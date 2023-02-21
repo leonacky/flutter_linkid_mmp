@@ -1,7 +1,7 @@
 name: flutter_linkid_mmp
-description: A new Flutter plugin project.
-version: 0.0.1
-homepage:
+description: LinkID Mobile Marketing Platform
+version: 1.0.0
+homepage: https://github.com/leonacky/flutter_linkid_mmp
 
 environment:
   sdk: '>=2.18.5 <3.0.0'
