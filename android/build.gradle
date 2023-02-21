@@ -1,0 +1,42 @@
+group 'com.linkid.flutter_linkid_mmp'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.2'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+//            url 'https://github.com/ekyc-uiux/ekyc-maven/raw/main/repo'
+            url '/Users/leonacky/android_repo/linkid_mmp/build/host/outputs/repo'
+        }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 31
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 21
+    }
+}
+
+dependencies {
+    implementation 'com.linkid.mmp:linkid_mmp:1.0.1'
+}

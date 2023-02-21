@@ -1,0 +1,17 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 effective-4.1.50 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name linkid_mmp
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CryptoSwift
+import Foundation
+import KeychainSwift
+import SQLite
+import Swift
+import _Concurrency
+import _StringProcessing
+@_exported import linkid_mmp
+@_hasMissingDesignatedInitializers public class LinkIdMMP {
+  public static func event(name: Swift.String, data: [Swift.String : Any]?)
+  public static func intSDK(partnerCode: Swift.String, appId: Swift.String)
+  @objc deinit
+}
