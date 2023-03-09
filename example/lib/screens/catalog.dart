@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../models/cart.dart';
 import '../models/catalog.dart';
 
 class MyCatalog extends StatelessWidget {
-  const MyCatalog({super.key});
+  MyCatalog({super.key}) {
+    TrackingHelper.setCurrentScreen(screenName: "MainScreen");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +54,7 @@ class _AddButton extends StatelessWidget {
               // We are using context.read() here because the callback
               // is executed whenever the user taps the button. In other
               // words, it is executed outside the build method.
+              TrackingHelper.logEvent(event: "AddCart");
               var cart = context.read<CartModel>();
               cart.add(item);
             },
@@ -78,11 +82,17 @@ class _MyAppBar extends StatelessWidget {
       actions: [
         IconButton(
           icon: const Icon(Icons.chat_bubble),
-          onPressed: () => context.go('/catalog/chat'),
+          onPressed: () {
+            TrackingHelper.logEvent(event: "OpenChat");
+            context.go('/catalog/chat');
+          },
         ),
         IconButton(
           icon: const Icon(Icons.shopping_cart),
-          onPressed: () => context.go('/catalog/cart'),
+          onPressed: () {
+            TrackingHelper.logEvent(event: "OpenCart");
+            context.go('/catalog/cart');
+          },
         ),
       ],
     );

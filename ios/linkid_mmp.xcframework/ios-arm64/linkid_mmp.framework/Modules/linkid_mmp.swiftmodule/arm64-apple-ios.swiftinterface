@@ -2,16 +2,39 @@
 // swift-compiler-version: Apple Swift version 5.7.1 effective-4.1.50 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
 // swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name linkid_mmp
 // swift-module-flags-ignorable: -enable-bare-slash-regex
+import CoreTelephony
 import CryptoSwift
+import DeviceCheck
 import Foundation
-import KeychainSwift
 import SQLite
 import Swift
+import UIKit
 import _Concurrency
 import _StringProcessing
 @_exported import linkid_mmp
-@_hasMissingDesignatedInitializers public class LinkIdMMP {
-  public static func event(name: Swift.String, data: [Swift.String : Any]?)
-  public static func intSDK(partnerCode: Swift.String, appId: Swift.String)
+@_hasMissingDesignatedInitializers @objcMembers public class LinkIdMMP {
+  @objc public static func logEvent(name: Swift.String, data: [Swift.String : Any]?)
+  @objc public static func intSDK(partnerCode: Swift.String)
+  @objc public static func setCurrentScreen(_ name: Swift.String)
+  public static func logBeginCheckout(value: Swift.Double, currency: Swift.String, items: [linkid_mmp.PurchaseItem]?)
+  public static func setUserInfo(userInfo: linkid_mmp.UserInfo)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class DetectWindowTouch : UIKit.UIWindow {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func sendEvent(_ event: UIKit.UIEvent)
+  @available(iOS 13.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(windowScene: UIKit.UIWindowScene)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PurchaseItem {
+  public static func convertToArray(_ items: [linkid_mmp.PurchaseItem]) -> [[Swift.String : Any]]
+  public static func convertToDictionary(_ item: linkid_mmp.PurchaseItem) -> [Swift.String : Any]
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objcMembers public class UserInfo {
+  public class func create(userId: Swift.String, name: Swift.String, gender: Swift.String, email: Swift.String, phone: Swift.String, age: Swift.Int32, country: Swift.String, city: Swift.String, deviceToken: Swift.String) -> linkid_mmp.UserInfo
+  public class func fromDictionary(data: [Swift.String : Any]) -> linkid_mmp.UserInfo
   @objc deinit
 }

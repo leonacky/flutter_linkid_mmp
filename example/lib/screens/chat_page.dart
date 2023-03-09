@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
+import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:http/http.dart' as http;
 
 // import 'package:image_picker/image_picker.dart';
@@ -34,6 +35,7 @@ class _ChatPageState extends State<ChatPage> {
   void initState() {
     super.initState();
     _loadMessages();
+    TrackingHelper.setCurrentScreen(screenName: "ChatScreen");
   }
 
   @override

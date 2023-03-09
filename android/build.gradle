@@ -16,8 +16,8 @@ rootProject.allprojects {
         google()
         mavenCentral()
         maven {
-//            url 'https://github.com/ekyc-uiux/ekyc-maven/raw/main/repo'
             url '/Users/leonacky/android_repo/linkid_mmp/build/host/outputs/repo'
+//            url 'https://github.com/vnpage/mmp_sdk/raw/main/repo'
         }
     }
 }
@@ -25,7 +25,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -38,5 +38,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.linkid.mmp:linkid_mmp:1.0.1'
+    releaseImplementation 'com.linkid.mmp:linkid_mmp:1.0.5'
+    debugImplementation 'com.linkid.mmp:linkid_mmp_debug:1.0.5'
+//    implementation 'com.linkid.mmp:linkid_mmp:1.0.5'
 }

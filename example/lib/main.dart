@@ -1,22 +1,36 @@
 import 'dart:io';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_linkid_mmp/flutter_linkid_mmp.dart';
+import 'package:flutter_linkid_mmp/user_info.dart';
+import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:flutter_linkid_mmp_example/screens/chat_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'common/theme.dart';
+import 'firebase_options.dart';
 import 'models/cart.dart';
 import 'models/catalog.dart';
 import 'screens/cart.dart';
 import 'screens/catalog.dart';
 import 'screens/login.dart';
 import 'package:window_size/window_size.dart';
-import 'package:flutter_linkid_mmp/flutter_linkid_mmp.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
-void main() {
-  setupWindow();
-  runApp(const MyApp());
+var fcmToken = "";
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  print("Firebase.initializeApp begin");
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  print("Firebase.initializeApp end");
+  // setupWindow();
+  runApp(MyApp());
 }
 
 const double windowWidth = 400;
@@ -44,15 +58,15 @@ GoRouter router() {
     routes: [
       GoRoute(
         path: '/login',
-        builder: (context, state) => const MyLogin(),
+        builder: (context, state) => MyLogin(),
       ),
       GoRoute(
         path: '/catalog',
-        builder: (context, state) => const MyCatalog(),
+        builder: (context, state) => MyCatalog(),
         routes: [
           GoRoute(
             path: 'cart',
-            builder: (context, state) => const MyCart(),
+            builder: (context, state) => MyCart(),
           ),
           GoRoute(
             path: 'chat',
@@ -65,11 +79,62 @@ GoRouter router() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  Future<void> initFcm(BuildContext context) async {
+    await FirebaseMessaging.instance.requestPermission(
+      alert: true,
+      announcement: false,
+      badge: true,
+      carPlay: false,
+      criticalAlert: false,
+      provisional: false,
+      sound: true,
+    );
+    fcmToken = await FirebaseMessaging.instance.getToken() ?? "";
+    print("fcmToken ${fcmToken}");
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      print('Got a message whilst in the foreground!');
+      print('Message data: ${message.data}');
+
+      if (message.notification != null) {
+        print('Message also contained a notification: ${message.notification}');
+        try {
+          EasyLoading.instance
+            ..toastPosition = EasyLoadingToastPosition.bottom
+            ..displayDuration = const Duration(milliseconds: 2000)
+            ..indicatorType = EasyLoadingIndicatorType.fadingCircle
+            ..loadingStyle = EasyLoadingStyle.dark
+            ..indicatorSize = 45.0
+            ..radius = 10.0
+            ..progressColor = Colors.yellow
+            ..backgroundColor = Colors.green
+            ..indicatorColor = Colors.yellow
+            ..textColor = Colors.yellow
+            ..maskColor = Colors.blue.withOpacity(0.5)
+            ..userInteractions = true
+            ..dismissOnTap = false;
+          EasyLoading.showInfo(
+              '${message.notification?.title}\n${message.notification?.body}');
+        } catch (e) {
+          print(e);
+        }
+      }
+    });
+  }
+
+  Future<void> init(BuildContext context) async {
+    await FlutterLinkIdMMP().initSDK("partner_code_01");
+    await initFcm(context);
+    FlutterLinkIdMMP().setUserInfo(UserInfo(
+        deviceToken: fcmToken));
+  }
 
   @override
   Widget build(BuildContext context) {
     // Using MultiProvider is convenient when providing multiple objects.
+    if (fcmToken == "") {
+      init(context);
+    }
+    TrackingHelper.logEvent(event: "StartApp");
     return MultiProvider(
       providers: [
         // In this sample app, CatalogModel never changes, so a simple Provider
@@ -91,6 +156,7 @@ class MyApp extends StatelessWidget {
         title: 'Provider Demo',
         theme: appTheme,
         routerConfig: router(),
+        builder: EasyLoading.init(),
       ),
     );
   }

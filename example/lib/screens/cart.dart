@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:provider/provider.dart';
 import '../models/cart.dart';
 
 class MyCart extends StatelessWidget {
-  const MyCart({super.key});
+  MyCart({super.key}) {
+    TrackingHelper.setCurrentScreen(screenName: "CartScreen");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,10 +87,12 @@ class _CartTotal extends StatelessWidget {
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Đã đặt thành công')));
+                TrackingHelper.logEvent(event: "Order");
                 cart.removeAll();
               },
               style: TextButton.styleFrom(foregroundColor: Colors.white),
-              child: const Text('ĐẶT HÀNG', style: TextStyle(color: Colors.deepPurple)),
+              child: const Text('ĐẶT HÀNG',
+                  style: TextStyle(color: Colors.deepPurple)),
             ),
           ],
         ),
