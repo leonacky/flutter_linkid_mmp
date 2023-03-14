@@ -11,7 +11,7 @@ import 'package:flutter_linkid_mmp_example/screens/chat_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'common/theme.dart';
-import 'firebase_options.dart';
+// import 'firebase_options.dart';
 import 'models/cart.dart';
 import 'models/catalog.dart';
 import 'screens/cart.dart';
@@ -26,7 +26,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   print("Firebase.initializeApp begin");
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+    // options: DefaultFirebaseOptions.currentPlatform,
   );
   print("Firebase.initializeApp end");
   // setupWindow();

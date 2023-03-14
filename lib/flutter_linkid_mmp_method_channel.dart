@@ -26,7 +26,7 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
       });
       return result ?? false;
     } catch (e) {
-      print(e);
+      //print(e);
     }
     return false;
   }
@@ -39,7 +39,7 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
           'event', {'eventName': eventName, 'data': data ?? {}});
       return result ?? false;
     } catch (e) {
-      print(e);
+      // //print(e);
     }
     return false;
   }
@@ -53,7 +53,7 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
           await methodChannel.invokeMethod<bool>('setUserInfo', {'data': data});
       return result ?? false;
     } catch (e) {
-      print(e);
+      // //print(e);
     }
     return false;
   }
@@ -66,7 +66,7 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
           .invokeMethod<bool>('setCurrentScreen', {'screenName': screenName});
       return result ?? false;
     } catch (e) {
-      print(e);
+      //print(e);
     }
     return false;
   }

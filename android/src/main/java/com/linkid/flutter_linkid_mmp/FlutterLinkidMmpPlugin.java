@@ -4,7 +4,7 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
-import com.linkid.mmp.LinkMMP;
+import com.linkid.mmp.LinkIdMMP;
 import com.linkid.mmp.UserInfo;
 
 import java.util.Map;
@@ -52,8 +52,12 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
     } else if (call.method.equals("event")) {
       try {
         if(call.hasArgument("eventName")) {
+          Map<String, Object> data = null;
+          if(call.hasArgument("data")) {
+            data = call.argument("data");
+          }
           String eventName = call.argument("eventName");
-          LinkIdMMP.logEvent(eventName, null);
+          LinkIdMMP.logEvent(eventName, data);
           result.success(true);
         } else {
           result.success(false);

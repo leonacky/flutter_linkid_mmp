@@ -21,7 +21,11 @@ public class SwiftFlutterLinkidMmpPlugin: NSObject, FlutterPlugin {
       } else if(call.method.elementsEqual("event")) {
           if let args = call.arguments as? Dictionary<String, Any>, let event = args["eventName"] as? String {
               print(event)
-              LinkIdMMP.logEvent(name: event, data: nil)
+              if let data = args["data"] as? [String: Any] {
+                  LinkIdMMP.logEvent(name: event, data: data)
+              } else {
+                  LinkIdMMP.logEvent(name: event, data: nil)
+              }
               result(true)
           } else {
               result(false)
