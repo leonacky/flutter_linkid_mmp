@@ -12,9 +12,13 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 @_exported import linkid_mmp
+@_hasMissingDesignatedInitializers public class Common {
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers @objcMembers public class LinkIdMMP {
   @objc public static func logEvent(name: Swift.String, data: [Swift.String : Any]?)
-  @objc public static func intSDK(partnerCode: Swift.String)
+  @objc public static func intSDK(partnerCode: Swift.String, appSecret: Swift.String)
+  @objc public static func intSDKWithBaseUrl(partnerCode: Swift.String, appSecret: Swift.String, baseUrl: Swift.String)
   @objc public static func setCurrentScreen(_ name: Swift.String)
   public static func logBeginCheckout(value: Swift.Double, currency: Swift.String, items: [linkid_mmp.PurchaseItem]?)
   public static func setUserInfo(userInfo: linkid_mmp.UserInfo)
@@ -26,6 +30,14 @@ import _StringProcessing
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(windowScene: UIKit.UIWindowScene)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DeepLinkHandler {
+  public static func setDeepLink(url: Swift.String)
+  public static func setDeferredDeepLink(url: Swift.String)
+  public static func getDeepLink() -> Swift.String
+  public static func getDeferredDeepLink() -> Swift.String
+  public func application(_ application: UIKit.UIApplication, open url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any] = [:]) -> Swift.Bool
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class PurchaseItem {

@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
+// import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_linkid_mmp/flutter_linkid_mmp.dart';
@@ -11,6 +11,7 @@ import 'package:flutter_linkid_mmp_example/screens/chat_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'common/theme.dart';
+
 // import 'firebase_options.dart';
 import 'models/cart.dart';
 import 'models/catalog.dart';
@@ -25,9 +26,9 @@ var fcmToken = "";
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   print("Firebase.initializeApp begin");
-  await Firebase.initializeApp(
-    // options: DefaultFirebaseOptions.currentPlatform,
-  );
+  // await Firebase.initializeApp(
+  // options: DefaultFirebaseOptions.currentPlatform,
+  // );
   print("Firebase.initializeApp end");
   // setupWindow();
   runApp(MyApp());
@@ -79,53 +80,64 @@ GoRouter router() {
 }
 
 class MyApp extends StatelessWidget {
-  Future<void> initFcm(BuildContext context) async {
-    await FirebaseMessaging.instance.requestPermission(
-      alert: true,
-      announcement: false,
-      badge: true,
-      carPlay: false,
-      criticalAlert: false,
-      provisional: false,
-      sound: true,
-    );
-    fcmToken = await FirebaseMessaging.instance.getToken() ?? "";
-    print("fcmToken ${fcmToken}");
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      print('Got a message whilst in the foreground!');
-      print('Message data: ${message.data}');
-
-      if (message.notification != null) {
-        print('Message also contained a notification: ${message.notification}');
-        try {
-          EasyLoading.instance
-            ..toastPosition = EasyLoadingToastPosition.bottom
-            ..displayDuration = const Duration(milliseconds: 2000)
-            ..indicatorType = EasyLoadingIndicatorType.fadingCircle
-            ..loadingStyle = EasyLoadingStyle.dark
-            ..indicatorSize = 45.0
-            ..radius = 10.0
-            ..progressColor = Colors.yellow
-            ..backgroundColor = Colors.green
-            ..indicatorColor = Colors.yellow
-            ..textColor = Colors.yellow
-            ..maskColor = Colors.blue.withOpacity(0.5)
-            ..userInteractions = true
-            ..dismissOnTap = false;
-          EasyLoading.showInfo(
-              '${message.notification?.title}\n${message.notification?.body}');
-        } catch (e) {
-          print(e);
-        }
-      }
-    });
-  }
+  // Future<void> initFcm(BuildContext context) async {
+  //   await FirebaseMessaging.instance.requestPermission(
+  //     alert: true,
+  //     announcement: false,
+  //     badge: true,
+  //     carPlay: false,
+  //     criticalAlert: false,
+  //     provisional: false,
+  //     sound: true,
+  //   );
+  //   fcmToken = await FirebaseMessaging.instance.getToken() ?? "";
+  //   print("fcmToken ${fcmToken}");
+  //   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+  //     print('Got a message whilst in the foreground!');
+  //     print('Message data: ${message.data}');
+  //
+  //     if (message.notification != null) {
+  //       print('Message also contained a notification: ${message.notification}');
+  //       try {
+  //         EasyLoading.instance
+  //           ..toastPosition = EasyLoadingToastPosition.bottom
+  //           ..displayDuration = const Duration(milliseconds: 2000)
+  //           ..indicatorType = EasyLoadingIndicatorType.fadingCircle
+  //           ..loadingStyle = EasyLoadingStyle.dark
+  //           ..indicatorSize = 45.0
+  //           ..radius = 10.0
+  //           ..progressColor = Colors.yellow
+  //           ..backgroundColor = Colors.green
+  //           ..indicatorColor = Colors.yellow
+  //           ..textColor = Colors.yellow
+  //           ..maskColor = Colors.blue.withOpacity(0.5)
+  //           ..userInteractions = true
+  //           ..dismissOnTap = false;
+  //         EasyLoading.showInfo(
+  //             '${message.notification?.title}\n${message.notification?.body}');
+  //       } catch (e) {
+  //         print(e);
+  //       }
+  //     }
+  //   });
+  // }
 
   Future<void> init(BuildContext context) async {
-    await FlutterLinkIdMMP().initSDK("partner_code_01");
-    await initFcm(context);
-    FlutterLinkIdMMP().setUserInfo(UserInfo(
-        deviceToken: fcmToken));
+    await FlutterLinkIdMMP().initSDK(
+      partnerCode: "partner_code_01",
+      appSecret:
+          "06c006d8d71bae7aab08499dab3be1efa5a665a4586df471dd889c68d14ef38f",
+    );
+    FlutterLinkIdMMP().deepLinkHandler(
+      onReceivedDeepLink: (url) {
+        print('onReceivedDeepLink in main.dart '+url);
+      },
+      onReceivedDeferredDeepLink: (url) {
+        print('onReceivedDeferredDeepLink in main.dart '+url);
+      },
+    );
+    // await initFcm(context);
+    FlutterLinkIdMMP().setUserInfo(UserInfo(deviceToken: fcmToken));
   }
 
   @override

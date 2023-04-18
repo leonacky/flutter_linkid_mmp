@@ -1,3 +1,4 @@
+import 'package:flutter_linkid_mmp/deep_link_handler.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'flutter_linkid_mmp_method_channel.dart';
@@ -28,7 +29,7 @@ abstract class FlutterLinkIdMmpPlatform extends PlatformInterface {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
-  Future<bool> initSDK(String partnerCode) {
+  Future<bool> initSDK(String partnerCode, String appSecret) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
@@ -41,6 +42,10 @@ abstract class FlutterLinkIdMmpPlatform extends PlatformInterface {
   }
 
   Future<bool> setCurrentScreen(String screenName) {
+    throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  void setDeepLinkHandler(DeepLinkHandler deepLinkHandler) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 }

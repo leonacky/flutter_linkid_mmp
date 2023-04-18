@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_linkid_mmp/user_info.dart';
 
+import 'deep_link_handler.dart';
+import 'flutter_linkid_mmp.dart';
 import 'flutter_linkid_mmp_platform_interface.dart';
 
 /// An implementation of [FlutterLinkIdMmpPlatform] that uses method channels.
@@ -9,6 +11,25 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
   final methodChannel = const MethodChannel('flutter_linkid_mmp');
+  DeepLinkHandler? _deepLinkHandler;
+
+  MethodChannelFlutterLinkidMmp() : super() {
+    methodChannel.setMethodCallHandler((call) async {
+      // you can get hear method and passed arguments with method
+      print("method ${call.method}");
+      if(call.method == "onDeepLink") {
+        _deepLinkHandler?.onReceivedDeepLink(call.arguments);
+      }
+      if(call.method == "onDeferredDeepLink") {
+        _deepLinkHandler?.onReceivedDeferredDeepLink(call.arguments);
+      }
+    });
+  }
+
+  @override
+  void setDeepLinkHandler(DeepLinkHandler deepLinkHandler) {
+    _deepLinkHandler = deepLinkHandler;
+  }
 
   @override
   Future<String?> getPlatformVersion() async {
@@ -18,12 +39,11 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
   }
 
   @override
-  Future<bool> initSDK(String partnerCode) async {
+  Future<bool> initSDK(String partnerCode, String appSecret) async {
     // TODO: implement initSDK
     try {
-      final result = await methodChannel.invokeMethod<bool>('initSDK', {
-        'partnerCode': partnerCode,
-      });
+      final result = await methodChannel.invokeMethod<bool>(
+          'initSDK', {'partnerCode': partnerCode, 'appSecret': appSecret});
       return result ?? false;
     } catch (e) {
       //print(e);

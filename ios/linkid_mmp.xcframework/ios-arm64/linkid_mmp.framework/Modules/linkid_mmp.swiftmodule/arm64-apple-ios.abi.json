@@ -36,40 +36,53 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "linkid_mmp",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "linkid_mmp",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "linkid_mmp",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "CryptoSwift",
         "printedName": "CryptoSwift",
         "declKind": "Import",
         "moduleName": "linkid_mmp"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Common",
+        "printedName": "Common",
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp6CommonC",
+        "mangledName": "$s10linkid_mmp6CommonC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -142,7 +155,7 @@
           {
             "kind": "Function",
             "name": "intSDK",
-            "printedName": "intSDK(partnerCode:)",
+            "printedName": "intSDK(partnerCode:appSecret:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -154,11 +167,58 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10linkid_mmp9LinkIdMMPC6intSDK11partnerCodeySS_tFZ",
-            "mangledName": "$s10linkid_mmp9LinkIdMMPC6intSDK11partnerCodeySS_tFZ",
+            "usr": "s:10linkid_mmp9LinkIdMMPC6intSDK11partnerCode9appSecretySS_SStFZ",
+            "mangledName": "$s10linkid_mmp9LinkIdMMPC6intSDK11partnerCode9appSecretySS_SStFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "intSDKWithBaseUrl",
+            "printedName": "intSDKWithBaseUrl(partnerCode:appSecret:baseUrl:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp9LinkIdMMPC17intSDKWithBaseUrl11partnerCode9appSecret04baseI0ySS_S2StFZ",
+            "mangledName": "$s10linkid_mmp9LinkIdMMPC17intSDKWithBaseUrl11partnerCode9appSecret04baseI0ySS_S2StFZ",
             "moduleName": "linkid_mmp",
             "static": true,
             "declAttributes": [
@@ -554,6 +614,186 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "DeepLinkHandler",
+        "printedName": "DeepLinkHandler",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "setDeepLink",
+            "printedName": "setDeepLink(url:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15DeepLinkHandlerC03setcD03urlySS_tFZ",
+            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC03setcD03urlySS_tFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setDeferredDeepLink",
+            "printedName": "setDeferredDeepLink(url:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15DeepLinkHandlerC011setDeferredcD03urlySS_tFZ",
+            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC011setDeferredcD03urlySS_tFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getDeepLink",
+            "printedName": "getDeepLink()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15DeepLinkHandlerC03getcD0SSyFZ",
+            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC03getcD0SSyFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getDeferredDeepLink",
+            "printedName": "getDeferredDeepLink()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15DeepLinkHandlerC011getDeferredcD0SSyFZ",
+            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC011getDeferredcD0SSyFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "application",
+            "printedName": "application(_:open:options:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIApplication",
+                "printedName": "UIKit.UIApplication",
+                "usr": "c:objc(cs)UIApplication"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[UIKit.UIApplication.OpenURLOptionsKey : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OpenURLOptionsKey",
+                    "printedName": "UIKit.UIApplication.OpenURLOptionsKey",
+                    "usr": "c:@T@UIApplicationOpenURLOptionsKey"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15DeepLinkHandlerC11application_4open7optionsSbSo13UIApplicationC_10Foundation3URLVSDySo0I17OpenURLOptionsKeyaypGtF",
+            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC11application_4open7optionsSbSo13UIApplicationC_10Foundation3URLVSDySo0I17OpenURLOptionsKeyaypGtF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp15DeepLinkHandlerC",
+        "mangledName": "$s10linkid_mmp15DeepLinkHandlerC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "PurchaseItem",
         "printedName": "PurchaseItem",
         "children": [
@@ -865,6 +1105,34 @@
     "json_format_version": 8
   },
   "ConstValues": [
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
+      "kind": "StringLiteral",
+      "offset": 167,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 183,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 231,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
+      "kind": "Dictionary",
+      "offset": 1381,
+      "length": 3,
+      "value": "[]"
+    },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/TrackingEvent.swift",
       "kind": "IntegerLiteral",

@@ -45,5 +45,18 @@
 	<false/>
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<false/>
+    <key>CFBundleURLTypes</key>
+      <array>
+        <dict>
+          <key>CFBundleTypeRole</key>
+          <string>Editor</string>
+          <key>CFBundleURLName</key>
+          <string>myvpbank</string>
+          <key>CFBundleURLSchemes</key>
+          <array>
+            <string>myvpbank</string>
+          </array>
+        </dict>
+      </array>
 </dict>
 </plist>
