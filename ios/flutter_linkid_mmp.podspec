@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_linkid_mmp'
-  s.version          = '1.0.0'
+  s.version          = '1.0.8'
   s.summary          = 'LinkId Mobile Marketing Platform'
   s.description      = <<-DESC
 A new Flutter plugin project.
@@ -19,15 +19,18 @@ A new Flutter plugin project.
   s.ios.deployment_target = '8.0'
   
   s.dependency 'SQLite.swift', '~> 0.14.0'
-#  s.dependency 'KeychainSwift', '~> 20.0'
-  s.dependency 'CryptoSwift', '~> 1.3.3'
+  # s.dependency 'KeychainSwift', '~> 20.0'
+  # s.dependency 'CryptoSwift', '~> 1.3.3'
   
-  s.preserve_paths = 'linkid_mmp.xcframework/**/*'
-  s.xcconfig = { 'OTHER_LDFLAGS' => '-framework linkid_mmp' }
-  s.vendored_frameworks = 'linkid_mmp.xcframework'
+ s.preserve_paths = 'linkid_mmp.xcframework/**/*', 'CryptoSwift.xcframework/**/*'
+ s.xcconfig = { 'OTHER_LDFLAGS' => '-framework linkid_mmp -framework CryptoSwift' }
+ s.vendored_frameworks = 'linkid_mmp.xcframework', 'CryptoSwift.xcframework'
 
+# s.preserve_paths = 'linkid_mmp.xcframework/**/*'
+# s.xcconfig = { 'OTHER_LDFLAGS' => '-framework linkid_mmp' }
+# s.vendored_frameworks = 'linkid_mmp.xcframework'
 
   # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386'}
   s.swift_version = '5.0'
 end
