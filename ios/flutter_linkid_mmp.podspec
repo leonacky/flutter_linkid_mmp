@@ -16,10 +16,11 @@ A new Flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
   s.platform = :ios, '9.0'
+  s.ios.deployment_target = '8.0'
   
   s.dependency 'SQLite.swift', '~> 0.14.0'
 #  s.dependency 'KeychainSwift', '~> 20.0'
-  s.dependency 'CryptoSwift', '~> 1.5.1'
+  s.dependency 'CryptoSwift', '~> 1.3.3'
   
   s.preserve_paths = 'linkid_mmp.xcframework/**/*'
   s.xcconfig = { 'OTHER_LDFLAGS' => '-framework linkid_mmp' }

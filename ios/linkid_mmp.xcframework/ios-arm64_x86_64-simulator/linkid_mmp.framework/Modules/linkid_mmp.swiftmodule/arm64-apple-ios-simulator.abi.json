@@ -26,16 +26,6 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "linkid_mmp",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "CryptoSwift",
         "printedName": "CryptoSwift",
         "declKind": "Import",
@@ -53,6 +43,450 @@
           "AccessControl"
         ],
         "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DeepLinkHandler",
+        "printedName": "DeepLinkHandler",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "setDeepLink",
+            "printedName": "setDeepLink(url:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15DeepLinkHandlerC03setcD03urlySS_tFZ",
+            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC03setcD03urlySS_tFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setDeferredDeepLink",
+            "printedName": "setDeferredDeepLink(url:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15DeepLinkHandlerC011setDeferredcD03urlySS_tFZ",
+            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC011setDeferredcD03urlySS_tFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getDeepLink",
+            "printedName": "getDeepLink()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15DeepLinkHandlerC03getcD0SSyFZ",
+            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC03getcD0SSyFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getDeferredDeepLink",
+            "printedName": "getDeferredDeepLink()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15DeepLinkHandlerC011getDeferredcD0SSyFZ",
+            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC011getDeferredcD0SSyFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "application",
+            "printedName": "application(_:open:options:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIApplication",
+                "printedName": "UIKit.UIApplication",
+                "usr": "c:objc(cs)UIApplication"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[UIKit.UIApplication.OpenURLOptionsKey : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OpenURLOptionsKey",
+                    "printedName": "UIKit.UIApplication.OpenURLOptionsKey",
+                    "usr": "c:@T@UIApplicationOpenURLOptionsKey"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15DeepLinkHandlerC11application_4open7optionsSbSo13UIApplicationC_10Foundation3URLVSDySo0I17OpenURLOptionsKeyaypGtF",
+            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC11application_4open7optionsSbSo13UIApplicationC_10Foundation3URLVSDySo0I17OpenURLOptionsKeyaypGtF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp15DeepLinkHandlerC",
+        "mangledName": "$s10linkid_mmp15DeepLinkHandlerC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DetectWindowTouch",
+        "printedName": "DetectWindowTouch",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "sendEvent",
+            "printedName": "sendEvent(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIEvent",
+                "printedName": "UIKit.UIEvent",
+                "usr": "c:objc(cs)UIEvent"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch(im)sendEvent:",
+            "mangledName": "$s10linkid_mmp17DetectWindowTouchC9sendEventyySo7UIEventCF",
+            "moduleName": "linkid_mmp",
+            "overriding": true,
+            "objc_name": "sendEvent:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(windowScene:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DetectWindowTouch",
+                "printedName": "linkid_mmp.DetectWindowTouch",
+                "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIWindowScene",
+                "printedName": "UIKit.UIWindowScene",
+                "usr": "c:objc(cs)UIWindowScene"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch(im)initWithWindowScene:",
+            "mangledName": "$s10linkid_mmp17DetectWindowTouchC11windowSceneACSo08UIWindowG0C_tcfc",
+            "moduleName": "linkid_mmp",
+            "overriding": true,
+            "implicit": true,
+            "intro_iOS": "13.0",
+            "objc_name": "initWithWindowScene:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "Available"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(frame:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DetectWindowTouch",
+                "printedName": "linkid_mmp.DetectWindowTouch",
+                "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGRect",
+                "printedName": "CoreFoundation.CGRect",
+                "usr": "c:@S@CGRect"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch(im)initWithFrame:",
+            "mangledName": "$s10linkid_mmp17DetectWindowTouchC5frameACSo6CGRectV_tcfc",
+            "moduleName": "linkid_mmp",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithFrame:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "linkid_mmp.DetectWindowTouch?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DetectWindowTouch",
+                    "printedName": "linkid_mmp.DetectWindowTouch",
+                    "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch(im)initWithCoder:",
+            "mangledName": "$s10linkid_mmp17DetectWindowTouchC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "linkid_mmp",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Required"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch",
+        "mangledName": "$s10linkid_mmp17DetectWindowTouchC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "Custom",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)UIWindow",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "UIKit.UIWindow",
+          "UIKit.UIView",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "__DefaultCustomPlaygroundQuickLookable",
+            "printedName": "__DefaultCustomPlaygroundQuickLookable",
+            "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
+            "mangledName": "$ss38__DefaultCustomPlaygroundQuickLookableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "DeviceCheck",
+        "printedName": "DeviceCheck",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreTelephony",
+        "printedName": "CoreTelephony",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp"
       },
       {
         "kind": "Import",
@@ -363,436 +797,6 @@
         ]
       },
       {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "linkid_mmp",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "linkid_mmp"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "DetectWindowTouch",
-        "printedName": "DetectWindowTouch",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "sendEvent",
-            "printedName": "sendEvent(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UIEvent",
-                "printedName": "UIKit.UIEvent",
-                "usr": "c:objc(cs)UIEvent"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch(im)sendEvent:",
-            "mangledName": "$s10linkid_mmp17DetectWindowTouchC9sendEventyySo7UIEventCF",
-            "moduleName": "linkid_mmp",
-            "overriding": true,
-            "objc_name": "sendEvent:",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Custom",
-              "Override",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(windowScene:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "DetectWindowTouch",
-                "printedName": "linkid_mmp.DetectWindowTouch",
-                "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UIWindowScene",
-                "printedName": "UIKit.UIWindowScene",
-                "usr": "c:objc(cs)UIWindowScene"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch(im)initWithWindowScene:",
-            "mangledName": "$s10linkid_mmp17DetectWindowTouchC11windowSceneACSo08UIWindowG0C_tcfc",
-            "moduleName": "linkid_mmp",
-            "overriding": true,
-            "implicit": true,
-            "intro_iOS": "13.0",
-            "objc_name": "initWithWindowScene:",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Custom",
-              "Override",
-              "Available"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(frame:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "DetectWindowTouch",
-                "printedName": "linkid_mmp.DetectWindowTouch",
-                "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CGRect",
-                "printedName": "CoreFoundation.CGRect",
-                "usr": "c:@S@CGRect"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch(im)initWithFrame:",
-            "mangledName": "$s10linkid_mmp17DetectWindowTouchC5frameACSo6CGRectV_tcfc",
-            "moduleName": "linkid_mmp",
-            "overriding": true,
-            "implicit": true,
-            "objc_name": "initWithFrame:",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Custom",
-              "Override"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(coder:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "linkid_mmp.DetectWindowTouch?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "DetectWindowTouch",
-                    "printedName": "linkid_mmp.DetectWindowTouch",
-                    "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "NSCoder",
-                "printedName": "Foundation.NSCoder",
-                "usr": "c:objc(cs)NSCoder"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch(im)initWithCoder:",
-            "mangledName": "$s10linkid_mmp17DetectWindowTouchC5coderACSgSo7NSCoderC_tcfc",
-            "moduleName": "linkid_mmp",
-            "overriding": true,
-            "implicit": true,
-            "objc_name": "initWithCoder:",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Custom",
-              "Required"
-            ],
-            "init_kind": "Designated"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "c:@M@linkid_mmp@objc(cs)DetectWindowTouch",
-        "mangledName": "$s10linkid_mmp17DetectWindowTouchC",
-        "moduleName": "linkid_mmp",
-        "declAttributes": [
-          "Custom",
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:objc(cs)UIWindow",
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "UIKit.UIWindow",
-          "UIKit.UIView",
-          "UIKit.UIResponder",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "__DefaultCustomPlaygroundQuickLookable",
-            "printedName": "__DefaultCustomPlaygroundQuickLookable",
-            "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
-            "mangledName": "$ss38__DefaultCustomPlaygroundQuickLookableP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "linkid_mmp",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "DeepLinkHandler",
-        "printedName": "DeepLinkHandler",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "setDeepLink",
-            "printedName": "setDeepLink(url:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp15DeepLinkHandlerC03setcD03urlySS_tFZ",
-            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC03setcD03urlySS_tFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "setDeferredDeepLink",
-            "printedName": "setDeferredDeepLink(url:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp15DeepLinkHandlerC011setDeferredcD03urlySS_tFZ",
-            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC011setDeferredcD03urlySS_tFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "getDeepLink",
-            "printedName": "getDeepLink()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp15DeepLinkHandlerC03getcD0SSyFZ",
-            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC03getcD0SSyFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "getDeferredDeepLink",
-            "printedName": "getDeferredDeepLink()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp15DeepLinkHandlerC011getDeferredcD0SSyFZ",
-            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC011getDeferredcD0SSyFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "application",
-            "printedName": "application(_:open:options:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UIApplication",
-                "printedName": "UIKit.UIApplication",
-                "usr": "c:objc(cs)UIApplication"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "URL",
-                "printedName": "Foundation.URL",
-                "usr": "s:10Foundation3URLV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Dictionary",
-                "printedName": "[UIKit.UIApplication.OpenURLOptionsKey : Any]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "OpenURLOptionsKey",
-                    "printedName": "UIKit.UIApplication.OpenURLOptionsKey",
-                    "usr": "c:@T@UIApplicationOpenURLOptionsKey"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProtocolComposition",
-                    "printedName": "Any"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:SD"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp15DeepLinkHandlerC11application_4open7optionsSbSo13UIApplicationC_10Foundation3URLVSDySo0I17OpenURLOptionsKeyaypGtF",
-            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC11application_4open7optionsSbSo13UIApplicationC_10Foundation3URLVSDySo0I17OpenURLOptionsKeyaypGtF",
-            "moduleName": "linkid_mmp",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "s:10linkid_mmp15DeepLinkHandlerC",
-        "mangledName": "$s10linkid_mmp15DeepLinkHandlerC",
-        "moduleName": "linkid_mmp",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "hasMissingDesignatedInitializers": true
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "linkid_mmp",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
         "kind": "TypeDecl",
         "name": "PurchaseItem",
         "printedName": "PurchaseItem",
@@ -906,6 +910,26 @@
           "AccessControl"
         ],
         "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -1076,42 +1100,11 @@
           "ObjCMembers"
         ],
         "hasMissingDesignatedInitializers": true
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "linkid_mmp",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "DeviceCheck",
-        "printedName": "DeviceCheck",
-        "declKind": "Import",
-        "moduleName": "linkid_mmp"
-      },
-      {
-        "kind": "Import",
-        "name": "CoreTelephony",
-        "printedName": "CoreTelephony",
-        "declKind": "Import",
-        "moduleName": "linkid_mmp"
       }
     ],
     "json_format_version": 8
   },
   "ConstValues": [
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
-      "kind": "StringLiteral",
-      "offset": 167,
-      "length": 2,
-      "value": "\"\""
-    },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
@@ -1132,6 +1125,27 @@
       "offset": 1381,
       "length": 3,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
+      "kind": "Dictionary",
+      "offset": 383,
+      "length": 7091,
+      "value": "[(\"i386\", \"iPhone Simulator\"), (\"x86_64\", \"iPhone Simulator\"), (\"arm64\", \"iPhone Simulator\"), (\"iPod1,1\", \"iPod Touch\"), (\"iPod2,1\", \"iPod Touch\"), (\"iPod3,1\", \"iPod Touch\"), (\"iPod4,1\", \"iPod Touch\"), (\"iPod5,1\", \"iPod Touch\"), (\"iPod7,1\", \"iPod Touch\"), (\"iPod9,1\", \"iPod Touch\"), (\"iPhone1,1\", \"iPhone\"), (\"iPhone1,2\", \"iPhone 3G\"), (\"iPhone2,1\", \"iPhone 3GS\"), (\"iPad1,1\", \"iPad\"), (\"iPad2,1\", \"iPad 2\"), (\"iPad2,2\", \"iPad 2\"), (\"iPad2,3\", \"iPad 2\"), (\"iPad2,4\", \"iPad 2\"), (\"iPad3,1\", \"iPad\"), (\"iPad3,2\", \"iPad\"), (\"iPad3,3\", \"iPad\"), (\"iPhone3,1\", \"iPhone 4\"), (\"iPhone3,2\", \"iPhone 4\"), (\"iPhone3,3\", \"iPhone 4\"), (\"iPhone4,1\", \"iPhone 4S\"), (\"iPhone5,1\", \"iPhone 5\"), (\"iPhone5,2\", \"iPhone 5\"), (\"iPad3,4\", \"iPad\"), (\"iPad3,5\", \"iPad\"), (\"iPad3,6\", \"iPad\"), (\"iPad2,5\", \"iPad Mini\"), (\"iPad2,6\", \"iPad Mini\"), (\"iPad2,7\", \"iPad Mini\"), (\"iPhone5,3\", \"iPhone 5c\"), (\"iPhone5,4\", \"iPhone 5c\"), (\"iPhone6,1\", \"iPhone 5s\"), (\"iPhone6,2\", \"iPhone 5s\"), (\"iPhone7,1\", \"iPhone 6 Plus\"), (\"iPhone7,2\", \"iPhone 6\"), (\"iPhone8,1\", \"iPhone 6s\"), (\"iPhone8,2\", \"iPhone 6s Plus\"), (\"iPhone8,4\", \"iPhone SE\"), (\"iPhone9,1\", \"iPhone 7\"), (\"iPhone9,3\", \"iPhone 7\"), (\"iPhone9,2\", \"iPhone 7 Plus\"), (\"iPhone9,4\", \"iPhone 7 Plus\"), (\"iPhone10,3\", \"iPhone X\"), (\"iPhone10,6\", \"iPhone X\"), (\"iPhone10,1\", \"iPhone 8\"), (\"iPhone10,4\", \"iPhone 8\"), (\"iPhone10,2\", \"iPhone 8 Plus\"), (\"iPhone10,5\", \"iPhone 8 Plus\"), (\"iPhone11,2\", \"iPhone XS\"), (\"iPhone11,4\", \"iPhone XS Max\"), (\"iPhone11,6\", \"iPhone XS Max\"), (\"iPhone11,8\", \"iPhone XR\"), (\"iPhone12,1\", \"iPhone 11\"), (\"iPhone12,3\", \"iPhone 11 Pro\"), (\"iPhone12,5\", \"iPhone 11 Pro Max\"), (\"iPhone12,8\", \"iPhone SE\"), (\"iPhone13,1\", \"iPhone 12 mini\"), (\"iPhone13,2\", \"iPhone 12\"), (\"iPhone13,3\", \"iPhone 12 Pro\"), (\"iPhone13,4\", \"iPhone 12 Pro Max\"), (\"iPhone14,4\", \"iPhone 13 mini\"), (\"iPhone14,5\", \"iPhone 13\"), (\"iPhone14,2\", \"iPhone 13 Pro\"), (\"iPhone14,3\", \"iPhone 13 Pro Max\"), (\"iPhone14,6\", \"iPhone SE\"), (\"iPhone14,7\", \"iPhone 14\"), (\"iPhone14,8\", \"iPhone 14 Plus\"), (\"iPhone15,2\", \"iPhone 14 Pro\"), (\"iPhone15,3\", \"iPhone 14 Pro Max\"), (\"iPad4,1\", \"iPad Air\"), (\"iPad4,2\", \"iPad Air\"), (\"iPad4,3\", \"iPad Air\"), (\"iPad4,4\", \"iPad Mini 2\"), (\"iPad4,5\", \"iPad Mini 2\"), (\"iPad4,6\", \"iPad Mini 2\"), (\"iPad4,7\", \"iPad Mini 3\"), (\"iPad4,8\", \"iPad Mini 3\"), (\"iPad4,9\", \"iPad Mini 3\"), (\"iPad5,1\", \"iPad Mini 4\"), (\"iPad5,2\", \"iPad Mini 4\"), (\"iPad5,3\", \"iPad Air 2\"), (\"iPad5,4\", \"iPad Air 2\"), (\"iPad6,3\", \"iPad Pro 9.7-inch\"), (\"iPad6,4\", \"iPad Pro 9.7-inch\"), (\"iPad6,7\", \"iPad Pro 12.9-inch\"), (\"iPad6,8\", \"iPad Pro 12.9-inch\"), (\"iPad6,11\", \"iPad (5th generation)\"), (\"iPad6,12\", \"iPad (5th generation)\"), (\"iPad7,1\", \"iPad Pro 12.9-inch\"), (\"iPad7,2\", \"iPad Pro 12.9-inch\"), (\"iPad7,3\", \"iPad Pro 10.5-inch\"), (\"iPad7,4\", \"iPad Pro 10.5-inch\"), (\"iPad7,5\", \"iPad (6th generation)\"), (\"iPad7,6\", \"iPad (6th generation)\"), (\"iPad7,11\", \"iPad (7th generation)\"), (\"iPad7,12\", \"iPad (7th generation)\"), (\"iPad8,1\", \"iPad Pro 11-inch (3rd generation)\"), (\"iPad8,2\", \"iPad Pro 11-inch (3rd generation)\"), (\"iPad8,3\", \"iPad Pro 11-inch (3rd generation)\"), (\"iPad8,4\", \"iPad Pro 11-inch (3rd generation)\"), (\"iPad8,5\", \"iPad Pro 12.9-inch (3rd generation)\"), (\"iPad8,6\", \"iPad Pro 12.9-inch (3rd generation)\"), (\"iPad8,7\", \"iPad Pro 12.9-inch (3rd generation)\"), (\"iPad8,8\", \"iPad Pro 12.9-inch (3rd generation)\"), (\"iPad11,1\", \"iPad Mini 5\"), (\"iPad11,2\", \"iPad Mini 5\"), (\"iPad11,3\", \"iPad Air (3rd generation)\"), (\"iPad11,4\", \"iPad Air (3rd generation)\"), (\"iPad13,1\", \"iPad Air (4th generation)\"), (\"iPad13,2\", \"iPad Air (4th generation)\"), (\"AppleTV2,1\", \"Apple TV\"), (\"AppleTV3,1\", \"Apple TV\"), (\"AppleTV3,2\", \"Apple TV\"), (\"AppleTV5,3\", \"Apple TV\"), (\"AppleTV6,2\", \"Apple TV 4K\")]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
+      "kind": "StringLiteral",
+      "offset": 167,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/TrackingEvent.swift",
@@ -1174,20 +1188,6 @@
       "offset": 751,
       "length": 5,
       "value": "false"
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 248,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
-      "kind": "Dictionary",
-      "offset": 383,
-      "length": 7091,
-      "value": "[(\"i386\", \"iPhone Simulator\"), (\"x86_64\", \"iPhone Simulator\"), (\"arm64\", \"iPhone Simulator\"), (\"iPod1,1\", \"iPod Touch\"), (\"iPod2,1\", \"iPod Touch\"), (\"iPod3,1\", \"iPod Touch\"), (\"iPod4,1\", \"iPod Touch\"), (\"iPod5,1\", \"iPod Touch\"), (\"iPod7,1\", \"iPod Touch\"), (\"iPod9,1\", \"iPod Touch\"), (\"iPhone1,1\", \"iPhone\"), (\"iPhone1,2\", \"iPhone 3G\"), (\"iPhone2,1\", \"iPhone 3GS\"), (\"iPad1,1\", \"iPad\"), (\"iPad2,1\", \"iPad 2\"), (\"iPad2,2\", \"iPad 2\"), (\"iPad2,3\", \"iPad 2\"), (\"iPad2,4\", \"iPad 2\"), (\"iPad3,1\", \"iPad\"), (\"iPad3,2\", \"iPad\"), (\"iPad3,3\", \"iPad\"), (\"iPhone3,1\", \"iPhone 4\"), (\"iPhone3,2\", \"iPhone 4\"), (\"iPhone3,3\", \"iPhone 4\"), (\"iPhone4,1\", \"iPhone 4S\"), (\"iPhone5,1\", \"iPhone 5\"), (\"iPhone5,2\", \"iPhone 5\"), (\"iPad3,4\", \"iPad\"), (\"iPad3,5\", \"iPad\"), (\"iPad3,6\", \"iPad\"), (\"iPad2,5\", \"iPad Mini\"), (\"iPad2,6\", \"iPad Mini\"), (\"iPad2,7\", \"iPad Mini\"), (\"iPhone5,3\", \"iPhone 5c\"), (\"iPhone5,4\", \"iPhone 5c\"), (\"iPhone6,1\", \"iPhone 5s\"), (\"iPhone6,2\", \"iPhone 5s\"), (\"iPhone7,1\", \"iPhone 6 Plus\"), (\"iPhone7,2\", \"iPhone 6\"), (\"iPhone8,1\", \"iPhone 6s\"), (\"iPhone8,2\", \"iPhone 6s Plus\"), (\"iPhone8,4\", \"iPhone SE\"), (\"iPhone9,1\", \"iPhone 7\"), (\"iPhone9,3\", \"iPhone 7\"), (\"iPhone9,2\", \"iPhone 7 Plus\"), (\"iPhone9,4\", \"iPhone 7 Plus\"), (\"iPhone10,3\", \"iPhone X\"), (\"iPhone10,6\", \"iPhone X\"), (\"iPhone10,1\", \"iPhone 8\"), (\"iPhone10,4\", \"iPhone 8\"), (\"iPhone10,2\", \"iPhone 8 Plus\"), (\"iPhone10,5\", \"iPhone 8 Plus\"), (\"iPhone11,2\", \"iPhone XS\"), (\"iPhone11,4\", \"iPhone XS Max\"), (\"iPhone11,6\", \"iPhone XS Max\"), (\"iPhone11,8\", \"iPhone XR\"), (\"iPhone12,1\", \"iPhone 11\"), (\"iPhone12,3\", \"iPhone 11 Pro\"), (\"iPhone12,5\", \"iPhone 11 Pro Max\"), (\"iPhone12,8\", \"iPhone SE\"), (\"iPhone13,1\", \"iPhone 12 mini\"), (\"iPhone13,2\", \"iPhone 12\"), (\"iPhone13,3\", \"iPhone 12 Pro\"), (\"iPhone13,4\", \"iPhone 12 Pro Max\"), (\"iPhone14,4\", \"iPhone 13 mini\"), (\"iPhone14,5\", \"iPhone 13\"), (\"iPhone14,2\", \"iPhone 13 Pro\"), (\"iPhone14,3\", \"iPhone 13 Pro Max\"), (\"iPhone14,6\", \"iPhone SE\"), (\"iPhone14,7\", \"iPhone 14\"), (\"iPhone14,8\", \"iPhone 14 Plus\"), (\"iPhone15,2\", \"iPhone 14 Pro\"), (\"iPhone15,3\", \"iPhone 14 Pro Max\"), (\"iPad4,1\", \"iPad Air\"), (\"iPad4,2\", \"iPad Air\"), (\"iPad4,3\", \"iPad Air\"), (\"iPad4,4\", \"iPad Mini 2\"), (\"iPad4,5\", \"iPad Mini 2\"), (\"iPad4,6\", \"iPad Mini 2\"), (\"iPad4,7\", \"iPad Mini 3\"), (\"iPad4,8\", \"iPad Mini 3\"), (\"iPad4,9\", \"iPad Mini 3\"), (\"iPad5,1\", \"iPad Mini 4\"), (\"iPad5,2\", \"iPad Mini 4\"), (\"iPad5,3\", \"iPad Air 2\"), (\"iPad5,4\", \"iPad Air 2\"), (\"iPad6,3\", \"iPad Pro 9.7-inch\"), (\"iPad6,4\", \"iPad Pro 9.7-inch\"), (\"iPad6,7\", \"iPad Pro 12.9-inch\"), (\"iPad6,8\", \"iPad Pro 12.9-inch\"), (\"iPad6,11\", \"iPad (5th generation)\"), (\"iPad6,12\", \"iPad (5th generation)\"), (\"iPad7,1\", \"iPad Pro 12.9-inch\"), (\"iPad7,2\", \"iPad Pro 12.9-inch\"), (\"iPad7,3\", \"iPad Pro 10.5-inch\"), (\"iPad7,4\", \"iPad Pro 10.5-inch\"), (\"iPad7,5\", \"iPad (6th generation)\"), (\"iPad7,6\", \"iPad (6th generation)\"), (\"iPad7,11\", \"iPad (7th generation)\"), (\"iPad7,12\", \"iPad (7th generation)\"), (\"iPad8,1\", \"iPad Pro 11-inch (3rd generation)\"), (\"iPad8,2\", \"iPad Pro 11-inch (3rd generation)\"), (\"iPad8,3\", \"iPad Pro 11-inch (3rd generation)\"), (\"iPad8,4\", \"iPad Pro 11-inch (3rd generation)\"), (\"iPad8,5\", \"iPad Pro 12.9-inch (3rd generation)\"), (\"iPad8,6\", \"iPad Pro 12.9-inch (3rd generation)\"), (\"iPad8,7\", \"iPad Pro 12.9-inch (3rd generation)\"), (\"iPad8,8\", \"iPad Pro 12.9-inch (3rd generation)\"), (\"iPad11,1\", \"iPad Mini 5\"), (\"iPad11,2\", \"iPad Mini 5\"), (\"iPad11,3\", \"iPad Air (3rd generation)\"), (\"iPad11,4\", \"iPad Air (3rd generation)\"), (\"iPad13,1\", \"iPad Air (4th generation)\"), (\"iPad13,2\", \"iPad Air (4th generation)\"), (\"AppleTV2,1\", \"Apple TV\"), (\"AppleTV3,1\", \"Apple TV\"), (\"AppleTV3,2\", \"Apple TV\"), (\"AppleTV5,3\", \"Apple TV\"), (\"AppleTV6,2\", \"Apple TV 4K\")]"
     }
   ]
 }

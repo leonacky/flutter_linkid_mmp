@@ -124,9 +124,9 @@ class MyApp extends StatelessWidget {
 
   Future<void> init(BuildContext context) async {
     await FlutterLinkIdMMP().initSDK(
-      partnerCode: "partner_code_01",
+      partnerCode: "lynk_id_uat",
       appSecret:
-          "06c006d8d71bae7aab08499dab3be1efa5a665a4586df471dd889c68d14ef38f",
+          "5f42b02004225cb2dd56637d2ce902dc4b810025cd3ac4c8d4bb31937ff4a113",
     );
     FlutterLinkIdMMP().deepLinkHandler(
       onReceivedDeepLink: (url) {

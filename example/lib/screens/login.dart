@@ -12,7 +12,6 @@ class MyLogin extends StatelessWidget {
   String password = "";
 
   MyLogin({super.key}) {
-    print("partner_code_01");
     TrackingHelper.setCurrentScreen(screenName: "LoginScreen");
   }
 

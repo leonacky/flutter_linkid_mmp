@@ -38,8 +38,8 @@ android {
 }
 
 dependencies {
-    releaseImplementation 'com.linkid.mmp:linkid_mmp:1.0.8'
-    debugImplementation 'com.linkid.mmp:linkid_mmp_debug:1.0.8'
+    releaseImplementation 'com.linkid.mmp:linkid_mmp:1.0.9b1'
+    debugImplementation 'com.linkid.mmp:linkid_mmp_debug:1.0.9b1'
     implementation "com.android.installreferrer:installreferrer:2.2"
 //    implementation 'com.linkid.mmp:linkid_mmp:1.0.5'
 }

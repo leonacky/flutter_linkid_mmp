@@ -13,3 +13,15 @@
 ## 1.0.4
 
 * Release 4th version of LinkID MMP
+
+## 1.0.5
+
+* Release 5th version of LinkID MMP
+
+## 1.0.6
+
+* Release 6th version of LinkID MMP
+
+## 1.0.7
+
+* Release 7th version of LinkID MMP

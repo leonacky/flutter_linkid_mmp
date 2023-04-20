@@ -145,11 +145,10 @@ packages:
   flutter_linkid_mmp:
     dependency: "direct main"
     description:
-      name: flutter_linkid_mmp
-      sha256: "9a7ecf9c2755a4c2466cb38087717a3414718122dd536ef4c69a5f7197de0828"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.3"
+      path: ".."
+      relative: true
+    source: path
+    version: "1.0.6"
   flutter_linkify:
     dependency: transitive
     description:
