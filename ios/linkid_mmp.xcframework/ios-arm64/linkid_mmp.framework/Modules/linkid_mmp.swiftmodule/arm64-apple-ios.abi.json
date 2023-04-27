@@ -61,6 +61,62 @@
         "children": [
           {
             "kind": "Function",
+            "name": "initDeeplink",
+            "printedName": "initDeeplink()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15DeepLinkHandlerC12initDeeplinkyyFZ",
+            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC12initDeeplinkyyFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "saveDeeplink",
+            "printedName": "saveDeeplink(deeplinkCountDate:deferredDeeplinkCountDate:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15DeepLinkHandlerC12saveDeeplink17deeplinkCountDate08deferredgiJ0ys5Int64V_AHtFZ",
+            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC12saveDeeplink17deeplinkCountDate08deferredgiJ0ys5Int64V_AHtFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "setDeepLink",
             "printedName": "setDeepLink(url:)",
             "children": [
@@ -774,6 +830,74 @@
               "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setRevenue",
+            "printedName": "setRevenue(orderId:amount:currency:data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp9LinkIdMMPC10setRevenue05orderD06amount8currency4dataySS_SdSSSDySSypGSgtFZ",
+            "mangledName": "$s10linkid_mmp9LinkIdMMPC10setRevenue05orderD06amount8currency4dataySS_SdSSSDySSypGSgtFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -953,13 +1077,6 @@
       },
       {
         "kind": "Import",
-        "name": "SQLite",
-        "printedName": "SQLite",
-        "declKind": "Import",
-        "moduleName": "linkid_mmp"
-      },
-      {
-        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -1122,7 +1239,7 @@
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "Dictionary",
-      "offset": 1381,
+      "offset": 2984,
       "length": 3,
       "value": "[]"
     },
@@ -1150,42 +1267,42 @@
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/TrackingEvent.swift",
       "kind": "IntegerLiteral",
-      "offset": 196,
+      "offset": 198,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/TrackingEvent.swift",
       "kind": "IntegerLiteral",
-      "offset": 263,
+      "offset": 265,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/TrackingEvent.swift",
       "kind": "Array",
-      "offset": 344,
+      "offset": 346,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/TrackingEvent.swift",
       "kind": "IntegerLiteral",
-      "offset": 551,
+      "offset": 553,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/TrackingEvent.swift",
       "kind": "IntegerLiteral",
-      "offset": 713,
+      "offset": 715,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/TrackingEvent.swift",
       "kind": "BooleanLiteral",
-      "offset": 751,
+      "offset": 753,
       "length": 5,
       "value": "false"
     }

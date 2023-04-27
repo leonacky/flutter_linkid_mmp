@@ -1,16 +1,12 @@
 PODS:
   - Flutter (1.0.0)
-  - flutter_linkid_mmp (1.0.7):
+  - flutter_linkid_mmp (1.1.2):
     - Flutter
-    - SQLite.swift (~> 0.14.0)
   - open_filex (0.0.2):
     - Flutter
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - SQLite.swift (0.14.1):
-    - SQLite.swift/standard (= 0.14.1)
-  - SQLite.swift/standard (0.14.1)
   - url_launcher_ios (0.0.1):
     - Flutter
 
@@ -20,10 +16,6 @@ DEPENDENCIES:
   - open_filex (from `.symlinks/plugins/open_filex/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
   - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
-
-SPEC REPOS:
-  trunk:
-    - SQLite.swift
 
 EXTERNAL SOURCES:
   Flutter:
@@ -39,10 +31,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  flutter_linkid_mmp: 26061c25c4c13c569095474d76ddc5e7e5f6e475
+  flutter_linkid_mmp: c532d5405e7a1c2952f96c43ed932017b67e2c15
   open_filex: 6e26e659846ec990262224a12ef1c528bb4edbe4
   path_provider_foundation: 37748e03f12783f9de2cb2c4eadfaa25fe6d4852
-  SQLite.swift: 2992550ebf3c5b268bf4352603e3df87d2a4ed72
   url_launcher_ios: fb12c43172927bb5cf75aeebd073f883801f1993
 
 PODFILE CHECKSUM: b8ac3c9e0bf188a59f556e30660c41c133547467

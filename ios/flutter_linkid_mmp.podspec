@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_linkid_mmp'
-  s.version          = '1.0.8'
+  s.version          = '1.1.8'
   s.summary          = 'LinkId Mobile Marketing Platform'
   s.description      = <<-DESC
 A new Flutter plugin project.
@@ -18,7 +18,7 @@ A new Flutter plugin project.
   s.platform = :ios, '9.0'
   s.ios.deployment_target = '8.0'
   
-  s.dependency 'SQLite.swift', '~> 0.14.0'
+#  s.dependency 'SQLite.swift', '~> 0.14.0'
   # s.dependency 'KeychainSwift', '~> 20.0'
   # s.dependency 'CryptoSwift', '~> 1.3.3'
   

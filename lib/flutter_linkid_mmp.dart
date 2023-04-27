@@ -5,18 +5,28 @@ import 'flutter_linkid_mmp_platform_interface.dart';
 
 class FlutterLinkIdMMP implements DeepLinkHandler{
   static final FlutterLinkIdMMP _instance = FlutterLinkIdMMP._internal();
+
   factory FlutterLinkIdMMP() {
     return _instance;
   }
-  FlutterLinkIdMMP._internal();
+  FlutterLinkIdMMP._internal() {
+    FlutterLinkIdMmpPlatform.instance.setDeepLinkHandler(this);
+  }
 
   Function(String url)? _onReceivedDeferredDeepLink;
   Function(String url)? _onReceivedDeepLink;
+  String currentDeeplink = "";
+  String currentDeferredDeeplink = "";
 
   void deepLinkHandler({Function(String url)? onReceivedDeepLink, Function(String url)? onReceivedDeferredDeepLink}) {
-    FlutterLinkIdMmpPlatform.instance.setDeepLinkHandler(this);
     _onReceivedDeferredDeepLink = onReceivedDeferredDeepLink;
     _onReceivedDeepLink = onReceivedDeepLink;
+    if(currentDeeplink!="") {
+      _onReceivedDeepLink?.call(currentDeeplink);
+    }
+    if(currentDeferredDeeplink!="") {
+      _onReceivedDeferredDeepLink?.call(currentDeferredDeeplink);
+    }
   }
 
   Future<String?> getPlatformVersion() {
@@ -42,12 +52,14 @@ class FlutterLinkIdMMP implements DeepLinkHandler{
   @override
   void onReceivedDeepLink(String url) {
     // TODO: implement onReceivedDeepLink
+    currentDeeplink = url;
     _onReceivedDeepLink?.call(url);
   }
 
   @override
   void onReceivedDeferredDeepLink(String url) {
     // TODO: implement onReceivedDeferredDeepLink
+    currentDeferredDeeplink = url;
     _onReceivedDeferredDeepLink?.call(url);
   }
 }

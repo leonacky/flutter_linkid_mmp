@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter_linkid_mmp/deep_link_handler.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
@@ -30,22 +32,27 @@ abstract class FlutterLinkIdMmpPlatform extends PlatformInterface {
   }
 
   Future<bool> initSDK(String partnerCode, String appSecret) {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+    throw UnimplementedError('initSDK() has not been implemented.');
   }
 
   Future<bool> logEvent(String eventName, {Map<String, dynamic>? data}) {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+    throw UnimplementedError('logEvent() has not been implemented.');
   }
 
   Future<bool> setUserInfo(UserInfo userInfo) {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+    throw UnimplementedError('setUserInfo() has not been implemented.');
   }
 
   Future<bool> setCurrentScreen(String screenName) {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+    throw UnimplementedError('setCurrentScreen() has not been implemented.');
   }
 
   void setDeepLinkHandler(DeepLinkHandler deepLinkHandler) {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+    throw UnimplementedError('setDeepLinkHandler() has not been implemented.');
+  }
+
+  Future<bool> setRevenue(String orderId, Double amount, String currency,
+      {Map<String, dynamic>? data}) {
+    throw UnimplementedError('setRevenue() has not been implemented.');
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_linkid_mmp/user_info.dart';
@@ -17,10 +19,12 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
     methodChannel.setMethodCallHandler((call) async {
       // you can get hear method and passed arguments with method
       print("method ${call.method}");
-      if(call.method == "onDeepLink") {
+      if (call.method == "onDeepLink") {
         _deepLinkHandler?.onReceivedDeepLink(call.arguments);
       }
-      if(call.method == "onDeferredDeepLink") {
+      if (call.method == "onDeferredDeepLink") {
+        print(
+            "onDeferredDeepLink in dart _deepLinkHandler == $_deepLinkHandler");
         _deepLinkHandler?.onReceivedDeferredDeepLink(call.arguments);
       }
     });
@@ -87,6 +91,24 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
       return result ?? false;
     } catch (e) {
       //print(e);
+    }
+    return false;
+  }
+
+  @override
+  Future<bool> setRevenue(String orderId, Double amount, String currency,
+      {Map<String, dynamic>? data}) async {
+    // TODO: implement event
+    try {
+      final result = await methodChannel.invokeMethod<bool>('setRevenue', {
+        'orderId': orderId,
+        'amount': amount,
+        'currency': currency,
+        'data': data ?? {}
+      });
+      return result ?? false;
+    } catch (e) {
+      // //print(e);
     }
     return false;
   }

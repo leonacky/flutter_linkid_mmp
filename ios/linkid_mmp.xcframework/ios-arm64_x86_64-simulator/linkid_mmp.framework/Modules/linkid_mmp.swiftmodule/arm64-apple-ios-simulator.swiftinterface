@@ -6,7 +6,6 @@ import CoreTelephony
 import CryptoSwift
 import DeviceCheck
 import Foundation
-import SQLite
 import Swift
 import UIKit
 import _Concurrency
@@ -16,6 +15,8 @@ import _StringProcessing
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class DeepLinkHandler {
+  public static func initDeeplink()
+  public static func saveDeeplink(deeplinkCountDate: Swift.Int64, deferredDeeplinkCountDate: Swift.Int64)
   public static func setDeepLink(url: Swift.String)
   public static func setDeferredDeepLink(url: Swift.String)
   public static func getDeepLink() -> Swift.String
@@ -38,6 +39,7 @@ import _StringProcessing
   @objc public static func setCurrentScreen(_ name: Swift.String)
   public static func logBeginCheckout(value: Swift.Double, currency: Swift.String, items: [linkid_mmp.PurchaseItem]?)
   public static func setUserInfo(userInfo: linkid_mmp.UserInfo)
+  @objc public static func setRevenue(orderId: Swift.String, amount: Swift.Double, currency: Swift.String, data: [Swift.String : Any]?)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class PurchaseItem {
