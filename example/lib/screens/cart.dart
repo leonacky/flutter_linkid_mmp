@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'dart:math';
 import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:provider/provider.dart';
 import '../models/cart.dart';
@@ -62,6 +65,12 @@ class _CartList extends StatelessWidget {
 }
 
 class _CartTotal extends StatelessWidget {
+
+  static const _chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
+  final Random _rnd = Random();
+  String getRandomString(int length) => String.fromCharCodes(Iterable.generate(
+      length, (_) => _chars.codeUnitAt(_rnd.nextInt(_chars.length))));
+
   @override
   Widget build(BuildContext context) {
     var hugeStyle =
@@ -88,6 +97,7 @@ class _CartTotal extends StatelessWidget {
                 ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Đã đặt thành công')));
                 TrackingHelper.logEvent(event: "Order");
+                TrackingHelper.setRevenue(orderId: getRandomString(10), amount: cart.totalPrice.toDouble(), currency: "VND");
                 cart.removeAll();
               },
               style: TextButton.styleFrom(foregroundColor: Colors.white),

@@ -47,12 +47,20 @@ abstract class FlutterLinkIdMmpPlatform extends PlatformInterface {
     throw UnimplementedError('setCurrentScreen() has not been implemented.');
   }
 
+  Future<bool> setDevMode(bool devMode) {
+    throw UnimplementedError('setDevMode() has not been implemented.');
+  }
+
   void setDeepLinkHandler(DeepLinkHandler deepLinkHandler) {
     throw UnimplementedError('setDeepLinkHandler() has not been implemented.');
   }
 
-  Future<bool> setRevenue(String orderId, Double amount, String currency,
+  Future<bool> setRevenue(String orderId, double amount, String currency,
       {Map<String, dynamic>? data}) {
     throw UnimplementedError('setRevenue() has not been implemented.');
+  }
+
+  Future<bool> recordError(String name, String stackTrace) {
+    throw UnimplementedError('initSDK() has not been implemented.');
   }
 }

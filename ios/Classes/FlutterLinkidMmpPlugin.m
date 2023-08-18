@@ -10,6 +10,6 @@
 
 @implementation FlutterLinkidMmpPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [SwiftFlutterLinkidMmpPlugin registerWithRegistrar:registrar];
+  [LinkidMmpPlugin registerWithRegistrar:registrar];
 }
 @end

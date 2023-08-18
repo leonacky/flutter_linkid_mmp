@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 // import 'package:firebase_core/firebase_core.dart';
@@ -23,15 +24,13 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 var fcmToken = "";
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  print("Firebase.initializeApp begin");
-  // await Firebase.initializeApp(
-  // options: DefaultFirebaseOptions.currentPlatform,
-  // );
-  print("Firebase.initializeApp end");
-  // setupWindow();
-  runApp(MyApp());
+void main() {
+  FlutterLinkIdMMP.runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    runApp(MyApp());
+  }, (error, stackTrace) async {
+
+  });
 }
 
 const double windowWidth = 400;
@@ -123,18 +122,16 @@ class MyApp extends StatelessWidget {
   // }
 
   Future<void> init(BuildContext context) async {
+    FlutterLinkIdMMP.shared.setDevMode(true);
     await FlutterLinkIdMMP().initSDK(
       partnerCode: "lynk_id_uat",
       appSecret:
-          "5f42b02004225cb2dd56637d2ce902dc4b810025cd3ac4c8d4bb31937ff4a113",
+          "b3ccd1c20fa9154a559c304956f99b302027a87b87ad520c1c4dbdd4bb54be7a",
     );
     FlutterLinkIdMMP().deepLinkHandler(
       onReceivedDeepLink: (url) {
-        print('onReceivedDeepLink in main.dart '+url);
-      },
-      onReceivedDeferredDeepLink: (url) {
-        print('onReceivedDeferredDeepLink in main.dart '+url);
-      },
+        print('onReceivedDeepLink in dart ' + url);
+      }
     );
     // await initFcm(context);
     FlutterLinkIdMMP().setUserInfo(UserInfo(deviceToken: fcmToken));

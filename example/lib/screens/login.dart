@@ -15,6 +15,14 @@ class MyLogin extends StatelessWidget {
     TrackingHelper.setCurrentScreen(screenName: "LoginScreen");
   }
 
+  Future<void> asynchronousError() async {
+    throw UnimplementedError();
+  }
+
+  void synchronousError() {
+    throw UnimplementedError();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +63,7 @@ class MyLogin extends StatelessWidget {
                 onPressed: () {
                   TrackingHelper.logEvent(event: "Login");
                   if(username!="" && password!="") {
+                    // synchronousError();
                     TrackingHelper.logEvent(event: "LoginSuccess");
                     FlutterLinkIdMMP().setUserInfo(UserInfo(
                         userId: username,
@@ -64,6 +73,7 @@ class MyLogin extends StatelessWidget {
                     ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Đăng nhập thành công')));
                   } else {
+                    // asynchronousError();
                     ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Đăng nhập thất bại')));
                     TrackingHelper.logEvent(event: "LoginFail");

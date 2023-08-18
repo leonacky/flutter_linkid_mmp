@@ -22,11 +22,6 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
       if (call.method == "onDeepLink") {
         _deepLinkHandler?.onReceivedDeepLink(call.arguments);
       }
-      if (call.method == "onDeferredDeepLink") {
-        print(
-            "onDeferredDeepLink in dart _deepLinkHandler == $_deepLinkHandler");
-        _deepLinkHandler?.onReceivedDeferredDeepLink(call.arguments);
-      }
     });
   }
 
@@ -96,7 +91,7 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
   }
 
   @override
-  Future<bool> setRevenue(String orderId, Double amount, String currency,
+  Future<bool> setRevenue(String orderId, double amount, String currency,
       {Map<String, dynamic>? data}) async {
     // TODO: implement event
     try {
@@ -109,6 +104,32 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
       return result ?? false;
     } catch (e) {
       // //print(e);
+    }
+    return false;
+  }
+
+  @override
+  Future<bool> recordError(String name, String stackTrace) async {
+    // TODO: implement initSDK
+    try {
+      final result = await methodChannel.invokeMethod<bool>(
+          'recordError', {'name': name, 'stackTrace': stackTrace});
+      return result ?? false;
+    } catch (e) {
+      //print(e);
+    }
+    return false;
+  }
+
+  @override
+  Future<bool> setDevMode(bool devMode) async {
+    // TODO: implement initSDK
+    try {
+      final result = await methodChannel.invokeMethod<bool>(
+          'setDevMode', {'devMode': devMode});
+      return result ?? false;
+    } catch (e) {
+      //print(e);
     }
     return false;
   }

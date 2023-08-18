@@ -1,9 +1,8 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 effective-4.1.50 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.8.1 effective-4.1.50 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
 // swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name linkid_mmp
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import CoreTelephony
-import CryptoSwift
 import DeviceCheck
 import Foundation
 import Swift
@@ -14,14 +13,22 @@ import _StringProcessing
 @_hasMissingDesignatedInitializers public class Common {
   @objc deinit
 }
+@_hasMissingDesignatedInitializers public class Crashlytics {
+  public static func setup()
+  public static func recordError(name: Swift.String, stackTrace: Swift.String)
+  public static func check()
+  @objc deinit
+}
+public typealias HandleDeeplink = (Swift.String) -> Swift.Void
 @_hasMissingDesignatedInitializers public class DeepLinkHandler {
+  public static var handleDeeplink: linkid_mmp.HandleDeeplink?
   public static func initDeeplink()
-  public static func saveDeeplink(deeplinkCountDate: Swift.Int64, deferredDeeplinkCountDate: Swift.Int64)
+  public static func saveDeeplink(deeplinkCountDate: Swift.Int64)
   public static func setDeepLink(url: Swift.String)
-  public static func setDeferredDeepLink(url: Swift.String)
-  public static func getDeepLink() -> Swift.String
-  public static func getDeferredDeepLink() -> Swift.String
+  public static func getLastDeepLink() -> Swift.String
+  public static func getCurrentDeepLink() -> Swift.String
   public func application(_ application: UIKit.UIApplication, open url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any] = [:]) -> Swift.Bool
+  public static func getUDL()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class DetectWindowTouch : UIKit.UIWindow {
@@ -32,14 +39,29 @@ import _StringProcessing
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
+public enum Network : Swift.String {
+  case wifi
+  case cellular
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 @_hasMissingDesignatedInitializers @objcMembers public class LinkIdMMP {
   @objc public static func logEvent(name: Swift.String, data: [Swift.String : Any]?)
+  @objc public static func setDevMode(_ devMode: Swift.Bool)
   @objc public static func intSDK(partnerCode: Swift.String, appSecret: Swift.String)
   @objc public static func intSDKWithBaseUrl(partnerCode: Swift.String, appSecret: Swift.String, baseUrl: Swift.String)
   @objc public static func setCurrentScreen(_ name: Swift.String)
+  @objc public static func recordError(name: Swift.String, stackTrace: Swift.String)
   public static func logBeginCheckout(value: Swift.Double, currency: Swift.String, items: [linkid_mmp.PurchaseItem]?)
   public static func setUserInfo(userInfo: linkid_mmp.UserInfo)
   @objc public static func setRevenue(orderId: Swift.String, amount: Swift.Double, currency: Swift.String, data: [Swift.String : Any]?)
+  @objc public static func handleDeeplink(_ handleDeeplink: @escaping (Swift.String) -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Logger {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class PurchaseItem {
@@ -49,6 +71,10 @@ import _StringProcessing
 }
 @_hasMissingDesignatedInitializers @objcMembers public class UserInfo {
   public class func create(userId: Swift.String, name: Swift.String, gender: Swift.String, email: Swift.String, phone: Swift.String, age: Swift.Int32, country: Swift.String, city: Swift.String, deviceToken: Swift.String) -> linkid_mmp.UserInfo
+  @objc public func toDictionary() -> [Swift.String : Any]
   public class func fromDictionary(data: [Swift.String : Any]) -> linkid_mmp.UserInfo
   @objc deinit
 }
+extension linkid_mmp.Network : Swift.Equatable {}
+extension linkid_mmp.Network : Swift.Hashable {}
+extension linkid_mmp.Network : Swift.RawRepresentable {}
