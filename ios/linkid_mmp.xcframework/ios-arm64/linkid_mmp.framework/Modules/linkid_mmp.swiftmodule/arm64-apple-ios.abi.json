@@ -9,6 +9,672 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
+        "moduleName": "linkid_mmp"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Airflex",
+        "printedName": "Airflex",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "logEvent",
+            "printedName": "logEvent(name:data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp7AirflexC8logEvent4name4dataySS_SDySSypGSgtFZ",
+            "mangledName": "$s10linkid_mmp7AirflexC8logEvent4name4dataySS_SDySSypGSgtFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setDevMode",
+            "printedName": "setDevMode(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp7AirflexC10setDevModeyySbFZ",
+            "mangledName": "$s10linkid_mmp7AirflexC10setDevModeyySbFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "intSDK",
+            "printedName": "intSDK(partnerCode:appSecret:options:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "linkid_mmp.AirflexOptions?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AirflexOptions",
+                    "printedName": "linkid_mmp.AirflexOptions",
+                    "usr": "s:10linkid_mmp14AirflexOptionsC"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp7AirflexC6intSDK11partnerCode9appSecret7optionsySS_SSAA0C7OptionsCSgtFZ",
+            "mangledName": "$s10linkid_mmp7AirflexC6intSDK11partnerCode9appSecret7optionsySS_SSAA0C7OptionsCSgtFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "intSDK",
+            "printedName": "intSDK(partnerCode:appSecret:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp7AirflexC6intSDK11partnerCode9appSecretySS_SStFZ",
+            "mangledName": "$s10linkid_mmp7AirflexC6intSDK11partnerCode9appSecretySS_SStFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setCurrentScreen",
+            "printedName": "setCurrentScreen(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp7AirflexC16setCurrentScreenyySSFZ",
+            "mangledName": "$s10linkid_mmp7AirflexC16setCurrentScreenyySSFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "recordError",
+            "printedName": "recordError(name:stackTrace:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp7AirflexC11recordError4name10stackTraceySS_SStFZ",
+            "mangledName": "$s10linkid_mmp7AirflexC11recordError4name10stackTraceySS_SStFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "logBeginCheckout",
+            "printedName": "logBeginCheckout(value:currency:items:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[linkid_mmp.PurchaseItem]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[linkid_mmp.PurchaseItem]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PurchaseItem",
+                        "printedName": "linkid_mmp.PurchaseItem",
+                        "usr": "s:10linkid_mmp12PurchaseItemC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp7AirflexC16logBeginCheckout5value8currency5itemsySd_SSSayAA12PurchaseItemCGSgtFZ",
+            "mangledName": "$s10linkid_mmp7AirflexC16logBeginCheckout5value8currency5itemsySd_SSSayAA12PurchaseItemCGSgtFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setUserInfo",
+            "printedName": "setUserInfo(userInfo:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UserInfo",
+                "printedName": "linkid_mmp.UserInfo",
+                "usr": "s:10linkid_mmp8UserInfoC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp7AirflexC11setUserInfo04userF0yAA0eF0C_tFZ",
+            "mangledName": "$s10linkid_mmp7AirflexC11setUserInfo04userF0yAA0eF0C_tFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setRevenue",
+            "printedName": "setRevenue(orderId:amount:currency:data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp7AirflexC10setRevenue7orderId6amount8currency4dataySS_SdSSSDySSypGSgtFZ",
+            "mangledName": "$s10linkid_mmp7AirflexC10setRevenue7orderId6amount8currency4dataySS_SdSSSDySSypGSgtFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "handleDeeplink",
+            "printedName": "handleDeeplink(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.String) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp7AirflexC14handleDeeplinkyyySScFZ",
+            "mangledName": "$s10linkid_mmp7AirflexC14handleDeeplinkyyySScFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp7AirflexC",
+        "mangledName": "$s10linkid_mmp7AirflexC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AirflexOptions",
+        "printedName": "AirflexOptions",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "showLog",
+            "printedName": "showLog",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp14AirflexOptionsC7showLogSbvp",
+            "mangledName": "$s10linkid_mmp14AirflexOptionsC7showLogSbvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp14AirflexOptionsC7showLogSbvg",
+                "mangledName": "$s10linkid_mmp14AirflexOptionsC7showLogSbvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp14AirflexOptionsC7showLogSbvs",
+                "mangledName": "$s10linkid_mmp14AirflexOptionsC7showLogSbvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp14AirflexOptionsC7showLogSbvM",
+                "mangledName": "$s10linkid_mmp14AirflexOptionsC7showLogSbvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "autoTrackingScreen",
+            "printedName": "autoTrackingScreen",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp14AirflexOptionsC18autoTrackingScreenSbvp",
+            "mangledName": "$s10linkid_mmp14AirflexOptionsC18autoTrackingScreenSbvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp14AirflexOptionsC18autoTrackingScreenSbvg",
+                "mangledName": "$s10linkid_mmp14AirflexOptionsC18autoTrackingScreenSbvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp14AirflexOptionsC18autoTrackingScreenSbvs",
+                "mangledName": "$s10linkid_mmp14AirflexOptionsC18autoTrackingScreenSbvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp14AirflexOptionsC18autoTrackingScreenSbvM",
+                "mangledName": "$s10linkid_mmp14AirflexOptionsC18autoTrackingScreenSbvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AirflexOptions",
+                "printedName": "linkid_mmp.AirflexOptions",
+                "usr": "s:10linkid_mmp14AirflexOptionsC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10linkid_mmp14AirflexOptionsCACycfc",
+            "mangledName": "$s10linkid_mmp14AirflexOptionsCACycfc",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp14AirflexOptionsC",
+        "mangledName": "$s10linkid_mmp14AirflexOptionsC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
         "moduleName": "linkid_mmp",
         "declAttributes": [
           "RawDocComment"
@@ -169,6 +835,2203 @@
         "declAttributes": [
           "ImplementationOnly"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DeepLinkAirflexParameters",
+        "printedName": "DeepLinkAirflexParameters",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "name",
+            "printedName": "name",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC4nameSSSgvp",
+            "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC4nameSSSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC4nameSSSgvg",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC4nameSSSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC4nameSSSgvs",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC4nameSSSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC4nameSSSgvM",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC4nameSSSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "source",
+            "printedName": "source",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC6sourceSSSgvp",
+            "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC6sourceSSSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC6sourceSSSgvg",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC6sourceSSSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC6sourceSSSgvs",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC6sourceSSSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC6sourceSSSgvM",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC6sourceSSSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "code",
+            "printedName": "code",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC4codeSSSgvp",
+            "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC4codeSSSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC4codeSSSgvg",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC4codeSSSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC4codeSSSgvs",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC4codeSSSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC4codeSSSgvM",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC4codeSSSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "medium",
+            "printedName": "medium",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC6mediumSSSgvp",
+            "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC6mediumSSSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC6mediumSSSgvg",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC6mediumSSSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC6mediumSSSgvs",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC6mediumSSSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC6mediumSSSgvM",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC6mediumSSSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "campaign",
+            "printedName": "campaign",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC8campaignSSSgvp",
+            "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC8campaignSSSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC8campaignSSSgvg",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC8campaignSSSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC8campaignSSSgvs",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC8campaignSSSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC8campaignSSSgvM",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC8campaignSSSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "term",
+            "printedName": "term",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC4termSSSgvp",
+            "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC4termSSSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC4termSSSgvg",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC4termSSSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC4termSSSgvs",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC4termSSSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC4termSSSgvM",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC4termSSSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "content",
+            "printedName": "content",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC7contentSSSgvp",
+            "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC7contentSSSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC7contentSSSgvg",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC7contentSSSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC7contentSSSgvs",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC7contentSSSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC7contentSSSgvM",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC7contentSSSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(source:code:medium:campaign:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DeepLinkAirflexParameters",
+                "printedName": "linkid_mmp.DeepLinkAirflexParameters",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC6source4code6medium8campaignACSSSg_A3Htcfc",
+            "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC6source4code6medium8campaignACSSSg_A3Htcfc",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "buildParams",
+            "printedName": "buildParams()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC11buildParamsSDySSypGyF",
+            "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC11buildParamsSDySSypGyF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC",
+        "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DeepLinkAndroidParameters",
+        "printedName": "DeepLinkAndroidParameters",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "packageName",
+            "printedName": "packageName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC11packageNameSSSgvp",
+            "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC11packageNameSSSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC11packageNameSSSgvg",
+                "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC11packageNameSSSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC11packageNameSSSgvs",
+                "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC11packageNameSSSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC11packageNameSSSgvM",
+                "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC11packageNameSSSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "playStoreURL",
+            "printedName": "playStoreURL",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC12playStoreURLSSSgvp",
+            "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC12playStoreURLSSSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC12playStoreURLSSSgvg",
+                "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC12playStoreURLSSSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC12playStoreURLSSSgvs",
+                "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC12playStoreURLSSSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC12playStoreURLSSSgvM",
+                "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC12playStoreURLSSSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "customSchema",
+            "printedName": "customSchema",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC12customSchemaSSSgvp",
+            "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC12customSchemaSSSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC12customSchemaSSSgvg",
+                "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC12customSchemaSSSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC12customSchemaSSSgvs",
+                "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC12customSchemaSSSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC12customSchemaSSSgvM",
+                "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC12customSchemaSSSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(packageName:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DeepLinkAndroidParameters",
+                "printedName": "linkid_mmp.DeepLinkAndroidParameters",
+                "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC11packageNameACSSSg_tcfc",
+            "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC11packageNameACSSSg_tcfc",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "buildParams",
+            "printedName": "buildParams()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC11buildParamsSDySSypGyF",
+            "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC11buildParamsSDySSypGyF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC",
+        "mangledName": "$s10linkid_mmp25DeepLinkAndroidParametersC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DeepLinkBuilder",
+        "printedName": "DeepLinkBuilder",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "iOSParameters",
+            "printedName": "iOSParameters",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "linkid_mmp.DeepLinkIOSParameters?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DeepLinkIOSParameters",
+                    "printedName": "linkid_mmp.DeepLinkIOSParameters",
+                    "usr": "s:10linkid_mmp21DeepLinkIOSParametersC"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp15DeepLinkBuilderC13iOSParametersAA0cD13IOSParametersCSgvp",
+            "mangledName": "$s10linkid_mmp15DeepLinkBuilderC13iOSParametersAA0cD13IOSParametersCSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "linkid_mmp.DeepLinkIOSParameters?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DeepLinkIOSParameters",
+                        "printedName": "linkid_mmp.DeepLinkIOSParameters",
+                        "usr": "s:10linkid_mmp21DeepLinkIOSParametersC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp15DeepLinkBuilderC13iOSParametersAA0cD13IOSParametersCSgvg",
+                "mangledName": "$s10linkid_mmp15DeepLinkBuilderC13iOSParametersAA0cD13IOSParametersCSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "linkid_mmp.DeepLinkIOSParameters?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DeepLinkIOSParameters",
+                        "printedName": "linkid_mmp.DeepLinkIOSParameters",
+                        "usr": "s:10linkid_mmp21DeepLinkIOSParametersC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp15DeepLinkBuilderC13iOSParametersAA0cD13IOSParametersCSgvs",
+                "mangledName": "$s10linkid_mmp15DeepLinkBuilderC13iOSParametersAA0cD13IOSParametersCSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp15DeepLinkBuilderC13iOSParametersAA0cD13IOSParametersCSgvM",
+                "mangledName": "$s10linkid_mmp15DeepLinkBuilderC13iOSParametersAA0cD13IOSParametersCSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "androidParameters",
+            "printedName": "androidParameters",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "linkid_mmp.DeepLinkAndroidParameters?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DeepLinkAndroidParameters",
+                    "printedName": "linkid_mmp.DeepLinkAndroidParameters",
+                    "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp15DeepLinkBuilderC17androidParametersAA0cd7AndroidG0CSgvp",
+            "mangledName": "$s10linkid_mmp15DeepLinkBuilderC17androidParametersAA0cd7AndroidG0CSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "linkid_mmp.DeepLinkAndroidParameters?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DeepLinkAndroidParameters",
+                        "printedName": "linkid_mmp.DeepLinkAndroidParameters",
+                        "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp15DeepLinkBuilderC17androidParametersAA0cd7AndroidG0CSgvg",
+                "mangledName": "$s10linkid_mmp15DeepLinkBuilderC17androidParametersAA0cd7AndroidG0CSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "linkid_mmp.DeepLinkAndroidParameters?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DeepLinkAndroidParameters",
+                        "printedName": "linkid_mmp.DeepLinkAndroidParameters",
+                        "usr": "s:10linkid_mmp25DeepLinkAndroidParametersC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp15DeepLinkBuilderC17androidParametersAA0cd7AndroidG0CSgvs",
+                "mangledName": "$s10linkid_mmp15DeepLinkBuilderC17androidParametersAA0cd7AndroidG0CSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp15DeepLinkBuilderC17androidParametersAA0cd7AndroidG0CSgvM",
+                "mangledName": "$s10linkid_mmp15DeepLinkBuilderC17androidParametersAA0cd7AndroidG0CSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "airflexParameters",
+            "printedName": "airflexParameters",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "linkid_mmp.DeepLinkAirflexParameters?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DeepLinkAirflexParameters",
+                    "printedName": "linkid_mmp.DeepLinkAirflexParameters",
+                    "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp15DeepLinkBuilderC17airflexParametersAA0cd7AirflexG0CSgvp",
+            "mangledName": "$s10linkid_mmp15DeepLinkBuilderC17airflexParametersAA0cd7AirflexG0CSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "linkid_mmp.DeepLinkAirflexParameters?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DeepLinkAirflexParameters",
+                        "printedName": "linkid_mmp.DeepLinkAirflexParameters",
+                        "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp15DeepLinkBuilderC17airflexParametersAA0cd7AirflexG0CSgvg",
+                "mangledName": "$s10linkid_mmp15DeepLinkBuilderC17airflexParametersAA0cd7AirflexG0CSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "linkid_mmp.DeepLinkAirflexParameters?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DeepLinkAirflexParameters",
+                        "printedName": "linkid_mmp.DeepLinkAirflexParameters",
+                        "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp15DeepLinkBuilderC17airflexParametersAA0cd7AirflexG0CSgvs",
+                "mangledName": "$s10linkid_mmp15DeepLinkBuilderC17airflexParametersAA0cd7AirflexG0CSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp15DeepLinkBuilderC17airflexParametersAA0cd7AirflexG0CSgvM",
+                "mangledName": "$s10linkid_mmp15DeepLinkBuilderC17airflexParametersAA0cd7AirflexG0CSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DeepLinkBuilder",
+                "printedName": "linkid_mmp.DeepLinkBuilder",
+                "usr": "s:10linkid_mmp15DeepLinkBuilderC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10linkid_mmp15DeepLinkBuilderCACycfc",
+            "mangledName": "$s10linkid_mmp15DeepLinkBuilderCACycfc",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "createLink",
+            "printedName": "createLink(completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(linkid_mmp.DeepLinkBuilderResult?, linkid_mmp.DeepLinkBuilderError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(linkid_mmp.DeepLinkBuilderResult?, linkid_mmp.DeepLinkBuilderError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "linkid_mmp.DeepLinkBuilderResult?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "DeepLinkBuilderResult",
+                            "printedName": "linkid_mmp.DeepLinkBuilderResult",
+                            "usr": "s:10linkid_mmp21DeepLinkBuilderResultC"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "linkid_mmp.DeepLinkBuilderError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "DeepLinkBuilderError",
+                            "printedName": "linkid_mmp.DeepLinkBuilderError",
+                            "usr": "s:10linkid_mmp20DeepLinkBuilderErrorC"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15DeepLinkBuilderC06createD010completionyyAA0cdE6ResultCSg_AA0cdE5ErrorCSgtc_tF",
+            "mangledName": "$s10linkid_mmp15DeepLinkBuilderC06createD010completionyyAA0cdE6ResultCSg_AA0cdE5ErrorCSgtc_tF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp15DeepLinkBuilderC",
+        "mangledName": "$s10linkid_mmp15DeepLinkBuilderC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DeepLinkBuilderError",
+        "printedName": "DeepLinkBuilderError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "code",
+            "printedName": "code",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp20DeepLinkBuilderErrorC4codeSSvp",
+            "mangledName": "$s10linkid_mmp20DeepLinkBuilderErrorC4codeSSvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp20DeepLinkBuilderErrorC4codeSSvg",
+                "mangledName": "$s10linkid_mmp20DeepLinkBuilderErrorC4codeSSvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp20DeepLinkBuilderErrorC4codeSSvs",
+                "mangledName": "$s10linkid_mmp20DeepLinkBuilderErrorC4codeSSvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp20DeepLinkBuilderErrorC4codeSSvM",
+                "mangledName": "$s10linkid_mmp20DeepLinkBuilderErrorC4codeSSvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "message",
+            "printedName": "message",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp20DeepLinkBuilderErrorC7messageSSvp",
+            "mangledName": "$s10linkid_mmp20DeepLinkBuilderErrorC7messageSSvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp20DeepLinkBuilderErrorC7messageSSvg",
+                "mangledName": "$s10linkid_mmp20DeepLinkBuilderErrorC7messageSSvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp20DeepLinkBuilderErrorC7messageSSvs",
+                "mangledName": "$s10linkid_mmp20DeepLinkBuilderErrorC7messageSSvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp20DeepLinkBuilderErrorC7messageSSvM",
+                "mangledName": "$s10linkid_mmp20DeepLinkBuilderErrorC7messageSSvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(code:message:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DeepLinkBuilderError",
+                "printedName": "linkid_mmp.DeepLinkBuilderError",
+                "usr": "s:10linkid_mmp20DeepLinkBuilderErrorC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10linkid_mmp20DeepLinkBuilderErrorC4code7messageACSS_SStcfc",
+            "mangledName": "$s10linkid_mmp20DeepLinkBuilderErrorC4code7messageACSS_SStcfc",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp20DeepLinkBuilderErrorC",
+        "mangledName": "$s10linkid_mmp20DeepLinkBuilderErrorC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DeepLinkBuilderResult",
+        "printedName": "DeepLinkBuilderResult",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shortLink",
+            "printedName": "shortLink",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp21DeepLinkBuilderResultC05shortD0SSvp",
+            "mangledName": "$s10linkid_mmp21DeepLinkBuilderResultC05shortD0SSvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkBuilderResultC05shortD0SSvg",
+                "mangledName": "$s10linkid_mmp21DeepLinkBuilderResultC05shortD0SSvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkBuilderResultC05shortD0SSvs",
+                "mangledName": "$s10linkid_mmp21DeepLinkBuilderResultC05shortD0SSvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkBuilderResultC05shortD0SSvM",
+                "mangledName": "$s10linkid_mmp21DeepLinkBuilderResultC05shortD0SSvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "longLink",
+            "printedName": "longLink",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp21DeepLinkBuilderResultC04longD0SSvp",
+            "mangledName": "$s10linkid_mmp21DeepLinkBuilderResultC04longD0SSvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkBuilderResultC04longD0SSvg",
+                "mangledName": "$s10linkid_mmp21DeepLinkBuilderResultC04longD0SSvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkBuilderResultC04longD0SSvs",
+                "mangledName": "$s10linkid_mmp21DeepLinkBuilderResultC04longD0SSvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkBuilderResultC04longD0SSvM",
+                "mangledName": "$s10linkid_mmp21DeepLinkBuilderResultC04longD0SSvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp21DeepLinkBuilderResultC",
+        "mangledName": "$s10linkid_mmp21DeepLinkBuilderResultC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
       },
       {
         "kind": "Import",
@@ -553,6 +3416,555 @@
           "AccessControl"
         ],
         "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DeepLinkIOSParameters",
+        "printedName": "DeepLinkIOSParameters",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "bundleID",
+            "printedName": "bundleID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp21DeepLinkIOSParametersC8bundleIDSSSgvp",
+            "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC8bundleIDSSSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkIOSParametersC8bundleIDSSSgvg",
+                "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC8bundleIDSSSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkIOSParametersC8bundleIDSSSgvs",
+                "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC8bundleIDSSSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkIOSParametersC8bundleIDSSSgvM",
+                "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC8bundleIDSSSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "appStoreID",
+            "printedName": "appStoreID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp21DeepLinkIOSParametersC10appStoreIDSSSgvp",
+            "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC10appStoreIDSSSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkIOSParametersC10appStoreIDSSSgvg",
+                "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC10appStoreIDSSSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkIOSParametersC10appStoreIDSSSgvs",
+                "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC10appStoreIDSSSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkIOSParametersC10appStoreIDSSSgvM",
+                "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC10appStoreIDSSSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "customSchema",
+            "printedName": "customSchema",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp21DeepLinkIOSParametersC12customSchemaSSSgvp",
+            "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC12customSchemaSSSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkIOSParametersC12customSchemaSSSgvg",
+                "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC12customSchemaSSSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkIOSParametersC12customSchemaSSSgvs",
+                "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC12customSchemaSSSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkIOSParametersC12customSchemaSSSgvM",
+                "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC12customSchemaSSSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "appStoreURL",
+            "printedName": "appStoreURL",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp21DeepLinkIOSParametersC11appStoreURLSSSgvp",
+            "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC11appStoreURLSSSgvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkIOSParametersC11appStoreURLSSSgvg",
+                "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC11appStoreURLSSSgvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkIOSParametersC11appStoreURLSSSgvs",
+                "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC11appStoreURLSSSgvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp21DeepLinkIOSParametersC11appStoreURLSSSgvM",
+                "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC11appStoreURLSSSgvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(bundleID:appStoreID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DeepLinkIOSParameters",
+                "printedName": "linkid_mmp.DeepLinkIOSParameters",
+                "usr": "s:10linkid_mmp21DeepLinkIOSParametersC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10linkid_mmp21DeepLinkIOSParametersC8bundleID08appStoreG0ACSSSg_AFtcfc",
+            "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC8bundleID08appStoreG0ACSSSg_AFtcfc",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "buildParams",
+            "printedName": "buildParams()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp21DeepLinkIOSParametersC11buildParamsSDySSypGyF",
+            "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC11buildParamsSDySSypGyF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp21DeepLinkIOSParametersC",
+        "mangledName": "$s10linkid_mmp21DeepLinkIOSParametersC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl"
+        ]
       },
       {
         "kind": "Import",
@@ -1062,447 +4474,6 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
-        "moduleName": "linkid_mmp"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "LinkIdMMP",
-        "printedName": "LinkIdMMP",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "logEvent",
-            "printedName": "logEvent(name:data:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "[Swift.String : Any]?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Any]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "ProtocolComposition",
-                        "printedName": "Any"
-                      }
-                    ],
-                    "usr": "s:SD"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp9LinkIdMMPC8logEvent4name4dataySS_SDySSypGSgtFZ",
-            "mangledName": "$s10linkid_mmp9LinkIdMMPC8logEvent4name4dataySS_SDySSypGSgtFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "setDevMode",
-            "printedName": "setDevMode(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp9LinkIdMMPC10setDevModeyySbFZ",
-            "mangledName": "$s10linkid_mmp9LinkIdMMPC10setDevModeyySbFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "intSDK",
-            "printedName": "intSDK(partnerCode:appSecret:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp9LinkIdMMPC6intSDK11partnerCode9appSecretySS_SStFZ",
-            "mangledName": "$s10linkid_mmp9LinkIdMMPC6intSDK11partnerCode9appSecretySS_SStFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "intSDKWithBaseUrl",
-            "printedName": "intSDKWithBaseUrl(partnerCode:appSecret:baseUrl:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp9LinkIdMMPC17intSDKWithBaseUrl11partnerCode9appSecret04baseI0ySS_S2StFZ",
-            "mangledName": "$s10linkid_mmp9LinkIdMMPC17intSDKWithBaseUrl11partnerCode9appSecret04baseI0ySS_S2StFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "setCurrentScreen",
-            "printedName": "setCurrentScreen(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp9LinkIdMMPC16setCurrentScreenyySSFZ",
-            "mangledName": "$s10linkid_mmp9LinkIdMMPC16setCurrentScreenyySSFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "recordError",
-            "printedName": "recordError(name:stackTrace:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp9LinkIdMMPC11recordError4name10stackTraceySS_SStFZ",
-            "mangledName": "$s10linkid_mmp9LinkIdMMPC11recordError4name10stackTraceySS_SStFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "logBeginCheckout",
-            "printedName": "logBeginCheckout(value:currency:items:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "[linkid_mmp.PurchaseItem]?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[linkid_mmp.PurchaseItem]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "PurchaseItem",
-                        "printedName": "linkid_mmp.PurchaseItem",
-                        "usr": "s:10linkid_mmp12PurchaseItemC"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp9LinkIdMMPC16logBeginCheckout5value8currency5itemsySd_SSSayAA12PurchaseItemCGSgtFZ",
-            "mangledName": "$s10linkid_mmp9LinkIdMMPC16logBeginCheckout5value8currency5itemsySd_SSSayAA12PurchaseItemCGSgtFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "setUserInfo",
-            "printedName": "setUserInfo(userInfo:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UserInfo",
-                "printedName": "linkid_mmp.UserInfo",
-                "usr": "s:10linkid_mmp8UserInfoC"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp9LinkIdMMPC11setUserInfo04userH0yAA0gH0C_tFZ",
-            "mangledName": "$s10linkid_mmp9LinkIdMMPC11setUserInfo04userH0yAA0gH0C_tFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "setRevenue",
-            "printedName": "setRevenue(orderId:amount:currency:data:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "[Swift.String : Any]?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Any]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "ProtocolComposition",
-                        "printedName": "Any"
-                      }
-                    ],
-                    "usr": "s:SD"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp9LinkIdMMPC10setRevenue05orderD06amount8currency4dataySS_SdSSSDySSypGSgtFZ",
-            "mangledName": "$s10linkid_mmp9LinkIdMMPC10setRevenue05orderD06amount8currency4dataySS_SdSSSDySSypGSgtFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "handleDeeplink",
-            "printedName": "handleDeeplink(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Swift.String) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp9LinkIdMMPC14handleDeeplinkyyySScFZ",
-            "mangledName": "$s10linkid_mmp9LinkIdMMPC14handleDeeplinkyyySScFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "s:10linkid_mmp9LinkIdMMPC",
-        "mangledName": "$s10linkid_mmp9LinkIdMMPC",
-        "moduleName": "linkid_mmp",
-        "declAttributes": [
-          "AccessControl",
-          "ObjCMembers"
-        ],
-        "hasMissingDesignatedInitializers": true
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
         "moduleName": "linkid_mmp",
         "declAttributes": [
           "RawDocComment"
@@ -1645,6 +4616,23 @@
           "AccessControl"
         ],
         "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp"
       },
       {
         "kind": "Import",
@@ -1868,6 +4856,132 @@
     "json_format_version": 8
   },
   "ConstValues": [
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 413,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 1643,
+      "length": 21,
+      "value": "\"lid_mmp_screen_view\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 1673,
+      "length": 13,
+      "value": "\"screen_name\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 1994,
+      "length": 24,
+      "value": "\"lid_mmp_begin_checkout\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 2040,
+      "length": 7,
+      "value": "\"value\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 2068,
+      "length": 10,
+      "value": "\"currency\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 2102,
+      "length": 7,
+      "value": "\"items\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "Dictionary",
+      "offset": 2164,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "Dictionary",
+      "offset": 2277,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 2300,
+      "length": 11,
+      "value": "\"user info\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 2499,
+      "length": 19,
+      "value": "\"LinkID_MMP_UserID\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "Dictionary",
+      "offset": 2721,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 2820,
+      "length": 9,
+      "value": "\"orderId\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 2852,
+      "length": 8,
+      "value": "\"amount\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 2882,
+      "length": 10,
+      "value": "\"currency\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 2952,
+      "length": 17,
+      "value": "\"lid_mmp_revenue\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/AirflexOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 170,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/AirflexOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 218,
+      "length": 4,
+      "value": "true"
+    },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Common.swift",
       "kind": "StringLiteral",
@@ -2226,6 +5340,286 @@
       "value": "\"\""
     },
     {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAirflexParameters.swift",
+      "kind": "Dictionary",
+      "offset": 701,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAirflexParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 749,
+      "length": 6,
+      "value": "\"name\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAirflexParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 820,
+      "length": 12,
+      "value": "\"utm_source\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAirflexParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 899,
+      "length": 12,
+      "value": "\"utm_medium\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAirflexParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 980,
+      "length": 14,
+      "value": "\"utm_campaign\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAirflexParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 1064,
+      "length": 13,
+      "value": "\"utm_content\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAirflexParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 1143,
+      "length": 10,
+      "value": "\"utm_term\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAirflexParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 1216,
+      "length": 6,
+      "value": "\"code\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAndroidParameters.swift",
+      "kind": "Dictionary",
+      "offset": 456,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAndroidParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 511,
+      "length": 14,
+      "value": "\"package_name\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAndroidParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 560,
+      "length": 15,
+      "value": "\"android_store\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAndroidParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 579,
+      "length": 63,
+      "value": "\"https:\/\/play.google.com\/store\/apps\/details?id=\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAndroidParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 641,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAndroidParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 711,
+      "length": 6,
+      "value": "\"http\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAndroidParameters.swift",
+      "kind": "BooleanLiteral",
+      "offset": 722,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAndroidParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 753,
+      "length": 17,
+      "value": "\"play.google.com\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAndroidParameters.swift",
+      "kind": "BooleanLiteral",
+      "offset": 775,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAndroidParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 801,
+      "length": 15,
+      "value": "\"android_store\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAndroidParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 895,
+      "length": 25,
+      "value": "\"android_custom_protocol\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "Dictionary",
+      "offset": 430,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "Dictionary",
+      "offset": 470,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "Array",
+      "offset": 825,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 910,
+      "length": 5,
+      "value": "\"key\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 922,
+      "length": 7,
+      "value": "\"value\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 974,
+      "length": 8,
+      "value": "\"fields\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 1216,
+      "length": 26,
+      "value": "\"\/partner\/deeplink\/create\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1467,
+      "length": 3,
+      "value": "200"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1496,
+      "length": 3,
+      "value": "299"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 1906,
+      "length": 3,
+      "value": "\"0\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 1920,
+      "length": 14,
+      "value": "\"data is null\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2059,
+      "length": 24,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2082,
+      "length": 13,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2094,
+      "length": 24,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2117,
+      "length": 3,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2257,
+      "length": 3,
+      "value": "\"0\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2271,
+      "length": 31,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2301,
+      "length": 3,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2403,
+      "length": 3,
+      "value": "\"0\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2417,
+      "length": 53,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2469,
+      "length": 3,
+      "value": "\"\""
+    },
+    {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
       "offset": 239,
@@ -2354,163 +5748,247 @@
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 2227,
+      "offset": 2225,
       "length": 18,
       "value": "\"lid_mmp_deeplink\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 2254,
+      "offset": 2252,
       "length": 10,
       "value": "\"deeplink\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 2936,
+      "offset": 2934,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "Dictionary",
-      "offset": 3113,
+      "offset": 3111,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 3262,
+      "offset": 3260,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 3928,
+      "offset": 3926,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 3972,
+      "offset": 3970,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "Dictionary",
-      "offset": 4062,
+      "offset": 4060,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4079,
+      "offset": 4077,
       "length": 10,
       "value": "\"platform\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4123,
+      "offset": 4121,
       "length": 12,
       "value": "\"ip_address\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4162,
+      "offset": 4160,
       "length": 9,
       "value": "\"version\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4198,
+      "offset": 4196,
       "length": 4,
       "value": "\"os\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4259,
+      "offset": 4257,
       "length": 34,
       "value": "\"\/partner\/unified-deeplink\/verify\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4500,
+      "offset": 4498,
       "length": 55,
       "value": "\"\/partner\/unified-deeplink\/verify: \""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4544,
+      "offset": 4542,
       "length": 9,
       "value": "\"No data\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4554,
+      "offset": 4552,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "Array",
-      "offset": 4656,
+      "offset": 4654,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4709,
+      "offset": 4707,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4783,
+      "offset": 4781,
       "length": 10,
       "value": "\"deeplink\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4997,
+      "offset": 4995,
       "length": 78,
       "value": "\"\/partner\/unified-deeplink\/verify: Failed to convert JSON data to dictionary.\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 5166,
+      "offset": 5164,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 5369,
+      "offset": 5367,
       "length": 44,
       "value": "\"\/partner\/unified-deeplink\/verify: \""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 5412,
+      "offset": 5410,
       "length": 2,
       "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkIOSParameters.swift",
+      "kind": "Dictionary",
+      "offset": 534,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkIOSParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 586,
+      "length": 11,
+      "value": "\"bundle_id\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkIOSParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 670,
+      "length": 13,
+      "value": "\"appstore_id\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkIOSParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 717,
+      "length": 11,
+      "value": "\"ios_store\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkIOSParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 732,
+      "length": 50,
+      "value": "\"https:\/\/apps.apple.com\/app\/id\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkIOSParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 776,
+      "length": 1,
+      "value": "\"?mt=8\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkIOSParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 849,
+      "length": 6,
+      "value": "\"http\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkIOSParameters.swift",
+      "kind": "BooleanLiteral",
+      "offset": 860,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkIOSParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 890,
+      "length": 16,
+      "value": "\"apps.apple.com\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkIOSParameters.swift",
+      "kind": "BooleanLiteral",
+      "offset": 911,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkIOSParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 937,
+      "length": 11,
+      "value": "\"ios_store\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkIOSParameters.swift",
+      "kind": "StringLiteral",
+      "offset": 1026,
+      "length": 21,
+      "value": "\"ios_custom_protocol\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DetechWindowTouch.swift",
@@ -3598,125 +7076,6 @@
       "value": "\"---- HEADER ----\""
     },
     {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "StringLiteral",
-      "offset": 447,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "StringLiteral",
-      "offset": 885,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "StringLiteral",
-      "offset": 1319,
-      "length": 21,
-      "value": "\"lid_mmp_screen_view\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "StringLiteral",
-      "offset": 1349,
-      "length": 13,
-      "value": "\"screen_name\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "StringLiteral",
-      "offset": 1670,
-      "length": 24,
-      "value": "\"lid_mmp_begin_checkout\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "StringLiteral",
-      "offset": 1716,
-      "length": 7,
-      "value": "\"value\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "StringLiteral",
-      "offset": 1744,
-      "length": 10,
-      "value": "\"currency\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "StringLiteral",
-      "offset": 1778,
-      "length": 7,
-      "value": "\"items\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "Dictionary",
-      "offset": 1840,
-      "length": 3,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "Dictionary",
-      "offset": 1953,
-      "length": 3,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "StringLiteral",
-      "offset": 1976,
-      "length": 11,
-      "value": "\"user info\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "StringLiteral",
-      "offset": 2175,
-      "length": 19,
-      "value": "\"LinkID_MMP_UserID\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "Dictionary",
-      "offset": 2397,
-      "length": 3,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "StringLiteral",
-      "offset": 2496,
-      "length": 9,
-      "value": "\"orderId\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "StringLiteral",
-      "offset": 2528,
-      "length": 8,
-      "value": "\"amount\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "StringLiteral",
-      "offset": 2558,
-      "length": 10,
-      "value": "\"currency\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/LinkIdMMP.swift",
-      "kind": "StringLiteral",
-      "offset": 2628,
-      "length": 17,
-      "value": "\"lid_mmp_revenue\""
-    },
-    {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Logger.swift",
       "kind": "BooleanLiteral",
       "offset": 156,
@@ -3757,6 +7116,13 @@
       "offset": 803,
       "length": 7,
       "value": "\"price\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ScreenChangeObserver.swift",
+      "kind": "StringLiteral",
+      "offset": 1413,
+      "length": 16,
+      "value": "\"Unknown Screen\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",

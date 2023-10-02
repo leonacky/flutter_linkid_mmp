@@ -294,6 +294,7 @@ SWIFT_CLASS("_TtC10linkid_mmp17DetectWindowTouch")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
 #endif
 #if defined(__cplusplus)
 #endif

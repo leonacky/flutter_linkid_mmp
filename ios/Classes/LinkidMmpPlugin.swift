@@ -33,8 +33,8 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
         if(call.method.elementsEqual("initSDK")) {
             if let args = call.arguments as? Dictionary<String, Any>, let partnerCode = args["partnerCode"] as? String, let appSecret = args["appSecret"] as? String {
                 print("initSDK \(partnerCode)")
-                LinkIdMMP.intSDK(partnerCode: partnerCode, appSecret: appSecret)
-                LinkIdMMP.handleDeeplink { url in
+                Airflex.intSDK(partnerCode: partnerCode, appSecret: appSecret)
+                Airflex.handleDeeplink { url in
                     LinkidMmpPlugin.sharedInstance.handleDeeplink(url: url)
                 }
                 result(true)
@@ -43,14 +43,14 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
             }
         } else if(call.method.elementsEqual("recordError")) {
             if let args = call.arguments as? Dictionary<String, Any>, let name = args["name"] as? String, let stackTrace = args["stackTrace"] as? String {
-                LinkIdMMP.recordError(name: name, stackTrace: stackTrace)
+                Airflex.recordError(name: name, stackTrace: stackTrace)
                 result(true)
             } else {
                 result(false)
             }
         } else if(call.method.elementsEqual("setDevMode")) {
             if let args = call.arguments as? Dictionary<String, Any>, let devMode = args["devMode"] as? Bool {
-                LinkIdMMP.setDevMode(devMode )
+                Airflex.setDevMode(devMode )
                 result(true)
             } else {
                 result(false)
@@ -66,9 +66,9 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
           if let args = call.arguments as? Dictionary<String, Any>, let event = args["eventName"] as? String {
               print(event)
               if let data = args["data"] as? [String: Any] {
-                  LinkIdMMP.logEvent(name: event, data: data)
+                  Airflex.logEvent(name: event, data: data)
               } else {
-                  LinkIdMMP.logEvent(name: event, data: nil)
+                  Airflex.logEvent(name: event, data: nil)
               }
               result(true)
           } else {
@@ -78,7 +78,7 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
           if let args = call.arguments as? Dictionary<String, Any>, let data = args["data"] as? [String: Any] {
               print(data)
               let userInfo = UserInfo.fromDictionary(data: data)
-              LinkIdMMP.setUserInfo(userInfo: userInfo)
+              Airflex.setUserInfo(userInfo: userInfo)
               result(true)
           } else {
               result(false)
@@ -86,14 +86,14 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
       } else if(call.method.elementsEqual("setCurrentScreen")) {
           if let args = call.arguments as? Dictionary<String, Any>, let screenName = args["screenName"] as? String {
               print(screenName)
-              LinkIdMMP.setCurrentScreen(screenName)
+              Airflex.setCurrentScreen(screenName)
               result(true)
           } else {
               result(false)
           }
       } else if(call.method.elementsEqual("setRevenue")) {
           if let args = call.arguments as? Dictionary<String, Any>, let orderId = args["orderId"] as? String, let amount = args["amount"] as? Double, let currency = args["currency"] as? String, let data = args["data"] as? [String: Any] {
-              LinkIdMMP.setRevenue(orderId: orderId, amount: amount, currency: currency, data: data)
+              Airflex.setRevenue(orderId: orderId, amount: amount, currency: currency, data: data)
               result(true)
           } else {
               result(false)

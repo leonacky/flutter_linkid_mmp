@@ -8,14 +8,14 @@ import 'package:flutter_linkid_mmp/user_info.dart';
 
 import 'flutter_linkid_mmp_platform_interface.dart';
 
-class FlutterLinkIdMMP implements DeepLinkHandler {
-  static final FlutterLinkIdMMP shared = FlutterLinkIdMMP._internal();
+class Airflex implements DeepLinkHandler {
+  static final Airflex shared = Airflex._internal();
 
-  factory FlutterLinkIdMMP() {
+  factory Airflex() {
     return shared;
   }
 
-  FlutterLinkIdMMP._internal() {
+  Airflex._internal() {
     FlutterLinkIdMmpPlatform.instance.setDeepLinkHandler(this);
   }
 

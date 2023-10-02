@@ -10,6 +10,25 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 @_exported import linkid_mmp
+@_hasMissingDesignatedInitializers @objcMembers public class Airflex {
+  @objc public static func logEvent(name: Swift.String, data: [Swift.String : Any]?)
+  @objc public static func setDevMode(_ devMode: Swift.Bool)
+  public static func intSDK(partnerCode: Swift.String, appSecret: Swift.String, options: linkid_mmp.AirflexOptions?)
+  @objc public static func intSDK(partnerCode: Swift.String, appSecret: Swift.String)
+  @objc public static func setCurrentScreen(_ name: Swift.String)
+  @objc public static func recordError(name: Swift.String, stackTrace: Swift.String)
+  public static func logBeginCheckout(value: Swift.Double, currency: Swift.String, items: [linkid_mmp.PurchaseItem]?)
+  public static func setUserInfo(userInfo: linkid_mmp.UserInfo)
+  @objc public static func setRevenue(orderId: Swift.String, amount: Swift.Double, currency: Swift.String, data: [Swift.String : Any]?)
+  @objc public static func handleDeeplink(_ handleDeeplink: @escaping (Swift.String) -> Swift.Void)
+  @objc deinit
+}
+public class AirflexOptions {
+  public var showLog: Swift.Bool
+  public var autoTrackingScreen: Swift.Bool
+  public init()
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class Common {
   @objc deinit
 }
@@ -17,6 +36,45 @@ import _StringProcessing
   public static func setup()
   public static func recordError(name: Swift.String, stackTrace: Swift.String)
   public static func check()
+  @objc deinit
+}
+public class DeepLinkAirflexParameters {
+  public var name: Swift.String?
+  public var source: Swift.String?
+  public var code: Swift.String?
+  public var medium: Swift.String?
+  public var campaign: Swift.String?
+  public var term: Swift.String?
+  public var content: Swift.String?
+  public init(source: Swift.String? = nil, code: Swift.String? = nil, medium: Swift.String? = nil, campaign: Swift.String? = nil)
+  public func buildParams() -> [Swift.String : Any]
+  @objc deinit
+}
+public class DeepLinkAndroidParameters {
+  public var packageName: Swift.String?
+  public var playStoreURL: Swift.String?
+  public var customSchema: Swift.String?
+  public init(packageName: Swift.String? = nil)
+  public func buildParams() -> [Swift.String : Any]
+  @objc deinit
+}
+public class DeepLinkBuilder {
+  public var iOSParameters: linkid_mmp.DeepLinkIOSParameters?
+  public var androidParameters: linkid_mmp.DeepLinkAndroidParameters?
+  public var airflexParameters: linkid_mmp.DeepLinkAirflexParameters?
+  public init()
+  public func createLink(completion: @escaping (linkid_mmp.DeepLinkBuilderResult?, linkid_mmp.DeepLinkBuilderError?) -> Swift.Void)
+  @objc deinit
+}
+public class DeepLinkBuilderError {
+  public var code: Swift.String
+  public var message: Swift.String
+  public init(code: Swift.String, message: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DeepLinkBuilderResult {
+  public var shortLink: Swift.String
+  public var longLink: Swift.String
   @objc deinit
 }
 public typealias HandleDeeplink = (Swift.String) -> Swift.Void
@@ -29,6 +87,15 @@ public typealias HandleDeeplink = (Swift.String) -> Swift.Void
   public static func getCurrentDeepLink() -> Swift.String
   public func application(_ application: UIKit.UIApplication, open url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any] = [:]) -> Swift.Bool
   public static func getUDL()
+  @objc deinit
+}
+public class DeepLinkIOSParameters {
+  public var bundleID: Swift.String?
+  public var appStoreID: Swift.String?
+  public var customSchema: Swift.String?
+  public var appStoreURL: Swift.String?
+  public init(bundleID: Swift.String? = nil, appStoreID: Swift.String? = nil)
+  public func buildParams() -> [Swift.String : Any]
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class DetectWindowTouch : UIKit.UIWindow {
@@ -47,19 +114,6 @@ public enum Network : Swift.String {
   public var rawValue: Swift.String {
     get
   }
-}
-@_hasMissingDesignatedInitializers @objcMembers public class LinkIdMMP {
-  @objc public static func logEvent(name: Swift.String, data: [Swift.String : Any]?)
-  @objc public static func setDevMode(_ devMode: Swift.Bool)
-  @objc public static func intSDK(partnerCode: Swift.String, appSecret: Swift.String)
-  @objc public static func intSDKWithBaseUrl(partnerCode: Swift.String, appSecret: Swift.String, baseUrl: Swift.String)
-  @objc public static func setCurrentScreen(_ name: Swift.String)
-  @objc public static func recordError(name: Swift.String, stackTrace: Swift.String)
-  public static func logBeginCheckout(value: Swift.Double, currency: Swift.String, items: [linkid_mmp.PurchaseItem]?)
-  public static func setUserInfo(userInfo: linkid_mmp.UserInfo)
-  @objc public static func setRevenue(orderId: Swift.String, amount: Swift.Double, currency: Swift.String, data: [Swift.String : Any]?)
-  @objc public static func handleDeeplink(_ handleDeeplink: @escaping (Swift.String) -> Swift.Void)
-  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class Logger {
   @objc deinit

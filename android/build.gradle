@@ -16,8 +16,8 @@ rootProject.allprojects {
         google()
         mavenCentral()
         maven {
-//            url '/Users/leonacky/android_repo/linkid_mmp/build/host/outputs/repo'
-            url 'https://github.com/vnpage/mmp_sdk/raw/main/repo'
+//            url '/Users/leonacky/linkid_android_repo/linkid-mmp'
+            url 'https://github.com/vnpage/linkid_android_repo/raw/main/linkid-mmp'
         }
     }
 }
@@ -39,5 +39,5 @@ android {
 
 dependencies {
     implementation "com.android.installreferrer:installreferrer:2.2"
-    implementation 'com.linkid.mmp:linkid_mmp:1.0.9b39'
+    implementation 'com.linkid.mmp:airflex:1.0.11'
 }

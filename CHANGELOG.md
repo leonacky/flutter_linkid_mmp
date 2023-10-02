@@ -168,4 +168,12 @@
 
 ## 1.1.33
 
-* Release version 1.1.323 of LinkID MMP
+* Release version 1.1.33 of LinkID MMP
+
+## 1.1.34
+
+* Release version 1.1.34 of LinkID MMP
+
+## 1.1.35
+
+* Release version 1.1.34 of LinkID Airflex

@@ -65,7 +65,7 @@ class MyLogin extends StatelessWidget {
                   if(username!="" && password!="") {
                     // synchronousError();
                     TrackingHelper.logEvent(event: "LoginSuccess");
-                    FlutterLinkIdMMP().setUserInfo(UserInfo(
+                    Airflex().setUserInfo(UserInfo(
                         userId: username,
                         email: "$username@gmail.com",
                         age: 30));

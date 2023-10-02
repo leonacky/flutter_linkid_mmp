@@ -25,7 +25,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 var fcmToken = "";
 
 void main() {
-  FlutterLinkIdMMP.runZonedGuarded(() async {
+  Airflex.runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
     runApp(MyApp());
   }, (error, stackTrace) async {
@@ -122,19 +122,19 @@ class MyApp extends StatelessWidget {
   // }
 
   Future<void> init(BuildContext context) async {
-    FlutterLinkIdMMP.shared.setDevMode(true);
-    await FlutterLinkIdMMP().initSDK(
+    Airflex.shared.setDevMode(true);
+    await Airflex.shared.initSDK(
       partnerCode: "lynk_id_uat",
       appSecret:
           "b3ccd1c20fa9154a559c304956f99b302027a87b87ad520c1c4dbdd4bb54be7a",
     );
-    FlutterLinkIdMMP().deepLinkHandler(
+    Airflex.shared.deepLinkHandler(
       onReceivedDeepLink: (url) {
         print('onReceivedDeepLink in dart ' + url);
       }
     );
     // await initFcm(context);
-    FlutterLinkIdMMP().setUserInfo(UserInfo(deviceToken: fcmToken));
+    Airflex().setUserInfo(UserInfo(deviceToken: fcmToken));
   }
 
   @override

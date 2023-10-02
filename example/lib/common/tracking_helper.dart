@@ -5,7 +5,7 @@ import 'package:flutter_linkid_mmp/flutter_linkid_mmp.dart';
 
 class TrackingHelper {
   static logEvent({required String event, Map<String, dynamic>? data}) {
-    FlutterLinkIdMMP().logEvent(event, data: data);
+    Airflex().logEvent(event, data: data);
     // FirebaseAnalytics.instance.logEvent(name: event, parameters: data);
   }
 
@@ -14,13 +14,13 @@ class TrackingHelper {
       required double amount,
       required String currency,
       Map<String, dynamic>? data}) {
-    FlutterLinkIdMMP().setRevenue(
+    Airflex().setRevenue(
         orderId: orderId, amount: amount, currency: currency, data: data);
     // FirebaseAnalytics.instance.logEvent(name: event, parameters: data);
   }
 
   static setCurrentScreen({required String screenName}) {
-    FlutterLinkIdMMP().setCurrentScreen(screenName: screenName);
+    Airflex().setCurrentScreen(screenName: screenName);
     // FirebaseAnalytics.instance.setCurrentScreen(screenName: screenName);
   }
 }

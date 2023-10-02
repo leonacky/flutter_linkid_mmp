@@ -6,9 +6,9 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.linkid.mmp.Airflex;
 import com.linkid.mmp.DeepLink;
 import com.linkid.mmp.DeepLinkHandler;
-import com.linkid.mmp.LinkIdMMP;
 import com.linkid.mmp.UserInfo;
 
 import java.util.EventListener;
@@ -44,7 +44,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
         deepLinkHandler = new DeepLinkHandler() {
             @Override
             public void onReceivedDeeplink(String s) {
-                Log.e(LinkIdMMP.TAG, "Flutter Plugin onReceivedDeeplink " + s);
+                Log.e(Airflex.TAG, "Flutter Plugin onReceivedDeeplink " + s);
                 checkDeepLink();
             }
         };
@@ -66,7 +66,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
                 if (call.hasArgument("partnerCode")) {
                     String partnerCode = call.argument("partnerCode");
                     String appSecret = call.argument("appSecret");
-                    LinkIdMMP.initSDK(context, partnerCode, appSecret);
+                    Airflex.initSDK(context, partnerCode, appSecret);
                     result.success(true);
                 } else {
                     result.success(false);
@@ -80,7 +80,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
                 if (call.hasArgument("name")) {
                     String name = call.argument("name");
                     String stackTrace = call.argument("stackTrace");
-                    LinkIdMMP.recordError(context, name, stackTrace);
+                    Airflex.recordError(context, name, stackTrace);
                     result.success(true);
                 } else {
                     result.success(false);
@@ -93,7 +93,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
             try {
                 if (call.hasArgument("devMode")) {
                     boolean devMode = Boolean.TRUE.equals(call.argument("devMode"));
-                    LinkIdMMP.setDevMode(devMode);
+                    Airflex.setDevMode(devMode);
                     result.success(true);
                 } else {
                     result.success(false);
@@ -110,7 +110,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
                         data = call.argument("data");
                     }
                     String eventName = call.argument("eventName");
-                    LinkIdMMP.logEvent(eventName, data);
+                    Airflex.logEvent(eventName, data);
                     result.success(true);
                 } else {
                     result.success(false);
@@ -123,7 +123,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
             try {
                 if (call.hasArgument("screenName")) {
                     String screenName = call.argument("screenName");
-                    LinkIdMMP.setCurrentScreen(screenName);
+                    Airflex.setCurrentScreen(screenName);
                     result.success(true);
                 } else {
                     result.success(false);
@@ -136,7 +136,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
             try {
                 if (call.hasArgument("data")) {
                     Map<String, Object> data = call.argument("data");
-                    LinkIdMMP.setUserInfo(UserInfo.fromMap(data));
+                    Airflex.setUserInfo(UserInfo.fromMap(data));
                     result.success(true);
                 } else {
                     result.success(false);
@@ -156,7 +156,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
                         data = call.argument("data");
                     } catch (Exception e) {
                     }
-                    LinkIdMMP.setRevenue(orderId, amount, currency, data);
+                    Airflex.setRevenue(orderId, amount, currency, data);
                     result.success(true);
                 } else {
                     result.success(false);
@@ -178,7 +178,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
     @Override
     public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
         context = binding.getActivity().getApplicationContext();
-        LinkIdMMP.handleDeepLink(context, binding.getActivity().getIntent(), deepLinkHandler);
+        Airflex.handleDeepLink(context, binding.getActivity().getIntent(), deepLinkHandler);
         binding.addOnNewIntentListener(this);
     }
 
@@ -200,7 +200,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
 
     @Override
     public boolean onNewIntent(@NonNull Intent intent) {
-        LinkIdMMP.handleDeepLink(context, intent, deepLinkHandler);
+        Airflex.handleDeepLink(context, intent, deepLinkHandler);
         return false;
     }
 }
