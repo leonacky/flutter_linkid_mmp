@@ -124,13 +124,13 @@ class MyApp extends StatelessWidget {
   Future<void> init(BuildContext context) async {
     Airflex.shared.setDevMode(true);
     await Airflex.shared.initSDK(
-      partnerCode: "lynk_id_uat",
+      partnerCode: "myvpbank_uat",
       appSecret:
-          "b3ccd1c20fa9154a559c304956f99b302027a87b87ad520c1c4dbdd4bb54be7a",
+          "7fe95468c204397de9bcda2d702d4501a174976b1d003d92d1e5550b03f9fcb5",
     );
     Airflex.shared.deepLinkHandler(
       onReceivedDeepLink: (url) {
-        print('onReceivedDeepLink in dart ' + url);
+        print('onReceivedDeepLink in dart $url');
       }
     );
     // await initFcm(context);

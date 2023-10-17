@@ -7,6 +7,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.linkid.mmp.Airflex;
+import com.linkid.mmp.AirflexOptions;
 import com.linkid.mmp.DeepLink;
 import com.linkid.mmp.DeepLinkHandler;
 import com.linkid.mmp.UserInfo;
@@ -35,6 +36,8 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
     private MethodChannel channel;
     private Context context;
 
+    private boolean showLog = false;
+
     private DeepLinkHandler deepLinkHandler;
 
     @Override
@@ -55,6 +58,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
             channel.invokeMethod("onDeepLink", DeepLink.getCurrentDeepLink());
         }
     }
+
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
         if (call.method.equals("getPlatformVersion")) {
@@ -66,7 +70,9 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
                 if (call.hasArgument("partnerCode")) {
                     String partnerCode = call.argument("partnerCode");
                     String appSecret = call.argument("appSecret");
-                    Airflex.initSDK(context, partnerCode, appSecret);
+                    AirflexOptions options = new AirflexOptions();
+                    options.showLog = showLog;
+                    Airflex.initSDK(context, partnerCode, appSecret, options);
                     result.success(true);
                 } else {
                     result.success(false);
@@ -93,6 +99,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
             try {
                 if (call.hasArgument("devMode")) {
                     boolean devMode = Boolean.TRUE.equals(call.argument("devMode"));
+                    showLog = devMode;
                     Airflex.setDevMode(devMode);
                     result.success(true);
                 } else {

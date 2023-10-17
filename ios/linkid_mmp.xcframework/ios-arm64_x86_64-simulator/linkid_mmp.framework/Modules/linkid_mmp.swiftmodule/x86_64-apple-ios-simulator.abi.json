@@ -465,6 +465,251 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "AirflexDeepLinkDelegate",
+        "printedName": "AirflexDeepLinkDelegate",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AirflexDeepLinkDelegate",
+                "printedName": "linkid_mmp.AirflexDeepLinkDelegate",
+                "usr": "c:@M@linkid_mmp@objc(cs)AirflexDeepLinkDelegate"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp23AirflexDeepLinkDelegateC6sharedACvpZ",
+            "mangledName": "$s10linkid_mmp23AirflexDeepLinkDelegateC6sharedACvpZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AirflexDeepLinkDelegate",
+                    "printedName": "linkid_mmp.AirflexDeepLinkDelegate",
+                    "usr": "c:@M@linkid_mmp@objc(cs)AirflexDeepLinkDelegate"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp23AirflexDeepLinkDelegateC6sharedACvgZ",
+                "mangledName": "$s10linkid_mmp23AirflexDeepLinkDelegateC6sharedACvgZ",
+                "moduleName": "linkid_mmp",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "application",
+            "printedName": "application(_:open:options:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIApplication",
+                "printedName": "UIKit.UIApplication",
+                "usr": "c:objc(cs)UIApplication"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[UIKit.UIApplication.OpenURLOptionsKey : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OpenURLOptionsKey",
+                    "printedName": "UIKit.UIApplication.OpenURLOptionsKey",
+                    "usr": "c:@T@UIApplicationOpenURLOptionsKey"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@linkid_mmp@objc(cs)AirflexDeepLinkDelegate(im)application:openURL:options:",
+            "mangledName": "$s10linkid_mmp23AirflexDeepLinkDelegateC11application_4open7optionsSbSo13UIApplicationC_10Foundation3URLVSDySo0J17OpenURLOptionsKeyaypGtF",
+            "moduleName": "linkid_mmp",
+            "objc_name": "application:openURL:options:",
+            "declAttributes": [
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "handleDeeplink",
+            "printedName": "handleDeeplink(url:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp23AirflexDeepLinkDelegateC14handleDeeplink3urlySS_tF",
+            "mangledName": "$s10linkid_mmp23AirflexDeepLinkDelegateC14handleDeeplink3urlySS_tF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AirflexDeepLinkDelegate",
+                "printedName": "linkid_mmp.AirflexDeepLinkDelegate",
+                "usr": "c:@M@linkid_mmp@objc(cs)AirflexDeepLinkDelegate"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@linkid_mmp@objc(cs)AirflexDeepLinkDelegate(im)init",
+            "mangledName": "$s10linkid_mmp23AirflexDeepLinkDelegateCACycfc",
+            "moduleName": "linkid_mmp",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@linkid_mmp@objc(cs)AirflexDeepLinkDelegate",
+        "mangledName": "$s10linkid_mmp23AirflexDeepLinkDelegateC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "Custom",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)UIResponder",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "AirflexOptions",
         "printedName": "AirflexOptions",
         "children": [
@@ -3334,59 +3579,6 @@
           },
           {
             "kind": "Function",
-            "name": "application",
-            "printedName": "application(_:open:options:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UIApplication",
-                "printedName": "UIKit.UIApplication",
-                "usr": "c:objc(cs)UIApplication"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "URL",
-                "printedName": "Foundation.URL",
-                "usr": "s:10Foundation3URLV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Dictionary",
-                "printedName": "[UIKit.UIApplication.OpenURLOptionsKey : Any]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "OpenURLOptionsKey",
-                    "printedName": "UIKit.UIApplication.OpenURLOptionsKey",
-                    "usr": "c:@T@UIApplicationOpenURLOptionsKey"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProtocolComposition",
-                    "printedName": "Any"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:SD"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp15DeepLinkHandlerC11application_4open7optionsSbSo13UIApplicationC_10Foundation3URLVSDySo0I17OpenURLOptionsKeyaypGtF",
-            "mangledName": "$s10linkid_mmp15DeepLinkHandlerC11application_4open7optionsSbSo13UIApplicationC_10Foundation3URLVSDySo0I17OpenURLOptionsKeyaypGtF",
-            "moduleName": "linkid_mmp",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "getUDL",
             "printedName": "getUDL()",
             "children": [
@@ -3403,7 +3595,8 @@
             "static": true,
             "declAttributes": [
               "Final",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           }
@@ -4199,6 +4392,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "__DefaultCustomPlaygroundQuickLookable",
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
@@ -4866,107 +5066,163 @@
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 1643,
+      "offset": 1860,
       "length": 21,
       "value": "\"lid_mmp_screen_view\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 1673,
+      "offset": 1890,
       "length": 13,
       "value": "\"screen_name\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 1994,
+      "offset": 2211,
       "length": 24,
       "value": "\"lid_mmp_begin_checkout\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 2040,
+      "offset": 2257,
       "length": 7,
       "value": "\"value\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 2068,
+      "offset": 2285,
       "length": 10,
       "value": "\"currency\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 2102,
+      "offset": 2319,
       "length": 7,
       "value": "\"items\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "Dictionary",
-      "offset": 2164,
+      "offset": 2381,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "Dictionary",
-      "offset": 2277,
+      "offset": 2494,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 2300,
+      "offset": 2517,
       "length": 11,
       "value": "\"user info\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 2499,
+      "offset": 2716,
       "length": 19,
       "value": "\"LinkID_MMP_UserID\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "Dictionary",
-      "offset": 2721,
+      "offset": 2938,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 2820,
+      "offset": 3037,
       "length": 9,
       "value": "\"orderId\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 2852,
+      "offset": 3069,
       "length": 8,
       "value": "\"amount\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 2882,
+      "offset": 3099,
       "length": 10,
       "value": "\"currency\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 2952,
+      "offset": 3169,
       "length": 17,
       "value": "\"lid_mmp_revenue\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/AirflexDeepLinkDelegate.swift",
+      "kind": "StringLiteral",
+      "offset": 279,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/AirflexDeepLinkDelegate.swift",
+      "kind": "StringLiteral",
+      "offset": 337,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/AirflexDeepLinkDelegate.swift",
+      "kind": "BooleanLiteral",
+      "offset": 807,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/AirflexDeepLinkDelegate.swift",
+      "kind": "Dictionary",
+      "offset": 984,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/AirflexDeepLinkDelegate.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1062,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/AirflexDeepLinkDelegate.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1418,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/AirflexDeepLinkDelegate.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1790,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/AirflexDeepLinkDelegate.swift",
+      "kind": "StringLiteral",
+      "offset": 1870,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/AirflexOptions.swift",
@@ -5217,7 +5473,7 @@
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "StringLiteral",
       "offset": 519,
-      "length": 28,
+      "length": 30,
       "value": "\"\""
     },
     {
@@ -5225,117 +5481,124 @@
       "kind": "StringLiteral",
       "offset": 527,
       "length": 1,
-      "value": "\"\/linkid_mmp.sqlite3\""
+      "value": "\"\/linkid_mmp_1.sqlite3\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "StringLiteral",
-      "offset": 702,
+      "offset": 704,
       "length": 11,
       "value": "\"EventData\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "Array",
-      "offset": 755,
+      "offset": 757,
       "length": 6,
       "value": "[\"id\"]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "StringLiteral",
-      "offset": 792,
+      "offset": 794,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "StringLiteral",
-      "offset": 844,
+      "offset": 846,
       "length": 5,
       "value": "\"key\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "StringLiteral",
-      "offset": 897,
+      "offset": 899,
       "length": 6,
       "value": "\"time\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "StringLiteral",
-      "offset": 954,
+      "offset": 956,
       "length": 11,
       "value": "\"sessionId\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "StringLiteral",
-      "offset": 1013,
+      "offset": 1015,
       "length": 10,
       "value": "\"realtime\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "StringLiteral",
-      "offset": 1074,
+      "offset": 1076,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "StringLiteral",
-      "offset": 1415,
+      "offset": 1130,
+      "length": 10,
+      "value": "\"preEvent\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 1475,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "StringLiteral",
-      "offset": 1424,
+      "offset": 1484,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "StringLiteral",
-      "offset": 1650,
+      "offset": 1710,
       "length": 6,
       "value": "\"time\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "IntegerLiteral",
-      "offset": 1698,
+      "offset": 1758,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "IntegerLiteral",
-      "offset": 1710,
+      "offset": 1770,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "Array",
-      "offset": 1961,
+      "offset": 2021,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "StringLiteral",
-      "offset": 2207,
+      "offset": 2267,
       "length": 34,
       "value": "\"Error removing records: \""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DatabaseHelper.swift",
       "kind": "StringLiteral",
-      "offset": 2240,
+      "offset": 2300,
       "length": 2,
       "value": "\"\""
     },
@@ -5747,162 +6010,113 @@
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 2225,
-      "length": 18,
-      "value": "\"lid_mmp_deeplink\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 2252,
-      "length": 10,
-      "value": "\"deeplink\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2934,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "Dictionary",
-      "offset": 3111,
-      "length": 3,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3260,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3926,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3970,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
-      "kind": "Dictionary",
-      "offset": 4060,
+      "offset": 4124,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4077,
+      "offset": 4141,
       "length": 10,
       "value": "\"platform\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4121,
+      "offset": 4185,
       "length": 12,
       "value": "\"ip_address\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4160,
+      "offset": 4224,
       "length": 9,
       "value": "\"version\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4196,
+      "offset": 4260,
       "length": 4,
       "value": "\"os\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4257,
+      "offset": 4321,
       "length": 34,
       "value": "\"\/partner\/unified-deeplink\/verify\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4498,
+      "offset": 4562,
       "length": 55,
       "value": "\"\/partner\/unified-deeplink\/verify: \""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4542,
+      "offset": 4606,
       "length": 9,
       "value": "\"No data\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4552,
+      "offset": 4616,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "Array",
-      "offset": 4654,
+      "offset": 4718,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4707,
+      "offset": 4771,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4781,
+      "offset": 4845,
       "length": 10,
       "value": "\"deeplink\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4995,
+      "offset": 5059,
       "length": 78,
       "value": "\"\/partner\/unified-deeplink\/verify: Failed to convert JSON data to dictionary.\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 5164,
+      "offset": 5228,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 5367,
+      "offset": 5431,
       "length": 44,
       "value": "\"\/partner\/unified-deeplink\/verify: \""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 5410,
+      "offset": 5474,
       "length": 2,
       "value": "\"\""
     },
@@ -6147,392 +6361,392 @@
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 9260,
+      "offset": 9304,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 9589,
+      "offset": 9633,
       "length": 28,
       "value": "\"CFBundleShortVersionString\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 9633,
+      "offset": 9677,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 9747,
+      "offset": 9791,
       "length": 17,
       "value": "\"CFBundleVersion\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 9780,
+      "offset": 9824,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 10189,
+      "offset": 10233,
       "length": 10,
       "value": "\"CHAGRING\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 10300,
+      "offset": 10344,
       "length": 6,
       "value": "\"FULL\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 10412,
+      "offset": 10456,
       "length": 11,
       "value": "\"UNPLUGGED\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 10460,
+      "offset": 10504,
       "length": 9,
       "value": "\"UNKNOWN\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 10627,
+      "offset": 10671,
       "length": 8,
       "value": "\"iphone\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 10658,
+      "offset": 10702,
       "length": 8,
       "value": "\"iphone\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 10705,
+      "offset": 10749,
       "length": 6,
       "value": "\"ipod\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 10734,
+      "offset": 10778,
       "length": 6,
       "value": "\"ipod\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 10779,
+      "offset": 10823,
       "length": 6,
       "value": "\"ipad\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 10808,
+      "offset": 10852,
       "length": 6,
       "value": "\"ipad\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 10840,
+      "offset": 10884,
       "length": 12,
       "value": "\"ios_device\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11093,
+      "offset": 11137,
       "length": 19,
       "value": "\"LinkID_MMP_UserID\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11117,
+      "offset": 11161,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11167,
+      "offset": 11211,
       "length": 13,
       "value": "\"sdkDeviceId\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11219,
+      "offset": 11263,
       "length": 8,
       "value": "\"userId\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11248,
+      "offset": 11292,
       "length": 10,
       "value": "\"bundleId\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11294,
+      "offset": 11338,
       "length": 12,
       "value": "\"appVersion\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11351,
+      "offset": 11395,
       "length": 4,
       "value": "\"os\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11396,
+      "offset": 11440,
       "length": 11,
       "value": "\"osVersion\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11451,
+      "offset": 11495,
       "length": 13,
       "value": "\"deviceModel\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11511,
+      "offset": 11555,
       "length": 13,
       "value": "\"deviceBrand\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11526,
+      "offset": 11570,
       "length": 7,
       "value": "\"Apple\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11546,
+      "offset": 11590,
       "length": 12,
       "value": "\"deviceType\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11599,
+      "offset": 11643,
       "length": 12,
       "value": "\"deviceName\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11652,
+      "offset": 11696,
       "length": 18,
       "value": "\"deviceIsEmulator\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11709,
+      "offset": 11753,
       "length": 20,
       "value": "\"deviceIsJailBroken\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11769,
+      "offset": 11813,
       "length": 16,
       "value": "\"deviceLanguage\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 11813,
+      "offset": 11857,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11828,
+      "offset": 11872,
       "length": 15,
       "value": "\"deviceCountry\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11874,
+      "offset": 11918,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11889,
+      "offset": 11933,
       "length": 16,
       "value": "\"deviceTimeZone\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 11947,
+      "offset": 11991,
       "length": 16,
       "value": "\"deviceIsTablet\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 12021,
+      "offset": 12065,
       "length": 20,
       "value": "\"deviceBatteryLevel\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 12085,
+      "offset": 12129,
       "length": 21,
       "value": "\"deviceBatteryStatus\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 12145,
+      "offset": 12189,
       "length": 18,
       "value": "\"deviceIsCharging\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 12196,
+      "offset": 12240,
       "length": 15,
       "value": "\"deviceCarrier\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 12237,
+      "offset": 12281,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 12546,
+      "offset": 12590,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 13118,
+      "offset": 13162,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 13296,
+      "offset": 13340,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 13631,
+      "offset": 13675,
       "length": 10,
       "value": "\"cydia:\/\/\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "BooleanLiteral",
-      "offset": 13842,
+      "offset": 13886,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "BooleanLiteral",
-      "offset": 13886,
+      "offset": 13930,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "BooleanLiteral",
-      "offset": 14097,
+      "offset": 14141,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "BooleanLiteral",
-      "offset": 14141,
+      "offset": 14185,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 14233,
+      "offset": 14277,
       "length": 19,
       "value": "\"Developer Insider\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "BooleanLiteral",
-      "offset": 14337,
+      "offset": 14381,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "BooleanLiteral",
-      "offset": 14379,
+      "offset": 14423,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "BooleanLiteral",
-      "offset": 14421,
+      "offset": 14465,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "Array",
-      "offset": 14581,
+      "offset": 14625,
       "length": 410,
       "value": "[\"\/Applications\/Cydia.app\", \"\/Applications\/blackra1n.app\", \"\/Applications\/FakeCarrier.app\", \"\/Applications\/Icy.app\", \"\/Applications\/IntelliScreen.app\", \"\/Applications\/MxTube.app\", \"\/Applications\/RockApp.app\", \"\/Applications\/SBSettings.app\", \"\/Applications\/WinterBoard.app\"]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeviceInfo.swift",
       "kind": "Array",
-      "offset": 15074,
+      "offset": 15118,
       "length": 799,
       "value": "[\"\/Library\/MobileSubstrate\/DynamicLibraries\/LiveClock.plist\", \"\/Library\/MobileSubstrate\/DynamicLibraries\/Veency.plist\", \"\/private\/var\/lib\/apt\", \"\/private\/var\/lib\/apt\/\", \"\/private\/var\/lib\/cydia\", \"\/private\/var\/mobile\/Library\/SBSettings\/Themes\", \"\/private\/var\/stash\", \"\/private\/var\/tmp\/cydia.log\", \"\/System\/Library\/LaunchDaemons\/com.ikey.bbot.plist\", \"\/System\/Library\/LaunchDaemons\/com.saurik.Cydia.Startup.plist\", \"\/usr\/bin\/sshd\", \"\/usr\/libexec\/sftp-server\", \"\/usr\/sbin\/sshd\", \"\/etc\/apt\", \"\/bin\/bash\", \"\/Library\/MobileSubstrate\/MobileSubstrate.dylib\"]"
     },
@@ -6553,287 +6767,350 @@
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 601,
+      "offset": 361,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 411,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 700,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 741,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "IntegerLiteral",
-      "offset": 785,
+      "offset": 923,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "IntegerLiteral",
-      "offset": 833,
+      "offset": 971,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "IntegerLiteral",
-      "offset": 898,
+      "offset": 1036,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "IntegerLiteral",
-      "offset": 960,
+      "offset": 1098,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 1061,
+      "offset": 1199,
       "length": 24,
       "value": "\"0123456789abcdefABCDEF\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 1262,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 1283,
+      "length": 21,
+      "value": "\"lid_mmp_screen_view\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "IntegerLiteral",
-      "offset": 1186,
+      "offset": 1470,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 1687,
+      "offset": 1991,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 1763,
+      "offset": 2067,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2081,
+      "offset": 2385,
       "length": 5,
       "value": "\"key\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2093,
+      "offset": 2397,
       "length": 7,
       "value": "\"value\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2137,
+      "offset": 2454,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2153,
+      "offset": 2482,
       "length": 5,
       "value": "\"key\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2171,
+      "offset": 2512,
       "length": 6,
       "value": "\"time\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2191,
+      "offset": 2544,
       "length": 11,
       "value": "\"sessionId\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2226,
+      "offset": 2591,
       "length": 10,
       "value": "\"realtime\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2254,
+      "offset": 2631,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 2657,
+      "length": 10,
+      "value": "\"preEvent\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "IntegerLiteral",
-      "offset": 2426,
+      "offset": 2852,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "IntegerLiteral",
-      "offset": 2429,
+      "offset": 2855,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "Array",
-      "offset": 2521,
+      "offset": 2947,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "Array",
-      "offset": 2534,
+      "offset": 2960,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2727,
+      "offset": 3153,
       "length": 54,
       "value": "\"Error converting dictionary to JSON string: \""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2780,
+      "offset": 3206,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2808,
+      "offset": 3234,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "Array",
-      "offset": 3112,
+      "offset": 3538,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3205,
+      "offset": 3631,
       "length": 54,
       "value": "\"Error converting JSON string to dictionary: \""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3258,
+      "offset": 3684,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3409,
+      "offset": 3835,
       "length": 4,
       "value": "\"id\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
-      "kind": "StringLiteral",
-      "offset": 3425,
-      "length": 5,
-      "value": "\"key\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
-      "kind": "StringLiteral",
-      "offset": 3443,
-      "length": 6,
-      "value": "\"time\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
-      "kind": "StringLiteral",
-      "offset": 3463,
-      "length": 11,
-      "value": "\"sessionId\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
-      "kind": "StringLiteral",
-      "offset": 3498,
-      "length": 10,
-      "value": "\"realtime\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
-      "kind": "StringLiteral",
-      "offset": 3526,
-      "length": 6,
-      "value": "\"data\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
-      "kind": "StringLiteral",
-      "offset": 3661,
-      "length": 5,
-      "value": "\"key\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
-      "kind": "StringLiteral",
-      "offset": 3694,
-      "length": 4,
-      "value": "\"id\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
-      "kind": "StringLiteral",
-      "offset": 3728,
-      "length": 6,
-      "value": "\"time\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
-      "kind": "StringLiteral",
-      "offset": 3765,
-      "length": 10,
-      "value": "\"realtime\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
-      "kind": "StringLiteral",
-      "offset": 3823,
-      "length": 11,
-      "value": "\"sessionId\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
       "offset": 3851,
-      "length": 2,
-      "value": "\"\""
+      "length": 5,
+      "value": "\"key\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 3869,
+      "length": 6,
+      "value": "\"time\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
       "offset": 3889,
+      "length": 11,
+      "value": "\"sessionId\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 3924,
+      "length": 10,
+      "value": "\"realtime\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 3952,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3912,
+      "offset": 3972,
+      "length": 10,
+      "value": "\"preEvent\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 4115,
+      "length": 5,
+      "value": "\"key\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 4148,
+      "length": 4,
+      "value": "\"id\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 4182,
+      "length": 6,
+      "value": "\"time\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 4219,
+      "length": 10,
+      "value": "\"realtime\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 4277,
+      "length": 11,
+      "value": "\"sessionId\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 4305,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 4341,
+      "length": 10,
+      "value": "\"preEvent\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 4368,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 4406,
+      "length": 6,
+      "value": "\"data\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 4429,
       "length": 4,
       "value": "\"{}\""
     },
@@ -7085,14 +7362,14 @@
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 320,
+      "offset": 394,
       "length": 13,
       "value": "\"MMP: \""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 332,
+      "offset": 406,
       "length": 2,
       "value": "\"\""
     },
@@ -7218,133 +7495,126 @@
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 1775,
-      "length": 10,
-      "value": "\"deeplink\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1859,
+      "offset": 1812,
       "length": 22,
       "value": "\"\/public\/partner\/auth\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 2080,
+      "offset": 2033,
       "length": 24,
       "value": "\"Khong lay duoc du lieu\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2241,
+      "offset": 2194,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 2306,
+      "offset": 2259,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 2520,
+      "offset": 2473,
       "length": 15,
       "value": "\"___first_open\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 2540,
+      "offset": 2493,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 2583,
+      "offset": 2536,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 2643,
+      "offset": 2596,
       "length": 3,
       "value": "\"1\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 2656,
+      "offset": 2609,
       "length": 15,
       "value": "\"___first_open\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 2732,
+      "offset": 2685,
       "length": 20,
       "value": "\"lid_mmp_first_open\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 2794,
+      "offset": 2747,
       "length": 10,
       "value": "\"deeplink\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 3089,
+      "offset": 3042,
       "length": 23,
       "value": "\"lid_mmp_start_session\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 3150,
+      "offset": 3103,
       "length": 10,
       "value": "\"deeplink\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3330,
+      "offset": 3283,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 3778,
+      "offset": 3731,
       "length": 20,
       "value": "\"baseUrl \""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 3797,
+      "offset": 3750,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 4004,
+      "offset": 3957,
       "length": 29,
       "value": "\"\/partner\/device-info\/update\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 4235,
+      "offset": 4188,
       "length": 24,
       "value": "\"Khong lay duoc du lieu\""
     },

@@ -23,6 +23,13 @@ import _StringProcessing
   @objc public static func handleDeeplink(_ handleDeeplink: @escaping (Swift.String) -> Swift.Void)
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AirflexDeepLinkDelegate : UIKit.UIResponder, UIKit.UIApplicationDelegate {
+  @_Concurrency.MainActor(unsafe) public static let shared: linkid_mmp.AirflexDeepLinkDelegate
+  @_Concurrency.MainActor(unsafe) @objc public func application(_ application: UIKit.UIApplication, open url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any] = [:]) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func handleDeeplink(url: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+  @objc deinit
+}
 public class AirflexOptions {
   public var showLog: Swift.Bool
   public var autoTrackingScreen: Swift.Bool
@@ -85,7 +92,6 @@ public typealias HandleDeeplink = (Swift.String) -> Swift.Void
   public static func setDeepLink(url: Swift.String)
   public static func getLastDeepLink() -> Swift.String
   public static func getCurrentDeepLink() -> Swift.String
-  public func application(_ application: UIKit.UIApplication, open url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any] = [:]) -> Swift.Bool
   public static func getUDL()
   @objc deinit
 }

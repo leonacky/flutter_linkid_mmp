@@ -6,6 +6,7 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
     
     var deeplink = ""
     var channel: FlutterMethodChannel?
+    var showLog: Bool = false
     
     public static let sharedInstance = LinkidMmpPlugin()
 
@@ -33,7 +34,9 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
         if(call.method.elementsEqual("initSDK")) {
             if let args = call.arguments as? Dictionary<String, Any>, let partnerCode = args["partnerCode"] as? String, let appSecret = args["appSecret"] as? String {
                 print("initSDK \(partnerCode)")
-                Airflex.intSDK(partnerCode: partnerCode, appSecret: appSecret)
+                let airflexOptions = AirflexOptions()
+                airflexOptions.showLog = showLog
+                Airflex.intSDK(partnerCode: partnerCode, appSecret: appSecret, options: airflexOptions)
                 Airflex.handleDeeplink { url in
                     LinkidMmpPlugin.sharedInstance.handleDeeplink(url: url)
                 }
@@ -50,6 +53,7 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
             }
         } else if(call.method.elementsEqual("setDevMode")) {
             if let args = call.arguments as? Dictionary<String, Any>, let devMode = args["devMode"] as? Bool {
+                showLog = devMode
                 Airflex.setDevMode(devMode )
                 result(true)
             } else {
