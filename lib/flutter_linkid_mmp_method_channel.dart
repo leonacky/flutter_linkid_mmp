@@ -125,11 +125,27 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
   Future<bool> setDevMode(bool devMode) async {
     // TODO: implement initSDK
     try {
-      final result = await methodChannel.invokeMethod<bool>(
-          'setDevMode', {'devMode': devMode});
+      final result = await methodChannel
+          .invokeMethod<bool>('setDevMode', {'devMode': devMode});
       return result ?? false;
     } catch (e) {
       //print(e);
+    }
+    return false;
+  }
+
+  @override
+  Future<bool> setProductList(String listName,
+      {required List<Map<String, dynamic>> products}) async {
+    // TODO: implement event
+    try {
+      final result = await methodChannel.invokeMethod<bool>('setProductList', {
+        'listName': listName,
+        'products': products,
+      });
+      return result ?? false;
+    } catch (e) {
+      // //print(e);
     }
     return false;
   }

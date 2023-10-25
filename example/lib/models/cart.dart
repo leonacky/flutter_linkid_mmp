@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter_linkid_mmp/product_item.dart';
 import '../models/catalog.dart';
 
 class CartModel extends ChangeNotifier {
@@ -25,6 +26,14 @@ class CartModel extends ChangeNotifier {
   /// The current total price of all items.
   int get totalPrice =>
       items.fold(0, (total, current) => total + current.price);
+
+  List<ProductItem> get products {
+    List<ProductItem> data = List.empty(growable: true);
+    for (var element in items) {
+      data.add(ProductItem(id: element.id.toString(), name: element.name, image: "", price: element.price.toString(), quantity: 1));
+    }
+    return data;
+  }
 
   /// Adds [item] to cart. This is the only way to modify the cart from outside.
   void add(Item item) {

@@ -181,3 +181,7 @@
 ## 1.1.36
 
 * Release version 1.1.36 of LinkID Airflex
+
+## 1.1.37
+
+* Release version 1.1.37 of LinkID Airflex

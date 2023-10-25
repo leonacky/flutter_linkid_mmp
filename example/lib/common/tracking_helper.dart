@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter_linkid_mmp/flutter_linkid_mmp.dart';
+import 'package:flutter_linkid_mmp/product_item.dart';
 // import 'package:firebase_analytics/firebase_analytics.dart';
 
 class TrackingHelper {
@@ -16,6 +17,12 @@ class TrackingHelper {
       Map<String, dynamic>? data}) {
     Airflex().setRevenue(
         orderId: orderId, amount: amount, currency: currency, data: data);
+    // FirebaseAnalytics.instance.logEvent(name: event, parameters: data);
+  }
+
+  static setProductList(
+      {required String listName, required List<ProductItem> products}) {
+    Airflex().setProductList(listName: listName, products: products);
     // FirebaseAnalytics.instance.logEvent(name: event, parameters: data);
   }
 

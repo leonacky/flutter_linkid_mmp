@@ -17,10 +17,10 @@ import _StringProcessing
   @objc public static func intSDK(partnerCode: Swift.String, appSecret: Swift.String)
   @objc public static func setCurrentScreen(_ name: Swift.String)
   @objc public static func recordError(name: Swift.String, stackTrace: Swift.String)
-  public static func logBeginCheckout(value: Swift.Double, currency: Swift.String, items: [linkid_mmp.PurchaseItem]?)
   public static func setUserInfo(userInfo: linkid_mmp.UserInfo)
   @objc public static func setRevenue(orderId: Swift.String, amount: Swift.Double, currency: Swift.String, data: [Swift.String : Any]?)
   @objc public static func handleDeeplink(_ handleDeeplink: @escaping (Swift.String) -> Swift.Void)
+  public static func setProductList(listName: Swift.String, products: [linkid_mmp.ProductItem])
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AirflexDeepLinkDelegate : UIKit.UIResponder, UIKit.UIApplicationDelegate {
@@ -34,6 +34,14 @@ public class AirflexOptions {
   public var showLog: Swift.Bool
   public var autoTrackingScreen: Swift.Bool
   public init()
+  @objc deinit
+}
+@objcMembers public class ProductCategory {
+  @objc public init(categoryId: Swift.String, categoryName: Swift.String)
+  @objc public func toDictionary() -> [Swift.String : Any]
+  public static func convertToArray(_ items: [linkid_mmp.ProductCategory]) -> [[Swift.String : Any]]
+  public static func fromDictionary(_ data: [Swift.String : Any]) -> linkid_mmp.ProductCategory
+  public static func fromList(_ data: [[Swift.String : Any]]) -> [linkid_mmp.ProductCategory]
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class Common {
@@ -71,6 +79,7 @@ public class DeepLinkBuilder {
   public var airflexParameters: linkid_mmp.DeepLinkAirflexParameters?
   public init()
   public func createLink(completion: @escaping (linkid_mmp.DeepLinkBuilderResult?, linkid_mmp.DeepLinkBuilderError?) -> Swift.Void)
+  public func createShortLink(longLink: Swift.String, name: Swift.String = "", shortLinkId: Swift.String = "", completion: @escaping (linkid_mmp.DeepLinkBuilderResult?, linkid_mmp.DeepLinkBuilderError?) -> Swift.Void)
   @objc deinit
 }
 public class DeepLinkBuilderError {
@@ -85,14 +94,14 @@ public class DeepLinkBuilderError {
   @objc deinit
 }
 public typealias HandleDeeplink = (Swift.String) -> Swift.Void
-@_hasMissingDesignatedInitializers public class DeepLinkHandler {
-  public static var handleDeeplink: linkid_mmp.HandleDeeplink?
-  public static func initDeeplink()
-  public static func saveDeeplink(deeplinkCountDate: Swift.Int64)
-  public static func setDeepLink(url: Swift.String)
-  public static func getLastDeepLink() -> Swift.String
-  public static func getCurrentDeepLink() -> Swift.String
-  public static func getUDL()
+@_hasMissingDesignatedInitializers @objcMembers public class DeepLinkHandler {
+  @objc public static var handleDeeplink: linkid_mmp.HandleDeeplink?
+  @objc public static func initDeeplink()
+  @objc public static func saveDeeplink(deeplinkCountDate: Swift.Int64)
+  @objc public static func setDeepLink(url: Swift.String)
+  @objc public static func getLastDeepLink() -> Swift.String
+  @objc public static func getCurrentDeepLink() -> Swift.String
+  @objc public static func getUDL()
   @objc deinit
 }
 public class DeepLinkIOSParameters {
@@ -124,9 +133,16 @@ public enum Network : Swift.String {
 @_hasMissingDesignatedInitializers public class Logger {
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class PurchaseItem {
-  public static func convertToArray(_ items: [linkid_mmp.PurchaseItem]) -> [[Swift.String : Any]]
-  public static func convertToDictionary(_ item: linkid_mmp.PurchaseItem) -> [Swift.String : Any]
+@objcMembers public class ProductItem {
+  @objc public var productId: Swift.String
+  public init(id: Swift.String, name: Swift.String, image: Swift.String, price: Swift.String? = "", quantity: Swift.Int? = 1, categories: [linkid_mmp.ProductCategory]? = [])
+  @objc public func setQuantity(quantity: Swift.Int)
+  public func addCategory(category: linkid_mmp.ProductCategory)
+  public static func convertToArray(_ items: [linkid_mmp.ProductItem]) -> [[Swift.String : Any]]
+  @objc public func toDictionary() -> [Swift.String : Any]
+  public static func fromDictionary(_ data: [Swift.String : Any]) -> linkid_mmp.ProductItem
+  public static func fromList(_ data: [[Swift.String : Any]]) -> [linkid_mmp.ProductItem]
+  public static func convertToJsonString(listName: Swift.String, products: [linkid_mmp.ProductItem]) -> Swift.String
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objcMembers public class UserInfo {

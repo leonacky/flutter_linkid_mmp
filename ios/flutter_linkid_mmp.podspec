@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_linkid_mmp'
-  s.version          = '1.1.32'
+  s.version          = '1.1.33'
   s.summary          = 'LinkId Mobile Marketing Platform'
   s.description      = <<-DESC
 A new Flutter plugin project.

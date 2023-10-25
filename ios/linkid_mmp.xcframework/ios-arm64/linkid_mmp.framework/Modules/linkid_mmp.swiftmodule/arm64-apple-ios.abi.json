@@ -251,62 +251,6 @@
           },
           {
             "kind": "Function",
-            "name": "logBeginCheckout",
-            "printedName": "logBeginCheckout(value:currency:items:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "[linkid_mmp.PurchaseItem]?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[linkid_mmp.PurchaseItem]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "PurchaseItem",
-                        "printedName": "linkid_mmp.PurchaseItem",
-                        "usr": "s:10linkid_mmp12PurchaseItemC"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp7AirflexC16logBeginCheckout5value8currency5itemsySd_SSSayAA12PurchaseItemCGSgtFZ",
-            "mangledName": "$s10linkid_mmp7AirflexC16logBeginCheckout5value8currency5itemsySd_SSSayAA12PurchaseItemCGSgtFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "setUserInfo",
             "printedName": "setUserInfo(userInfo:)",
             "children": [
@@ -439,6 +383,48 @@
               "Final",
               "AccessControl",
               "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setProductList",
+            "printedName": "setProductList(listName:products:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[linkid_mmp.ProductItem]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProductItem",
+                    "printedName": "linkid_mmp.ProductItem",
+                    "usr": "s:10linkid_mmp11ProductItemC"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp7AirflexC14setProductList8listName8productsySS_SayAA0E4ItemCGtFZ",
+            "mangledName": "$s10linkid_mmp7AirflexC14setProductList8listName8productsySS_SayAA0E4ItemCGtFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
           }
@@ -913,6 +899,258 @@
         "moduleName": "linkid_mmp",
         "declAttributes": [
           "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ProductCategory",
+        "printedName": "ProductCategory",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(categoryId:categoryName:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProductCategory",
+                "printedName": "linkid_mmp.ProductCategory",
+                "usr": "s:10linkid_mmp15ProductCategoryC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10linkid_mmp15ProductCategoryC10categoryId0E4NameACSS_SStcfc",
+            "mangledName": "$s10linkid_mmp15ProductCategoryC10categoryId0E4NameACSS_SStcfc",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "toDictionary",
+            "printedName": "toDictionary()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15ProductCategoryC12toDictionarySDySSypGyF",
+            "mangledName": "$s10linkid_mmp15ProductCategoryC12toDictionarySDySSypGyF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "convertToArray",
+            "printedName": "convertToArray(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[[Swift.String : Any]]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[linkid_mmp.ProductCategory]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProductCategory",
+                    "printedName": "linkid_mmp.ProductCategory",
+                    "usr": "s:10linkid_mmp15ProductCategoryC"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15ProductCategoryC14convertToArrayySaySDySSypGGSayACGFZ",
+            "mangledName": "$s10linkid_mmp15ProductCategoryC14convertToArrayySaySDySSypGGSayACGFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fromDictionary",
+            "printedName": "fromDictionary(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProductCategory",
+                "printedName": "linkid_mmp.ProductCategory",
+                "usr": "s:10linkid_mmp15ProductCategoryC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15ProductCategoryC14fromDictionaryyACSDySSypGFZ",
+            "mangledName": "$s10linkid_mmp15ProductCategoryC14fromDictionaryyACSDySSypGFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fromList",
+            "printedName": "fromList(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[linkid_mmp.ProductCategory]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProductCategory",
+                    "printedName": "linkid_mmp.ProductCategory",
+                    "usr": "s:10linkid_mmp15ProductCategoryC"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[[Swift.String : Any]]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15ProductCategoryC8fromListySayACGSaySDySSypGGFZ",
+            "mangledName": "$s10linkid_mmp15ProductCategoryC8fromListySayACGSaySDySSypGGFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp15ProductCategoryC",
+        "mangledName": "$s10linkid_mmp15ProductCategoryC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers"
         ]
       },
       {
@@ -2846,6 +3084,93 @@
               "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createShortLink",
+            "printedName": "createShortLink(longLink:name:shortLinkId:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(linkid_mmp.DeepLinkBuilderResult?, linkid_mmp.DeepLinkBuilderError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(linkid_mmp.DeepLinkBuilderResult?, linkid_mmp.DeepLinkBuilderError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "linkid_mmp.DeepLinkBuilderResult?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "DeepLinkBuilderResult",
+                            "printedName": "linkid_mmp.DeepLinkBuilderResult",
+                            "usr": "s:10linkid_mmp21DeepLinkBuilderResultC"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "linkid_mmp.DeepLinkBuilderError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "DeepLinkBuilderError",
+                            "printedName": "linkid_mmp.DeepLinkBuilderError",
+                            "usr": "s:10linkid_mmp20DeepLinkBuilderErrorC"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15DeepLinkBuilderC011createShortD004longD04name05shortD2Id10completionySS_S2SyAA0cdE6ResultCSg_AA0cdE5ErrorCSgtctF",
+            "mangledName": "$s10linkid_mmp15DeepLinkBuilderC011createShortD004longD04name05shortD2Id10completionySS_S2SyAA0cdE6ResultCSg_AA0cdE5ErrorCSgtctF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -3334,7 +3659,8 @@
               "HasInitialValue",
               "Final",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "hasStorage": true,
             "accessors": [
@@ -3377,7 +3703,8 @@
                 "static": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "get"
               },
@@ -3425,7 +3752,8 @@
                 "static": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "set"
               },
@@ -3471,7 +3799,8 @@
             "static": true,
             "declAttributes": [
               "Final",
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -3499,7 +3828,8 @@
             "static": true,
             "declAttributes": [
               "Final",
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -3527,7 +3857,8 @@
             "static": true,
             "declAttributes": [
               "Final",
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -3550,7 +3881,8 @@
             "static": true,
             "declAttributes": [
               "Final",
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -3573,7 +3905,8 @@
             "static": true,
             "declAttributes": [
               "Final",
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -3596,7 +3929,8 @@
             "declAttributes": [
               "Final",
               "AccessControl",
-              "RawDocComment"
+              "RawDocComment",
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
           }
@@ -3606,7 +3940,8 @@
         "mangledName": "$s10linkid_mmp15DeepLinkHandlerC",
         "moduleName": "linkid_mmp",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "ObjCMembers"
         ],
         "hasMissingDesignatedInitializers": true
       },
@@ -4704,9 +5039,246 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "PurchaseItem",
-        "printedName": "PurchaseItem",
+        "name": "ProductItem",
+        "printedName": "ProductItem",
         "children": [
+          {
+            "kind": "Var",
+            "name": "productId",
+            "printedName": "productId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp11ProductItemC9productIdSSvp",
+            "mangledName": "$s10linkid_mmp11ProductItemC9productIdSSvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp11ProductItemC9productIdSSvg",
+                "mangledName": "$s10linkid_mmp11ProductItemC9productIdSSvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp11ProductItemC9productIdSSvs",
+                "mangledName": "$s10linkid_mmp11ProductItemC9productIdSSvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp11ProductItemC9productIdSSvM",
+                "mangledName": "$s10linkid_mmp11ProductItemC9productIdSSvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(id:name:image:price:quantity:categories:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProductItem",
+                "printedName": "linkid_mmp.ProductItem",
+                "usr": "s:10linkid_mmp11ProductItemC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[linkid_mmp.ProductCategory]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[linkid_mmp.ProductCategory]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProductCategory",
+                        "printedName": "linkid_mmp.ProductCategory",
+                        "usr": "s:10linkid_mmp15ProductCategoryC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10linkid_mmp11ProductItemC2id4name5image5price8quantity10categoriesACSS_S3SSgSiSgSayAA0C8CategoryCGSgtcfc",
+            "mangledName": "$s10linkid_mmp11ProductItemC2id4name5image5price8quantity10categoriesACSS_S3SSgSiSgSayAA0C8CategoryCGSgtcfc",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "setQuantity",
+            "printedName": "setQuantity(quantity:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp11ProductItemC11setQuantity8quantityySi_tF",
+            "mangledName": "$s10linkid_mmp11ProductItemC11setQuantity8quantityySi_tF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addCategory",
+            "printedName": "addCategory(category:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProductCategory",
+                "printedName": "linkid_mmp.ProductCategory",
+                "usr": "s:10linkid_mmp15ProductCategoryC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp11ProductItemC11addCategory8categoryyAA0cF0C_tF",
+            "mangledName": "$s10linkid_mmp11ProductItemC11addCategory8categoryyAA0cF0C_tF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
           {
             "kind": "Function",
             "name": "convertToArray",
@@ -4742,21 +5314,21 @@
               {
                 "kind": "TypeNominal",
                 "name": "Array",
-                "printedName": "[linkid_mmp.PurchaseItem]",
+                "printedName": "[linkid_mmp.ProductItem]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "PurchaseItem",
-                    "printedName": "linkid_mmp.PurchaseItem",
-                    "usr": "s:10linkid_mmp12PurchaseItemC"
+                    "name": "ProductItem",
+                    "printedName": "linkid_mmp.ProductItem",
+                    "usr": "s:10linkid_mmp11ProductItemC"
                   }
                 ],
                 "usr": "s:Sa"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10linkid_mmp12PurchaseItemC14convertToArrayySaySDySSypGGSayACGFZ",
-            "mangledName": "$s10linkid_mmp12PurchaseItemC14convertToArrayySaySDySSypGGSayACGFZ",
+            "usr": "s:10linkid_mmp11ProductItemC14convertToArrayySaySDySSypGGSayACGFZ",
+            "mangledName": "$s10linkid_mmp11ProductItemC14convertToArrayySaySDySSypGGSayACGFZ",
             "moduleName": "linkid_mmp",
             "static": true,
             "declAttributes": [
@@ -4767,8 +5339,8 @@
           },
           {
             "kind": "Function",
-            "name": "convertToDictionary",
-            "printedName": "convertToDictionary(_:)",
+            "name": "toDictionary",
+            "printedName": "toDictionary()",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4788,17 +5360,153 @@
                   }
                 ],
                 "usr": "s:SD"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "PurchaseItem",
-                "printedName": "linkid_mmp.PurchaseItem",
-                "usr": "s:10linkid_mmp12PurchaseItemC"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10linkid_mmp12PurchaseItemC19convertToDictionaryySDySSypGACFZ",
-            "mangledName": "$s10linkid_mmp12PurchaseItemC19convertToDictionaryySDySSypGACFZ",
+            "usr": "s:10linkid_mmp11ProductItemC12toDictionarySDySSypGyF",
+            "mangledName": "$s10linkid_mmp11ProductItemC12toDictionarySDySSypGyF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fromDictionary",
+            "printedName": "fromDictionary(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProductItem",
+                "printedName": "linkid_mmp.ProductItem",
+                "usr": "s:10linkid_mmp11ProductItemC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp11ProductItemC14fromDictionaryyACSDySSypGFZ",
+            "mangledName": "$s10linkid_mmp11ProductItemC14fromDictionaryyACSDySSypGFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fromList",
+            "printedName": "fromList(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[linkid_mmp.ProductItem]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProductItem",
+                    "printedName": "linkid_mmp.ProductItem",
+                    "usr": "s:10linkid_mmp11ProductItemC"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[[Swift.String : Any]]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp11ProductItemC8fromListySayACGSaySDySSypGGFZ",
+            "mangledName": "$s10linkid_mmp11ProductItemC8fromListySayACGSaySDySSypGGFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "convertToJsonString",
+            "printedName": "convertToJsonString(listName:products:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[linkid_mmp.ProductItem]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProductItem",
+                    "printedName": "linkid_mmp.ProductItem",
+                    "usr": "s:10linkid_mmp11ProductItemC"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp11ProductItemC19convertToJsonString8listName8productsS2S_SayACGtFZ",
+            "mangledName": "$s10linkid_mmp11ProductItemC19convertToJsonString8listName8productsS2S_SayACGtFZ",
             "moduleName": "linkid_mmp",
             "static": true,
             "declAttributes": [
@@ -4809,13 +5517,13 @@
           }
         ],
         "declKind": "Class",
-        "usr": "s:10linkid_mmp12PurchaseItemC",
-        "mangledName": "$s10linkid_mmp12PurchaseItemC",
+        "usr": "s:10linkid_mmp11ProductItemC",
+        "mangledName": "$s10linkid_mmp11ProductItemC",
         "moduleName": "linkid_mmp",
         "declAttributes": [
-          "AccessControl"
-        ],
-        "hasMissingDesignatedInitializers": true
+          "AccessControl",
+          "ObjCMembers"
+        ]
       },
       {
         "kind": "Import",
@@ -5079,94 +5787,73 @@
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
-      "kind": "StringLiteral",
-      "offset": 2211,
-      "length": 24,
-      "value": "\"lid_mmp_begin_checkout\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
-      "kind": "StringLiteral",
-      "offset": 2257,
-      "length": 7,
-      "value": "\"value\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
-      "kind": "StringLiteral",
-      "offset": 2285,
-      "length": 10,
-      "value": "\"currency\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
-      "kind": "StringLiteral",
-      "offset": 2319,
-      "length": 7,
-      "value": "\"items\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "Dictionary",
-      "offset": 2381,
-      "length": 3,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
-      "kind": "Dictionary",
-      "offset": 2494,
+      "offset": 2160,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 2517,
+      "offset": 2183,
       "length": 11,
       "value": "\"user info\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 2716,
+      "offset": 2382,
       "length": 19,
       "value": "\"LinkID_MMP_UserID\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "Dictionary",
-      "offset": 2938,
+      "offset": 2604,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 3037,
+      "offset": 2703,
       "length": 9,
       "value": "\"orderId\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 3069,
+      "offset": 2735,
       "length": 8,
       "value": "\"amount\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 3099,
+      "offset": 2765,
       "length": 10,
       "value": "\"currency\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
       "kind": "StringLiteral",
-      "offset": 3169,
+      "offset": 2835,
       "length": 17,
       "value": "\"lid_mmp_revenue\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 3252,
+      "length": 10,
+      "value": "\"products\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Airflex.swift",
+      "kind": "StringLiteral",
+      "offset": 3324,
+      "length": 18,
+      "value": "\"lid_mmp_products\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/AirflexDeepLinkDelegate.swift",
@@ -5237,6 +5924,62 @@
       "offset": 218,
       "length": 4,
       "value": "true"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "StringLiteral",
+      "offset": 430,
+      "length": 6,
+      "value": "\"c_id\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "StringLiteral",
+      "offset": 450,
+      "length": 8,
+      "value": "\"c_name\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "StringLiteral",
+      "offset": 871,
+      "length": 8,
+      "value": "\"c_name\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "StringLiteral",
+      "offset": 895,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "StringLiteral",
+      "offset": 920,
+      "length": 6,
+      "value": "\"c_id\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "StringLiteral",
+      "offset": 942,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "Array",
+      "offset": 1185,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "StringLiteral",
+      "offset": 1319,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Common.swift",
@@ -5883,37 +6626,170 @@
       "value": "\"\""
     },
     {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2573,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2599,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2719,
+      "length": 6,
+      "value": "\"name\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2746,
+      "length": 15,
+      "value": "\"short_link_id\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2789,
+      "length": 14,
+      "value": "\"redirect_url\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 2862,
+      "length": 32,
+      "value": "\"\/partner\/deeplink\/shorten-link\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3119,
+      "length": 3,
+      "value": "200"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3148,
+      "length": 3,
+      "value": "299"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 3558,
+      "length": 3,
+      "value": "\"0\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 3572,
+      "length": 14,
+      "value": "\"data is null\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 3711,
+      "length": 24,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 3734,
+      "length": 13,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 3746,
+      "length": 24,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 3769,
+      "length": 3,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 3909,
+      "length": 3,
+      "value": "\"0\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 3923,
+      "length": 31,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 3953,
+      "length": 3,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 4055,
+      "length": 3,
+      "value": "\"0\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 4069,
+      "length": 53,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 4121,
+      "length": 3,
+      "value": "\"\""
+    },
+    {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 239,
+      "offset": 252,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 291,
+      "offset": 304,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 486,
+      "offset": 499,
       "length": 11,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 496,
-      "length": 14,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 669,
+      "offset": 509,
       "length": 14,
       "value": "\"\""
     },
@@ -5927,196 +6803,203 @@
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 846,
-      "length": 11,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 856,
+      "offset": 695,
       "length": 14,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 1213,
+      "offset": 859,
+      "length": 11,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 869,
+      "length": 14,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 1226,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "IntegerLiteral",
-      "offset": 1280,
+      "offset": 1293,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "IntegerLiteral",
-      "offset": 1420,
+      "offset": 1433,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 1469,
+      "offset": 1482,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "IntegerLiteral",
-      "offset": 1715,
+      "offset": 1728,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "IntegerLiteral",
-      "offset": 1767,
+      "offset": 1780,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "IntegerLiteral",
-      "offset": 1946,
+      "offset": 1959,
       "length": 2,
       "value": "24"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "IntegerLiteral",
-      "offset": 1949,
+      "offset": 1962,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "IntegerLiteral",
-      "offset": 1952,
+      "offset": 1965,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 2124,
+      "offset": 2137,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "Dictionary",
-      "offset": 4124,
+      "offset": 4137,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4141,
+      "offset": 4154,
       "length": 10,
       "value": "\"platform\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4185,
+      "offset": 4198,
       "length": 12,
       "value": "\"ip_address\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4224,
+      "offset": 4237,
       "length": 9,
       "value": "\"version\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4260,
+      "offset": 4273,
       "length": 4,
       "value": "\"os\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4321,
+      "offset": 4334,
       "length": 34,
       "value": "\"\/partner\/unified-deeplink\/verify\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4562,
+      "offset": 4575,
       "length": 55,
       "value": "\"\/partner\/unified-deeplink\/verify: \""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4606,
+      "offset": 4619,
       "length": 9,
       "value": "\"No data\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4616,
+      "offset": 4629,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "Array",
-      "offset": 4718,
+      "offset": 4731,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4771,
+      "offset": 4784,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 4845,
+      "offset": 4858,
       "length": 10,
       "value": "\"deeplink\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 5059,
+      "offset": 5072,
       "length": 78,
       "value": "\"\/partner\/unified-deeplink\/verify: Failed to convert JSON data to dictionary.\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 5228,
+      "offset": 5241,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 5431,
+      "offset": 5444,
       "length": 44,
       "value": "\"\/partner\/unified-deeplink\/verify: \""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkHandler.swift",
       "kind": "StringLiteral",
-      "offset": 5474,
+      "offset": 5487,
       "length": 2,
       "value": "\"\""
     },
@@ -6843,274 +7726,281 @@
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
+      "kind": "StringLiteral",
+      "offset": 1315,
+      "length": 18,
+      "value": "\"lid_mmp_products\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "IntegerLiteral",
-      "offset": 1470,
+      "offset": 1499,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 1991,
+      "offset": 2020,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2067,
+      "offset": 2096,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2385,
+      "offset": 2414,
       "length": 5,
       "value": "\"key\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2397,
+      "offset": 2426,
       "length": 7,
       "value": "\"value\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2454,
+      "offset": 2483,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2482,
+      "offset": 2511,
       "length": 5,
       "value": "\"key\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2512,
+      "offset": 2541,
       "length": 6,
       "value": "\"time\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2544,
+      "offset": 2573,
       "length": 11,
       "value": "\"sessionId\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2591,
+      "offset": 2620,
       "length": 10,
       "value": "\"realtime\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2631,
+      "offset": 2660,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 2657,
+      "offset": 2686,
       "length": 10,
       "value": "\"preEvent\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "IntegerLiteral",
-      "offset": 2852,
+      "offset": 2881,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "IntegerLiteral",
-      "offset": 2855,
+      "offset": 2884,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "Array",
-      "offset": 2947,
+      "offset": 2976,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "Array",
-      "offset": 2960,
+      "offset": 2989,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3153,
+      "offset": 3182,
       "length": 54,
       "value": "\"Error converting dictionary to JSON string: \""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3206,
+      "offset": 3235,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3234,
+      "offset": 3263,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "Array",
-      "offset": 3538,
+      "offset": 3567,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3631,
+      "offset": 3660,
       "length": 54,
       "value": "\"Error converting JSON string to dictionary: \""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3684,
+      "offset": 3713,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3835,
+      "offset": 3864,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3851,
+      "offset": 3880,
       "length": 5,
       "value": "\"key\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3869,
+      "offset": 3898,
       "length": 6,
       "value": "\"time\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3889,
+      "offset": 3918,
       "length": 11,
       "value": "\"sessionId\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3924,
+      "offset": 3953,
       "length": 10,
       "value": "\"realtime\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3952,
+      "offset": 3981,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 3972,
+      "offset": 4001,
       "length": 10,
       "value": "\"preEvent\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 4115,
+      "offset": 4144,
       "length": 5,
       "value": "\"key\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 4148,
+      "offset": 4177,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 4182,
+      "offset": 4211,
       "length": 6,
       "value": "\"time\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 4219,
+      "offset": 4248,
       "length": 10,
       "value": "\"realtime\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 4277,
+      "offset": 4306,
       "length": 11,
       "value": "\"sessionId\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 4305,
+      "offset": 4334,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 4341,
+      "offset": 4370,
       "length": 10,
       "value": "\"preEvent\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 4368,
+      "offset": 4397,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 4406,
+      "offset": 4435,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/EventData.swift",
       "kind": "StringLiteral",
-      "offset": 4429,
+      "offset": 4458,
       "length": 4,
       "value": "\"{}\""
     },
@@ -7374,25 +8264,249 @@
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/PurchaseItem.swift",
-      "kind": "StringLiteral",
-      "offset": 753,
-      "length": 10,
-      "value": "\"itemName\""
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "IntegerLiteral",
+      "offset": 297,
+      "length": 1,
+      "value": "1"
     },
     {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/PurchaseItem.swift",
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "Array",
+      "offset": 346,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
       "kind": "StringLiteral",
-      "offset": 780,
+      "offset": 428,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "IntegerLiteral",
+      "offset": 449,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "Array",
+      "offset": 485,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 622,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "IntegerLiteral",
+      "offset": 668,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "Array",
+      "offset": 717,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1271,
       "length": 8,
-      "value": "\"itemId\""
+      "value": "\"p_name\""
     },
     {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/PurchaseItem.swift",
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
       "kind": "StringLiteral",
-      "offset": 803,
+      "offset": 1294,
+      "length": 6,
+      "value": "\"p_id\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1313,
       "length": 7,
-      "value": "\"price\""
+      "value": "\"p_img\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1336,
+      "length": 9,
+      "value": "\"p_price\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1361,
+      "length": 12,
+      "value": "\"p_quantity\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1392,
+      "length": 14,
+      "value": "\"p_categories\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1572,
+      "length": 8,
+      "value": "\"p_name\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1596,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1621,
+      "length": 6,
+      "value": "\"p_id\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1643,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1669,
+      "length": 7,
+      "value": "\"p_img\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1692,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1720,
+      "length": 9,
+      "value": "\"p_price\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1745,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1776,
+      "length": 12,
+      "value": "\"p_quantity\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1801,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 1827,
+      "length": 14,
+      "value": "\"p_categories\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "Array",
+      "offset": 1866,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "Array",
+      "offset": 2167,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 2296,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 2626,
+      "length": 10,
+      "value": "\"products\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 2661,
+      "length": 9,
+      "value": "\"p_group\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "Array",
+      "offset": 2789,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 2895,
+      "length": 4,
+      "value": "\"{}\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 2936,
+      "length": 70,
+      "value": "\"Error converting array to JSON string: \""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 3005,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductItem.swift",
+      "kind": "StringLiteral",
+      "offset": 3027,
+      "length": 4,
+      "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ScreenChangeObserver.swift",

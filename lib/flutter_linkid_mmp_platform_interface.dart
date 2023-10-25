@@ -63,4 +63,9 @@ abstract class FlutterLinkIdMmpPlatform extends PlatformInterface {
   Future<bool> recordError(String name, String stackTrace) {
     throw UnimplementedError('initSDK() has not been implemented.');
   }
+
+  Future<bool> setProductList(String listName,
+      {required List<Map<String, dynamic>> products}) {
+    throw UnimplementedError('setProductList() has not been implemented.');
+  }
 }

@@ -98,6 +98,7 @@ class _CartTotal extends StatelessWidget {
                     const SnackBar(content: Text('Đã đặt thành công')));
                 TrackingHelper.logEvent(event: "Order");
                 TrackingHelper.setRevenue(orderId: getRandomString(10), amount: cart.totalPrice.toDouble(), currency: "VND");
+                TrackingHelper.setProductList(listName: "purchase", products: cart.products);
                 cart.removeAll();
               },
               style: TextButton.styleFrom(foregroundColor: Colors.white),

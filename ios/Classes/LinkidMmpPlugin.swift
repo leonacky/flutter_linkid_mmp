@@ -102,6 +102,11 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
           } else {
               result(false)
           }
+      } else if(call.method.elementsEqual("setProductList")) {
+          if let args = call.arguments as? Dictionary<String, Any>, let listName = args["listName"] as? String, let products = args["products"] as? [[String: Any]] {
+              let productsList = ProductItem.fromList(products)
+              Airflex.setProductList(listName: listName, products: productsList)
+          }
       }
     result("iOS " + UIDevice.current.systemVersion)
     }

@@ -7,6 +7,7 @@ import 'package:flutter_linkid_mmp/deep_link_handler.dart';
 import 'package:flutter_linkid_mmp/user_info.dart';
 
 import 'flutter_linkid_mmp_platform_interface.dart';
+import 'product_item.dart';
 
 class Airflex implements DeepLinkHandler {
   static final Airflex shared = Airflex._internal();
@@ -57,8 +58,7 @@ class Airflex implements DeepLinkHandler {
     FlutterLinkIdMmpPlatform.instance.recordError(stack0, errorAndTrace);
   }
 
-  void deepLinkHandler(
-      {Function(String url)? onReceivedDeepLink}) {
+  void deepLinkHandler({Function(String url)? onReceivedDeepLink}) {
     _onReceivedDeepLink = onReceivedDeepLink;
     if (currentDeeplink != "") {
       _onReceivedDeepLink?.call(currentDeeplink);
@@ -104,5 +104,11 @@ class Airflex implements DeepLinkHandler {
     // TODO: implement onReceivedDeepLink
     currentDeeplink = url;
     _onReceivedDeepLink?.call(url);
+  }
+
+  Future<bool> setProductList(
+      {required String listName, required List<ProductItem> products}) {
+    return FlutterLinkIdMmpPlatform.instance.setProductList(listName,
+        products: ProductItem.convertToList(products));
   }
 }

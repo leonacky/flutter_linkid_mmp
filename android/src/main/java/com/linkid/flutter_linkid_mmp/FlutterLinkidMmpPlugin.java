@@ -10,9 +10,11 @@ import com.linkid.mmp.Airflex;
 import com.linkid.mmp.AirflexOptions;
 import com.linkid.mmp.DeepLink;
 import com.linkid.mmp.DeepLinkHandler;
+import com.linkid.mmp.ProductItem;
 import com.linkid.mmp.UserInfo;
 
 import java.util.EventListener;
+import java.util.List;
 import java.util.Map;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
@@ -171,6 +173,24 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
             } catch (Exception e) {
                 e.printStackTrace();
                 result.success(false);
+            }
+        } else if (call.method.equals("setProductList")) {
+            try {
+                if (call.hasArgument("listName") && call.hasArgument("products")) {
+                    String listName = call.argument("listName");
+                    List<Map<String, Object>> data = call.argument("products");
+                    if (listName != null && listName != "" && data != null && data.size() > 0) {
+                        Airflex.setProductList(listName, ProductItem.fromList(data));
+                        result.success(true);
+                    } else {
+                        result.success(false);
+                    }
+                } else {
+                    result.success(false);
+                }
+            } catch (Exception e) {
+                result.success(false);
+                e.printStackTrace();
             }
         } else {
             result.notImplemented();
