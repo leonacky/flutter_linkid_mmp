@@ -61,7 +61,8 @@ public class DeepLinkAirflexParameters {
   public var campaign: Swift.String?
   public var term: Swift.String?
   public var content: Swift.String?
-  public init(source: Swift.String? = nil, code: Swift.String? = nil, medium: Swift.String? = nil, campaign: Swift.String? = nil)
+  public var redirectUrl: Swift.String?
+  public init(source: Swift.String? = nil, code: Swift.String? = nil, medium: Swift.String? = nil, campaign: Swift.String? = nil, redirectUrl: Swift.String? = nil)
   public func buildParams() -> [Swift.String : Any]
   @objc deinit
 }

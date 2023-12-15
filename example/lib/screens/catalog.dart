@@ -88,6 +88,13 @@ class _MyAppBar extends StatelessWidget {
           },
         ),
         IconButton(
+          icon: const Icon(Icons.email),
+          onPressed: () {
+            TrackingHelper.logEvent(event: "OpenContact");
+            context.go('/catalog/contact');
+          },
+        ),
+        IconButton(
           icon: const Icon(Icons.shopping_cart),
           onPressed: () {
             TrackingHelper.logEvent(event: "OpenCart");

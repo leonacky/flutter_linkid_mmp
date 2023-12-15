@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 // import 'package:file_picker/file_picker.dart';
+import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
@@ -30,18 +31,24 @@ class _ChatPageState extends State<ChatPage> {
   final _gpt = const types.User(
       id: '82091008-a484-4a89-ae75-a22bf8d6f3aa',
       imageUrl: "https://chat.openai.com/apple-touch-icon.png");
+  late OpenAI openAI;
 
   @override
   void initState() {
     super.initState();
     _loadMessages();
     TrackingHelper.setCurrentScreen(screenName: "ChatScreen");
+    openAI = OpenAI.instance.build(
+        token: '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',
+        orgId: 'org-WVUGB0DEU3m6c5daDedJAbem',
+        baseOption: HttpSetup(receiveTimeout: const Duration(seconds: 5)),
+        enableLog: true);
   }
 
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text("Chat GPT"),
+          title: const Text("Trợ lý ảo"),
         ),
         body: Chat(
           messages: _messages,
@@ -59,25 +66,48 @@ class _ChatPageState extends State<ChatPage> {
 
   Future<void> sendMsg(types.Message message) async {
     try {
-      final request = await _client.post(
-          Uri.parse("https://vpe-production.up.railway.app/chat/conversation"),
-          body: '{"question": "${(message as types.TextMessage).text}"}',
-          headers: {'Content-Type': 'application/json'});
-      if (request.statusCode >= 200 && request.statusCode <= 299) {
-        Map<String, dynamic> result = json.decode(request.body);
-        var data = result["data"] as Map<String, dynamic>?;
-        if (data != null) {
-          String? answer = data["data"] as String?;
-          if (answer != null && answer != "") {
-            final textMessage = types.TextMessage(
-              author: _gpt,
-              createdAt: DateTime.now().millisecondsSinceEpoch,
-              id: const Uuid().v4(),
-              text: answer,
-            );
-            _addMessage(textMessage, isMe: false);
-          }
+      // final request = await _client.post(
+      //     Uri.parse("https://vpe-production.up.railway.app/chat/conversation"),
+      //     body: '{"question": "${(message as types.TextMessage).text}"}',
+      //     headers: {'Content-Type': 'application/json'});
+
+      final request = CompleteText(
+          prompt: (message as types.TextMessage).text,
+          maxTokens: 200,
+          model: TextDavinci3Model());
+
+      final response = await openAI.onCompletion(request: request);
+      print('chat gpt');
+      print(response);
+
+      if (response != null) {
+        String? answer = response.choices.last.text;
+        if (answer != null && answer != "") {
+          final textMessage = types.TextMessage(
+            author: _gpt,
+            createdAt: DateTime.now().millisecondsSinceEpoch,
+            id: const Uuid().v4(),
+            text: answer,
+          );
+          _addMessage(textMessage, isMe: false);
+        } else {
+          final textMessage = types.TextMessage(
+            author: _gpt,
+            createdAt: DateTime.now().millisecondsSinceEpoch,
+            id: const Uuid().v4(),
+            text: response.toString(),
+          );
+          _addMessage(textMessage, isMe: false);
         }
+      } else {
+        final textMessage = types.TextMessage(
+          author: _gpt,
+          createdAt: DateTime.now().millisecondsSinceEpoch,
+          id: const Uuid().v4(),
+          text:
+              'You exceeded your current quota, please check your plan and billing details.',
+        );
+        _addMessage(textMessage, isMe: false);
       }
     } catch (e) {
       print(e);

@@ -9,6 +9,7 @@ import 'package:flutter_linkid_mmp/flutter_linkid_mmp.dart';
 import 'package:flutter_linkid_mmp/user_info.dart';
 import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:flutter_linkid_mmp_example/screens/chat_page.dart';
+import 'package:flutter_linkid_mmp_example/screens/contact.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'common/theme.dart';
@@ -71,6 +72,10 @@ GoRouter router() {
           GoRoute(
             path: 'chat',
             builder: (context, state) => const ChatPage(),
+          ),
+          GoRoute(
+            path: 'contact',
+            builder: (context, state) => const ContactScreen(),
           ),
         ],
       ),
