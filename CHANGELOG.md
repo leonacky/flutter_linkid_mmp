@@ -192,4 +192,8 @@
 
 ## 1.1.39
 
-* Release version 1.1.38 of LinkID Airflex: Fixbug addition of Android Event
+* Release version 1.1.39 of LinkID Airflex: Fixbug addition of Android Event
+
+## 1.1.40
+
+* Release version 1.1.40 of LinkID Airflex: add Platform
