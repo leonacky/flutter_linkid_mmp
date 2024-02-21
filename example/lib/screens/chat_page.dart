@@ -1,17 +1,14 @@
-import 'dart:convert';
 import 'dart:io';
 
 // import 'package:file_picker/file_picker.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:http/http.dart' as http;
 
 // import 'package:image_picker/image_picker.dart';
-import 'package:intl/date_symbol_data_local.dart';
 
 // import 'package:mime/mime.dart';
 import 'package:open_filex/open_filex.dart';
@@ -26,7 +23,7 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
-  List<types.Message> _messages = [];
+  final List<types.Message> _messages = [];
   final _user = const types.User(id: '82091008-a484-4a89-ae75-a22bf8d6f3ac');
   final _gpt = const types.User(
       id: '82091008-a484-4a89-ae75-a22bf8d6f3aa',
@@ -82,7 +79,7 @@ class _ChatPageState extends State<ChatPage> {
 
       if (response != null) {
         String? answer = response.choices.last.text;
-        if (answer != null && answer != "") {
+        if (answer != "") {
           final textMessage = types.TextMessage(
             author: _gpt,
             createdAt: DateTime.now().millisecondsSinceEpoch,

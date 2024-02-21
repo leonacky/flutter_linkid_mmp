@@ -5,7 +5,6 @@ import 'package:flutter_linkid_mmp/user_info.dart';
 import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:go_router/go_router.dart';
 
-import '../main.dart';
 
 class MyLogin extends StatelessWidget {
   String username = "";

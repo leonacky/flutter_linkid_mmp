@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:flutter_linkid_mmp/deep_link_handler.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';

@@ -1,11 +1,9 @@
-import 'dart:ffi';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_linkid_mmp/user_info.dart';
 
 import 'deep_link_handler.dart';
-import 'flutter_linkid_mmp.dart';
 import 'flutter_linkid_mmp_platform_interface.dart';
 
 /// An implementation of [FlutterLinkIdMmpPlatform] that uses method channels.

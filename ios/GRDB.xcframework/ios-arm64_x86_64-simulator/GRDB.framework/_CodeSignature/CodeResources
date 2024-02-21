@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		j5R/kPHEA8a21to2fVXoRd6zhBk=
+		WpxPdKv3reihwOfrxSEuErlcsig=
 		</data>
 		<key>Modules/GRDB.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/GRDB.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		QmvJaaNzdbiEdufWPndvnZedKM8=
+		dZho2aXQEIFOkjKXo6vAJ/sJETw=
 		</data>
 		<key>Modules/GRDB.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Modules/GRDB.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		x+C0GOVdRQ5MUfVHqU0tTs/riY8=
+		488TNT7FJPJu4j2gCXAfH4JvMWM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -148,11 +148,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QmvJaaNzdbiEdufWPndvnZedKM8=
+			dZho2aXQEIFOkjKXo6vAJ/sJETw=
 			</data>
 			<key>hash2</key>
 			<data>
-			g1HgfoKfLPxAgH19XeOp+H0Qc2Z4RA8ZQJKWvCwtxEo=
+			EHp3nHYBigbafldiewGrSZls7a2CnCvJp8Do25gfNS8=
 			</data>
 		</dict>
 		<key>Modules/GRDB.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -203,11 +203,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			x+C0GOVdRQ5MUfVHqU0tTs/riY8=
+			488TNT7FJPJu4j2gCXAfH4JvMWM=
 			</data>
 			<key>hash2</key>
 			<data>
-			crRFUp+7YtOsE6BKacr3XZniWIYBAJJ3YR754BqbpV8=
+			mtML5IGi7Z8dnTbNuKDYT1O1umgWVFdUaqBC7rJtAJ8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -28,7 +28,7 @@ var fcmToken = "";
 void main() {
   Airflex.runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
-    runApp(MyApp());
+    runApp(const MyApp());
   }, (error, stackTrace) async {
 
   });
@@ -84,6 +84,8 @@ GoRouter router() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   // Future<void> initFcm(BuildContext context) async {
   //   await FirebaseMessaging.instance.requestPermission(
   //     alert: true,

@@ -1,6 +1,5 @@
 import 'dart:async' as DartAsync;
 import 'dart:async';
-import 'dart:ffi';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_linkid_mmp/deep_link_handler.dart';
@@ -24,7 +23,7 @@ class Airflex implements DeepLinkHandler {
   String currentDeeplink = "";
 
   static R? runZonedGuarded<R>(
-      R body(), void onError(Object error, StackTrace stack),
+      R Function() body, void Function(Object error, StackTrace stack) onError,
       {Map<Object?, Object?>? zoneValues,
       ZoneSpecification? zoneSpecification}) {
     FlutterError.onError = (FlutterErrorDetails errorDetails) {

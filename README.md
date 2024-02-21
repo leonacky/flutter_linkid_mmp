@@ -23,7 +23,7 @@ $ flutter pub add flutter_linkid_mmp
 This will add a line like this to your package's pubspec.yaml (and run an implicit dart pub get):
 ```
 dependencies:
-    flutter_linkid_mmp: ^1.1.38
+    flutter_linkid_mmp: ^1.1.39
 ```
 
 Alternatively, your editor might support dart pub get or flutter pub get. Check the docs for your editor to learn more.

@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:flutter_linkid_mmp/flutter_linkid_mmp.dart';
 import 'package:flutter_linkid_mmp/product_item.dart';

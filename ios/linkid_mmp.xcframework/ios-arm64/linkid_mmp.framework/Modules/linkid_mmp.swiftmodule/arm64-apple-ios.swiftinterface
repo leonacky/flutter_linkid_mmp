@@ -36,14 +36,6 @@ public class AirflexOptions {
   public init()
   @objc deinit
 }
-@objcMembers public class ProductCategory {
-  @objc public init(categoryId: Swift.String, categoryName: Swift.String)
-  @objc public func toDictionary() -> [Swift.String : Any]
-  public static func convertToArray(_ items: [linkid_mmp.ProductCategory]) -> [[Swift.String : Any]]
-  public static func fromDictionary(_ data: [Swift.String : Any]) -> linkid_mmp.ProductCategory
-  public static func fromList(_ data: [[Swift.String : Any]]) -> [linkid_mmp.ProductCategory]
-  @objc deinit
-}
 @_hasMissingDesignatedInitializers public class Common {
   @objc deinit
 }
@@ -132,6 +124,14 @@ public enum Network : Swift.String {
   }
 }
 @_hasMissingDesignatedInitializers public class Logger {
+  @objc deinit
+}
+@objcMembers public class ProductCategory {
+  @objc public init(categoryId: Swift.String, categoryName: Swift.String)
+  @objc public func toDictionary() -> [Swift.String : Any]
+  public static func convertToArray(_ items: [linkid_mmp.ProductCategory]) -> [[Swift.String : Any]]
+  public static func fromDictionary(_ data: [Swift.String : Any]) -> linkid_mmp.ProductCategory
+  public static func fromList(_ data: [[Swift.String : Any]]) -> [linkid_mmp.ProductCategory]
   @objc deinit
 }
 @objcMembers public class ProductItem {

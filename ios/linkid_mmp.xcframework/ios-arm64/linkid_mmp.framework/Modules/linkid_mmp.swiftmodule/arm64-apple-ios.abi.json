@@ -912,258 +912,6 @@
         ]
       },
       {
-        "kind": "TypeDecl",
-        "name": "ProductCategory",
-        "printedName": "ProductCategory",
-        "children": [
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(categoryId:categoryName:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "ProductCategory",
-                "printedName": "linkid_mmp.ProductCategory",
-                "usr": "s:10linkid_mmp15ProductCategoryC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:10linkid_mmp15ProductCategoryC10categoryId0E4NameACSS_SStcfc",
-            "mangledName": "$s10linkid_mmp15ProductCategoryC10categoryId0E4NameACSS_SStcfc",
-            "moduleName": "linkid_mmp",
-            "declAttributes": [
-              "AccessControl",
-              "ObjC"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "toDictionary",
-            "printedName": "toDictionary()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Dictionary",
-                "printedName": "[Swift.String : Any]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProtocolComposition",
-                    "printedName": "Any"
-                  }
-                ],
-                "usr": "s:SD"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp15ProductCategoryC12toDictionarySDySSypGyF",
-            "mangledName": "$s10linkid_mmp15ProductCategoryC12toDictionarySDySSypGyF",
-            "moduleName": "linkid_mmp",
-            "declAttributes": [
-              "AccessControl",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "convertToArray",
-            "printedName": "convertToArray(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[[Swift.String : Any]]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Any]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "ProtocolComposition",
-                        "printedName": "Any"
-                      }
-                    ],
-                    "usr": "s:SD"
-                  }
-                ],
-                "usr": "s:Sa"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[linkid_mmp.ProductCategory]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProductCategory",
-                    "printedName": "linkid_mmp.ProductCategory",
-                    "usr": "s:10linkid_mmp15ProductCategoryC"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp15ProductCategoryC14convertToArrayySaySDySSypGGSayACGFZ",
-            "mangledName": "$s10linkid_mmp15ProductCategoryC14convertToArrayySaySDySSypGGSayACGFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "fromDictionary",
-            "printedName": "fromDictionary(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "ProductCategory",
-                "printedName": "linkid_mmp.ProductCategory",
-                "usr": "s:10linkid_mmp15ProductCategoryC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Dictionary",
-                "printedName": "[Swift.String : Any]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProtocolComposition",
-                    "printedName": "Any"
-                  }
-                ],
-                "usr": "s:SD"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp15ProductCategoryC14fromDictionaryyACSDySSypGFZ",
-            "mangledName": "$s10linkid_mmp15ProductCategoryC14fromDictionaryyACSDySSypGFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "fromList",
-            "printedName": "fromList(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[linkid_mmp.ProductCategory]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProductCategory",
-                    "printedName": "linkid_mmp.ProductCategory",
-                    "usr": "s:10linkid_mmp15ProductCategoryC"
-                  }
-                ],
-                "usr": "s:Sa"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[[Swift.String : Any]]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Any]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "ProtocolComposition",
-                        "printedName": "Any"
-                      }
-                    ],
-                    "usr": "s:SD"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10linkid_mmp15ProductCategoryC8fromListySayACGSaySDySSypGGFZ",
-            "mangledName": "$s10linkid_mmp15ProductCategoryC8fromListySayACGSaySDySSypGGFZ",
-            "moduleName": "linkid_mmp",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "s:10linkid_mmp15ProductCategoryC",
-        "mangledName": "$s10linkid_mmp15ProductCategoryC",
-        "moduleName": "linkid_mmp",
-        "declAttributes": [
-          "AccessControl",
-          "ObjCMembers"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "linkid_mmp",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -5164,6 +4912,258 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "ProductCategory",
+        "printedName": "ProductCategory",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(categoryId:categoryName:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProductCategory",
+                "printedName": "linkid_mmp.ProductCategory",
+                "usr": "s:10linkid_mmp15ProductCategoryC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10linkid_mmp15ProductCategoryC10categoryId0E4NameACSS_SStcfc",
+            "mangledName": "$s10linkid_mmp15ProductCategoryC10categoryId0E4NameACSS_SStcfc",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "toDictionary",
+            "printedName": "toDictionary()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15ProductCategoryC12toDictionarySDySSypGyF",
+            "mangledName": "$s10linkid_mmp15ProductCategoryC12toDictionarySDySSypGyF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "convertToArray",
+            "printedName": "convertToArray(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[[Swift.String : Any]]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[linkid_mmp.ProductCategory]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProductCategory",
+                    "printedName": "linkid_mmp.ProductCategory",
+                    "usr": "s:10linkid_mmp15ProductCategoryC"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15ProductCategoryC14convertToArrayySaySDySSypGGSayACGFZ",
+            "mangledName": "$s10linkid_mmp15ProductCategoryC14convertToArrayySaySDySSypGGSayACGFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fromDictionary",
+            "printedName": "fromDictionary(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProductCategory",
+                "printedName": "linkid_mmp.ProductCategory",
+                "usr": "s:10linkid_mmp15ProductCategoryC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15ProductCategoryC14fromDictionaryyACSDySSypGFZ",
+            "mangledName": "$s10linkid_mmp15ProductCategoryC14fromDictionaryyACSDySSypGFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fromList",
+            "printedName": "fromList(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[linkid_mmp.ProductCategory]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProductCategory",
+                    "printedName": "linkid_mmp.ProductCategory",
+                    "usr": "s:10linkid_mmp15ProductCategoryC"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[[Swift.String : Any]]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15ProductCategoryC8fromListySayACGSaySDySSypGGFZ",
+            "mangledName": "$s10linkid_mmp15ProductCategoryC8fromListySayACGSaySDySSypGGFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp15ProductCategoryC",
+        "mangledName": "$s10linkid_mmp15ProductCategoryC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "ProductItem",
         "printedName": "ProductItem",
         "children": [
@@ -6049,62 +6049,6 @@
       "offset": 218,
       "length": 4,
       "value": "true"
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
-      "kind": "StringLiteral",
-      "offset": 430,
-      "length": 6,
-      "value": "\"c_id\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
-      "kind": "StringLiteral",
-      "offset": 450,
-      "length": 8,
-      "value": "\"c_name\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
-      "kind": "StringLiteral",
-      "offset": 871,
-      "length": 8,
-      "value": "\"c_name\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
-      "kind": "StringLiteral",
-      "offset": 895,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
-      "kind": "StringLiteral",
-      "offset": 920,
-      "length": 6,
-      "value": "\"c_id\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
-      "kind": "StringLiteral",
-      "offset": 942,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
-      "kind": "Array",
-      "offset": 1185,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
-      "kind": "StringLiteral",
-      "offset": 1319,
-      "length": 2,
-      "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Common.swift",
@@ -8349,28 +8293,28 @@
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/http.swift",
       "kind": "StringLiteral",
-      "offset": 4931,
+      "offset": 4966,
       "length": 15,
       "value": "\"Authorization\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/http.swift",
       "kind": "StringLiteral",
-      "offset": 4948,
+      "offset": 4983,
       "length": 22,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/http.swift",
       "kind": "StringLiteral",
-      "offset": 4969,
+      "offset": 5004,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/http.swift",
       "kind": "StringLiteral",
-      "offset": 5097,
+      "offset": 5171,
       "length": 18,
       "value": "\"---- HEADER ----\""
     },
@@ -8392,6 +8336,62 @@
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 406,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "StringLiteral",
+      "offset": 430,
+      "length": 6,
+      "value": "\"c_id\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "StringLiteral",
+      "offset": 450,
+      "length": 8,
+      "value": "\"c_name\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "StringLiteral",
+      "offset": 871,
+      "length": 8,
+      "value": "\"c_name\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "StringLiteral",
+      "offset": 895,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "StringLiteral",
+      "offset": 920,
+      "length": 6,
+      "value": "\"c_id\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "StringLiteral",
+      "offset": 942,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "Array",
+      "offset": 1185,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/ProductCategory.swift",
+      "kind": "StringLiteral",
+      "offset": 1319,
       "length": 2,
       "value": "\"\""
     },
