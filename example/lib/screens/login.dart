@@ -5,7 +5,6 @@ import 'package:flutter_linkid_mmp/user_info.dart';
 import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:go_router/go_router.dart';
 
-
 class MyLogin extends StatelessWidget {
   String username = "";
   String password = "";
@@ -60,10 +59,23 @@ class MyLogin extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  TrackingHelper.logEvent(event: "Login");
-                  if(username!="" && password!="") {
+                  TrackingHelper.logEvent(event: "Login", data: {
+                    'user': username,
+                    'key1': 'value1',
+                    'key2': 'value2'
+                  });
+                  if (username != "" && password != "") {
                     // synchronousError();
-                    TrackingHelper.logEvent(event: "LoginSuccess");
+                    TrackingHelper.logEvent(event: "LoginSuccess", data: {
+                      'user_id': 113568,
+                      'topup_time': '2024-02-22 15:02:41.933739',
+                      'order_id': 'TOPUP_PQ7TWkTk',
+                      'network_name': 'Mobifone',
+                      'price': 50000.0,
+                      'payment_method': 'Ví Momo',
+                      'total_price': 49000.0,
+                      'success': false
+                    });
                     Airflex().setUserInfo(UserInfo(
                         userId: username,
                         email: "$username@gmail.com",

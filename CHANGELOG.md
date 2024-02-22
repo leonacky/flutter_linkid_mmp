@@ -197,3 +197,7 @@
 ## 1.1.40
 
 * Release version 1.1.40 of LinkID Airflex: add Platform
+
+## 1.1.41
+
+* Release version 1.1.41 of LinkID Airflex: add Platform

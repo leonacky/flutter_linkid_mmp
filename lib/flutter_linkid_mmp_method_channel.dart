@@ -23,6 +23,19 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
     });
   }
 
+  Map<String, String> _convertDynamicMapToString(Map<String, dynamic>? originalMap) {
+    if (originalMap == null) {
+      return {};
+    }
+    return originalMap!.map((key, value) {
+      try {
+        return MapEntry(key, value.toString());
+      } catch (e) {
+        return MapEntry(key, '$value');
+      }
+    });
+  }
+
   @override
   void setDeepLinkHandler(DeepLinkHandler deepLinkHandler) {
     _deepLinkHandler = deepLinkHandler;
@@ -53,7 +66,7 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
     // TODO: implement event
     try {
       final result = await methodChannel.invokeMethod<bool>(
-          'event', {'eventName': eventName, 'data': data ?? {}});
+          'event', {'eventName': eventName, 'data': _convertDynamicMapToString(data)});
       return result ?? false;
     } catch (e) {
       // //print(e);
@@ -97,7 +110,7 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
         'orderId': orderId,
         'amount': amount,
         'currency': currency,
-        'data': data ?? {}
+        'data': _convertDynamicMapToString(data)
       });
       return result ?? false;
     } catch (e) {
