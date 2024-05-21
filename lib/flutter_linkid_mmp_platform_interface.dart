@@ -1,4 +1,3 @@
-
 import 'package:flutter_linkid_mmp/deep_link_handler.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
@@ -66,5 +65,14 @@ abstract class FlutterLinkIdMmpPlatform extends PlatformInterface {
   Future<bool> setProductList(String listName,
       {required List<Map<String, dynamic>> products}) {
     throw UnimplementedError('setProductList() has not been implemented.');
+  }
+
+  Future<Map<String, dynamic>?> createLink(Map<String, dynamic> params) {
+    throw UnimplementedError('createLink() has not been implemented.');
+  }
+
+  Future<Map<String, dynamic>?> createShortLink(
+      {required String longLink, String name = "", String shortLinkId = ""}) {
+    throw UnimplementedError('createShortLink() has not been implemented.');
   }
 }

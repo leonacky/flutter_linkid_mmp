@@ -160,4 +160,48 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
     }
     return false;
   }
+  @override
+  Future<Map<String, dynamic>?> createLink(Map<String, dynamic> params) async {
+    try {
+      final result = await methodChannel.invokeMethod<Map>('createLink', {
+        'params': params,
+      });
+      Map<String, dynamic> data = {};
+      if(result != null){
+        result.forEach((key, value) {
+          if(key is String) {
+            data[key] = value;
+          }
+        });
+      }
+      return data;
+    } catch (e) {
+      // print(e);
+    }
+    return null;
+  }
+
+  @override
+  Future<Map<String, dynamic>?> createShortLink(
+      {required String longLink, String name = "", String shortLinkId = ""}) async {
+    try {
+      final result = await methodChannel.invokeMethod<Map>('createShortLink', {
+        'longLink': longLink,
+        'name': name,
+        'shortLinkId': shortLinkId,
+      });
+      Map<String, dynamic> data = {};
+      if(result != null){
+        result.forEach((key, value) {
+          if(key is String) {
+            data[key] = value;
+          }
+        });
+      }
+      return data;
+    } catch (e) {
+      // //print(e);
+    }
+    return null;
+  }
 }

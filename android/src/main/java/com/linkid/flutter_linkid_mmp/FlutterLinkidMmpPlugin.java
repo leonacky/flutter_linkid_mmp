@@ -9,11 +9,16 @@ import androidx.annotation.NonNull;
 import com.linkid.mmp.Airflex;
 import com.linkid.mmp.AirflexOptions;
 import com.linkid.mmp.DeepLink;
+import com.linkid.mmp.DeepLinkBuilder;
+import com.linkid.mmp.DeepLinkBuilderError;
+import com.linkid.mmp.DeepLinkBuilderListener;
+import com.linkid.mmp.DeepLinkBuilderResult;
 import com.linkid.mmp.DeepLinkHandler;
 import com.linkid.mmp.ProductItem;
 import com.linkid.mmp.UserInfo;
 
 import java.util.EventListener;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -190,6 +195,94 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
                 }
             } catch (Exception e) {
                 result.success(false);
+                e.printStackTrace();
+            }
+        } else if (call.method.equals("createLink")) {
+            try {
+                if (call.hasArgument("params")) {
+                    Map<String, Object> params = call.argument("params");
+                    DeepLinkBuilder builder = new DeepLinkBuilder();
+                    builder.createLink(params, new DeepLinkBuilderListener() {
+                        @Override
+                        public void onSuccess(DeepLinkBuilderResult _result) {
+                            Map<String, Object> data = new HashMap<>();
+                            data.put("success", true);
+                            data.put("message", "Success");
+                            data.put("shortLink", _result.shortLink);
+                            data.put("longLink", _result.longLink);
+                            result.success(data);
+                        }
+
+                        @Override
+                        public void onError(DeepLinkBuilderError error) {
+                            Map<String, Object> data = new HashMap<>();
+                            data.put("success", false);
+                            data.put("message", error.message);
+                            data.put("shortLink", "");
+                            data.put("longLink", "");
+                            result.success(data);
+                        }
+                    });
+                } else {
+                    Map<String, Object> data = new HashMap<>();
+                    data.put("success", false);
+                    data.put("message", "Cannot create link without params");
+                    data.put("shortLink", "");
+                    data.put("longLink", "");
+                    result.success(data);
+                }
+            } catch (Exception e) {
+                Map<String, Object> data = new HashMap<>();
+                data.put("success", false);
+                data.put("message", "Cannot create link");
+                data.put("shortLink", "");
+                data.put("longLink", "");
+                result.success(data);
+                e.printStackTrace();
+            }
+        } else if (call.method.equals("createShortLink")) {
+            try {
+                if (call.hasArgument("longLink")) {
+                    String longLink = call.argument("longLink");
+                    String name = call.argument("name");
+                    String shortLinkId = call.argument("shortLinkId");
+                    DeepLinkBuilder builder = new DeepLinkBuilder();
+                    builder.createShortLink(longLink, name, shortLinkId, new DeepLinkBuilderListener() {
+                        @Override
+                        public void onSuccess(DeepLinkBuilderResult _result) {
+                            Map<String, Object> data = new HashMap<>();
+                            data.put("success", true);
+                            data.put("message", "Success");
+                            data.put("shortLink", _result.shortLink);
+                            data.put("longLink", _result.longLink);
+                            result.success(data);
+                        }
+
+                        @Override
+                        public void onError(DeepLinkBuilderError error) {
+                            Map<String, Object> data = new HashMap<>();
+                            data.put("success", false);
+                            data.put("message", error.message);
+                            data.put("shortLink", "");
+                            data.put("longLink", "");
+                            result.success(data);
+                        }
+                    });
+                } else {
+                    Map<String, Object> data = new HashMap<>();
+                    data.put("success", false);
+                    data.put("message", "Cannot create link without params");
+                    data.put("shortLink", "");
+                    data.put("longLink", "");
+                    result.success(data);
+                }
+            } catch (Exception e) {
+                Map<String, Object> data = new HashMap<>();
+                data.put("success", false);
+                data.put("message", "Cannot create link");
+                data.put("shortLink", "");
+                data.put("longLink", "");
+                result.success(data);
                 e.printStackTrace();
             }
         } else {

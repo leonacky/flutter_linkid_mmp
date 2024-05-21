@@ -46,6 +46,7 @@ public class AirflexOptions {
   @objc deinit
 }
 public class DeepLinkAirflexParameters {
+  public var shortLinkId: Swift.String?
   public var name: Swift.String?
   public var source: Swift.String?
   public var code: Swift.String?
@@ -71,6 +72,7 @@ public class DeepLinkBuilder {
   public var androidParameters: linkid_mmp.DeepLinkAndroidParameters?
   public var airflexParameters: linkid_mmp.DeepLinkAirflexParameters?
   public init()
+  public func createLink(with params: [Swift.String : Any], completion: @escaping (linkid_mmp.DeepLinkBuilderResult?, linkid_mmp.DeepLinkBuilderError?) -> Swift.Void)
   public func createLink(completion: @escaping (linkid_mmp.DeepLinkBuilderResult?, linkid_mmp.DeepLinkBuilderError?) -> Swift.Void)
   public func createShortLink(longLink: Swift.String, name: Swift.String = "", shortLinkId: Swift.String = "", completion: @escaping (linkid_mmp.DeepLinkBuilderResult?, linkid_mmp.DeepLinkBuilderError?) -> Swift.Void)
   @objc deinit

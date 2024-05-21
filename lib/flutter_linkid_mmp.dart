@@ -4,12 +4,16 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_linkid_mmp/deep_link_handler.dart';
 import 'package:flutter_linkid_mmp/user_info.dart';
+import 'package:flutter_linkid_mmp/airflex_idle_detector.dart';
 
 import 'flutter_linkid_mmp_platform_interface.dart';
 import 'product_item.dart';
+import 'deeplink_builder.dart';
 
 class Airflex implements DeepLinkHandler {
   static final Airflex shared = Airflex._internal();
+
+  bool isKeyboardShowing = false;
 
   factory Airflex() {
     return shared;

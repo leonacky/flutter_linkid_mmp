@@ -150,6 +150,7 @@ class MyApp extends StatelessWidget {
     if (fcmToken == "") {
       init(context);
     }
+    print('Main init');
     TrackingHelper.logEvent(event: "StartApp");
     return MultiProvider(
       providers: [

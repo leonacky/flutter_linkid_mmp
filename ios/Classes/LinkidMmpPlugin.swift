@@ -107,8 +107,62 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
               let productsList = ProductItem.fromList(products)
               Airflex.setProductList(listName: listName, products: productsList)
           }
+      } else if(call.method.elementsEqual("createLink")) {
+          if let args = call.arguments as? Dictionary<String, Any>, let params = args["params"] as? [String: Any] {
+              let linkBuider = DeepLinkBuilder()
+              linkBuider.createLink(with: params) { resultData, errorData in
+                  if (errorData != nil) {
+                      result([
+                        "success": false,
+                        "messsage": errorData?.message ?? ""
+                      ] as [String : Any])
+                  } else if(resultData != nil && resultData?.shortLink.isEmpty == false) {
+                      result([
+                        "success": true,
+                        "messsage": "Success",
+                        "longLink": resultData?.longLink ?? "",
+                        "shortLink": resultData?.shortLink ?? "",
+                      ] as [String : Any])
+                  } else {
+                      result([
+                        "success": false,
+                        "messsage": "Cannot create link"
+                      ] as [String : Any])
+                  }
+              }
+          } else {
+              result([
+                "success": false,
+                "messsage": "Cannot create link without params"
+              ] as [String : Any])
+          }
+      } else if(call.method.elementsEqual("createShortLink")) {
+          if let args = call.arguments as? Dictionary<String, Any>, let longLink = args["longLink"] as? String {
+              let name: String? = args["name"] as? String? ?? ""
+              let shortLinkId: String? = args["shortLinkId"] as? String? ?? ""
+              let linkBuider = DeepLinkBuilder()
+              linkBuider.createShortLink(longLink: longLink, name: name ?? "", shortLinkId: shortLinkId ?? "") { resultData, errorData in
+                  if (errorData != nil) {
+                      result([
+                        "success": false,
+                        "message": errorData?.message ?? ""
+                      ] as [String : Any])
+                  } else if(resultData != nil && resultData?.shortLink.isEmpty == false) {
+                      result([
+                        "success": true,
+                        "messsage": errorData?.message ?? "",
+                        "longLink": resultData?.longLink ?? "",
+                        "shortLink": resultData?.shortLink ?? "",
+                      ] as [String : Any])
+                  } else {
+                      result([
+                        "success": false,
+                        "message": "Có lỗi xảy ra trong quá trình xử lý"
+                      ] as [String : Any])
+                  }
+              }
+          }
       }
-    result("iOS " + UIDevice.current.systemVersion)
     }
     
     private func application(_ application: UIApplication,

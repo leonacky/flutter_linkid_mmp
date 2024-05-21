@@ -5,6 +5,9 @@ import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
+import 'package:flutter_linkid_mmp/deeplink_android_parameter.dart';
+import 'package:flutter_linkid_mmp/deeplink_builder.dart';
+import 'package:flutter_linkid_mmp/deeplink_ios_parameter.dart';
 import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:http/http.dart' as http;
 
@@ -40,6 +43,27 @@ class _ChatPageState extends State<ChatPage> {
         orgId: 'org-WVUGB0DEU3m6c5daDedJAbem',
         baseOption: HttpSetup(receiveTimeout: const Duration(seconds: 5)),
         enableLog: true);
+    createShortLink();
+  }
+
+  Future<void> createShortLink() async {
+    DeepLinkBuilder deepLinkBuilder = DeepLinkBuilder();
+    DeepLinkBuilderResult result = await deepLinkBuilder.createShortLink(
+        longLink:
+            "https://stackoverflow.com/questions/54708249/how-to-send-data-back-from-ios-to-flutter", shortLinkId: "TuanDV123");
+    print("TuanDV $result");
+  }
+
+  Future<void> createLink() async {
+    DeepLinkBuilder deepLinkBuilder = DeepLinkBuilder();
+    DeepLinkAndroidParameter androidParameter = DeepLinkAndroidParameter(
+        packageName: "com.example.flutter_linkid_mmp_example");
+    deepLinkBuilder.androidParameters = androidParameter;
+    DeepLinkIOSParameter iosParameter = DeepLinkIOSParameter(
+        bundleID: "com.example.flutterLinkidMmpExample", appStoreID: '123456');
+    deepLinkBuilder.iOSParameters = iosParameter;
+    DeepLinkBuilderResult result = await deepLinkBuilder.createLink();
+    print("TuanDV $result");
   }
 
   @override
@@ -269,14 +293,15 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   void _handleSendPressed(types.PartialText message) {
-    final textMessage = types.TextMessage(
-      author: _user,
-      createdAt: DateTime.now().millisecondsSinceEpoch,
-      id: const Uuid().v4(),
-      text: message.text,
-    );
-
-    _addMessage(textMessage);
+    createLink();
+    // final textMessage = types.TextMessage(
+    //   author: _user,
+    //   createdAt: DateTime.now().millisecondsSinceEpoch,
+    //   id: const Uuid().v4(),
+    //   text: message.text,
+    // );
+    //
+    // _addMessage(textMessage);
   }
 
   void _loadMessages() async {

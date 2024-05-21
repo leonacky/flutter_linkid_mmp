@@ -201,3 +201,18 @@
 ## 1.1.41
 
 * Release version 1.1.41 of LinkID Airflex: add Platform
+
+## 1.1.42
+* Release version 1.1.42 of LinkID Airflex: add Platform
+
+## 1.1.43
+* Release version 1.1.43 of LinkID Airflex: add realtime event
+
+## 1.1.44
+* Release version 1.1.44 of LinkID Airflex: add big image for ios
+
+## 1.1.45
+* Release version 1.1.45 of LinkID Airflex: Ping User Online
+
+## 1.1.48
+* Release version 1.1.48 of LinkID Airflex: Create deeplink and short link
