@@ -427,6 +427,29 @@
               "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeUserToken",
+            "printedName": "removeUserToken()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp7AirflexC15removeUserTokenyyFZ",
+            "mangledName": "$s10linkid_mmp7AirflexC15removeUserTokenyyFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -9063,9 +9086,30 @@
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "StringLiteral",
-      "offset": 4188,
-      "length": 24,
-      "value": "\"Khong lay duoc du lieu\""
+      "offset": 4165,
+      "length": 5,
+      "value": "\"Loi\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
+      "kind": "StringLiteral",
+      "offset": 4286,
+      "length": 44,
+      "value": "\"\/partner\/device-info\/remove-firebase-token\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
+      "kind": "Dictionary",
+      "offset": 4340,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
+      "kind": "StringLiteral",
+      "offset": 4508,
+      "length": 5,
+      "value": "\"Loi\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/StorageHelper.swift",

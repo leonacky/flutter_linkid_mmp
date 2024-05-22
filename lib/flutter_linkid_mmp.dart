@@ -114,4 +114,8 @@ class Airflex implements DeepLinkHandler {
     return FlutterLinkIdMmpPlatform.instance.setProductList(listName,
         products: ProductItem.convertToList(products));
   }
+
+  Future<bool> removeUserToken() {
+    return FlutterLinkIdMmpPlatform.instance.removeUserToken();
+  }
 }

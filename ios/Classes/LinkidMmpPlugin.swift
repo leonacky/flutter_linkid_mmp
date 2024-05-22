@@ -44,6 +44,9 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
             } else {
                 result(false)
             }
+        } else if(call.method.elementsEqual("removeUserToken")) {
+            Airflex.removeUserToken()
+            result(true)
         } else if(call.method.elementsEqual("recordError")) {
             if let args = call.arguments as? Dictionary<String, Any>, let name = args["name"] as? String, let stackTrace = args["stackTrace"] as? String {
                 Airflex.recordError(name: name, stackTrace: stackTrace)

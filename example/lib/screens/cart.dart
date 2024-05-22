@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_linkid_mmp/flutter_linkid_mmp.dart';
 import 'dart:math';
 import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +9,7 @@ import '../models/cart.dart';
 class MyCart extends StatelessWidget {
   MyCart({super.key}) {
     TrackingHelper.setCurrentScreen(screenName: "CartScreen");
+    Airflex.shared.removeUserToken();
   }
 
   @override

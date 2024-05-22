@@ -216,3 +216,6 @@
 
 ## 1.1.48
 * Release version 1.1.48 of LinkID Airflex: Create deeplink and short link
+
+## 1.1.49
+* Release version 1.1.49 of LinkID Airflex: remove user token function

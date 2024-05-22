@@ -67,6 +67,10 @@ abstract class FlutterLinkIdMmpPlatform extends PlatformInterface {
     throw UnimplementedError('setProductList() has not been implemented.');
   }
 
+  Future<bool> removeUserToken() {
+    throw UnimplementedError('removeUserToken() has not been implemented.');
+  }
+
   Future<Map<String, dynamic>?> createLink(Map<String, dynamic> params) {
     throw UnimplementedError('createLink() has not been implemented.');
   }

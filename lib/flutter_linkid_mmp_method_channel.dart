@@ -1,4 +1,3 @@
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_linkid_mmp/user_info.dart';
@@ -23,7 +22,8 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
     });
   }
 
-  Map<String, String> _convertDynamicMapToString(Map<String, dynamic>? originalMap) {
+  Map<String, String> _convertDynamicMapToString(
+      Map<String, dynamic>? originalMap) {
     if (originalMap == null) {
       return {};
     }
@@ -65,8 +65,8 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
   Future<bool> logEvent(String eventName, {Map<String, dynamic>? data}) async {
     // TODO: implement event
     try {
-      final result = await methodChannel.invokeMethod<bool>(
-          'event', {'eventName': eventName, 'data': _convertDynamicMapToString(data)});
+      final result = await methodChannel.invokeMethod<bool>('event',
+          {'eventName': eventName, 'data': _convertDynamicMapToString(data)});
       return result ?? false;
     } catch (e) {
       // //print(e);
@@ -160,6 +160,7 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
     }
     return false;
   }
+
   @override
   Future<Map<String, dynamic>?> createLink(Map<String, dynamic> params) async {
     try {
@@ -167,9 +168,9 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
         'params': params,
       });
       Map<String, dynamic> data = {};
-      if(result != null){
+      if (result != null) {
         result.forEach((key, value) {
-          if(key is String) {
+          if (key is String) {
             data[key] = value;
           }
         });
@@ -183,7 +184,9 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
 
   @override
   Future<Map<String, dynamic>?> createShortLink(
-      {required String longLink, String name = "", String shortLinkId = ""}) async {
+      {required String longLink,
+      String name = "",
+      String shortLinkId = ""}) async {
     try {
       final result = await methodChannel.invokeMethod<Map>('createShortLink', {
         'longLink': longLink,
@@ -191,9 +194,9 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
         'shortLinkId': shortLinkId,
       });
       Map<String, dynamic> data = {};
-      if(result != null){
+      if (result != null) {
         result.forEach((key, value) {
-          if(key is String) {
+          if (key is String) {
             data[key] = value;
           }
         });
@@ -203,5 +206,16 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
       // //print(e);
     }
     return null;
+  }
+
+  @override
+  Future<bool> removeUserToken() async {
+    try {
+      var result = await methodChannel.invokeMethod<bool>('removeUserToken');
+      return result ?? false;
+    } catch (e) {
+      print(e);
+    }
+    return false;
   }
 }

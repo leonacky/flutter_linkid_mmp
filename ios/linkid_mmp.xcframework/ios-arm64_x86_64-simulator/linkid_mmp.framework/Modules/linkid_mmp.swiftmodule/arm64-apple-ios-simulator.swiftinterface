@@ -21,6 +21,7 @@ import _StringProcessing
   @objc public static func setRevenue(orderId: Swift.String, amount: Swift.Double, currency: Swift.String, data: [Swift.String : Any]?)
   @objc public static func handleDeeplink(_ handleDeeplink: @escaping (Swift.String) -> Swift.Void)
   public static func setProductList(listName: Swift.String, products: [linkid_mmp.ProductItem])
+  @objc public static func removeUserToken()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AirflexDeepLinkDelegate : UIKit.UIResponder, UIKit.UIApplicationDelegate {
