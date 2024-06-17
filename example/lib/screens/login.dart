@@ -65,7 +65,7 @@ class MyLogin extends StatelessWidget {
                       'user': username,
                       'key1': 'value1',
                       'key2': 'value2',
-                      'time': DateTime.now()
+                      'time': DateTime.now(),
                     });
                     if (username != "" && password != "") {
                       // synchronousError();
@@ -83,6 +83,7 @@ class MyLogin extends StatelessWidget {
                       Airflex().setUserInfo(UserInfo(
                           userId: username,
                           email: "$username@gmail.com",
+                          deviceToken: "deviceToken",
                           age: 30));
                       context.pushReplacement('/catalog');
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(

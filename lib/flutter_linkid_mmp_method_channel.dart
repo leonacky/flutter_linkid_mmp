@@ -27,7 +27,7 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
     if (originalMap == null) {
       return {};
     }
-    return originalMap!.map((key, value) {
+    return originalMap.map((key, value) {
       try {
         return MapEntry(key, value.toString());
       } catch (e) {
