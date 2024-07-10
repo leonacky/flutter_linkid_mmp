@@ -19,12 +19,12 @@ A new Flutter plugin project.
   s.ios.deployment_target = '8.0'
   
 #  s.dependency 'linkid_mmp', '~> 1.0.3'
-  s.dependency 'CryptoSwift', '1.3.3'
-  s.dependency 'GRDB.swift', '4.14.0'
+#  s.dependency 'CryptoSwift', '1.3.3'
+#  s.dependency 'GRDB.swift', '4.14.0'
   
-# s.preserve_paths = 'linkid_mmp.xcframework/**/*', 'MMPCryptoSwift.xcframework/**/*', 'GRBB.xcframework/**/*'
-# s.xcconfig = { 'OTHER_LDFLAGS' => '-framework linkid_mmp -framework MMPCryptoSwift -framework GRDB' }
-# s.vendored_frameworks = 'linkid_mmp.xcframework', 'MMPCryptoSwift.xcframework', 'GRDB.xcframework'
+# s.preserve_paths = 'linkid_mmp.xcframework/**/*', 'GRBB.xcframework/**/*'
+# s.xcconfig = { 'OTHER_LDFLAGS' => '-framework linkid_mmp -framework GRDB' }
+# s.vendored_frameworks = 'linkid_mmp.xcframework', 'GRDB.xcframework'
 
   s.preserve_paths = 'linkid_mmp.xcframework/**/*'
   s.xcconfig = { 'OTHER_LDFLAGS' => '-framework linkid_mmp' }

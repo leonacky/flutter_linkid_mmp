@@ -212,6 +212,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
                                 data.put("message", "Success");
                                 data.put("shortLink", _result.shortLink);
                                 data.put("longLink", _result.longLink);
+                                data.put("qrLink", _result.qrLink);
                                 result.success(data);
                             }
 
@@ -257,6 +258,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
                             data.put("message", "Success");
                             data.put("shortLink", _result.shortLink);
                             data.put("longLink", _result.longLink);
+                            data.put("qrLink", _result.qrLink);
                             result.success(data);
                         }
 

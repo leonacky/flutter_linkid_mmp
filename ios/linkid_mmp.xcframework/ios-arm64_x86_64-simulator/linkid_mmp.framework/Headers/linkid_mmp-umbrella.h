@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "grdb_config.h"
 
 FOUNDATION_EXPORT double linkid_mmpVersionNumber;
 FOUNDATION_EXPORT const unsigned char linkid_mmpVersionString[];

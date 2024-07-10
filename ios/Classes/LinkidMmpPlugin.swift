@@ -125,6 +125,7 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
                         "messsage": "Success",
                         "longLink": resultData?.longLink ?? "",
                         "shortLink": resultData?.shortLink ?? "",
+                        "qrLink": resultData?.qrLink ?? "",
                       ] as [String : Any])
                   } else {
                       result([
@@ -156,6 +157,7 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
                         "messsage": errorData?.message ?? "",
                         "longLink": resultData?.longLink ?? "",
                         "shortLink": resultData?.shortLink ?? "",
+                        "qrLink": resultData?.qrLink ?? "",
                       ] as [String : Any])
                   } else {
                       result([

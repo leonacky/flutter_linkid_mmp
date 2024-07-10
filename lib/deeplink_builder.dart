@@ -7,16 +7,17 @@ import 'deeplink_ios_parameter.dart';
 class DeepLinkBuilderResult {
   String? longLink;
   String? shortLink;
+  String? qrLink;
   bool success = false;
   String? message;
 
   DeepLinkBuilderResult(
-      {this.longLink, this.shortLink, this.success = false, this.message});
+      {this.longLink, this.shortLink, this.qrLink, this.success = false, this.message});
 
   @override
   String toString() {
     // TODO: implement toString
-    return "longLink: $longLink, shortLink: $shortLink, success: $success, message: $message";
+    return "longLink: $longLink, shortLink: $shortLink, qrLink: $qrLink, success: $success, message: $message";
   }
 }
 
@@ -55,6 +56,7 @@ class DeepLinkBuilder {
     if (result != null) {
       data.longLink = result["longLink"];
       data.shortLink = result["shortLink"];
+      data.qrLink = result["qrLink"];
       data.success = result["success"];
       data.message = result["message"];
     }
@@ -71,6 +73,7 @@ class DeepLinkBuilder {
     if (result != null) {
       data.longLink = result["longLink"];
       data.shortLink = result["shortLink"];
+      data.qrLink = result["qrLink"];
       data.success = result["success"];
       data.message = result["message"];
     }

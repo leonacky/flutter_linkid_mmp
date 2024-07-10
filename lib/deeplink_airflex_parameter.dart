@@ -11,7 +11,7 @@ class DeepLinkAirflexParameter {
 
   DeepLinkAirflexParameter({
     this.shortLinkId,
-    this.name,
+    required this.name,
     this.source,
     this.code,
     this.medium,

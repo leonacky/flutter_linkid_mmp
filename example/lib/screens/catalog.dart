@@ -8,6 +8,7 @@ import '../models/catalog.dart';
 class MyCatalog extends StatelessWidget {
   MyCatalog({super.key}) {
     TrackingHelper.setCurrentScreen(screenName: "MainScreen");
+    TrackingHelper.createDeepLink();
   }
 
   @override
