@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 effective-4.1.50 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name linkid_mmp
+// swift-compiler-version: Apple Swift version 5.8.1 effective-4.1.50 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name linkid_mmp
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import CommonCrypto
 import CoreGraphics
 import CoreTelephony
@@ -12,7 +13,6 @@ import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
-import _SwiftConcurrencyShims
 @_exported import linkid_mmp
 @_hasMissingDesignatedInitializers @objcMembers public class Airflex {
   @objc public static func logEvent(name: Swift.String, data: [Swift.String : Any]?)

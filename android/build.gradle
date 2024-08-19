@@ -17,7 +17,7 @@ rootProject.allprojects {
         mavenCentral()
         maven {
 //            url '/Users/leonacky/linkid_android_repo/linkid-fintech'
-            url 'https://github.com/vnpage/linkid_android_repo/raw/main/linkid-fintech'
+            url 'https://repo-dev.linkid.vn/android/maven'
         }
     }
 }
@@ -39,5 +39,5 @@ android {
 
 dependencies {
     implementation "com.android.installreferrer:installreferrer:2.2"
-    implementation 'com.linkid.fintech:airflex:1.0.28'
+    implementation 'com.linkid.fintech:airflex:1.0.29'
 }
