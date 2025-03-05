@@ -53,8 +53,8 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
         channel.setMethodCallHandler(this);
         deepLinkHandler = new DeepLinkHandler() {
             @Override
-            public void onReceivedDeeplink(String s) {
-                Log.e(Airflex.TAG, "Flutter Plugin onReceivedDeeplink " + s);
+            public void onReceivedDeeplink(String redirectUrl, String longLink, String error) {
+                Log.e(Airflex.TAG, "Flutter Plugin onReceivedDeeplink " + longLink);
                 checkDeepLink();
             }
         };

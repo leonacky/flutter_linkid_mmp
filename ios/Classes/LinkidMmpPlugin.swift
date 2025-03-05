@@ -36,7 +36,7 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
                 print("initSDK \(partnerCode)")
                 let airflexOptions = AirflexOptions()
                 airflexOptions.showLog = showLog
-                Airflex.intSDK(partnerCode: partnerCode, appSecret: appSecret, options: airflexOptions)
+                Airflex.initSDK(partnerCode: partnerCode, appSecret: appSecret, options: airflexOptions)
                 Airflex.handleDeeplink { url in
                     LinkidMmpPlugin.sharedInstance.handleDeeplink(url: url)
                 }
@@ -205,5 +205,4 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
             checkDeepLink()
         }
     }
-
 }
