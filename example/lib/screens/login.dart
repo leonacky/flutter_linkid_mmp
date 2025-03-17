@@ -6,13 +6,20 @@ import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_linkid_mmp/airflex_idle_detector.dart';
 
-class MyLogin extends StatelessWidget {
-  String username = "";
-  String password = "";
+class MyLogin extends StatefulWidget {
 
   MyLogin({super.key}) {
     TrackingHelper.setCurrentScreen(screenName: "LoginScreen");
   }
+
+  @override
+  State<MyLogin> createState() => _MyLoginState();
+}
+
+class _MyLoginState extends State<MyLogin> {
+  String username = "";
+
+  String password = "";
 
   Future<void> asynchronousError() async {
     throw UnimplementedError();

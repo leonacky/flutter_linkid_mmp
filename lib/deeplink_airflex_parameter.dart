@@ -8,6 +8,7 @@ class DeepLinkAirflexParameter {
   String? term;
   String? content;
   String? redirectUrl;
+  Map<String, dynamic> customParams = {};
 
   DeepLinkAirflexParameter({
     this.shortLinkId,
@@ -21,8 +22,17 @@ class DeepLinkAirflexParameter {
     this.redirectUrl,
   });
 
+  addCustomParam(String key, dynamic value) {
+    customParams[key] = value;
+  }
+
+  addCustomParams(Map<String, dynamic> params) {
+    customParams.addAll(params);
+  }
+
   Map<String, dynamic> buildParams() {
     Map<String, dynamic> params = {};
+    params.addAll(customParams);
     if (shortLinkId?.isNotEmpty == true) {
       params["short_link_id"] = shortLinkId;
     }

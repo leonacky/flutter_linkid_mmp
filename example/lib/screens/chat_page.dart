@@ -83,7 +83,7 @@ class _ChatPageState extends State<ChatPage> {
         ),
       );
 
-  final _client = http.Client();
+  // final _client = http.Client();
 
   Future<void> sendMsg(types.Message message) async {
     try {

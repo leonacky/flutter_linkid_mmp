@@ -1354,7 +1354,10 @@ public class DeepLinkAirflexParameters {
   public var term: Swift.String?
   public var content: Swift.String?
   public var redirectUrl: Swift.String?
+  public var customParams: [Swift.String : Any]
   public init(name: Swift.String, source: Swift.String? = nil, code: Swift.String? = nil, medium: Swift.String? = nil, campaign: Swift.String? = nil, redirectUrl: Swift.String? = nil)
+  public func addCustomParam(key: Swift.String, value: Any)
+  public func addCustomParams(params: [Swift.String : Any])
   public func buildParams() -> [Swift.String : Any]
   @objc deinit
 }
@@ -3878,6 +3881,9 @@ extension Foundation.UUID : linkid_mmp.StatementColumnConvertible {
             fatalConversionError(to: UUID.self, sqliteStatement: sqliteStatement, index: index)
         }
     }
+}
+@_hasMissingDesignatedInitializers public class AirflexAdHelper {
+  @objc deinit
 }
 public enum ValueScheduling {
   case mainQueue

@@ -35056,6 +35056,131 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "customParams",
+            "printedName": "customParams",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC12customParamsSDySSypGvp",
+            "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC12customParamsSDySSypGvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC12customParamsSDySSypGvg",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC12customParamsSDySSypGvg",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC12customParamsSDySSypGvs",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC12customParamsSDySSypGvs",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC12customParamsSDySSypGvM",
+                "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC12customParamsSDySSypGvM",
+                "moduleName": "linkid_mmp",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(name:source:code:medium:campaign:redirectUrl:)",
@@ -35156,6 +35281,76 @@
               "AccessControl"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "addCustomParam",
+            "printedName": "addCustomParam(key:value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "Any"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC14addCustomParam3key5valueySS_yptF",
+            "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC14addCustomParam3key5valueySS_yptF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addCustomParams",
+            "printedName": "addCustomParams(params:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp25DeepLinkAirflexParametersC15addCustomParams6paramsySDySSypG_tF",
+            "mangledName": "$s10linkid_mmp25DeepLinkAirflexParametersC15addCustomParams6paramsySDySSypG_tF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
@@ -81855,6 +82050,30 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AirflexAdHelper",
+        "printedName": "AirflexAdHelper",
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp15AirflexAdHelperC",
+        "mangledName": "$s10linkid_mmp15AirflexAdHelperC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
         "name": "Dispatch",
         "printedName": "Dispatch",
         "declKind": "Import",
@@ -105757,6 +105976,13 @@
       "value": "0"
     },
     {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkAirflexParameters.swift",
+      "kind": "Dictionary",
+      "offset": 491,
+      "length": 3,
+      "value": "[]"
+    },
+    {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/DeepLinkBuilder.swift",
       "kind": "StringLiteral",
       "offset": 3074,
@@ -107102,8 +107328,15 @@
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
+      "kind": "StringLiteral",
+      "offset": 343,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/SessionManager.swift",
       "kind": "FloatLiteral",
-      "offset": 4103,
+      "offset": 4314,
       "length": 3,
       "value": "1.0"
     },
