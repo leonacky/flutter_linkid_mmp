@@ -116,4 +116,9 @@ class Airflex implements DeepLinkHandler {
   Future<bool> removeUserToken() {
     return FlutterLinkIdMmpPlatform.instance.removeUserToken();
   }
+
+  Future<void> getAd() async {
+    final adResult = await FlutterLinkIdMmpPlatform.instance.getAd(adId: "29fe05c6-fba3-401b-99e6-8a770894b001", adType: "PRODUCT");
+    print(adResult);
+  }
 }

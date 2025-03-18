@@ -62,113 +62,152 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
             } else {
                 result(false)
             }
-      } else if(call.method.elementsEqual("getDeepLink")) {
-          checkDeepLink()
-          if let appDelegate = UIApplication.shared.delegate as? FlutterAppDelegate {
-              if let userActivity = appDelegate.userActivity, userActivity.activityType == NSUserActivityTypeBrowsingWeb, let url = userActivity.webpageURL {
-                  handleDeeplink(url: url.absoluteString)
-              }
-          }
-      } else if(call.method.elementsEqual("event")) {
-          if let args = call.arguments as? Dictionary<String, Any>, let event = args["eventName"] as? String {
-              print(event)
-              if let data = args["data"] as? [String: Any] {
-                  Airflex.logEvent(name: event, data: data)
-              } else {
-                  Airflex.logEvent(name: event, data: nil)
-              }
-              result(true)
-          } else {
-              result(false)
-          }
-      } else if(call.method.elementsEqual("setUserInfo")) {
-          if let args = call.arguments as? Dictionary<String, Any>, let data = args["data"] as? [String: Any] {
-              print(data)
-              let userInfo = UserInfo.fromDictionary(data: data)
-              Airflex.setUserInfo(userInfo: userInfo)
-              result(true)
-          } else {
-              result(false)
-          }
-      } else if(call.method.elementsEqual("setCurrentScreen")) {
-          if let args = call.arguments as? Dictionary<String, Any>, let screenName = args["screenName"] as? String {
-              print(screenName)
-              Airflex.setCurrentScreen(screenName)
-              result(true)
-          } else {
-              result(false)
-          }
-      } else if(call.method.elementsEqual("setRevenue")) {
-          if let args = call.arguments as? Dictionary<String, Any>, let orderId = args["orderId"] as? String, let amount = args["amount"] as? Double, let currency = args["currency"] as? String, let data = args["data"] as? [String: Any] {
-              Airflex.setRevenue(orderId: orderId, amount: amount, currency: currency, data: data)
-              result(true)
-          } else {
-              result(false)
-          }
-      } else if(call.method.elementsEqual("setProductList")) {
-          if let args = call.arguments as? Dictionary<String, Any>, let listName = args["listName"] as? String, let products = args["products"] as? [[String: Any]] {
-              let productsList = ProductItem.fromList(products)
-              Airflex.setProductList(listName: listName, products: productsList)
-          }
-      } else if(call.method.elementsEqual("createLink")) {
-          if let args = call.arguments as? Dictionary<String, Any>, let params = args["params"] as? [String: Any] {
-              let linkBuider = DeepLinkBuilder()
-              linkBuider.createLink(with: params) { resultData, errorData in
-                  if (errorData != nil) {
-                      result([
-                        "success": false,
-                        "messsage": errorData?.message ?? ""
-                      ] as [String : Any])
-                  } else if(resultData != nil && resultData?.shortLink.isEmpty == false) {
-                      result([
-                        "success": true,
-                        "messsage": "Success",
-                        "longLink": resultData?.longLink ?? "",
-                        "shortLink": resultData?.shortLink ?? "",
-                        "qrLink": resultData?.qrLink ?? "",
-                      ] as [String : Any])
-                  } else {
-                      result([
-                        "success": false,
-                        "messsage": "Cannot create link"
-                      ] as [String : Any])
-                  }
-              }
-          } else {
-              result([
-                "success": false,
-                "messsage": "Cannot create link without params"
-              ] as [String : Any])
-          }
-      } else if(call.method.elementsEqual("createShortLink")) {
-          if let args = call.arguments as? Dictionary<String, Any>, let longLink = args["longLink"] as? String {
-              let name: String? = args["name"] as? String? ?? ""
-              let shortLinkId: String? = args["shortLinkId"] as? String? ?? ""
-              let linkBuider = DeepLinkBuilder()
-              linkBuider.createShortLink(longLink: longLink, name: name ?? "", shortLinkId: shortLinkId ?? "") { resultData, errorData in
-                  if (errorData != nil) {
-                      result([
-                        "success": false,
-                        "message": errorData?.message ?? ""
-                      ] as [String : Any])
-                  } else if(resultData != nil && resultData?.shortLink.isEmpty == false) {
-                      result([
-                        "success": true,
-                        "messsage": errorData?.message ?? "",
-                        "longLink": resultData?.longLink ?? "",
-                        "shortLink": resultData?.shortLink ?? "",
-                        "qrLink": resultData?.qrLink ?? "",
-                      ] as [String : Any])
-                  } else {
-                      result([
-                        "success": false,
-                        "message": "Có lỗi xảy ra trong quá trình xử lý"
-                      ] as [String : Any])
-                  }
-              }
-          }
-      }
+        } else if(call.method.elementsEqual("getDeepLink")) {
+            checkDeepLink()
+            if let appDelegate = UIApplication.shared.delegate as? FlutterAppDelegate {
+                if let userActivity = appDelegate.userActivity, userActivity.activityType == NSUserActivityTypeBrowsingWeb, let url = userActivity.webpageURL {
+                    handleDeeplink(url: url.absoluteString)
+                }
+            }
+        } else if(call.method.elementsEqual("event")) {
+            if let args = call.arguments as? Dictionary<String, Any>, let event = args["eventName"] as? String {
+                print(event)
+                if let data = args["data"] as? [String: Any] {
+                    Airflex.logEvent(name: event, data: data)
+                } else {
+                    Airflex.logEvent(name: event, data: nil)
+                }
+                result(true)
+            } else {
+                result(false)
+            }
+        } else if(call.method.elementsEqual("setUserInfo")) {
+            if let args = call.arguments as? Dictionary<String, Any>, let data = args["data"] as? [String: Any] {
+                print(data)
+                let userInfo = UserInfo.fromDictionary(data: data)
+                Airflex.setUserInfo(userInfo: userInfo)
+                result(true)
+            } else {
+                result(false)
+            }
+        } else if(call.method.elementsEqual("setCurrentScreen")) {
+            if let args = call.arguments as? Dictionary<String, Any>, let screenName = args["screenName"] as? String {
+                print(screenName)
+                Airflex.setCurrentScreen(screenName)
+                result(true)
+            } else {
+                result(false)
+            }
+        } else if(call.method.elementsEqual("setRevenue")) {
+            if let args = call.arguments as? Dictionary<String, Any>, let orderId = args["orderId"] as? String, let amount = args["amount"] as? Double, let currency = args["currency"] as? String, let data = args["data"] as? [String: Any] {
+                Airflex.setRevenue(orderId: orderId, amount: amount, currency: currency, data: data)
+                result(true)
+            } else {
+                result(false)
+            }
+        } else if(call.method.elementsEqual("setProductList")) {
+            if let args = call.arguments as? Dictionary<String, Any>, let listName = args["listName"] as? String, let products = args["products"] as? [[String: Any]] {
+                let productsList = ProductItem.fromList(products)
+                Airflex.setProductList(listName: listName, products: productsList)
+            }
+        } else if(call.method.elementsEqual("createLink")) {
+            if let args = call.arguments as? Dictionary<String, Any>, let params = args["params"] as? [String: Any] {
+                let linkBuider = DeepLinkBuilder()
+                linkBuider.createLink(with: params) { resultData, errorData in
+                    if (errorData != nil) {
+                        result([
+                            "success": false,
+                            "messsage": errorData?.message ?? ""
+                        ] as [String : Any])
+                    } else if(resultData != nil && resultData?.shortLink.isEmpty == false) {
+                        result([
+                            "success": true,
+                            "messsage": "Success",
+                            "longLink": resultData?.longLink ?? "",
+                            "shortLink": resultData?.shortLink ?? "",
+                            "qrLink": resultData?.qrLink ?? "",
+                        ] as [String : Any])
+                    } else {
+                        result([
+                            "success": false,
+                            "messsage": "Cannot create link"
+                        ] as [String : Any])
+                    }
+                }
+            } else {
+                result([
+                    "success": false,
+                    "messsage": "Cannot create link without params"
+                ] as [String : Any])
+            }
+        } else if(call.method.elementsEqual("getAd")) {
+            if let args = call.arguments as? Dictionary<String, Any>, let adId = args["adId"] as? String, let adType = args["adType"] as? String {
+                AirflexAdHelper.getAd(adId: adId, adType: adType) { adItem in
+                    if let adItem = adItem as AdItem? {
+                        result([
+                            "success": true,
+                            "adItem": adItem.toJsonString() ?? "",
+                            "message": "Success"
+                        ])
+                    } else {
+                        result([
+                            "success": false,
+                            "adItem": nil,
+                            "message": "Cannot get ad"
+                        ])
+                    }
+                }
+            } else {
+                result([
+                    "success": false,
+                    "adItem": nil,
+                    "message": "Cannot get ad without params"
+                ])
+            }
+        } else if(call.method.elementsEqual("trackClick")) {
+            if let args = call.arguments as? Dictionary<String, Any>, let adId = args["adId"] as? String, let productId = args["productId"] as? String {
+                AirflexAdHelper.trackClick(adId: adId, productId: productId)
+                result(true)
+            } else {
+                result(false)
+            }
+        } else if(call.method.elementsEqual("trackImpression")) {
+            if let args = call.arguments as? Dictionary<String, Any>, let adId = args["adId"] as? String, let productId = args["productId"] as? String {
+                AirflexAdHelper.trackImpression(adId: adId, productId: productId)
+                result(true)
+            } else {
+                result(false)
+            }
+        } else if(call.method.elementsEqual("createShortLink")) {
+            if let args = call.arguments as? Dictionary<String, Any>, let longLink = args["longLink"] as? String {
+                let name: String? = args["name"] as? String? ?? ""
+                let shortLinkId: String? = args["shortLinkId"] as? String? ?? ""
+                let linkBuider = DeepLinkBuilder()
+                linkBuider.createShortLink(longLink: longLink, name: name ?? "", shortLinkId: shortLinkId ?? "") { resultData, errorData in
+                    if (errorData != nil) {
+                        result([
+                            "success": false,
+                            "message": errorData?.message ?? ""
+                        ] as [String : Any])
+                    } else if(resultData != nil && resultData?.shortLink.isEmpty == false) {
+                        result([
+                            "success": true,
+                            "messsage": errorData?.message ?? "",
+                            "longLink": resultData?.longLink ?? "",
+                            "shortLink": resultData?.shortLink ?? "",
+                            "qrLink": resultData?.qrLink ?? "",
+                        ] as [String : Any])
+                    } else {
+                        result([
+                            "success": false,
+                            "message": "Có lỗi xảy ra trong quá trình xử lý"
+                        ] as [String : Any])
+                    }
+                }
+            }
+        }
     }
+    
     
     private func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

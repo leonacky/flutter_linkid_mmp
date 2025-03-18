@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_linkid_mmp/flutter_linkid_mmp.dart';
 import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../models/cart.dart';
 import '../models/catalog.dart';
 
-class MyCatalog extends StatelessWidget {
+class MyCatalog extends StatefulWidget {
   MyCatalog({super.key}) {
     TrackingHelper.setCurrentScreen(screenName: "MainScreen");
     TrackingHelper.createDeepLink();
   }
 
+  @override
+  State<MyCatalog> createState() => _MyCatalogState();
+}
+
+class _MyCatalogState extends State<MyCatalog> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Airflex.shared.getAd();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

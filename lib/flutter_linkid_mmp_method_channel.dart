@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_linkid_mmp/user_info.dart';
@@ -215,6 +217,66 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
       return result ?? false;
     } catch (e) {
       print(e);
+    }
+    return false;
+  }
+
+  @override
+  Future<Map<String, dynamic>?> getAd(
+      {required String adId, required String adType}) async {
+    try {
+      final result = await methodChannel.invokeMethod<Map>('getAd', {
+        'adId': adId,
+        'adType': adType,
+      });
+      Map<String, dynamic> data = {};
+      if (result != null) {
+        result.forEach((key, value) {
+          if (key is String) {
+            if(key == "adItem") {
+              String adItem = value as String;
+              //covert adItem to Map; adItem is a json string
+              data[key] = jsonDecode(adItem);
+            } else {
+              data[key] = value;
+            }
+          }
+        });
+      }
+      return data;
+    } catch (e) {
+      // //print(e);
+    }
+    return null;
+  }
+
+  @override
+  Future<bool> trackAdClick(
+      {required String adId, String productId = ""}) async {
+    try {
+      final result = await methodChannel.invokeMethod<bool>('trackAdClick', {
+        'adId': adId,
+        'productId': productId,
+      });
+      return result ?? false;
+    } catch (e) {
+      // //print(e);
+    }
+    return false;
+  }
+
+  @override
+  Future<bool> trackAdImpression(
+      {required String adId, String productId = ""}) async {
+    try {
+      final result =
+          await methodChannel.invokeMethod<bool>('trackAdImpression', {
+        'adId': adId,
+        'productId': productId,
+      });
+      return result ?? false;
+    } catch (e) {
+      // //print(e);
     }
     return false;
   }

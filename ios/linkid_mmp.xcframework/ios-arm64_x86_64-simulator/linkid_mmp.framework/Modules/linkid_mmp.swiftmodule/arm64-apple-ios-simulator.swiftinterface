@@ -3882,7 +3882,26 @@ extension Foundation.UUID : linkid_mmp.StatementColumnConvertible {
         }
     }
 }
+@_hasMissingDesignatedInitializers public class AdItem : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public func toJsonObject() -> [Swift.String : Any]
+  public func toJsonString() -> Swift.String?
+  @_hasMissingDesignatedInitializers public class AdSize : Swift.CustomStringConvertible {
+    public var description: Swift.String {
+      get
+    }
+    public func toJsonObject() -> [Swift.String : Any]
+    @objc deinit
+  }
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class AirflexAdHelper {
+  public static func showAd()
+  public static func getAd(adId: Swift.String, adType: Swift.String, callback: @escaping (linkid_mmp.AdItem?) -> Swift.Void)
+  public static func trackImpression(adId: Swift.String, productId: Swift.String = "")
+  public static func trackClick(adId: Swift.String, productId: Swift.String = "")
   @objc deinit
 }
 public enum ValueScheduling {

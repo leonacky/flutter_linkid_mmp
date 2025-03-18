@@ -6,7 +6,10 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.linkid.mmp.AdItem;
+import com.linkid.mmp.AdResultListener;
 import com.linkid.mmp.Airflex;
+import com.linkid.mmp.AirflexAdHelper;
 import com.linkid.mmp.AirflexOptions;
 import com.linkid.mmp.DeepLink;
 import com.linkid.mmp.DeepLinkBuilder;
@@ -200,49 +203,124 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
                 e.printStackTrace();
             }
         } else if (call.method.equals("createLink")) {
-                try {
-                    if (call.hasArgument("params")) {
-                        Map<String, Object> params = call.argument("params");
-                        DeepLinkBuilder builder = new DeepLinkBuilder();
-                        builder.createLink(params, new DeepLinkBuilderListener() {
-                            @Override
-                            public void onSuccess(DeepLinkBuilderResult _result) {
-                                Map<String, Object> data = new HashMap<>();
-                                data.put("success", true);
-                                data.put("message", "Success");
-                                data.put("shortLink", _result.shortLink);
-                                data.put("longLink", _result.longLink);
-                                data.put("qrLink", _result.qrLink);
-                                result.success(data);
-                            }
+            try {
+                if (call.hasArgument("params")) {
+                    Map<String, Object> params = call.argument("params");
+                    DeepLinkBuilder builder = new DeepLinkBuilder();
+                    builder.createLink(params, new DeepLinkBuilderListener() {
+                        @Override
+                        public void onSuccess(DeepLinkBuilderResult _result) {
+                            Map<String, Object> data = new HashMap<>();
+                            data.put("success", true);
+                            data.put("message", "Success");
+                            data.put("shortLink", _result.shortLink);
+                            data.put("longLink", _result.longLink);
+                            data.put("qrLink", _result.qrLink);
+                            result.success(data);
+                        }
 
-                            @Override
-                            public void onError(DeepLinkBuilderError error) {
-                                Map<String, Object> data = new HashMap<>();
-                                data.put("success", false);
-                                data.put("message", error.message);
-                                data.put("shortLink", "");
-                                data.put("longLink", "");
-                                result.success(data);
-                            }
-                        });
-                    } else {
-                        Map<String, Object> data = new HashMap<>();
-                        data.put("success", false);
-                        data.put("message", "Cannot create link without params");
-                        data.put("shortLink", "");
-                        data.put("longLink", "");
-                        result.success(data);
-                    }
-                } catch (Exception e) {
+                        @Override
+                        public void onError(DeepLinkBuilderError error) {
+                            Map<String, Object> data = new HashMap<>();
+                            data.put("success", false);
+                            data.put("message", error.message);
+                            data.put("shortLink", "");
+                            data.put("longLink", "");
+                            result.success(data);
+                        }
+                    });
+                } else {
                     Map<String, Object> data = new HashMap<>();
                     data.put("success", false);
-                    data.put("message", "Cannot create link");
+                    data.put("message", "Cannot create link without params");
                     data.put("shortLink", "");
                     data.put("longLink", "");
                     result.success(data);
-                    e.printStackTrace();
                 }
+            } catch (Exception e) {
+                Map<String, Object> data = new HashMap<>();
+                data.put("success", false);
+                data.put("message", "Cannot create link");
+                data.put("shortLink", "");
+                data.put("longLink", "");
+                result.success(data);
+                e.printStackTrace();
+            }
+        } else if (call.method.equals("getAd")) {
+            try {
+                if (call.hasArgument("adId") && call.hasArgument("adType")) {
+                    String adId = call.argument("adId");
+                    String adType = call.argument("adType");
+                    AirflexAdHelper.getAd(adId, adType, new AdResultListener() {
+
+                        @Override
+                        public void onSuccess(AdItem adItem) {
+                            if (adItem != null) {
+                                Map<String, Object> data = new HashMap<>();
+                                data.put("success", false);
+                                data.put("message", "Success");
+                                data.put("adItem", adItem.toJsonString());
+                                result.success(data);
+                            } else {
+                                Map<String, Object> data = new HashMap<>();
+                                data.put("success", false);
+                                data.put("message", "Cannot get ad");
+                                data.put("adItem", null);
+                                result.success(data);
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(String s, int i) {
+                            Map<String, Object> data = new HashMap<>();
+                            data.put("success", false);
+                            data.put("message", s);
+                            data.put("adItem", null);
+                            result.success(data);
+                        }
+                    });
+                } else {
+                    Map<String, Object> data = new HashMap<>();
+                    data.put("success", false);
+                    data.put("message", "Cannot get ad without params");
+                    data.put("adItem", null);
+                    result.success(data);
+                }
+            } catch (Exception e) {
+                Map<String, Object> data = new HashMap<>();
+                data.put("success", false);
+                data.put("message", "Cannot get ad");
+                data.put("adItem", null);
+                result.success(data);
+                e.printStackTrace();
+            }
+        } else if (call.method.equals("trackImpression")) {
+            try {
+                if (call.hasArgument("adId")) {
+                    String adId = call.argument("adId");
+                    AirflexAdHelper.trackImpression(adId);
+                    result.success(true);
+                } else {
+                    result.success(false);
+                }
+            } catch (Exception e) {
+                result.success(false);
+                e.printStackTrace();
+            }
+        } else if (call.method.equals("trackClick")) {
+            try {
+                if (call.hasArgument("adId")) {
+                    String adId = call.argument("adId");
+                    String productId = call.argument("productId")+"";
+                    AirflexAdHelper.trackClick(adId, productId);
+                    result.success(true);
+                } else {
+                    result.success(false);
+                }
+            } catch (Exception e) {
+                result.success(false);
+                e.printStackTrace();
+            }
         } else if (call.method.equals("createShortLink")) {
             try {
                 if (call.hasArgument("longLink")) {

@@ -82059,16 +82059,407 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AdItem",
+        "printedName": "AdItem",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10linkid_mmp6AdItemC11descriptionSSvp",
+            "mangledName": "$s10linkid_mmp6AdItemC11descriptionSSvp",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10linkid_mmp6AdItemC11descriptionSSvg",
+                "mangledName": "$s10linkid_mmp6AdItemC11descriptionSSvg",
+                "moduleName": "linkid_mmp",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "toJsonObject",
+            "printedName": "toJsonObject()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp6AdItemC12toJsonObjectSDySSypGyF",
+            "mangledName": "$s10linkid_mmp6AdItemC12toJsonObjectSDySSypGyF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toJsonString",
+            "printedName": "toJsonString()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp6AdItemC12toJsonStringSSSgyF",
+            "mangledName": "$s10linkid_mmp6AdItemC12toJsonStringSSSgyF",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "AdSize",
+            "printedName": "AdSize",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "description",
+                "printedName": "description",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:10linkid_mmp6AdItemC0C4SizeC11descriptionSSvp",
+                "mangledName": "$s10linkid_mmp6AdItemC0C4SizeC11descriptionSSvp",
+                "moduleName": "linkid_mmp",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:10linkid_mmp6AdItemC0C4SizeC11descriptionSSvg",
+                    "mangledName": "$s10linkid_mmp6AdItemC0C4SizeC11descriptionSSvg",
+                    "moduleName": "linkid_mmp",
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Function",
+                "name": "toJsonObject",
+                "printedName": "toJsonObject()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:10linkid_mmp6AdItemC0C4SizeC12toJsonObjectSDySSypGyF",
+                "mangledName": "$s10linkid_mmp6AdItemC0C4SizeC12toJsonObjectSDySSypGyF",
+                "moduleName": "linkid_mmp",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              }
+            ],
+            "declKind": "Class",
+            "usr": "s:10linkid_mmp6AdItemC0C4SizeC",
+            "mangledName": "$s10linkid_mmp6AdItemC0C4SizeC",
+            "moduleName": "linkid_mmp",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "hasMissingDesignatedInitializers": true,
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "CustomStringConvertible",
+                "printedName": "CustomStringConvertible",
+                "usr": "s:s23CustomStringConvertibleP",
+                "mangledName": "$ss23CustomStringConvertibleP"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10linkid_mmp6AdItemC",
+        "mangledName": "$s10linkid_mmp6AdItemC",
+        "moduleName": "linkid_mmp",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          }
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "AirflexAdHelper",
         "printedName": "AirflexAdHelper",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "showAd",
+            "printedName": "showAd()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15AirflexAdHelperC04showD0yyFZ",
+            "mangledName": "$s10linkid_mmp15AirflexAdHelperC04showD0yyFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getAd",
+            "printedName": "getAd(adId:adType:callback:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(linkid_mmp.AdItem?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "linkid_mmp.AdItem?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AdItem",
+                        "printedName": "linkid_mmp.AdItem",
+                        "usr": "s:10linkid_mmp6AdItemC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15AirflexAdHelperC03getD04adId0G4Type8callbackySS_SSyAA0D4ItemCSgctFZ",
+            "mangledName": "$s10linkid_mmp15AirflexAdHelperC03getD04adId0G4Type8callbackySS_SSyAA0D4ItemCSgctFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "trackImpression",
+            "printedName": "trackImpression(adId:productId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15AirflexAdHelperC15trackImpression4adId07productI0ySS_SStFZ",
+            "mangledName": "$s10linkid_mmp15AirflexAdHelperC15trackImpression4adId07productI0ySS_SStFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "trackClick",
+            "printedName": "trackClick(adId:productId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10linkid_mmp15AirflexAdHelperC10trackClick4adId07productI0ySS_SStFZ",
+            "mangledName": "$s10linkid_mmp15AirflexAdHelperC10trackClick4adId07productI0ySS_SStFZ",
+            "moduleName": "linkid_mmp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
         "declKind": "Class",
         "usr": "s:10linkid_mmp15AirflexAdHelperC",
         "mangledName": "$s10linkid_mmp15AirflexAdHelperC",
         "moduleName": "linkid_mmp",
         "declAttributes": [
-          "AccessControl",
-          "RawDocComment"
+          "AccessControl"
         ],
         "hasMissingDesignatedInitializers": true
       },
@@ -108522,6 +108913,20 @@
       "offset": 2650,
       "length": 2,
       "value": "16"
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/AirflexAdHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 3896,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/linkid_mmp\/Classes\/AirflexAdHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 4106,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/leonacky\/Data\/dev\/2022\/linkid_mmp\/GRDB.swift\/GRDB\/ValueObservation\/ValueObservation+DatabaseValueConvertible.swift",
