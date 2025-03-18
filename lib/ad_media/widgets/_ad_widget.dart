@@ -4,24 +4,30 @@ class _AdWidget extends StatelessWidget {
   static const EdgeInsets defaultPadding = EdgeInsets.all(16);
 
   const _AdWidget({
+    Key? key,
     required this.adContent,
     required this.size,
     this.padding = defaultPadding,
-  });
+    this.onClose,
+  }) : super(key: key);
 
   final String adContent;
   final Size size;
   final EdgeInsets padding;
+  final VoidCallback? onClose;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: padding,
-      child: AspectRatio(
-        aspectRatio: size.aspectRatio,
-        child: HtmlWidget(
-          adContent,
-          enableCaching: true,
+      child: _AdActionWrapper(
+        onClose: onClose,
+        child: AspectRatio(
+          aspectRatio: size.aspectRatio,
+          child: HtmlWidget(
+            adContent,
+            enableCaching: true,
+          ),
         ),
       ),
     );

@@ -2,12 +2,15 @@ part of 'ad_retail_media_widget.dart';
 
 class _AdRetailMediaProduct extends StatefulWidget {
   const _AdRetailMediaProduct({
+    Key? key,
     required this.ad,
     this.padding = _AdWidget.defaultPadding,
-  });
+    this.onClose,
+  }) : super(key: key);
 
   final AdMediaData ad;
   final EdgeInsets padding;
+  final VoidCallback? onClose;
 
   @override
   State<_AdRetailMediaProduct> createState() => _AdRetailMediaProductState();
@@ -38,7 +41,7 @@ class _AdRetailMediaProductState extends State<_AdRetailMediaProduct> {
               itemCount: adCarousel.adData.length,
               options: CarouselOptions(
                 viewportFraction: 1,
-                aspectRatio: (width + widget.padding.horizontal) / (height + widget.padding.vertical),
+                aspectRatio: (width + widget.padding.horizontal) / (height + widget.padding.top),
                 autoPlay: true,
                 autoPlayInterval: const Duration(seconds: 5),
                 onPageChanged: (index, reason) {
@@ -49,7 +52,8 @@ class _AdRetailMediaProductState extends State<_AdRetailMediaProduct> {
                 return _AdWidget(
                   adContent: adCarousel.adData[index],
                   size: adCarousel.size.toFlutterSize,
-                  padding: widget.padding,
+                  padding: widget.padding.copyWith(bottom: 0),
+                  onClose: widget.onClose,
                 );
               },
             );
@@ -84,6 +88,7 @@ class _AdRetailMediaProductState extends State<_AdRetailMediaProduct> {
               ).toList(),
             ),
           ),
+        SizedBox(height: widget.padding.bottom),
       ],
     );
   }

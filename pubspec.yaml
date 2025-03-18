@@ -23,6 +23,8 @@ dependencies:
   webview_flutter_platform_interface: ^2.7.0
   webview_flutter_wkwebview: ^3.9.4
 
+  flutter_svg: ^2.0.17
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -50,6 +52,9 @@ flutter:
         pluginClass: FlutterLinkidMmpPlugin
       ios:
         pluginClass: FlutterLinkidMmpPlugin
+
+  assets:
+    - lib/ad_media/assets/
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

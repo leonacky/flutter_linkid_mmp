@@ -258,7 +258,7 @@ Map<String, dynamic> _fakeAdDataBanner = {
   data-ad-element-id="db4bf3c4-8f03-47ea-a077-b53908bb02ca"
   style="
     border-radius: 8px;
-    border: 1px solid #f3f4f6;
+    border: 1px solid #e5e7eb;
     background-color: #fff;
     box-sizing: border-box;
     width: 100%;
@@ -380,7 +380,7 @@ Map<String, dynamic> _fakeAdDataProduct = {
     "
   >
     <img
-      src="https://d2fpeiluuf92qr.cloudfront.net/694d08cc-dc15-51e1-9c52-47f11f39cc85.jpeg"
+      src="https://d2fpeiluuf92qr.cloudfront.net/507b018b-b04e-51a1-b2e3-815901c07024.jpeg"
       alt="Image"
       style="width: 100%; height: 100%; object-fit: cover;"
     />
@@ -397,7 +397,7 @@ Map<String, dynamic> _fakeAdDataProduct = {
   >
     <div>
       <div style="color: #213547; max-lines: 2; text-overflow: ellipsis">
-        Bàn Phím Razer BlackWidow V3 Mini HyperSpeed - Yellow Switch
+        Samsung galaxy Fold 6
       </div>
       <div
         style="
@@ -409,12 +409,11 @@ Map<String, dynamic> _fakeAdDataProduct = {
           text-overflow: ellipsis;
         "
       >
-        Bàn Phím Razer BlackWidow V3 Mini HyperSpeed - Yellow Switch với khả
-        năng chơi game ​​Wireless không có độ trễ trong một kiểu dáng đẹp, 65%.
+        Điện thoại Samsung Galaxy Z Fold6 màn hình mỏng hơn, bộ camera mạnh mẽ, đa nhiệm siêu mượt.
       </div>
     </div>
     <div style="font-weight: 600; color: #6b1ca2">
-      <span style="font-size: 14px">4.690.000 đ</span
+      <span style="font-size: 14px">38.000.000 đ</span
       ><span
         style="
           margin-left: 4px;
@@ -422,7 +421,7 @@ Map<String, dynamic> _fakeAdDataProduct = {
           color: #aaa;
           text-decoration: line-through;
         "
-      ></span>
+      >44.000.000 đ</span>
     </div>
   </div>
 </div>

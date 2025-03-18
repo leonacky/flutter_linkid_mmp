@@ -23,7 +23,7 @@ class MyCatalog extends StatelessWidget {
             children: [
               const Text('  Ad Banner'),
               AdRetailMediaWidget.fromType(type: AdType.banner),
-              const Text('  Ad Carousel'),
+              const Text('  Ad Product'),
               AdRetailMediaWidget.fromId(id: 'db4bf3c4-8f03-47ea-a077-b53908bb02ca'),
             ],
           ),
