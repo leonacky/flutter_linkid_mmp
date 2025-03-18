@@ -3,10 +3,10 @@ description: Demonstrates how to use the flutter_linkid_mmp plugin.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: '>=2.18.5 <3.0.0'
+  sdk: ">=3.1.0 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -28,7 +28,7 @@ dependencies:
     # the parent directory to use the current plugin's version.
     path: ../
 
-#  flutter_linkid_mmp: ^1.1.38
+  #  flutter_linkid_mmp: ^1.1.38
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -37,15 +37,15 @@ dependencies:
   provider: ^6.0.2
   flutter_chat_ui: ^1.6.6
   uuid: ^3.0.7
-  path_provider: ^2.0.12
+  path_provider: ^2.1.5
   open_filex: ^4.3.2
   window_size:
     git:
       url: https://github.com/google/flutter-desktop-embedding.git
       path: plugins/window_size
-#  firebase_core: ^2.7.0
-#  firebase_analytics: ^10.1.4
-#  firebase_messaging: ^14.2.5
+  #  firebase_core: ^2.7.0
+  #  firebase_analytics: ^10.1.4
+  #  firebase_messaging: ^14.2.5
   flutter_easyloading: ^3.0.5
   chat_gpt_sdk: 2.2.5
 #  flutter_linkid_digitalfootprint: ^1.1.1
@@ -66,7 +66,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

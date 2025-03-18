@@ -1,39 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_linkid_mmp/flutter_linkid_mmp.dart';
+import 'package:flutter_linkid_mmp/ad_media/ad_type.dart';
+import 'package:flutter_linkid_mmp/ad_media/widgets/ad_retail_media_widget.dart';
 import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../models/cart.dart';
 import '../models/catalog.dart';
 
-class MyCatalog extends StatefulWidget {
+class MyCatalog extends StatelessWidget {
   MyCatalog({super.key}) {
     TrackingHelper.setCurrentScreen(screenName: "MainScreen");
     TrackingHelper.createDeepLink();
   }
 
   @override
-  State<MyCatalog> createState() => _MyCatalogState();
-}
-
-class _MyCatalogState extends State<MyCatalog> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Airflex.shared.getAd();
-  }
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           _MyAppBar(),
-          const SliverToBoxAdapter(child: SizedBox(height: 12)),
+          SliverList.list(
+            children: [
+              const Text('  Ad Banner'),
+              AdRetailMediaWidget.fromType(type: AdType.banner),
+              const Text('  Ad Product'),
+              AdRetailMediaWidget.fromId(id: 'db4bf3c4-8f03-47ea-a077-b53908bb02ca'),
+            ],
+          ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
-                (context, index) => _MyListItem(index),
-                childCount: 20),
+              (context, index) => _MyListItem(index),
+              childCount: 20,
+            ),
           ),
         ],
       ),
@@ -79,9 +77,7 @@ class _AddButton extends StatelessWidget {
           return null; // Defer to the widget's default.
         }),
       ),
-      child: isInCart
-          ? const Icon(Icons.check, semanticLabel: 'Đã thêm')
-          : const Text('Thêm'),
+      child: isInCart ? const Icon(Icons.check, semanticLabel: 'Đã thêm') : const Text('Thêm'),
     );
   }
 }

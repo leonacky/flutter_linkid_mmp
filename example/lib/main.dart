@@ -28,10 +28,8 @@ var fcmToken = "";
 void main() {
   Airflex.runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
-    runApp(const MyApp());
-  }, (error, stackTrace) async {
-
-  });
+    runApp(MyApp());
+  }, (error, stackTrace) async {});
 }
 
 const double windowWidth = 400;
@@ -84,7 +82,9 @@ GoRouter router() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  final _router = router();
 
   // Future<void> initFcm(BuildContext context) async {
   //   await FirebaseMessaging.instance.requestPermission(
@@ -135,11 +135,9 @@ class MyApp extends StatelessWidget {
       appSecret:
           "b3ccd1c20fa9154a559c304956f99b302027a87b87ad520c1c4dbdd4bb54be7a",
     );
-    Airflex.shared.deepLinkHandler(
-      onReceivedDeepLink: (url) {
-        print('onReceivedDeepLink in dart $url');
-      }
-    );
+    Airflex.shared.deepLinkHandler(onReceivedDeepLink: (url) {
+      print('onReceivedDeepLink in dart $url');
+    });
     // await initFcm(context);
     Airflex().setUserInfo(UserInfo(deviceToken: fcmToken));
   }
@@ -172,7 +170,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp.router(
         title: 'Provider Demo',
         theme: appTheme,
-        routerConfig: router(),
+        routerConfig: _router,
         builder: EasyLoading.init(),
       ),
     );

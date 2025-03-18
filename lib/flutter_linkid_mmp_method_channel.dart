@@ -24,8 +24,7 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
     });
   }
 
-  Map<String, String> _convertDynamicMapToString(
-      Map<String, dynamic>? originalMap) {
+  Map<String, String> _convertDynamicMapToString(Map<String, dynamic>? originalMap) {
     if (originalMap == null) {
       return {};
     }
@@ -45,17 +44,15 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version =
-        await methodChannel.invokeMethod<String>('getPlatformVersion');
+    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
 
   @override
   Future<bool> initSDK(String partnerCode, String appSecret) async {
-    // TODO: implement initSDK
     try {
-      final result = await methodChannel.invokeMethod<bool>(
-          'initSDK', {'partnerCode': partnerCode, 'appSecret': appSecret});
+      final result =
+          await methodChannel.invokeMethod<bool>('initSDK', {'partnerCode': partnerCode, 'appSecret': appSecret});
       return result ?? false;
     } catch (e) {
       //print(e);
@@ -65,10 +62,11 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
 
   @override
   Future<bool> logEvent(String eventName, {Map<String, dynamic>? data}) async {
-    // TODO: implement event
     try {
-      final result = await methodChannel.invokeMethod<bool>('event',
-          {'eventName': eventName, 'data': _convertDynamicMapToString(data)});
+      final result = await methodChannel.invokeMethod<bool>(
+        'event',
+        {'eventName': eventName, 'data': _convertDynamicMapToString(data)},
+      );
       return result ?? false;
     } catch (e) {
       // //print(e);
@@ -78,11 +76,12 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
 
   @override
   Future<bool> setUserInfo(UserInfo userInfo) async {
-    // TODO: implement event
     try {
       Map<String, dynamic> data = userInfo.toMap();
-      final result =
-          await methodChannel.invokeMethod<bool>('setUserInfo', {'data': data});
+      final result = await methodChannel.invokeMethod<bool>(
+        'setUserInfo',
+        {'data': data},
+      );
       return result ?? false;
     } catch (e) {
       // //print(e);
@@ -92,10 +91,11 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
 
   @override
   Future<bool> setCurrentScreen(String screenName) async {
-    // TODO: implement event
     try {
-      final result = await methodChannel
-          .invokeMethod<bool>('setCurrentScreen', {'screenName': screenName});
+      final result = await methodChannel.invokeMethod<bool>(
+        'setCurrentScreen',
+        {'screenName': screenName},
+      );
       return result ?? false;
     } catch (e) {
       //print(e);
@@ -104,16 +104,22 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
   }
 
   @override
-  Future<bool> setRevenue(String orderId, double amount, String currency,
-      {Map<String, dynamic>? data}) async {
-    // TODO: implement event
+  Future<bool> setRevenue(
+    String orderId,
+    double amount,
+    String currency, {
+    Map<String, dynamic>? data,
+  }) async {
     try {
-      final result = await methodChannel.invokeMethod<bool>('setRevenue', {
-        'orderId': orderId,
-        'amount': amount,
-        'currency': currency,
-        'data': _convertDynamicMapToString(data)
-      });
+      final result = await methodChannel.invokeMethod<bool>(
+        'setRevenue',
+        {
+          'orderId': orderId,
+          'amount': amount,
+          'currency': currency,
+          'data': _convertDynamicMapToString(data),
+        },
+      );
       return result ?? false;
     } catch (e) {
       // //print(e);
@@ -123,10 +129,11 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
 
   @override
   Future<bool> recordError(String name, String stackTrace) async {
-    // TODO: implement initSDK
     try {
       final result = await methodChannel.invokeMethod<bool>(
-          'recordError', {'name': name, 'stackTrace': stackTrace});
+        'recordError',
+        {'name': name, 'stackTrace': stackTrace},
+      );
       return result ?? false;
     } catch (e) {
       //print(e);
@@ -136,10 +143,11 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
 
   @override
   Future<bool> setDevMode(bool devMode) async {
-    // TODO: implement initSDK
     try {
-      final result = await methodChannel
-          .invokeMethod<bool>('setDevMode', {'devMode': devMode});
+      final result = await methodChannel.invokeMethod<bool>(
+        'setDevMode',
+        {'devMode': devMode},
+      );
       return result ?? false;
     } catch (e) {
       //print(e);
@@ -148,9 +156,10 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
   }
 
   @override
-  Future<bool> setProductList(String listName,
-      {required List<Map<String, dynamic>> products}) async {
-    // TODO: implement event
+  Future<bool> setProductList(
+    String listName, {
+    required List<Map<String, dynamic>> products,
+  }) async {
     try {
       final result = await methodChannel.invokeMethod<bool>('setProductList', {
         'listName': listName,
@@ -186,9 +195,7 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
 
   @override
   Future<Map<String, dynamic>?> createShortLink(
-      {required String longLink,
-      String name = "",
-      String shortLinkId = ""}) async {
+      {required String longLink, String name = "", String shortLinkId = ""}) async {
     try {
       final result = await methodChannel.invokeMethod<Map>('createShortLink', {
         'longLink': longLink,
@@ -280,4 +287,212 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
     }
     return false;
   }
+
+  @override
+  Future<Map<String, dynamic>?> getAdById(String adId) async {
+    try {
+      final result = _fakeAdDataProduct;
+      return result;
+    } catch (e, s) {
+      debugPrint('MethodChannelFlutterLinkidMmp.getAdById Error: $e');
+      debugPrintStack(stackTrace: s);
+      return null;
+    }
+  }
+
+  @override
+  Future<Map<String, dynamic>?> getAdByType(String adType) async {
+    try {
+      final result = adType == 'banner' ? _fakeAdDataBanner : _fakeAdDataProduct;
+      return result;
+    } catch (e, s) {
+      debugPrint('MethodChannelFlutterLinkidMmp.getAdByType Error: $e');
+      debugPrintStack(stackTrace: s);
+      return null;
+    }
+  }
 }
+
+Map<String, dynamic> _fakeAdDataBanner = {
+  "adData": [
+    '''
+<div
+  data-ad-element-id="db4bf3c4-8f03-47ea-a077-b53908bb02ca"
+  style="
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background-color: #fff;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+  "
+>
+  <img
+    src="https://d2fpeiluuf92qr.cloudfront.net/507b018b-b04e-51a1-b2e3-815901c07024.jpeg"
+    alt=""
+    style="height: 100%; width: 100%; border-radius: 8px; object-fit: cover"
+  />
+</div>
+''',
+  ],
+  "size": {
+    "width": 480,
+    "height": 120,
+  },
+  "actionType": "inapp",
+  "actionData": "https://www.google.com"
+};
+
+Map<String, dynamic> _fakeAdDataProduct = {
+  "adData": [
+    '''
+<div
+  style="
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  "
+>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 34%;
+    "
+  >
+    <img
+      src="https://d2fpeiluuf92qr.cloudfront.net/694d08cc-dc15-51e1-9c52-47f11f39cc85.jpeg"
+      alt="Image"
+      style="width: 100%; height: 100%; object-fit: cover;"
+    />
+  </div>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 14px;
+      width: calc(66% - 16px);
+    "
+  >
+    <div>
+      <div style="color: #213547; max-lines: 2; text-overflow: ellipsis">
+        Bàn Phím Razer BlackWidow V3 Mini HyperSpeed - Yellow Switch
+      </div>
+      <div
+        style="
+          margin-top: 2px;
+          font-size: 10px;
+          color: #aaa;
+          line-height: 14px;
+          max-lines: 2;
+          text-overflow: ellipsis;
+        "
+      >
+        Bàn Phím Razer BlackWidow V3 Mini HyperSpeed - Yellow Switch với khả
+        năng chơi game ​​Wireless không có độ trễ trong một kiểu dáng đẹp, 65%,
+        nó hoàn hảo cho mọi không gian và đủ linh hoạt cho mọi thiết lập và sử
+        dụng hàng ngày.
+      </div>
+    </div>
+    <div style="font-weight: 600; color: #6b1ca2">
+      <span style="font-size: 14px">4.690.000 đ</span
+      ><span
+        style="
+          margin-left: 4px;
+          font-size: 10px;
+          color: #aaa;
+          text-decoration: line-through;
+        "
+      ></span>
+    </div>
+  </div>
+</div>
+''',
+    '''
+<div
+  style="
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  "
+>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 34%;
+    "
+  >
+    <img
+      src="https://d2fpeiluuf92qr.cloudfront.net/507b018b-b04e-51a1-b2e3-815901c07024.jpeg"
+      alt="Image"
+      style="width: 100%; height: 100%; object-fit: cover;"
+    />
+  </div>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 14px;
+      width: calc(66% - 16px);
+    "
+  >
+    <div>
+      <div style="color: #213547; max-lines: 2; text-overflow: ellipsis">
+        Samsung galaxy Fold 6
+      </div>
+      <div
+        style="
+          margin-top: 2px;
+          font-size: 10px;
+          color: #aaa;
+          line-height: 14px;
+          max-lines: 2;
+          text-overflow: ellipsis;
+        "
+      >
+        Điện thoại Samsung Galaxy Z Fold6 màn hình mỏng hơn, bộ camera mạnh mẽ, đa nhiệm siêu mượt.
+      </div>
+    </div>
+    <div style="font-weight: 600; color: #6b1ca2">
+      <span style="font-size: 14px">38.000.000 đ</span
+      ><span
+        style="
+          margin-left: 4px;
+          font-size: 10px;
+          color: #aaa;
+          text-decoration: line-through;
+        "
+      >44.000.000 đ</span>
+    </div>
+  </div>
+</div>
+''',
+  ],
+  "size": {
+    "width": 480,
+    "height": 180,
+  },
+  "actionType": "inapp",
+  "actionData": "https://www.google.com"
+};

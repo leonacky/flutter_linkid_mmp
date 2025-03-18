@@ -2,6 +2,8 @@ import 'dart:async' as DartAsync;
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter_linkid_mmp/ad_media/ad_media_data.dart';
+import 'package:flutter_linkid_mmp/ad_media/ad_type.dart';
 import 'package:flutter_linkid_mmp/deep_link_handler.dart';
 import 'package:flutter_linkid_mmp/user_info.dart';
 
@@ -24,10 +26,8 @@ class Airflex implements DeepLinkHandler {
   Function(String url)? _onReceivedDeepLink;
   String currentDeeplink = "";
 
-  static R? runZonedGuarded<R>(
-      R Function() body, void Function(Object error, StackTrace stack) onError,
-      {Map<Object?, Object?>? zoneValues,
-      ZoneSpecification? zoneSpecification}) {
+  static R? runZonedGuarded<R>(R Function() body, void Function(Object error, StackTrace stack) onError,
+      {Map<Object?, Object?>? zoneValues, ZoneSpecification? zoneSpecification}) {
     FlutterError.onError = (FlutterErrorDetails errorDetails) {
       print('===== onError: FlutterError =====');
       if (errorDetails.stack != null) {
@@ -41,16 +41,14 @@ class Airflex implements DeepLinkHandler {
       shared.recordError(error, stack);
       return true;
     };
-    return DartAsync.runZonedGuarded(body,
-        (Object error, StackTrace stackTrace) async {
+    return DartAsync.runZonedGuarded(body, (Object error, StackTrace stackTrace) async {
       onError(error, stackTrace);
       print('===== onError: runZonedGuarded =====');
       shared.recordError(error, stackTrace);
     }, zoneValues: zoneValues, zoneSpecification: zoneSpecification);
   }
 
-  Future<void> recordError(Object error, StackTrace? stackTrace,
-      {String? reason}) async {
+  Future<void> recordError(Object error, StackTrace? stackTrace, {String? reason}) async {
     String stack0 = stackTrace.toString().split("\n")[0];
     String errorAndTrace = reason != null ? "reason: $reason\n" : "";
     errorAndTrace += "${error.toString()} \n${stackTrace?.toString()}";
@@ -70,8 +68,7 @@ class Airflex implements DeepLinkHandler {
     return FlutterLinkIdMmpPlatform.instance.getPlatformVersion();
   }
 
-  Future<bool> initSDK(
-      {required String partnerCode, required String appSecret}) {
+  Future<bool> initSDK({required String partnerCode, required String appSecret}) {
     return FlutterLinkIdMmpPlatform.instance.initSDK(partnerCode, appSecret);
   }
 
@@ -92,12 +89,8 @@ class Airflex implements DeepLinkHandler {
   }
 
   Future<bool> setRevenue(
-      {required String orderId,
-      required double amount,
-      required String currency,
-      Map<String, dynamic>? data}) {
-    return FlutterLinkIdMmpPlatform.instance
-        .setRevenue(orderId, amount, currency, data: data);
+      {required String orderId, required double amount, required String currency, Map<String, dynamic>? data}) {
+    return FlutterLinkIdMmpPlatform.instance.setRevenue(orderId, amount, currency, data: data);
   }
 
   @override
@@ -107,10 +100,8 @@ class Airflex implements DeepLinkHandler {
     _onReceivedDeepLink?.call(url);
   }
 
-  Future<bool> setProductList(
-      {required String listName, required List<ProductItem> products}) {
-    return FlutterLinkIdMmpPlatform.instance.setProductList(listName,
-        products: ProductItem.convertToList(products));
+  Future<bool> setProductList({required String listName, required List<ProductItem> products}) {
+    return FlutterLinkIdMmpPlatform.instance.setProductList(listName, products: ProductItem.convertToList(products));
   }
 
   Future<bool> removeUserToken() {
@@ -120,5 +111,27 @@ class Airflex implements DeepLinkHandler {
   Future<void> getAd() async {
     final adResult = await FlutterLinkIdMmpPlatform.instance.getAd(adId: "29fe05c6-fba3-401b-99e6-8a770894b001", adType: "PRODUCT");
     print(adResult);
+  }
+
+  Future<AdMediaData?> getAdById(String adId) async {
+    final response = await FlutterLinkIdMmpPlatform.instance.getAdById(adId);
+    return _convertToAdMediaData(response, tag: 'AirFlex.getAdById');
+  }
+
+  Future<AdMediaData?> getAdByType(AdType adType) async {
+    final response = await FlutterLinkIdMmpPlatform.instance.getAdByType(adType.name);
+    return _convertToAdMediaData(response, tag: 'AirFlex.getAdByType');
+  }
+
+  AdMediaData? _convertToAdMediaData(Map<String, dynamic>? map, {String? tag}) {
+    if (map == null) return null;
+    try {
+      final AdMediaData adMediaData = AdMediaData.fromMap(map);
+      if (adMediaData.adData.isEmpty) return null;
+      return adMediaData;
+    } catch (e) {
+      debugPrint('${tag?.isNotEmpty == true ? "$tag: " : ""}Error: $e');
+      return null;
+    }
   }
 }
