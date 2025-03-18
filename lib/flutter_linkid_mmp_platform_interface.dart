@@ -53,8 +53,12 @@ abstract class FlutterLinkIdMmpPlatform extends PlatformInterface {
     throw UnimplementedError('setDeepLinkHandler() has not been implemented.');
   }
 
-  Future<bool> setRevenue(String orderId, double amount, String currency,
-      {Map<String, dynamic>? data}) {
+  Future<bool> setRevenue(
+    String orderId,
+    double amount,
+    String currency, {
+    Map<String, dynamic>? data,
+  }) {
     throw UnimplementedError('setRevenue() has not been implemented.');
   }
 
@@ -62,8 +66,10 @@ abstract class FlutterLinkIdMmpPlatform extends PlatformInterface {
     throw UnimplementedError('initSDK() has not been implemented.');
   }
 
-  Future<bool> setProductList(String listName,
-      {required List<Map<String, dynamic>> products}) {
+  Future<bool> setProductList(
+    String listName, {
+    required List<Map<String, dynamic>> products,
+  }) {
     throw UnimplementedError('setProductList() has not been implemented.');
   }
 
@@ -75,8 +81,19 @@ abstract class FlutterLinkIdMmpPlatform extends PlatformInterface {
     throw UnimplementedError('createLink() has not been implemented.');
   }
 
-  Future<Map<String, dynamic>?> createShortLink(
-      {required String longLink, String name = "", String shortLinkId = ""}) {
+  Future<Map<String, dynamic>?> createShortLink({
+    required String longLink,
+    String name = "",
+    String shortLinkId = "",
+  }) {
     throw UnimplementedError('createShortLink() has not been implemented.');
+  }
+
+  Future<Map<String, dynamic>?> getAdById(String adId) {
+    throw UnimplementedError('getAdById() has not been implemented.');
+  }
+
+  Future<Map<String, dynamic>?> getAdByType(String adType) {
+    throw UnimplementedError('getAdByType() has not been implemented.');
   }
 }

@@ -28,10 +28,8 @@ var fcmToken = "";
 void main() {
   Airflex.runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
-    runApp(const MyApp());
-  }, (error, stackTrace) async {
-
-  });
+    runApp(MyApp());
+  }, (error, stackTrace) async {});
 }
 
 const double windowWidth = 400;
@@ -84,7 +82,9 @@ GoRouter router() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  final _router = router();
 
   // Future<void> initFcm(BuildContext context) async {
   //   await FirebaseMessaging.instance.requestPermission(
@@ -132,14 +132,11 @@ class MyApp extends StatelessWidget {
     Airflex.shared.setDevMode(true);
     await Airflex.shared.initSDK(
       partnerCode: "myvpbank_uat",
-      appSecret:
-          "7fe95468c204397de9bcda2d702d4501a174976b1d003d92d1e5550b03f9fcb5",
+      appSecret: "7fe95468c204397de9bcda2d702d4501a174976b1d003d92d1e5550b03f9fcb5",
     );
-    Airflex.shared.deepLinkHandler(
-      onReceivedDeepLink: (url) {
-        print('onReceivedDeepLink in dart $url');
-      }
-    );
+    Airflex.shared.deepLinkHandler(onReceivedDeepLink: (url) {
+      print('onReceivedDeepLink in dart $url');
+    });
     // await initFcm(context);
     Airflex().setUserInfo(UserInfo(deviceToken: fcmToken));
   }
@@ -172,7 +169,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp.router(
         title: 'Provider Demo',
         theme: appTheme,
-        routerConfig: router(),
+        routerConfig: _router,
         builder: EasyLoading.init(),
       ),
     );

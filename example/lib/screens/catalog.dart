@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_linkid_mmp/ad_media/widgets/ad_media_banner.dart';
+import 'package:flutter_linkid_mmp/ad_media/widgets/ad_media_carousel.dart';
 import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -17,11 +19,17 @@ class MyCatalog extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           _MyAppBar(),
-          const SliverToBoxAdapter(child: SizedBox(height: 12)),
+          const SliverToBoxAdapter(child: Text('  Ad Banner')),
+          const SliverToBoxAdapter(child: AdMediaBanner()),
+          const SliverToBoxAdapter(child: SizedBox(height: 20)),
+          const SliverToBoxAdapter(child: Text('  Ad Carousel')),
+          const SliverToBoxAdapter(child: AdMediaCarousel()),
+          const SliverToBoxAdapter(child: SizedBox(height: 20)),
           SliverList(
             delegate: SliverChildBuilderDelegate(
-                (context, index) => _MyListItem(index),
-                childCount: 20),
+              (context, index) => _MyListItem(index),
+              childCount: 20,
+            ),
           ),
         ],
       ),
@@ -67,9 +75,7 @@ class _AddButton extends StatelessWidget {
           return null; // Defer to the widget's default.
         }),
       ),
-      child: isInCart
-          ? const Icon(Icons.check, semanticLabel: 'Đã thêm')
-          : const Text('Thêm'),
+      child: isInCart ? const Icon(Icons.check, semanticLabel: 'Đã thêm') : const Text('Thêm'),
     );
   }
 }
