@@ -7,7 +7,6 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_linkid_mmp/airflex_idle_detector.dart';
 
 class MyLogin extends StatefulWidget {
-
   MyLogin({super.key}) {
     TrackingHelper.setCurrentScreen(screenName: "LoginScreen");
   }
@@ -17,9 +16,9 @@ class MyLogin extends StatefulWidget {
 }
 
 class _MyLoginState extends State<MyLogin> {
-  String username = "";
+  String username = "1";
 
-  String password = "";
+  String password = "1";
 
   Future<void> asynchronousError() async {
     throw UnimplementedError();
@@ -88,17 +87,12 @@ class _MyLoginState extends State<MyLogin> {
                         "afRealtime": true
                       });
                       Airflex().setUserInfo(UserInfo(
-                          userId: username,
-                          email: "$username@gmail.com",
-                          deviceToken: "deviceToken",
-                          age: 30));
+                          userId: username, email: "$username@gmail.com", deviceToken: "deviceToken", age: 30));
                       context.pushReplacement('/catalog');
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                          content: Text('Đăng nhập thành công')));
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Đăng nhập thành công')));
                     } else {
                       // asynchronousError();
-                      ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Đăng nhập thất bại')));
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Đăng nhập thất bại')));
                       TrackingHelper.logEvent(event: "LoginFail");
                     }
                   },

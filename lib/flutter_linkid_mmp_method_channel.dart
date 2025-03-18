@@ -229,7 +229,7 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
   @override
   Future<Map<String, dynamic>?> getAdById(String adId) async {
     try {
-      final result = _fakeAdData;
+      final result = _fakeAdDataProduct;
       return result;
     } catch (e, s) {
       debugPrint('MethodChannelFlutterLinkidMmp.getAdById Error: $e');
@@ -241,7 +241,7 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
   @override
   Future<Map<String, dynamic>?> getAdByType(String adType) async {
     try {
-      final result = _fakeAdData;
+      final result = adType == 'banner' ? _fakeAdDataBanner : _fakeAdDataProduct;
       return result;
     } catch (e, s) {
       debugPrint('MethodChannelFlutterLinkidMmp.getAdByType Error: $e');
@@ -251,34 +251,187 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
   }
 }
 
-Map<String, dynamic> _fakeAdData = {
+Map<String, dynamic> _fakeAdDataBanner = {
   "adData": [
-    "<div style=\"border:1px solid #e5e7eb;border-radius:8px;display:grid;grid-template-columns:1fr 2fr;overflow:hidden\"><div style=\"display:flex;align-items:center;justify-content:center;background:#fde68a\"><img src=\"https://d2fpeiluuf92qr.cloudfront.net/507b018b-b04e-51a1-b2e3-815901c07024.jpeg\" alt=\"Image\" style=\"width:100%;height:100%;object-fit:cover\"></div><div style=\"display:flex;flex-direction:column;justify-content:space-between;padding:8px;font-size:14px\"><div><div style=\"color:#213547;-webkit-line-clamp:2;overflow:hidden\">Samsung galaxy Fold 6</div><div style=\"margin-top:2px;font-size:10px;color:#aaa;line-height:14px;-webkit-line-clamp:2;overflow:hidden\">Điện thoại Samsung Galaxy Z Fold6 màn hình mỏng hơn, bộ camera mạnh mẽ, đa nhiệm siêu mượt.</div></div><div style=\"font-weight:600;color:#6b1ca2\"><span style=\"font-size:14px\">38.000.000 đ</span><span style=\"margin-left:4px;font-size:10px;color:#aaa;text-decoration:line-through\"></span></div></div></div>",
-    "<div style=\"border:1px solid #e5e7eb;border-radius:8px;display:grid;grid-template-columns:1fr 2fr;overflow:hidden\"><div style=\"display:flex;align-items:center;justify-content:center;background:#fde68a\"><img src=\"https://d2fpeiluuf92qr.cloudfront.net/3334c45d-0752-5c4d-89bf-9129f5d56c97.png\" alt=\"Image\" style=\"width:100%;height:100%;object-fit:cover\"></div><div style=\"display:flex;flex-direction:column;justify-content:space-between;padding:8px;font-size:14px\"><div><div style=\"color:#213547;-webkit-line-clamp:2;overflow:hidden\">Điện thoại Samsung Galaxy A05 - 4GB/64GB</div><div style=\"margin-top:2px;font-size:10px;color:#aaa;line-height:14px;-webkit-line-clamp:2;overflow:hidden\">Miễn phí vận chuyển toàn quốc\nBảo hành 12 tháng chính hãng\nBao xài đổi lỗi trong 30 ngày đầu.\nGiá đã bao gồm VAT</div></div><div style=\"font-weight:600;color:#6b1ca2\"><span style=\"font-size:14px\">2.490.000 đ</span><span style=\"margin-left:4px;font-size:10px;color:#aaa;text-decoration:line-through\"></span></div></div></div>",
-    "<div style=\"border:1px solid #e5e7eb;border-radius:8px;display:grid;grid-template-columns:1fr 2fr;overflow:hidden\"><div style=\"display:flex;align-items:center;justify-content:center;background:#fde68a\"><img src=\"https://d2fpeiluuf92qr.cloudfront.net/8a9de844-fc2e-546a-93b5-63f6b5ad9edc.jpeg\" alt=\"Image\" style=\"width:100%;height:100%;object-fit:cover\"></div><div style=\"display:flex;flex-direction:column;justify-content:space-between;padding:8px;font-size:14px\"><div><div style=\"color:#213547;-webkit-line-clamp:2;overflow:hidden\">Máy giặt Xiaomi Mijia MJ106 – Giặt 10kg, 25 chế độ giặt</div><div style=\"margin-top:2px;font-size:10px;color:#aaa;line-height:14px;-webkit-line-clamp:2;overflow:hidden\">Máy giặt Xiaomi Mijia MJ106 với thiết kế nhỏ gọn, lồng giặt đường kính lớn có thể giặt tới 10kg quần áo. Với khả năng khử trùng bằng hơi nước, máy giúp loại bỏ các vi khuẩn gây hại cho sức khỏe.</div></div><div style=\"font-weight:600;color:#6b1ca2\"><span style=\"font-size:14px\">20.590.000 đ</span><span style=\"margin-left:4px;font-size:10px;color:#aaa;text-decoration:line-through\">21.619.500 đ</span></div></div></div>",
-    "<div style=\"border:1px solid #e5e7eb;border-radius:8px;display:grid;grid-template-columns:1fr 2fr;overflow:hidden\"><div style=\"display:flex;align-items:center;justify-content:center;background:#fde68a\"><img src=\"https://d2fpeiluuf92qr.cloudfront.net/fafc6799-9d19-53a2-838a-540c169a3ad6.png\" alt=\"Image\" style=\"width:100%;height:100%;object-fit:cover\"></div><div style=\"display:flex;flex-direction:column;justify-content:space-between;padding:8px;font-size:14px\"><div><div style=\"color:#213547;-webkit-line-clamp:2;overflow:hidden\">Chuột Gaming Razer DeathAdder V2 RZ01-03210100-R3M1</div><div style=\"margin-top:2px;font-size:10px;color:#aaa;line-height:14px;-webkit-line-clamp:2;overflow:hidden\">Loại sản phẩm: Chuột gaming có dây</div></div><div style=\"font-weight:600;color:#6b1ca2\"><span style=\"font-size:14px\">849.000 đ</span><span style=\"margin-left:4px;font-size:10px;color:#aaa;text-decoration:line-through\"></span></div></div></div>",
-    "<div style=\"border:1px solid #e5e7eb;border-radius:8px;display:grid;grid-template-columns:1fr 2fr;overflow:hidden\"><div style=\"display:flex;align-items:center;justify-content:center;background:#fde68a\"><img src=\"https://d2fpeiluuf92qr.cloudfront.net/694d08cc-dc15-51e1-9c52-47f11f39cc85.jpeg\" alt=\"Image\" style=\"width:100%;height:100%;object-fit:cover\"></div><div style=\"display:flex;flex-direction:column;justify-content:space-between;padding:8px;font-size:14px\"><div><div style=\"color:#213547;-webkit-line-clamp:2;overflow:hidden\">Bàn Phím Razer BlackWidow V3 Mini HyperSpeed - Yellow Switch</div><div style=\"margin-top:2px;font-size:10px;color:#aaa;line-height:14px;-webkit-line-clamp:2;overflow:hidden\">Bàn Phím Razer BlackWidow V3 Mini HyperSpeed - Yellow Switch với khả năng chơi game ​​Wireless không có độ trễ trong một kiểu dáng đẹp, 65%, nó hoàn hảo cho mọi không gian và đủ linh hoạt cho mọi thiết lập và sử dụng hàng ngày.</div></div><div style=\"font-weight:600;color:#6b1ca2\"><span style=\"font-size:14px\">4.690.000 đ</span><span style=\"margin-left:4px;font-size:10px;color:#aaa;text-decoration:line-through\"></span></div></div></div>"
+    '''
+<div
+  data-ad-element-id="db4bf3c4-8f03-47ea-a077-b53908bb02ca"
+  style="
+    border-radius: 8px;
+    border: 1px solid #f3f4f6;
+    background-color: #fff;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+  "
+>
+  <img
+    src="https://d2fpeiluuf92qr.cloudfront.net/507b018b-b04e-51a1-b2e3-815901c07024.jpeg"
+    alt=""
+    style="height: 100%; width: 100%; border-radius: 8px; object-fit: cover"
+  />
+</div>
+''',
   ],
+  "size": {
+    "width": 480,
+    "height": 120,
+  },
   "actionType": "inapp",
   "actionData": "https://www.google.com"
 };
 
-/*
-<div style="border:1px solid #e5e7eb;border-radius:8px;display:grid;grid-template-columns:1fr 2fr;overflow:hidden">
-  <div style="display:flex;align-items:center;justify-content:center;background:#fde68a">
-    <img src="https://d2fpeiluuf92qr.cloudfront.net/507b018b-b04e-51a1-b2e3-815901c07024.jpeg" alt="Image"
-      style="width:100%;height:100%;object-fit:cover">
+Map<String, dynamic> _fakeAdDataProduct = {
+  "adData": [
+    '''
+<div
+  style="
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  "
+>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 34%;
+    "
+  >
+    <img
+      src="https://d2fpeiluuf92qr.cloudfront.net/694d08cc-dc15-51e1-9c52-47f11f39cc85.jpeg"
+      alt="Image"
+      style="width: 100%; height: 100%; object-fit: cover;"
+    />
   </div>
-  <div style="display:flex;flex-direction:column;justify-content:space-between;padding:8px;font-size:14px">
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 14px;
+      width: calc(66% - 16px);
+    "
+  >
     <div>
-      <div style="color:#213547;-webkit-line-clamp:2;overflow:hidden">Samsung galaxy Fold 6</div>
-      <div style="margin-top:2px;font-size:10px;color:#aaa;line-height:14px;-webkit-line-clamp:2;overflow:hidden">Điện
-        thoại Samsung Galaxy Z Fold6 màn hình mỏng hơn, bộ camera mạnh mẽ, đa nhiệm siêu mượt.</div>
+      <div style="color: #213547; max-lines: 2; text-overflow: ellipsis">
+        Bàn Phím Razer BlackWidow V3 Mini HyperSpeed - Yellow Switch
+      </div>
+      <div
+        style="
+          margin-top: 2px;
+          font-size: 10px;
+          color: #aaa;
+          line-height: 14px;
+          max-lines: 2;
+          text-overflow: ellipsis;
+        "
+      >
+        Bàn Phím Razer BlackWidow V3 Mini HyperSpeed - Yellow Switch với khả
+        năng chơi game ​​Wireless không có độ trễ trong một kiểu dáng đẹp, 65%,
+        nó hoàn hảo cho mọi không gian và đủ linh hoạt cho mọi thiết lập và sử
+        dụng hàng ngày.
+      </div>
     </div>
-    <div style="font-weight:600;color:#6b1ca2">
-      <span style="font-size:14px">38.000.000 đ</span>
-      <span style="margin-left:4px;font-size:10px;color:#aaa;text-decoration:line-through"></span>
+    <div style="font-weight: 600; color: #6b1ca2">
+      <span style="font-size: 14px">4.690.000 đ</span
+      ><span
+        style="
+          margin-left: 4px;
+          font-size: 10px;
+          color: #aaa;
+          text-decoration: line-through;
+        "
+      ></span>
     </div>
   </div>
 </div>
-*/
+''',
+    '''
+<div
+  style="
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  "
+>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 34%;
+    "
+  >
+    <img
+      src="https://d2fpeiluuf92qr.cloudfront.net/694d08cc-dc15-51e1-9c52-47f11f39cc85.jpeg"
+      alt="Image"
+      style="width: 100%; height: 100%; object-fit: cover;"
+    />
+  </div>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 14px;
+      width: calc(66% - 16px);
+    "
+  >
+    <div>
+      <div style="color: #213547; max-lines: 2; text-overflow: ellipsis">
+        Bàn Phím Razer BlackWidow V3 Mini HyperSpeed - Yellow Switch
+      </div>
+      <div
+        style="
+          margin-top: 2px;
+          font-size: 10px;
+          color: #aaa;
+          line-height: 14px;
+          max-lines: 2;
+          text-overflow: ellipsis;
+        "
+      >
+        Bàn Phím Razer BlackWidow V3 Mini HyperSpeed - Yellow Switch với khả
+        năng chơi game ​​Wireless không có độ trễ trong một kiểu dáng đẹp, 65%.
+      </div>
+    </div>
+    <div style="font-weight: 600; color: #6b1ca2">
+      <span style="font-size: 14px">4.690.000 đ</span
+      ><span
+        style="
+          margin-left: 4px;
+          font-size: 10px;
+          color: #aaa;
+          text-decoration: line-through;
+        "
+      ></span>
+    </div>
+  </div>
+</div>
+''',
+  ],
+  "size": {
+    "width": 480,
+    "height": 180,
+  },
+  "actionType": "inapp",
+  "actionData": "https://www.google.com"
+};

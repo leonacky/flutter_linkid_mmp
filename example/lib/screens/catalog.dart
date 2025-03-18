@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_linkid_mmp/ad_media/widgets/ad_media_banner.dart';
-import 'package:flutter_linkid_mmp/ad_media/widgets/ad_media_carousel.dart';
+import 'package:flutter_linkid_mmp/ad_media/ad_type.dart';
+import 'package:flutter_linkid_mmp/ad_media/widgets/ad_retail_media_widget.dart';
 import 'package:flutter_linkid_mmp_example/common/tracking_helper.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -19,12 +19,14 @@ class MyCatalog extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           _MyAppBar(),
-          const SliverToBoxAdapter(child: Text('  Ad Banner')),
-          const SliverToBoxAdapter(child: AdMediaBanner()),
-          const SliverToBoxAdapter(child: SizedBox(height: 20)),
-          const SliverToBoxAdapter(child: Text('  Ad Carousel')),
-          const SliverToBoxAdapter(child: AdMediaCarousel()),
-          const SliverToBoxAdapter(child: SizedBox(height: 20)),
+          SliverList.list(
+            children: [
+              const Text('  Ad Banner'),
+              AdRetailMediaWidget.fromType(type: AdType.banner),
+              const Text('  Ad Carousel'),
+              AdRetailMediaWidget.fromId(id: 'db4bf3c4-8f03-47ea-a077-b53908bb02ca'),
+            ],
+          ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) => _MyListItem(index),
