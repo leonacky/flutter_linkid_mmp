@@ -38,7 +38,7 @@ class AdMediaData {
 
   factory AdMediaData.fromMap(Map<String, dynamic> map) {
     return AdMediaData(
-      adData: map['adData'] is List<String> ? List<String>.from((map['adData'] as List<String>)) : const [],
+      adData: (map['adData'] as List<dynamic>?)?.map((e) => e as String).toList() ?? const [],
       actionType: map['actionType'] as String? ?? '',
       actionData: map['actionData'] as String? ?? '',
       size: map['size'] is Map<String, dynamic> ? AdSize.fromMap(map['size'] as Map<String, dynamic>) : const AdSize(),
@@ -73,6 +73,11 @@ class AdSize {
 
   Size get toFlutterSize => Size(width, height);
 
+  @override
+  String toString() {
+    return '$runtimeType($width x $height)';
+  }
+
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'width': width,
@@ -84,6 +89,19 @@ class AdSize {
     return AdSize(
       width: (map['width'] as num? ?? 0).toDouble(),
       height: (map['height'] as num? ?? 0).toDouble(),
+    );
+  }
+}
+
+enum AdActionType {
+  none,
+  inapp,
+  outapp;
+
+  static AdActionType fromString(String value) {
+    return AdActionType.values.firstWhere(
+      (e) => e.name == value,
+      orElse: () => AdActionType.none,
     );
   }
 }

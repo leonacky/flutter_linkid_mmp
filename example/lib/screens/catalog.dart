@@ -20,11 +20,18 @@ class MyCatalog extends StatelessWidget {
         slivers: [
           _MyAppBar(),
           SliverList.list(
-            children: [
-              const Text('  Ad Banner'),
-              AdRetailMediaWidget.fromType(type: AdType.banner),
-              const Text('  Ad Product'),
-              AdRetailMediaWidget.fromId(id: 'db4bf3c4-8f03-47ea-a077-b53908bb02ca'),
+            children: const [
+              Text('  Ad Banner'),
+              AdRetailMediaWidget(
+                adId: 'dbb7fac6-3324-4fef-9fee-b4e9e8bfa5a1',
+                adType: AdType.banner,
+              ),
+              Text('  Ad Product'),
+              AdRetailMediaWidget(
+                adId: '29fe05c6-fba3-401b-99e6-8a770894b001',
+                adType: AdType.product,
+                placeholder: Center(child: CircularProgressIndicator()),
+              ),
             ],
           ),
           SliverList(
