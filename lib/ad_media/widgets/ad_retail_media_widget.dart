@@ -117,14 +117,18 @@ class _AdRetailMediaWidgetState extends State<AdRetailMediaWidget> {
     }
     try {
       FlutterLinkIdMmpPlatform.instance.trackAdClick(adId: widget.adId, productId: productId);
+      final url = Uri.tryParse(ad!.actionData);
+      if (url == null || !await canLaunchUrl(url)) return;
       switch (AdActionType.fromString(ad!.actionType)) {
         case AdActionType.inapp:
-          final url = Uri.tryParse(ad!.actionData);
-          if (url != null && await canLaunchUrl(url)) {
-            await launchUrl(url, mode: LaunchMode.platformDefault);
-          }
+          await launchUrl(
+            url,
+            mode: LaunchMode.inAppBrowserView,
+            browserConfiguration: const BrowserConfiguration(showTitle: true),
+          );
           break;
         case AdActionType.outapp:
+          await launchUrl(url, mode: LaunchMode.externalApplication);
           break;
         default:
           break;
@@ -166,7 +170,7 @@ class _AdRetailMediaWidgetState extends State<AdRetailMediaWidget> {
       "width": 1080,
       "height": 400,
     },
-    "actionType": "inapp",
+    "actionType": "outapp",
     "actionData": "https://www.google.com"
   };
 
