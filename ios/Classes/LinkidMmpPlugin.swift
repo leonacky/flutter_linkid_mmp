@@ -164,14 +164,14 @@ public class LinkidMmpPlugin: NSObject, FlutterPlugin {
                     "message": "Cannot get ad without params"
                 ])
             }
-        } else if(call.method.elementsEqual("trackClick")) {
+        } else if(call.method.elementsEqual("trackAdClick")) {
             if let args = call.arguments as? Dictionary<String, Any>, let adId = args["adId"] as? String, let productId = args["productId"] as? String {
                 AirflexAdHelper.trackClick(adId: adId, productId: productId)
                 result(true)
             } else {
                 result(false)
             }
-        } else if(call.method.elementsEqual("trackImpression")) {
+        } else if(call.method.elementsEqual("trackAdImpression")) {
             if let args = call.arguments as? Dictionary<String, Any>, let adId = args["adId"] as? String, let productId = args["productId"] as? String {
                 AirflexAdHelper.trackImpression(adId: adId, productId: productId)
                 result(true)
