@@ -28,7 +28,7 @@ class MyCatalog extends StatelessWidget {
               ),
               Text('  Ad Product'),
               AdRetailMediaWidget(
-                adId: '29fe05c6-fba3-401b-99e6-8a770894b001',
+                adId: '9ce0b027-5f59-450b-9f90-7f82f41406e3',
                 adType: AdType.product,
                 placeholder: Center(child: CircularProgressIndicator()),
               ),
