@@ -298,7 +298,8 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
             try {
                 if (call.hasArgument("adId")) {
                     String adId = call.argument("adId");
-                    AirflexAdHelper.trackImpression(adId);
+                    String productId = call.argument("productId")+"";
+                    AirflexAdHelper.trackImpression(adId, productId);
                     result.success(true);
                 } else {
                     result.success(false);
