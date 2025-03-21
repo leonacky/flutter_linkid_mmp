@@ -89,26 +89,15 @@ abstract class FlutterLinkIdMmpPlatform extends PlatformInterface {
     throw UnimplementedError('createShortLink() has not been implemented.');
   }
 
-  Future<Map<String, dynamic>?> getAd(
-      {required String adId, required String adType}) {
+  Future<Map<String, dynamic>?> getAd({required String adId, required String adType}) {
     throw UnimplementedError('getAd() has not been implemented.');
   }
 
-  Future<bool> trackAdClick(
-      {required String adId, String productId = ""}) {
+  Future<bool> trackAdClick({required String adId, String productId = ""}) {
     throw UnimplementedError('trackAdClick() has not been implemented.');
   }
 
-  Future<bool> trackAdImpression(
-      {required String adId, String productId = ""}) {
+  Future<bool> trackAdImpression({required String adId, String productId = ""}) {
     throw UnimplementedError('trackAdImpression() has not been implemented.');
-  }
-
-  Future<Map<String, dynamic>?> getAdById(String adId) {
-    throw UnimplementedError('getAdById() has not been implemented.');
-  }
-
-  Future<Map<String, dynamic>?> getAdByType(String adType) {
-    throw UnimplementedError('getAdByType() has not been implemented.');
   }
 }

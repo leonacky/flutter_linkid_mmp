@@ -2,8 +2,6 @@ import 'dart:async' as DartAsync;
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter_linkid_mmp/ad_media/ad_media_data.dart';
-import 'package:flutter_linkid_mmp/ad_media/ad_type.dart';
 import 'package:flutter_linkid_mmp/deep_link_handler.dart';
 import 'package:flutter_linkid_mmp/user_info.dart';
 
@@ -109,29 +107,10 @@ class Airflex implements DeepLinkHandler {
   }
 
   Future<void> getAd() async {
-    final adResult = await FlutterLinkIdMmpPlatform.instance.getAd(adId: "29fe05c6-fba3-401b-99e6-8a770894b001", adType: "PRODUCT");
+    final adResult = await FlutterLinkIdMmpPlatform.instance.getAd(
+      adId: "29fe05c6-fba3-401b-99e6-8a770894b001",
+      adType: "PRODUCT",
+    );
     print(adResult);
-  }
-
-  Future<AdMediaData?> getAdById(String adId) async {
-    final response = await FlutterLinkIdMmpPlatform.instance.getAdById(adId);
-    return _convertToAdMediaData(response, tag: 'AirFlex.getAdById');
-  }
-
-  Future<AdMediaData?> getAdByType(AdType adType) async {
-    final response = await FlutterLinkIdMmpPlatform.instance.getAdByType(adType.name);
-    return _convertToAdMediaData(response, tag: 'AirFlex.getAdByType');
-  }
-
-  AdMediaData? _convertToAdMediaData(Map<String, dynamic>? map, {String? tag}) {
-    if (map == null) return null;
-    try {
-      final AdMediaData adMediaData = AdMediaData.fromMap(map);
-      if (adMediaData.adData.isEmpty) return null;
-      return adMediaData;
-    } catch (e) {
-      debugPrint('${tag?.isNotEmpty == true ? "$tag: " : ""}Error: $e');
-      return null;
-    }
   }
 }

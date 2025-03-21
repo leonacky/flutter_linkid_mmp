@@ -5,11 +5,15 @@ class _AdRetailMediaProduct extends StatefulWidget {
     Key? key,
     required this.ad,
     this.padding = _AdWidget.defaultPadding,
+    this.onAdImpression,
+    this.onAdClick,
     this.onClose,
   }) : super(key: key);
 
   final AdMediaData ad;
   final EdgeInsets padding;
+  final AdActionCallback? onAdImpression;
+  final AdActionCallback? onAdClick;
   final VoidCallback? onClose;
 
   @override
@@ -53,6 +57,8 @@ class _AdRetailMediaProductState extends State<_AdRetailMediaProduct> {
                   adContent: adCarousel.adData[index],
                   size: adCarousel.size.toFlutterSize,
                   padding: widget.padding.copyWith(bottom: 0),
+                  onAdImpression: widget.onAdImpression,
+                  onAdClick: widget.onAdClick,
                   onClose: widget.onClose,
                 );
               },

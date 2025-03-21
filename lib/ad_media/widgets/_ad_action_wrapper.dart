@@ -2,13 +2,21 @@
 part of 'ad_retail_media_widget.dart';
 
 class _AdActionWrapper extends StatelessWidget {
-  const _AdActionWrapper({
+  _AdActionWrapper({
     Key? key,
     required this.child,
+    this.onClick,
+    this.onImpression,
     this.onClose,
-  }) : super(key: key);
+  }) : super(key: key) {
+    if (VisibilityDetectorController.instance.updateInterval != _impressionUpdateInterval) {
+      VisibilityDetectorController.instance.updateInterval = _impressionUpdateInterval;
+    }
+  }
 
   final Widget child;
+  final VoidCallback? onClick;
+  final VoidCallback? onImpression;
   final VoidCallback? onClose;
 
   static const String _iconInfo = 'packages/flutter_linkid_mmp/lib/ad_media/assets/ic_ad_info.svg';
@@ -16,11 +24,26 @@ class _AdActionWrapper extends StatelessWidget {
 
   static const double _iconSize = 16;
 
+  static const Duration _impressionUpdateInterval = Duration(milliseconds: 800);
+
+  final _key = UniqueKey();
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        child,
+        GestureDetector(
+          onTap: onClick,
+          child: VisibilityDetector(
+            key: _key,
+            onVisibilityChanged: (info) {
+              if (info.visibleFraction == 1) {
+                onImpression?.call();
+              }
+            },
+            child: child,
+          ),
+        ),
         Positioned(
           top: 4,
           right: 4,
