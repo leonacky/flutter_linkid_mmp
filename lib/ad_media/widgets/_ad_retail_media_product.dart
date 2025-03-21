@@ -46,7 +46,8 @@ class _AdRetailMediaProductState extends State<_AdRetailMediaProduct> {
               options: CarouselOptions(
                 viewportFraction: 1,
                 aspectRatio: (width + widget.padding.horizontal) / (height + widget.padding.top),
-                autoPlay: true,
+                autoPlay: adCarousel.adData.length > 1,
+                enableInfiniteScroll: adCarousel.adData.length > 1,
                 autoPlayInterval: const Duration(seconds: 5),
                 onPageChanged: (index, reason) {
                   currentPageNotifier.value = index;
