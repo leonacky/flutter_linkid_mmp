@@ -16,8 +16,8 @@ rootProject.allprojects {
         google()
         mavenCentral()
         maven {
-            url '/Users/leonacky/sdk-lynkid/android/maven'
-//            url 'https://repo-dev.lynkid.vn/android/maven'
+//            url '/Users/leonacky/sdk-lynkid/android/maven'
+            url 'https://repo-dev.lynkid.vn/android/maven'
         }
     }
 }
