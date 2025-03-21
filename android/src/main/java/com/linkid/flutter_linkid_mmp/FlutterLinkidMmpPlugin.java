@@ -294,7 +294,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
                 result.success(data);
                 e.printStackTrace();
             }
-        } else if (call.method.equals("trackImpression")) {
+        } else if (call.method.equals("trackAdImpression")) {
             try {
                 if (call.hasArgument("adId")) {
                     String adId = call.argument("adId");
@@ -307,7 +307,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
                 result.success(false);
                 e.printStackTrace();
             }
-        } else if (call.method.equals("trackClick")) {
+        } else if (call.method.equals("trackAdClick")) {
             try {
                 if (call.hasArgument("adId")) {
                     String adId = call.argument("adId");
