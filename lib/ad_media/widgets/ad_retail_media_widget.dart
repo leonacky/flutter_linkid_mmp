@@ -25,6 +25,8 @@ class AdRetailMediaWidget extends StatefulWidget {
   final AdType adType;
   final EdgeInsets padding;
   final Widget? placeholder;
+  final Duration timeoutGetAd;
+  final bool keepAlive;
 
   const AdRetailMediaWidget({
     super.key,
@@ -32,31 +34,40 @@ class AdRetailMediaWidget extends StatefulWidget {
     required this.adType,
     EdgeInsets? padding,
     this.placeholder,
+    this.timeoutGetAd = const Duration(seconds: 30),
+    this.keepAlive = true,
   }) : padding = padding ?? _AdWidget.defaultPadding;
 
   @override
   State<AdRetailMediaWidget> createState() => _AdRetailMediaWidgetState();
 }
 
-class _AdRetailMediaWidgetState extends State<AdRetailMediaWidget> {
+class _AdRetailMediaWidgetState extends State<AdRetailMediaWidget> with AutomaticKeepAliveClientMixin {
   AdMediaData? ad;
 
   bool showAd = true;
+  
+  @override
+  bool get wantKeepAlive => widget.keepAlive;
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return AnimatedSize(
       duration: Durations.medium2,
       child: FutureBuilder(
         future: _getAd(),
         builder: (context, snapshot) {
-          if (snapshot.data == null || !showAd) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
             return widget.placeholder != null
                 ? Padding(
                     padding: widget.padding,
                     child: widget.placeholder,
                   )
                 : const SizedBox.shrink();
+          }
+          if (snapshot.data == null || !showAd) {
+            return const SizedBox.shrink();
           }
           switch (widget.adType) {
             case AdType.banner:
@@ -88,10 +99,12 @@ class _AdRetailMediaWidgetState extends State<AdRetailMediaWidget> {
     // ad = AdMediaData.fromMap(widget.adType == AdType.banner ? fakeAdDataBanner : fakeAdDataProduct);
     if (ad != null) return ad;
     try {
-      final response = await FlutterLinkIdMmpPlatform.instance.getAd(
-        adId: widget.adId,
-        adType: widget.adType.name.toUpperCase(),
-      );
+      final response = await FlutterLinkIdMmpPlatform.instance
+          .getAd(
+            adId: widget.adId,
+            adType: widget.adType.name.toUpperCase(),
+          )
+          .timeout(widget.timeoutGetAd);
       if (response?["adItem"] == null) return null;
       ad = AdMediaData.fromMap(response!["adItem"]);
       if (ad!.adData.isEmpty) return null;
