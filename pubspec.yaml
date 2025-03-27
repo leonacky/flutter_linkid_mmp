@@ -1,6 +1,6 @@
 name: flutter_linkid_mmp
 description: Airflex.io is a Mobile Marketing Platform that offers tools for analyzing and optimizing user experiences on mobile and web platforms. It features real-time data analytics, audience segmentation, fraud prevention, and AI-driven user personalization to enhance marketing efficiency and campaign effectiveness.
-version: 1.1.72
+version: 1.1.73
 homepage: https://github.com/leonacky/flutter_linkid_mmp
 
 environment:
@@ -16,15 +16,14 @@ dependencies:
   carousel_slider: ^5.0.0
   html: ^0.15.5
 
-  # flutter_html: ^3.0.0
-  # flutter_html_table: ^3.0.0
-
-  flutter_widget_from_html: 0.15.3
-  webview_flutter_android: ^4.2.0
+  flutter_widget_from_html: ^0.15.1
+  webview_flutter_android: ^3.16.3
   webview_flutter_platform_interface: ^2.7.0
   webview_flutter_wkwebview: ^3.9.4
 
-  flutter_svg: ^2.0.17
+  chewie: ^1.8.0
+  win32: ^5.5.0
+  flutter_svg: ^2.0.10+1
   url_launcher: ^6.3.1
   url_launcher_ios: ^6.3.2
   visibility_detector: ^0.4.0+2
