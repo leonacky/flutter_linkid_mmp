@@ -23,12 +23,12 @@ class MyCatalog extends StatelessWidget {
             children: const [
               Text('  Ad Banner'),
               AdRetailMediaWidget(
-                adId: '43e2b985-2134-4dbd-8e8e-87059463f685',
+                adId: '93cc89ad-f1d9-4674-a8e1-6df6f55805a7',
                 adType: AdType.banner,
               ),
               Text('  Ad Product'),
               AdRetailMediaWidget(
-                adId: '9ce0b027-5f59-450b-9f90-7f82f41406e3',
+                adId: '00dd59d2-5fae-4b8a-999b-f65da21c438a',
                 adType: AdType.product,
                 placeholder: Center(child: CircularProgressIndicator()),
               ),
