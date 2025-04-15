@@ -1,5 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.linkid.flutter_linkid_mmp">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
   <queries>
     <package android:name="com.facebook.katana" />
     <package android:name="com.zing.zalo" />
