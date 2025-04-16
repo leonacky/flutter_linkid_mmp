@@ -20,6 +20,7 @@ part '_ad_widget.dart';
 part '_ad_action_wrapper.dart';
 
 typedef AdActionCallback = void Function(String productId);
+typedef AdClickCallback = void Function(String productId, String actionType, String actionData);
 
 class AdRetailMediaWidget extends StatefulWidget {
   final String adId;
@@ -130,7 +131,7 @@ class _AdRetailMediaWidgetState extends State<AdRetailMediaWidget> with Automati
     callback?.onAdImpression?.call(widget.adId, widget.adType.name, productId);
   }
 
-  void _onAdClick(String productId) async {
+  void _onAdClick(String productId, String actionType, String actionData) async {
     if (ad == null) return;
     if (kDebugMode) {
       debugPrint('AdRetailMediaWidget._onAdClick: adId = ${widget.adId}, productId = $productId');
@@ -139,13 +140,13 @@ class _AdRetailMediaWidgetState extends State<AdRetailMediaWidget> with Automati
       FlutterLinkIdMmpPlatform.instance.trackAdClick(adId: widget.adId, productId: productId);
 
       if (callback?.onAdClick != null) {
-        callback?.onAdClick?.call(widget.adId, widget.adType.name, productId, ad!.actionType, ad!.actionData);
+        callback?.onAdClick?.call(widget.adId, widget.adType.name, productId, actionType, actionData);
         return;
       }
 
-      final url = Uri.tryParse(ad!.actionData);
+      final url = Uri.tryParse(actionData);
       if (url == null || !await canLaunchUrl(url)) return;
-      switch (AdActionType.fromString(ad!.actionType)) {
+      switch (AdActionType.fromString(actionType)) {
         case AdActionType.inapp:
           await launchUrl(
             url,
