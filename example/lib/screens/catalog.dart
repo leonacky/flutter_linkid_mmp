@@ -7,40 +7,93 @@ import 'package:provider/provider.dart';
 import '../models/cart.dart';
 import '../models/catalog.dart';
 
-class MyCatalog extends StatelessWidget {
+class MyCatalog extends StatefulWidget {
   MyCatalog({super.key}) {
     TrackingHelper.setCurrentScreen(screenName: "MainScreen");
     TrackingHelper.createDeepLink();
   }
 
   @override
+  State<MyCatalog> createState() => _MyCatalogState();
+}
+
+class _MyCatalogState extends State<MyCatalog> {
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadData();
+  }
+
+  Future<void> _loadData() async {
+    setState(() {
+      isLoading = true;
+    });
+    await Future.delayed(const Duration(seconds: 2));
+    setState(() {
+      isLoading = false;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          _MyAppBar(),
-          SliverList.list(
-            children: const [
-              Text('  Ad Banner'),
-              AdRetailMediaWidget(
-                adId: '93cc89ad-f1d9-4674-a8e1-6df6f55805a7',
-                adType: AdType.banner,
+      body: RefreshIndicator(
+        onRefresh: () async {
+          return _loadData();
+        },
+        child: isLoading
+            ? const Center(child: CircularProgressIndicator())
+            : CustomScrollView(
+                slivers: [
+                  _MyAppBar(),
+                  SliverList.list(
+                    children: const [
+                      Text('  Ad Banner'),
+                      AdRetailMediaWidget(
+                        adId: '93cc89ad-f1d9-4674-a8e1-6df6f55805a7',
+                        adType: AdType.banner,
+                        placeholder: Center(child: Text('Chờ xíu đang load ad banner...')),
+                      ),
+                      Text('  Ad Product'),
+                      AdRetailMediaWidget(
+                        adId: '00dd59d2-5fae-4b8a-999b-f65da21c438a',
+                        adType: AdType.product,
+                        placeholder: Center(child: CircularProgressIndicator()),
+                      ),
+                    ],
+                  ),
+                  SliverList.separated(
+                    itemCount: 20,
+                    separatorBuilder: (context, index) {
+                      if (index == 3) {
+                        return const AdRetailMediaWidget(
+                          adId: '9fc43af1-c838-4f83-bf9d-0a5c0feb218a',
+                          adType: AdType.banner,
+                          placeholder: Center(child: Text('Mạng yếu load lâu chờ tí nha...')),
+                        );
+                      }
+                      if (index == 10) {
+                        return const AdRetailMediaWidget(
+                          adId: '3e868e22-4055-4763-bcd6-cd08b6deac62',
+                          adType: AdType.product,
+                          placeholder: Center(child: CircularProgressIndicator()),
+                        );
+                      }
+                      return const SizedBox.shrink();
+                    },
+                    itemBuilder: (context, index) => _MyListItem(index),
+                  ),
+                  const SliverToBoxAdapter(
+                    child: AdRetailMediaWidget(
+                      adId: '8095906d-1e8f-45c9-b117-f60a3c911c13',
+                      adType: AdType.banner,
+                      placeholder: Center(child: Text('Chờ xíu đang load ad banner...')),
+                    ),
+                  ),
+                ],
               ),
-              Text('  Ad Product'),
-              AdRetailMediaWidget(
-                adId: '00dd59d2-5fae-4b8a-999b-f65da21c438a',
-                adType: AdType.product,
-                placeholder: Center(child: CircularProgressIndicator()),
-              ),
-            ],
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) => _MyListItem(index),
-              childCount: 20,
-            ),
-          ),
-        ],
       ),
     );
   }
