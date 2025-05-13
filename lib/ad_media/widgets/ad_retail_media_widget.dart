@@ -72,7 +72,7 @@ class _AdRetailMediaWidgetState extends State<AdRetailMediaWidget> with Automati
                   )
                 : const SizedBox.shrink();
           }
-          if (snapshot.data == null || !showAd) {
+          if (snapshot.data == null || snapshot.data!.adData.isEmpty || !showAd) {
             return const SizedBox.shrink();
           }
           switch (widget.adType) {
