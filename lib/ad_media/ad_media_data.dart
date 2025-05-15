@@ -5,12 +5,12 @@ import 'package:flutter_linkid_mmp/ad_media/ad_type.dart';
 
 class AdMediaData {
   final List<String> adData;
-  final Map<String, dynamic> adDataJson;
+  final List<Map<String, dynamic>> adDataJson;
   final AdSize size;
 
   AdMediaData({
     this.adData = const [],
-    this.adDataJson = const {},
+    this.adDataJson = const [],
     this.size = const AdSize(),
   });
 
@@ -38,16 +38,15 @@ class AdMediaData {
   factory AdMediaData.fromMap(Map<String, dynamic> map) {
     return AdMediaData(
       adData: (map['adData'] as List<dynamic>?)?.map((e) => e as String).toList() ?? const [],
-      adDataJson: map['adDataJson'] is String
-          ? jsonDecode(map['adDataJson'] as String)
-          : map['adDataJson'] as Map<String, dynamic>? ?? const {},
+      adDataJson:
+          map['adDataJson'] is String ? jsonDecode(map['adDataJson'] as String).cast<Map<String, dynamic>>() : const [],
       size: map['size'] is Map<String, dynamic> ? AdSize.fromMap(map['size'] as Map<String, dynamic>) : const AdSize(),
     );
   }
 
   AdMediaData copyWith({
     List<String>? adData,
-    Map<String, dynamic>? adDataJson,
+    List<Map<String, dynamic>>? adDataJson,
     AdSize? size,
   }) {
     return AdMediaData(

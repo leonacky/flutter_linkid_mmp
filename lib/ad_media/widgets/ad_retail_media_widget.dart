@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_linkid_mmp/ad_media/ad_type.dart';
 import 'package:flutter_linkid_mmp/ad_media/widgets/ad_listener_callback.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:html/dom.dart' as dom;
 import 'package:html/parser.dart' as parser;
 import 'package:url_launcher/url_launcher.dart';
@@ -115,8 +114,9 @@ class _AdRetailMediaWidgetState extends State<AdRetailMediaWidget> with Automati
       ad = AdMediaData.fromMap(response!["adItem"]);
       if (ad!.adData.isEmpty) return null;
       return ad;
-    } catch (e) {
+    } catch (e, s) {
       debugPrint('AdRetailMediaWidget._getAd Error: $e');
+      debugPrintStack(stackTrace: s);
       callback?.onAdError?.call(e, widget.adId, widget.adType.name);
       return null;
     }
