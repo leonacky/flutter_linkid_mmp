@@ -1,16 +1,16 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_linkid_mmp/ad_media/ad_type.dart';
 
 class AdMediaData {
   final List<String> adData;
-  final String actionType;
-  final String actionData;
+  final List<Map<String, dynamic>> adDataJson;
   final AdSize size;
 
   AdMediaData({
     this.adData = const [],
-    this.actionType = '',
-    this.actionData = '',
+    this.adDataJson = const [],
     this.size = const AdSize(),
   });
 
@@ -30,8 +30,7 @@ class AdMediaData {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'adData': adData,
-      'actionType': actionType,
-      'actionData': actionData,
+      'adDataJson': adDataJson,
       'size': size.toMap(),
     };
   }
@@ -39,22 +38,20 @@ class AdMediaData {
   factory AdMediaData.fromMap(Map<String, dynamic> map) {
     return AdMediaData(
       adData: (map['adData'] as List<dynamic>?)?.map((e) => e as String).toList() ?? const [],
-      actionType: map['actionType'] as String? ?? '',
-      actionData: map['actionData'] as String? ?? '',
+      adDataJson:
+          map['adDataJson'] is String ? jsonDecode(map['adDataJson'] as String).cast<Map<String, dynamic>>() : const [],
       size: map['size'] is Map<String, dynamic> ? AdSize.fromMap(map['size'] as Map<String, dynamic>) : const AdSize(),
     );
   }
 
   AdMediaData copyWith({
     List<String>? adData,
-    String? actionType,
-    String? actionData,
+    List<Map<String, dynamic>>? adDataJson,
     AdSize? size,
   }) {
     return AdMediaData(
       adData: adData ?? this.adData,
-      actionType: actionType ?? this.actionType,
-      actionData: actionData ?? this.actionData,
+      adDataJson: adDataJson ?? this.adDataJson,
       size: size ?? this.size,
     );
   }

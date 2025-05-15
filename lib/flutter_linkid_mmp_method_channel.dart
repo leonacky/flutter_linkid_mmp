@@ -270,13 +270,26 @@ class MethodChannelFlutterLinkidMmp extends FlutterLinkIdMmpPlatform {
     return false;
   }
 
+  /// List of ad product ids that have been impressed.
+  ///
+  /// This is used to prevent duplicate impressions
+  /// for the same adId and productId.
+  ///
+  /// The format is "${adId}_${productId}".
+  final List<String> _impressedAdProductIds = [];
   @override
   Future<bool> trackAdImpression({required String adId, String productId = ""}) async {
+    if (_impressedAdProductIds.contains('${adId}_$productId')) {
+      return true;
+    }
     try {
       final result = await methodChannel.invokeMethod<bool>('trackAdImpression', {
         'adId': adId,
         'productId': productId,
       });
+      if (result == true) {
+        _impressedAdProductIds.add('${adId}_$productId');
+      }
       return result ?? false;
     } catch (e) {
       // //print(e);

@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 effective-4.1.50 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name linkid_mmp
+// swift-compiler-version: Apple Swift version 6.1 effective-4.1.50 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name linkid_mmp
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
 import CommonCrypto
 import CoreGraphics
 import CoreTelephony
@@ -12,10 +13,26 @@ import SQLite3
 import Swift
 import SwiftUI
 import UIKit
+import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_exported import linkid_mmp
+@_hasMissingDesignatedInitializers public class AdItem : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public func toJsonObject() -> [Swift.String : Any]
+  public func toJsonString() -> Swift.String?
+  @_hasMissingDesignatedInitializers public class AdSize : Swift.CustomStringConvertible {
+    public var description: Swift.String {
+      get
+    }
+    public func toJsonObject() -> [Swift.String : Any]
+    @objc deinit
+  }
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers @objcMembers public class Airflex {
   @objc public static func logEvent(name: Swift.String, data: [Swift.String : Any]?)
   @objc public static func setDevMode(_ devMode: Swift.Bool)
@@ -35,11 +52,39 @@ import _SwiftConcurrencyShims
   public static func getFlags(limit: Swift.Int, offset: Swift.Int, completion: @escaping (linkid_mmp.FlagData) -> Swift.Void)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AirflexDeepLinkDelegate : UIKit.UIResponder, UIKit.UIApplicationDelegate {
-  @_Concurrency.MainActor(unsafe) public static let shared: linkid_mmp.AirflexDeepLinkDelegate
-  @_Concurrency.MainActor(unsafe) @objc public func application(_ application: UIKit.UIApplication, open url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any] = [:]) -> Swift.Bool
-  @_Concurrency.MainActor(unsafe) public func handleUniversalLink(incomingURL: Swift.String, completion: @escaping (_ redirectUrl: Swift.String?, _ longLink: Swift.String?, _ error: Swift.String?) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+@_hasMissingDesignatedInitializers public class AirflexAdHelper {
+  public static func showAd()
+  public static func getAd(adId: Swift.String, adType: Swift.String, callback: @escaping (linkid_mmp.AdItem?) -> Swift.Void)
+  public static func trackImpression(adId: Swift.String, productId: Swift.String = "")
+  public static func trackClick(adId: Swift.String, productId: Swift.String = "")
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class AirflexAdView : UIKit.UIView {
+  public enum AdType : Swift.Int {
+    case BANNER
+    case PRODUCT
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @_Concurrency.MainActor @preconcurrency public init(context: UIKit.UIView, adType: linkid_mmp.AirflexAdView.AdType, adId: Swift.String)
+  @_Concurrency.MainActor @preconcurrency public func showAd()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+extension linkid_mmp.AirflexAdView : UIKit.UIPageViewControllerDataSource {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func pageViewController(_ pageViewController: UIKit.UIPageViewController, viewControllerBefore viewController: UIKit.UIViewController) -> UIKit.UIViewController?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func pageViewController(_ pageViewController: UIKit.UIPageViewController, viewControllerAfter viewController: UIKit.UIViewController) -> UIKit.UIViewController?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func presentationCount(for pageViewController: UIKit.UIPageViewController) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func presentationIndex(for pageViewController: UIKit.UIPageViewController) -> Swift.Int
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class AirflexDeepLinkDelegate : UIKit.UIResponder, UIKit.UIApplicationDelegate {
+  @_Concurrency.MainActor @preconcurrency public static let shared: linkid_mmp.AirflexDeepLinkDelegate
+  @_Concurrency.MainActor @preconcurrency @objc public func application(_ application: UIKit.UIApplication, open url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any] = [:]) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public func handleUniversalLink(incomingURL: Swift.String, completion: @escaping (_ redirectUrl: Swift.String?, _ longLink: Swift.String?, _ error: Swift.String?) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init()
   @objc deinit
 }
 public class AirflexOptions {
@@ -158,11 +203,66 @@ public func / <RowDecoder>(lhs: linkid_mmp.AssociationAggregate<RowDecoder>, rhs
 public func / <RowDecoder>(lhs: linkid_mmp.AssociationAggregate<RowDecoder>, rhs: any linkid_mmp.SQLExpressible) -> linkid_mmp.AssociationAggregate<RowDecoder>
 public func / <RowDecoder>(lhs: any linkid_mmp.SQLExpressible, rhs: linkid_mmp.AssociationAggregate<RowDecoder>) -> linkid_mmp.AssociationAggregate<RowDecoder>
 public func ?? <RowDecoder>(lhs: linkid_mmp.AssociationAggregate<RowDecoder>, rhs: any linkid_mmp.SQLExpressible) -> linkid_mmp.AssociationAggregate<RowDecoder>
+open class Attribute {
+  public init(key: Swift.String, value: Swift.String) throws
+  open func getKey() -> Swift.String
+  open func setKey(key: Swift.String) throws
+  open func getValue() -> Swift.String
+  @discardableResult
+  open func setValue(value: Swift.String) -> Swift.String
+  public func html() -> Swift.String
+  public func html(accum: linkid_mmp.StringBuilder, out: linkid_mmp.OutputSettings)
+  open func toString() -> Swift.String
+  public static func createFromEncoded(unencodedKey: Swift.String, encodedValue: Swift.String) throws -> linkid_mmp.Attribute
+  public func isDataAttribute() -> Swift.Bool
+  final public func shouldCollapseAttribute(out: linkid_mmp.OutputSettings) -> Swift.Bool
+  public func isBooleanAttribute() -> Swift.Bool
+  public func hashCode() -> Swift.Int
+  public func clone() -> linkid_mmp.Attribute
+  @objc deinit
+}
+extension linkid_mmp.Attribute : Swift.Equatable {
+  public static func == (lhs: linkid_mmp.Attribute, rhs: linkid_mmp.Attribute) -> Swift.Bool
+}
+open class Attributes : Foundation.NSCopying {
+  public static var dataPrefix: Swift.String
+  public init()
+  open func get(key: Swift.String) -> Swift.String
+  open func getIgnoreCase(key: Swift.String) throws -> Swift.String
+  open func put(_ key: Swift.String, _ value: Swift.String) throws
+  open func put(_ key: Swift.String, _ value: Swift.Bool) throws
+  open func put(attribute: linkid_mmp.Attribute)
+  open func remove(key: Swift.String) throws
+  open func removeIgnoreCase(key: Swift.String) throws
+  open func hasKey(key: Swift.String) -> Swift.Bool
+  open func hasKeyIgnoreCase(key: Swift.String) -> Swift.Bool
+  open func size() -> Swift.Int
+  open func addAll(incoming: linkid_mmp.Attributes?)
+  open func asList() -> [linkid_mmp.Attribute]
+  open func dataset() -> [Swift.String : Swift.String]
+  open func html() throws -> Swift.String
+  public func html(accum: linkid_mmp.StringBuilder, out: linkid_mmp.OutputSettings) throws
+  open func toString() throws -> Swift.String
+  open func equals(o: Swift.AnyObject?) -> Swift.Bool
+  open func lowercaseAllKeys()
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  open func clone() -> linkid_mmp.Attributes
+  @objc deinit
+}
+extension linkid_mmp.Attributes : Swift.Sequence {
+  public func makeIterator() -> Swift.AnyIterator<linkid_mmp.Attribute>
+  public typealias Element = linkid_mmp.Attribute
+  public typealias Iterator = Swift.AnyIterator<linkid_mmp.Attribute>
+}
 public struct BelongsToAssociation<Origin, Destination> : linkid_mmp.AssociationToOne where Origin : linkid_mmp.TableRecord, Destination : linkid_mmp.TableRecord {
   public typealias OriginRowDecoder = Origin
   public typealias RowDecoder = Destination
   public var sqlAssociation: linkid_mmp.SQLAssociation
   public init(sqlAssociation: linkid_mmp.SQLAssociation)
+}
+@_hasMissingDesignatedInitializers open class BooleanAttribute : linkid_mmp.Attribute {
+  override public func isBooleanAttribute() -> Swift.Bool
+  @objc deinit
 }
 extension CoreFoundation.CGFloat : linkid_mmp.DatabaseValueConvertible {
   public var databaseValue: linkid_mmp.DatabaseValue {
@@ -174,6 +274,74 @@ extension CoreFoundation.CGSize : Swift.CustomStringConvertible {
   public var description: Swift.String {
     get
   }
+}
+extension Swift.Character {
+  public static let space: Swift.Character
+  public static let BackslashT: Swift.Character
+  public static let BackslashN: Swift.Character
+  public static let BackslashF: Swift.Character
+  public static let BackslashR: Swift.Character
+  public static let BackshashRBackslashN: Swift.Character
+  public static let MIN_SUPPLEMENTARY_CODE_POINT: Swift.UInt32
+}
+final public class CharacterReader {
+  public static let EOF: Swift.UnicodeScalar
+  public init(_ input: Swift.String)
+  final public func getPos() -> Swift.Int
+  final public func isEmpty() -> Swift.Bool
+  final public func current() -> Swift.UnicodeScalar
+  @discardableResult
+  final public func consume() -> Swift.UnicodeScalar
+  final public func unconsume()
+  final public func advance()
+  final public func markPos()
+  final public func rewindToMark()
+  final public func consumeAsString() -> Swift.String
+  final public func nextIndexOf(_ c: Swift.UnicodeScalar) -> Swift.String.UnicodeScalarView.Index?
+  final public func nextIndexOf(_ seq: Swift.String) -> Swift.String.UnicodeScalarView.Index?
+  final public func consumeTo(_ c: Swift.UnicodeScalar) -> Swift.String
+  final public func consumeTo(_ seq: Swift.String) -> Swift.String
+  final public func consumeToAny(_ chars: Swift.UnicodeScalar...) -> Swift.String
+  final public func consumeToAny(_ chars: [Swift.UnicodeScalar]) -> Swift.String
+  final public func consumeToAnySorted(_ chars: Swift.UnicodeScalar...) -> Swift.String
+  final public func consumeToAnySorted(_ chars: [Swift.UnicodeScalar]) -> Swift.String
+  final public func consumeData() -> Swift.String
+  final public func consumeTagName() -> Swift.String
+  final public func consumeToEnd() -> Swift.String
+  final public func consumeLetterSequence() -> Swift.String
+  final public func consumeLetterThenDigitSequence() -> Swift.String
+  final public func consumeHexSequence() -> Swift.String
+  final public func consumeDigitSequence() -> Swift.String
+  final public func matches(_ c: Swift.UnicodeScalar) -> Swift.Bool
+  final public func matches(_ seq: Swift.String, ignoreCase: Swift.Bool = false, consume: Swift.Bool = false) -> Swift.Bool
+  final public func matchesIgnoreCase(_ seq: Swift.String) -> Swift.Bool
+  final public func matchesAny(_ seq: Swift.UnicodeScalar...) -> Swift.Bool
+  final public func matchesAny(_ seq: [Swift.UnicodeScalar]) -> Swift.Bool
+  final public func matchesAnySorted(_ seq: [Swift.UnicodeScalar]) -> Swift.Bool
+  final public func matchesLetter() -> Swift.Bool
+  final public func matchesDigit() -> Swift.Bool
+  @discardableResult
+  final public func matchConsume(_ seq: Swift.String) -> Swift.Bool
+  @discardableResult
+  final public func matchConsumeIgnoreCase(_ seq: Swift.String) -> Swift.Bool
+  final public func containsIgnoreCase(_ seq: Swift.String) -> Swift.Bool
+  final public func toString() -> Swift.String
+  @objc deinit
+}
+extension linkid_mmp.CharacterReader : Swift.CustomDebugStringConvertible {
+  final public var debugDescription: Swift.String {
+    get
+  }
+}
+open class Cleaner {
+  public init(headWhitelist: linkid_mmp.Whitelist?, bodyWhitelist: linkid_mmp.Whitelist)
+  public func clean(_ dirtyDocument: linkid_mmp.Document) throws -> linkid_mmp.Document
+  public func isValid(_ dirtyDocument: linkid_mmp.Document) throws -> Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class Collector {
+  public static func collect(_ eval: linkid_mmp.Evaluator, _ root: linkid_mmp.Element) throws -> linkid_mmp.Elements
+  @objc deinit
 }
 public protocol ColumnExpression : linkid_mmp.SQLExpression {
   var name: Swift.String { get }
@@ -282,6 +450,38 @@ extension linkid_mmp.ValueReducers {
 extension linkid_mmp.ValueObservation where Reducer == () {
   public static func combine<R1, R2, R3, R4, R5, R6, R7, R8>(_ o1: linkid_mmp.ValueObservation<R1>, _ o2: linkid_mmp.ValueObservation<R2>, _ o3: linkid_mmp.ValueObservation<R3>, _ o4: linkid_mmp.ValueObservation<R4>, _ o5: linkid_mmp.ValueObservation<R5>, _ o6: linkid_mmp.ValueObservation<R6>, _ o7: linkid_mmp.ValueObservation<R7>, _ o8: linkid_mmp.ValueObservation<R8>) -> linkid_mmp.ValueObservation<linkid_mmp.ValueReducers.Combine8<R1, R2, R3, R4, R5, R6, R7, R8>> where R1 : linkid_mmp.ValueReducer, R2 : linkid_mmp.ValueReducer, R3 : linkid_mmp.ValueReducer, R4 : linkid_mmp.ValueReducer, R5 : linkid_mmp.ValueReducer, R6 : linkid_mmp.ValueReducer, R7 : linkid_mmp.ValueReducer, R8 : linkid_mmp.ValueReducer
 }
+@_inheritsConvenienceInitializers public class CombiningEvaluator : linkid_mmp.Evaluator {
+  public var evaluators: Swift.Array<linkid_mmp.Evaluator> {
+    get
+  }
+  override public init()
+  public init(_ evaluators: Swift.Array<linkid_mmp.Evaluator>)
+  public init(_ evaluators: linkid_mmp.Evaluator...)
+  final public class And : linkid_mmp.CombiningEvaluator {
+    override public init(_ evaluators: [linkid_mmp.Evaluator])
+    override public init(_ evaluators: linkid_mmp.Evaluator...)
+    override final public func matches(_ root: linkid_mmp.Element, _ node: linkid_mmp.Element) -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class Or : linkid_mmp.CombiningEvaluator {
+    override public init(_ evaluators: [linkid_mmp.Evaluator])
+    final public func add(_ evaluator: linkid_mmp.Evaluator)
+    override final public func matches(_ root: linkid_mmp.Element, _ node: linkid_mmp.Element) -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  @objc deinit
+}
+public class Comment : linkid_mmp.Node {
+  public init(_ data: Swift.String, _ baseUri: Swift.String)
+  override public func nodeName() -> Swift.String
+  public func getData() -> Swift.String
+  override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  override public func copy(parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  override public func copy(clone: linkid_mmp.Node, parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class Common {
   @objc deinit
 }
@@ -336,6 +536,12 @@ public struct ConfigurationFJS {
   public static func setup()
   public static func recordError(name: Swift.String, stackTrace: Swift.String)
   public static func check()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class CssSelector {
+  public static func select(_ query: Swift.String, _ root: linkid_mmp.Element) throws -> linkid_mmp.Elements
+  public static func select(_ evaluator: linkid_mmp.Evaluator, _ root: linkid_mmp.Element) throws -> linkid_mmp.Elements
+  public static func select(_ query: Swift.String, _ roots: Swift.Array<linkid_mmp.Element>) throws -> linkid_mmp.Elements
   @objc deinit
 }
 extension Swift.Array {
@@ -447,7 +653,7 @@ extension Foundation.Data : linkid_mmp.DatabaseValueConvertible, linkid_mmp.Stat
   @inlinable public init(sqliteStatement: linkid_mmp.SQLiteStatement, index: Swift.Int32) {
         if let bytes = sqlite3_column_blob(sqliteStatement, index) {
             let count = Int(sqlite3_column_bytes(sqliteStatement, index))
-            self.init(bytes: bytes, count: count) // copy bytes
+            self.init(bytes: bytes, count: count)  
         } else {
             self.init()
         }
@@ -1150,8 +1356,8 @@ extension linkid_mmp.DatabaseValueConvertible {
   @objc deinit
   @inlinable final public func next() throws -> Value? {
         if _done {
-            // make sure this instance never yields a value again, even if the
-            // statement is reset by another cursor.
+             
+             
             return nil
         }
         switch sqlite3_step(_sqliteStatement) {
@@ -1178,8 +1384,8 @@ extension linkid_mmp.DatabaseValueConvertible {
   @objc deinit
   @inlinable final public func next() throws -> Value?? {
         if _done {
-            // make sure this instance never yields a value again, even if the
-            // statement is reset by another cursor.
+             
+             
             return nil
         }
         switch sqlite3_step(_sqliteStatement) {
@@ -1313,6 +1519,18 @@ final public class AnyDatabaseWriter : linkid_mmp.DatabaseWriter {
   final public func remove(collation: linkid_mmp.DatabaseCollation)
   @objc deinit
 }
+open class DataNode : linkid_mmp.Node {
+  public init(_ data: Swift.String, _ baseUri: Swift.String)
+  override open func nodeName() -> Swift.String
+  open func getWholeData() -> Swift.String
+  @discardableResult
+  open func setWholeData(_ data: Swift.String) -> linkid_mmp.DataNode
+  public static func createFromEncoded(_ encodedData: Swift.String, _ baseUri: Swift.String) throws -> linkid_mmp.DataNode
+  override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  override public func copy(parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  override public func copy(clone: linkid_mmp.Node, parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  @objc deinit
+}
 extension Foundation.NSDate : linkid_mmp.DatabaseValueConvertible {
   public var databaseValue: linkid_mmp.DatabaseValue {
     get
@@ -1411,12 +1629,12 @@ public class DeepLinkIOSParameters {
   public func buildParams() -> [Swift.String : Any]
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class DetectWindowTouch : UIKit.UIWindow {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func sendEvent(_ event: UIKit.UIEvent)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class DetectWindowTouch : UIKit.UIWindow {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func sendEvent(_ event: UIKit.UIEvent)
   @available(iOS 13.0, *)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(windowScene: UIKit.UIWindowScene)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(windowScene: UIKit.UIWindowScene)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public enum Network : Swift.String {
@@ -1436,6 +1654,295 @@ public struct DeviceInfoItem {
   public let label: Swift.String
   public let value: linkid_mmp.DeviceInfoValueType
   public let children: [linkid_mmp.DeviceInfoItem]?
+}
+open class Document : linkid_mmp.Element {
+  public enum QuirksMode {
+    case noQuirks, quirks, limitedQuirks
+    public static func == (a: linkid_mmp.Document.QuirksMode, b: linkid_mmp.Document.QuirksMode) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(_ baseUri: Swift.String)
+  public static func createShell(_ baseUri: Swift.String) -> linkid_mmp.Document
+  public func location() -> Swift.String
+  public func head() -> linkid_mmp.Element?
+  public func body() -> linkid_mmp.Element?
+  public func title() throws -> Swift.String
+  public func title(_ title: Swift.String) throws
+  public func createElement(_ tagName: Swift.String) throws -> linkid_mmp.Element
+  @discardableResult
+  public func normalise() throws -> linkid_mmp.Document
+  override open func outerHtml() throws -> Swift.String
+  @discardableResult
+  override public func text(_ text: Swift.String) throws -> linkid_mmp.Element
+  override open func nodeName() -> Swift.String
+  public func charset(_ charset: Swift.String.Encoding) throws
+  public func charset() -> Swift.String.Encoding
+  public func updateMetaCharsetElement(_ update: Swift.Bool)
+  public func updateMetaCharsetElement() -> Swift.Bool
+  public func outputSettings() -> linkid_mmp.OutputSettings
+  @discardableResult
+  public func outputSettings(_ outputSettings: linkid_mmp.OutputSettings) -> linkid_mmp.Document
+  public func quirksMode() -> linkid_mmp.Document.QuirksMode
+  @discardableResult
+  public func quirksMode(_ quirksMode: linkid_mmp.Document.QuirksMode) -> linkid_mmp.Document
+  override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  override public func copy(parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  override public func copy(clone: linkid_mmp.Node, parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  @objc deinit
+}
+public class OutputSettings : Foundation.NSCopying {
+  public enum Syntax {
+    case html, xml
+    public static func == (a: linkid_mmp.OutputSettings.Syntax, b: linkid_mmp.OutputSettings.Syntax) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init()
+  public func escapeMode() -> linkid_mmp.Entities.EscapeMode
+  @discardableResult
+  public func escapeMode(_ escapeMode: linkid_mmp.Entities.EscapeMode) -> linkid_mmp.OutputSettings
+  public func encoder() -> Swift.String.Encoding
+  public func charset() -> Swift.String.Encoding
+  @discardableResult
+  public func encoder(_ encoder: Swift.String.Encoding) -> linkid_mmp.OutputSettings
+  @discardableResult
+  public func charset(_ e: Swift.String.Encoding) -> linkid_mmp.OutputSettings
+  public func syntax() -> linkid_mmp.OutputSettings.Syntax
+  @discardableResult
+  public func syntax(syntax: linkid_mmp.OutputSettings.Syntax) -> linkid_mmp.OutputSettings
+  public func prettyPrint() -> Swift.Bool
+  @discardableResult
+  public func prettyPrint(pretty: Swift.Bool) -> linkid_mmp.OutputSettings
+  public func outline() -> Swift.Bool
+  @discardableResult
+  public func outline(outlineMode: Swift.Bool) -> linkid_mmp.OutputSettings
+  public func indentAmount() -> Swift.UInt
+  @discardableResult
+  public func indentAmount(indentAmount: Swift.UInt) -> linkid_mmp.OutputSettings
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc deinit
+}
+public class DocumentType : linkid_mmp.Node {
+  public init(_ name: Swift.String, _ publicId: Swift.String, _ systemId: Swift.String, _ baseUri: Swift.String)
+  public init(_ name: Swift.String, _ pubSysKey: Swift.String?, _ publicId: Swift.String, _ systemId: Swift.String, _ baseUri: Swift.String)
+  override public func nodeName() -> Swift.String
+  override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  override public func copy(parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  override public func copy(clone: linkid_mmp.Node, parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  @objc deinit
+}
+open class Element : linkid_mmp.Node {
+  public init(_ tag: linkid_mmp.Tag, _ baseUri: Swift.String, _ attributes: linkid_mmp.Attributes)
+  public init(_ tag: linkid_mmp.Tag, _ baseUri: Swift.String)
+  override open func nodeName() -> Swift.String
+  open func tagName() -> Swift.String
+  open func tagNameNormal() -> Swift.String
+  @discardableResult
+  public func tagName(_ tagName: Swift.String) throws -> linkid_mmp.Element
+  open func tag() -> linkid_mmp.Tag
+  open func isBlock() -> Swift.Bool
+  open func id() -> Swift.String
+  @discardableResult
+  override open func attr(_ attributeKey: Swift.String, _ attributeValue: Swift.String) throws -> linkid_mmp.Element
+  @discardableResult
+  open func attr(_ attributeKey: Swift.String, _ attributeValue: Swift.Bool) throws -> linkid_mmp.Element
+  open func dataset() -> Swift.Dictionary<Swift.String, Swift.String>
+  override open func parent() -> linkid_mmp.Element?
+  open func parents() -> linkid_mmp.Elements
+  open func child(_ index: Swift.Int) -> linkid_mmp.Element
+  open func children() -> linkid_mmp.Elements
+  open func textNodes() -> Swift.Array<linkid_mmp.TextNode>
+  open func dataNodes() -> Swift.Array<linkid_mmp.DataNode>
+  public func select(_ cssQuery: Swift.String) throws -> linkid_mmp.Elements
+  public func iS(_ cssQuery: Swift.String) throws -> Swift.Bool
+  public func iS(_ evaluator: linkid_mmp.Evaluator) throws -> Swift.Bool
+  @discardableResult
+  public func appendChild(_ child: linkid_mmp.Node) throws -> linkid_mmp.Element
+  @discardableResult
+  public func prependChild(_ child: linkid_mmp.Node) throws -> linkid_mmp.Element
+  @discardableResult
+  public func insertChildren(_ index: Swift.Int, _ children: Swift.Array<linkid_mmp.Node>) throws -> linkid_mmp.Element
+  @discardableResult
+  public func appendElement(_ tagName: Swift.String) throws -> linkid_mmp.Element
+  @discardableResult
+  public func prependElement(_ tagName: Swift.String) throws -> linkid_mmp.Element
+  @discardableResult
+  public func appendText(_ text: Swift.String) throws -> linkid_mmp.Element
+  @discardableResult
+  public func prependText(_ text: Swift.String) throws -> linkid_mmp.Element
+  @discardableResult
+  public func append(_ html: Swift.String) throws -> linkid_mmp.Element
+  @discardableResult
+  public func prepend(_ html: Swift.String) throws -> linkid_mmp.Element
+  @discardableResult
+  override open func before(_ html: Swift.String) throws -> linkid_mmp.Element
+  @discardableResult
+  override open func before(_ node: linkid_mmp.Node) throws -> linkid_mmp.Element
+  @discardableResult
+  override open func after(_ html: Swift.String) throws -> linkid_mmp.Element
+  override open func after(_ node: linkid_mmp.Node) throws -> linkid_mmp.Element
+  @discardableResult
+  public func empty() -> linkid_mmp.Element
+  @discardableResult
+  override open func wrap(_ html: Swift.String) throws -> linkid_mmp.Element
+  public func cssSelector() throws -> Swift.String
+  public func siblingElements() -> linkid_mmp.Elements
+  public func nextElementSibling() throws -> linkid_mmp.Element?
+  public func previousElementSibling() throws -> linkid_mmp.Element?
+  public func firstElementSibling() -> linkid_mmp.Element?
+  public func elementSiblingIndex() throws -> Swift.Int
+  public func lastElementSibling() -> linkid_mmp.Element?
+  public func getElementsByTag(_ tagName: Swift.String) throws -> linkid_mmp.Elements
+  public func getElementById(_ id: Swift.String) throws -> linkid_mmp.Element?
+  public func getElementsByClass(_ className: Swift.String) throws -> linkid_mmp.Elements
+  public func getElementsByAttribute(_ key: Swift.String) throws -> linkid_mmp.Elements
+  public func getElementsByAttributeStarting(_ keyPrefix: Swift.String) throws -> linkid_mmp.Elements
+  public func getElementsByAttributeValue(_ key: Swift.String, _ value: Swift.String) throws -> linkid_mmp.Elements
+  public func getElementsByAttributeValueNot(_ key: Swift.String, _ value: Swift.String) throws -> linkid_mmp.Elements
+  public func getElementsByAttributeValueStarting(_ key: Swift.String, _ valuePrefix: Swift.String) throws -> linkid_mmp.Elements
+  public func getElementsByAttributeValueEnding(_ key: Swift.String, _ valueSuffix: Swift.String) throws -> linkid_mmp.Elements
+  public func getElementsByAttributeValueContaining(_ key: Swift.String, _ match: Swift.String) throws -> linkid_mmp.Elements
+  public func getElementsByAttributeValueMatching(_ key: Swift.String, _ pattern: linkid_mmp.Pattern) throws -> linkid_mmp.Elements
+  public func getElementsByAttributeValueMatching(_ key: Swift.String, _ regex: Swift.String) throws -> linkid_mmp.Elements
+  public func getElementsByIndexLessThan(_ index: Swift.Int) throws -> linkid_mmp.Elements
+  public func getElementsByIndexGreaterThan(_ index: Swift.Int) throws -> linkid_mmp.Elements
+  public func getElementsByIndexEquals(_ index: Swift.Int) throws -> linkid_mmp.Elements
+  public func getElementsContainingText(_ searchText: Swift.String) throws -> linkid_mmp.Elements
+  public func getElementsContainingOwnText(_ searchText: Swift.String) throws -> linkid_mmp.Elements
+  public func getElementsMatchingText(_ pattern: linkid_mmp.Pattern) throws -> linkid_mmp.Elements
+  public func getElementsMatchingText(_ regex: Swift.String) throws -> linkid_mmp.Elements
+  public func getElementsMatchingOwnText(_ pattern: linkid_mmp.Pattern) throws -> linkid_mmp.Elements
+  public func getElementsMatchingOwnText(_ regex: Swift.String) throws -> linkid_mmp.Elements
+  public func getAllElements() throws -> linkid_mmp.Elements
+  public func text(trimAndNormaliseWhitespace: Swift.Bool = true) throws -> Swift.String
+  public func ownText() -> Swift.String
+  @discardableResult
+  public func text(_ text: Swift.String) throws -> linkid_mmp.Element
+  public func hasText() -> Swift.Bool
+  public func data() -> Swift.String
+  public func className() throws -> Swift.String
+  public func classNames() throws -> linkid_mmp.OrderedSet<Swift.String>
+  @discardableResult
+  public func classNames(_ classNames: linkid_mmp.OrderedSet<Swift.String>) throws -> linkid_mmp.Element
+  public func hasClass(_ className: Swift.String) -> Swift.Bool
+  @discardableResult
+  public func addClass(_ className: Swift.String) throws -> linkid_mmp.Element
+  @discardableResult
+  public func removeClass(_ className: Swift.String) throws -> linkid_mmp.Element
+  @discardableResult
+  public func toggleClass(_ className: Swift.String) throws -> linkid_mmp.Element
+  public func val() throws -> Swift.String
+  @discardableResult
+  public func val(_ value: Swift.String) throws -> linkid_mmp.Element
+  public func html() throws -> Swift.String
+  override open func html(_ appendable: linkid_mmp.StringBuilder) throws -> linkid_mmp.StringBuilder
+  @discardableResult
+  public func html(_ html: Swift.String) throws -> linkid_mmp.Element
+  override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  override public func copy(parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  override public func copy(clone: linkid_mmp.Node, parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  public static func == (lhs: linkid_mmp.Element, rhs: linkid_mmp.Element) -> Swift.Bool
+  override public func hash(into hasher: inout Swift.Hasher)
+  @objc deinit
+}
+open class Elements : Foundation.NSCopying {
+  public init()
+  public init(_ a: Swift.Array<linkid_mmp.Element>)
+  public init(_ a: linkid_mmp.OrderedSet<linkid_mmp.Element>)
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  open func attr(_ attributeKey: Swift.String) throws -> Swift.String
+  open func hasAttr(_ attributeKey: Swift.String) -> Swift.Bool
+  @discardableResult
+  open func attr(_ attributeKey: Swift.String, _ attributeValue: Swift.String) throws -> linkid_mmp.Elements
+  @discardableResult
+  open func removeAttr(_ attributeKey: Swift.String) throws -> linkid_mmp.Elements
+  @discardableResult
+  open func addClass(_ className: Swift.String) throws -> linkid_mmp.Elements
+  @discardableResult
+  open func removeClass(_ className: Swift.String) throws -> linkid_mmp.Elements
+  @discardableResult
+  open func toggleClass(_ className: Swift.String) throws -> linkid_mmp.Elements
+  open func hasClass(_ className: Swift.String) -> Swift.Bool
+  open func val() throws -> Swift.String
+  @discardableResult
+  open func val(_ value: Swift.String) throws -> linkid_mmp.Elements
+  open func text(trimAndNormaliseWhitespace: Swift.Bool = true) throws -> Swift.String
+  open func hasText() -> Swift.Bool
+  public func eachText() throws -> Swift.Array<Swift.String>
+  open func html() throws -> Swift.String
+  open func outerHtml() throws -> Swift.String
+  open func toString() throws -> Swift.String
+  @discardableResult
+  open func tagName(_ tagName: Swift.String) throws -> linkid_mmp.Elements
+  @discardableResult
+  open func html(_ html: Swift.String) throws -> linkid_mmp.Elements
+  @discardableResult
+  open func prepend(_ html: Swift.String) throws -> linkid_mmp.Elements
+  @discardableResult
+  open func append(_ html: Swift.String) throws -> linkid_mmp.Elements
+  @discardableResult
+  open func before(_ html: Swift.String) throws -> linkid_mmp.Elements
+  @discardableResult
+  open func after(_ html: Swift.String) throws -> linkid_mmp.Elements
+  @discardableResult
+  open func wrap(_ html: Swift.String) throws -> linkid_mmp.Elements
+  @discardableResult
+  open func unwrap() throws -> linkid_mmp.Elements
+  @discardableResult
+  open func empty() -> linkid_mmp.Elements
+  @discardableResult
+  open func remove() throws -> linkid_mmp.Elements
+  open func select(_ query: Swift.String) throws -> linkid_mmp.Elements
+  open func not(_ query: Swift.String) throws -> linkid_mmp.Elements
+  open func eq(_ index: Swift.Int) -> linkid_mmp.Elements
+  open func iS(_ query: Swift.String) throws -> Swift.Bool
+  open func parents() -> linkid_mmp.Elements
+  open func first() -> linkid_mmp.Element?
+  open func isEmpty() -> Swift.Bool
+  open func size() -> Swift.Int
+  open func last() -> linkid_mmp.Element?
+  @discardableResult
+  open func traverse(_ nodeVisitor: any linkid_mmp.NodeVisitor) throws -> linkid_mmp.Elements
+  open func forms() -> Swift.Array<linkid_mmp.FormElement>
+  open func add(_ e: linkid_mmp.Element)
+  open func add(_ index: Swift.Int, _ element: linkid_mmp.Element)
+  open func get(_ i: Swift.Int) -> linkid_mmp.Element
+  open func array() -> Swift.Array<linkid_mmp.Element>
+  @objc deinit
+}
+extension linkid_mmp.Elements : Swift.Equatable {
+  public static func == (lhs: linkid_mmp.Elements, rhs: linkid_mmp.Elements) -> Swift.Bool
+}
+extension linkid_mmp.Elements : Swift.RandomAccessCollection {
+  public subscript(position: Swift.Int) -> linkid_mmp.Element {
+    get
+  }
+  public var startIndex: Swift.Int {
+    get
+  }
+  public var endIndex: Swift.Int {
+    get
+  }
+  public var count: Swift.Int {
+    get
+  }
+  public typealias Element = linkid_mmp.Element
+  public typealias Index = Swift.Int
+  public typealias Indices = Swift.Range<Swift.Int>
+  public typealias Iterator = linkid_mmp.ElementsIterator
+  public typealias SubSequence = Swift.Slice<linkid_mmp.Elements>
+}
+public struct ElementsIterator : Swift.IteratorProtocol {
+  public mutating func next() -> linkid_mmp.Element?
+  public typealias Element = linkid_mmp.Element
+}
+extension linkid_mmp.Elements : Swift.Sequence {
+  public func makeIterator() -> linkid_mmp.ElementsIterator
 }
 public protocol EncodableRecord {
   func encode(to container: inout linkid_mmp.PersistenceContainer)
@@ -1500,6 +2007,258 @@ public enum DatabaseUUIDEncodingStrategy {
 extension linkid_mmp.EncodableRecord where Self : Swift.Encodable {
   public func encode(to container: inout linkid_mmp.PersistenceContainer)
 }
+@_hasMissingDesignatedInitializers public class Entities {
+  @_hasMissingDesignatedInitializers public class EscapeMode : Swift.Equatable {
+    public static let xhtml: linkid_mmp.Entities.EscapeMode
+    public static let base: linkid_mmp.Entities.EscapeMode
+    public static let extended: linkid_mmp.Entities.EscapeMode
+    public static func == (left: linkid_mmp.Entities.EscapeMode, right: linkid_mmp.Entities.EscapeMode) -> Swift.Bool
+    public func codepointForName(_ name: Swift.String) -> Swift.UnicodeScalar?
+    public func nameForCodepoint(_ codepoint: Swift.UnicodeScalar) -> Swift.String?
+    @objc deinit
+  }
+  public static func isNamedEntity(_ name: Swift.String) -> Swift.Bool
+  public static func isBaseNamedEntity(_ name: Swift.String) -> Swift.Bool
+  public static func getByName(name: Swift.String) -> Swift.String?
+  public static func codepointsForName(_ name: Swift.String) -> [Swift.UnicodeScalar]?
+  public static func escape(_ string: Swift.String, _ encode: Swift.String.Encoding = .utf8) -> Swift.String
+  public static func escape(_ string: Swift.String, _ out: linkid_mmp.OutputSettings) -> Swift.String
+  public static func unescape(_ string: Swift.String) throws -> Swift.String
+  public static func unescape(string: Swift.String, strict: Swift.Bool) throws -> Swift.String
+  @objc deinit
+}
+open class Evaluator {
+  public init()
+  open func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+  open func toString() -> Swift.String
+  public class Tag : linkid_mmp.Evaluator {
+    public init(_ tagName: Swift.String)
+    override open func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override open func toString() -> Swift.String
+    @objc deinit
+  }
+  final public class TagEndsWith : linkid_mmp.Evaluator {
+    public init(_ tagName: Swift.String)
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  final public class Id : linkid_mmp.Evaluator {
+    public init(_ id: Swift.String)
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  final public class Class : linkid_mmp.Evaluator {
+    public init(_ className: Swift.String)
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  final public class Attribute : linkid_mmp.Evaluator {
+    public init(_ key: Swift.String)
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  final public class AttributeStarting : linkid_mmp.Evaluator {
+    public init(_ keyPrefix: Swift.String) throws
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class AttributeWithValue : linkid_mmp.Evaluator.AttributeKeyPair {
+    override public init(_ key: Swift.String, _ value: Swift.String) throws
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class AttributeWithValueNot : linkid_mmp.Evaluator.AttributeKeyPair {
+    override public init(_ key: Swift.String, _ value: Swift.String) throws
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class AttributeWithValueStarting : linkid_mmp.Evaluator.AttributeKeyPair {
+    override public init(_ key: Swift.String, _ value: Swift.String) throws
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class AttributeWithValueEnding : linkid_mmp.Evaluator.AttributeKeyPair {
+    override public init(_ key: Swift.String, _ value: Swift.String) throws
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class AttributeWithValueContaining : linkid_mmp.Evaluator.AttributeKeyPair {
+    override public init(_ key: Swift.String, _ value: Swift.String) throws
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  final public class AttributeWithValueMatching : linkid_mmp.Evaluator {
+    public init(_ key: Swift.String, _ pattern: linkid_mmp.Pattern)
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  public class AttributeKeyPair : linkid_mmp.Evaluator {
+    public init(_ key: Swift.String, _ value2: Swift.String) throws
+    override open func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class AllElements : linkid_mmp.Evaluator {
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    override public init()
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class IndexLessThan : linkid_mmp.Evaluator.IndexEvaluator {
+    override public init(_ index: Swift.Int)
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class IndexGreaterThan : linkid_mmp.Evaluator.IndexEvaluator {
+    override public init(_ index: Swift.Int)
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class IndexEquals : linkid_mmp.Evaluator.IndexEvaluator {
+    override public init(_ index: Swift.Int)
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class IsLastChild : linkid_mmp.Evaluator {
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    override public init()
+    @objc deinit
+  }
+  final public class IsFirstOfType : linkid_mmp.Evaluator.IsNthOfType {
+    public init()
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  final public class IsLastOfType : linkid_mmp.Evaluator.IsNthLastOfType {
+    public init()
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  public class CssNthEvaluator : linkid_mmp.Evaluator {
+    final public let a: Swift.Int
+    final public let b: Swift.Int
+    public init(_ a: Swift.Int, _ b: Swift.Int)
+    public init(_ b: Swift.Int)
+    override open func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override open func toString() -> Swift.String
+    open func getPseudoClass() -> Swift.String
+    open func calculatePosition(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Int
+    @objc deinit
+  }
+  final public class IsNthChild : linkid_mmp.Evaluator.CssNthEvaluator {
+    override public init(_ a: Swift.Int, _ b: Swift.Int)
+    override final public func calculatePosition(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Int
+    override final public func getPseudoClass() -> Swift.String
+    @objc deinit
+  }
+  final public class IsNthLastChild : linkid_mmp.Evaluator.CssNthEvaluator {
+    override public init(_ a: Swift.Int, _ b: Swift.Int)
+    override final public func calculatePosition(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Int
+    override final public func getPseudoClass() -> Swift.String
+    @objc deinit
+  }
+  public class IsNthOfType : linkid_mmp.Evaluator.CssNthEvaluator {
+    override public init(_ a: Swift.Int, _ b: Swift.Int)
+    override open func calculatePosition(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) -> Swift.Int
+    override open func getPseudoClass() -> Swift.String
+    @objc deinit
+  }
+  public class IsNthLastOfType : linkid_mmp.Evaluator.CssNthEvaluator {
+    override public init(_ a: Swift.Int, _ b: Swift.Int)
+    override open func calculatePosition(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Int
+    override open func getPseudoClass() -> Swift.String
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class IsFirstChild : linkid_mmp.Evaluator {
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    override public init()
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class IsRoot : linkid_mmp.Evaluator {
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    override public init()
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class IsOnlyChild : linkid_mmp.Evaluator {
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    override public init()
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class IsOnlyOfType : linkid_mmp.Evaluator {
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    override public init()
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers final public class IsEmpty : linkid_mmp.Evaluator {
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    override public init()
+    @objc deinit
+  }
+  public class IndexEvaluator : linkid_mmp.Evaluator {
+    public init(_ index: Swift.Int)
+    @objc deinit
+  }
+  final public class ContainsText : linkid_mmp.Evaluator {
+    public init(_ searchText: Swift.String)
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  final public class ContainsOwnText : linkid_mmp.Evaluator {
+    public init(_ searchText: Swift.String)
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  final public class Matches : linkid_mmp.Evaluator {
+    public init(_ pattern: linkid_mmp.Pattern)
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  final public class MatchesOwn : linkid_mmp.Evaluator {
+    public init(_ pattern: linkid_mmp.Pattern)
+    override final public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override final public func toString() -> Swift.String
+    @objc deinit
+  }
+  @objc deinit
+}
+public enum ExceptionType {
+  case IllegalArgumentException
+  case IOException
+  case XmlDeclaration
+  case MalformedURLException
+  case CloneNotSupportedException
+  case SelectorParseException
+  public static func == (a: linkid_mmp.ExceptionType, b: linkid_mmp.ExceptionType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum Exception : Swift.Error {
+  case Error(type: linkid_mmp.ExceptionType, Message: Swift.String)
+}
 extension linkid_mmp.ValueReducers {
   public struct Fetch<Value> : linkid_mmp.ValueReducer {
     public init(_ fetch: @escaping (linkid_mmp.Database) throws -> Value)
@@ -1557,8 +2316,8 @@ extension linkid_mmp.FetchRequest where Self.RowDecoder : linkid_mmp.FetchableRe
   @objc deinit
   @inlinable final public func next() throws -> Record? {
         if _done {
-            // make sure this instance never yields a value again, even if the
-            // statement is reset by another cursor.
+             
+             
             return nil
         }
         switch sqlite3_step(_sqliteStatement) {
@@ -1693,15 +2452,9 @@ extension linkid_mmp.Fingerprinter {
 }
 @available(iOS 13, macOS 11, *)
 extension linkid_mmp.Fingerprinter {
-  #if compiler(>=5.3) && $AsyncAwait
   public func getDeviceId() async -> Swift.String?
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   public func getFingerprintTree() async -> linkid_mmp.FingerprintTree
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   public func getFingerprint() async -> Swift.String?
-  #endif
 }
 public protocol FingerprinterInstanceProviding {
   static func getInstance(_ configuration: linkid_mmp.ConfigurationFJS) -> linkid_mmp.Fingerprinter
@@ -1730,6 +2483,16 @@ public struct FingerprintTree {
     get
   }
   public func toString() -> Swift.String
+  @objc deinit
+}
+public class FormElement : linkid_mmp.Element {
+  override public init(_ tag: linkid_mmp.Tag, _ baseUri: Swift.String, _ attributes: linkid_mmp.Attributes)
+  public func elements() -> linkid_mmp.Elements
+  @discardableResult
+  public func addElement(_ element: linkid_mmp.Element) -> linkid_mmp.FormElement
+  override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  override public func copy(parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  override public func copy(clone: linkid_mmp.Node, parent: linkid_mmp.Node?) -> linkid_mmp.Node
   @objc deinit
 }
 public struct FTS3 : linkid_mmp.VirtualTableModule {
@@ -1988,6 +2751,95 @@ extension linkid_mmp.ValueReducers {
 }
 @available(*, deprecated, renamed: "ValueReducers.Map")
 public typealias MapValueReducer<Base, Value> = linkid_mmp.ValueReducers.Map<Base, Value> where Base : linkid_mmp.ValueReducer
+open class Node : Swift.Equatable, Swift.Hashable {
+  public var siblingIndex: Swift.Int {
+    get
+  }
+  public init(_ baseUri: Swift.String, _ attributes: linkid_mmp.Attributes)
+  public init(_ baseUri: Swift.String)
+  public init()
+  public func nodeName() -> Swift.String
+  open func attr(_ attributeKey: Swift.String) throws -> Swift.String
+  open func getAttributes() -> linkid_mmp.Attributes?
+  @discardableResult
+  open func attr(_ attributeKey: Swift.String, _ attributeValue: Swift.String) throws -> linkid_mmp.Node
+  open func hasAttr(_ attributeKey: Swift.String) -> Swift.Bool
+  @discardableResult
+  open func removeAttr(_ attributeKey: Swift.String) throws -> linkid_mmp.Node
+  open func getBaseUri() -> Swift.String
+  open func setBaseUri(_ baseUri: Swift.String) throws
+  open func absUrl(_ attributeKey: Swift.String) throws -> Swift.String
+  open func childNode(_ index: Swift.Int) -> linkid_mmp.Node
+  open func getChildNodes() -> Swift.Array<linkid_mmp.Node>
+  open func childNodesCopy() -> Swift.Array<linkid_mmp.Node>
+  public func childNodeSize() -> Swift.Int
+  open func parent() -> linkid_mmp.Node?
+  open func ownerDocument() -> linkid_mmp.Document?
+  open func remove() throws
+  @discardableResult
+  open func before(_ html: Swift.String) throws -> linkid_mmp.Node
+  @discardableResult
+  open func before(_ node: linkid_mmp.Node) throws -> linkid_mmp.Node
+  @discardableResult
+  open func after(_ html: Swift.String) throws -> linkid_mmp.Node
+  @discardableResult
+  open func after(_ node: linkid_mmp.Node) throws -> linkid_mmp.Node
+  @discardableResult
+  open func after(html: Swift.String) throws -> linkid_mmp.Node
+  @discardableResult
+  open func after(node: linkid_mmp.Node) throws -> linkid_mmp.Node
+  open func addSiblingHtml(index: Swift.Int, _ html: Swift.String) throws
+  @discardableResult
+  open func wrap(_ html: Swift.String) throws -> linkid_mmp.Node?
+  @discardableResult
+  open func unwrap() throws -> linkid_mmp.Node?
+  public func replaceWith(_ input: linkid_mmp.Node) throws
+  public func setParentNode(_ parentNode: linkid_mmp.Node) throws
+  public func replaceChild(_ out: linkid_mmp.Node, _ input: linkid_mmp.Node) throws
+  public func removeChild(_ out: linkid_mmp.Node) throws
+  public func addChildren(_ children: linkid_mmp.Node...) throws
+  public func addChildren(_ children: [linkid_mmp.Node]) throws
+  public func addChildren(_ index: Swift.Int, _ children: linkid_mmp.Node...) throws
+  public func addChildren(_ index: Swift.Int, _ children: [linkid_mmp.Node]) throws
+  public func ensureChildNodes()
+  public func reparentChild(_ child: linkid_mmp.Node) throws
+  open func siblingNodes() -> Swift.Array<linkid_mmp.Node>
+  open func nextSibling() -> linkid_mmp.Node?
+  open func previousSibling() -> linkid_mmp.Node?
+  public func setSiblingIndex(_ siblingIndex: Swift.Int)
+  @discardableResult
+  open func traverse(_ nodeVisitor: any linkid_mmp.NodeVisitor) throws -> linkid_mmp.Node
+  open func outerHtml() throws -> Swift.String
+  public func outerHtml(_ accum: linkid_mmp.StringBuilder) throws
+  open func html(_ appendable: linkid_mmp.StringBuilder) throws -> linkid_mmp.StringBuilder
+  public func indent(_ accum: linkid_mmp.StringBuilder, _ depth: Swift.Int, _ out: linkid_mmp.OutputSettings)
+  open func equals(_ o: linkid_mmp.Node) -> Swift.Bool
+  open func hasSameValue(_ o: linkid_mmp.Node) throws -> Swift.Bool
+  public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  public func copy(parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  public func copy(clone: linkid_mmp.Node) -> linkid_mmp.Node
+  public func copy(clone: linkid_mmp.Node, parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  public static func == (lhs: linkid_mmp.Node, rhs: linkid_mmp.Node) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  @objc deinit
+  open var hashValue: Swift.Int {
+    get
+  }
+}
+extension linkid_mmp.Node : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension linkid_mmp.Node : Swift.CustomDebugStringConvertible {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+public protocol NodeVisitor {
+  func head(_ node: linkid_mmp.Node, _ depth: Swift.Int) throws
+  func tail(_ node: linkid_mmp.Node, _ depth: Swift.Int) throws
+}
 extension Foundation.NSData : linkid_mmp.DatabaseValueConvertible {
   public var databaseValue: linkid_mmp.DatabaseValue {
     get
@@ -2074,6 +2926,137 @@ extension linkid_mmp.OrderedDictionary : Swift.Equatable where Value : Swift.Equ
   @usableFromInline
   internal static func == (lhs: linkid_mmp.OrderedDictionary<Key, Value>, rhs: linkid_mmp.OrderedDictionary<Key, Value>) -> Swift.Bool
 }
+public class OrderedSet<T> where T : Swift.Hashable {
+  public typealias Index = Swift.Int
+  public init()
+  @objc deinit
+  public init<S>(sequence: S) where T == S.Element, S : Swift.Sequence
+  required public init(arrayLiteral elements: T...)
+  public func index(of object: T) -> linkid_mmp.OrderedSet<T>.Index?
+  public func append(_ object: T)
+  public func append<S>(contentsOf sequence: S) where T == S.Element, S : Swift.Sequence
+  public func remove(_ object: T)
+  public func remove<S>(_ objects: S) where T == S.Element, S : Swift.Sequence
+  public func removeObject(at index: linkid_mmp.OrderedSet<T>.Index)
+  public func removeAllObjects()
+  public func swapObject(_ first: T, with second: T)
+  public func intersects<S>(_ other: S) -> Swift.Bool where T == S.Element, S : Swift.Sequence
+  public func isSubset<S>(of sequence: S) -> Swift.Bool where T == S.Element, S : Swift.Sequence
+  public func moveObject(_ object: T, toIndex index: linkid_mmp.OrderedSet<T>.Index)
+  public func moveObject(at index: linkid_mmp.OrderedSet<T>.Index, to toIndex: linkid_mmp.OrderedSet<T>.Index)
+  public func insert(_ object: T, at index: linkid_mmp.OrderedSet<T>.Index)
+  public func insert<S>(_ objects: S, at index: linkid_mmp.OrderedSet<T>.Index) where T == S.Element, S : Swift.Sequence
+  public var last: T? {
+    get
+  }
+}
+extension linkid_mmp.OrderedSet : Swift.ExpressibleByArrayLiteral {
+  public typealias ArrayLiteralElement = T
+}
+extension linkid_mmp.OrderedSet {
+  public var count: Swift.Int {
+    get
+  }
+  public var isEmpty: Swift.Bool {
+    get
+  }
+  public var first: T? {
+    get
+  }
+  public func index(after i: Swift.Int) -> Swift.Int
+  public var startIndex: Swift.Int {
+    get
+  }
+  public var endIndex: Swift.Int {
+    get
+  }
+  public subscript(index: linkid_mmp.OrderedSet<T>.Index) -> T {
+    get
+    set
+  }
+}
+extension linkid_mmp.OrderedSet : Swift.Sequence {
+  public typealias Iterator = linkid_mmp.OrderedSetGenerator<T>
+  public func makeIterator() -> linkid_mmp.OrderedSet<T>.Iterator
+  public typealias Element = linkid_mmp.OrderedSetGenerator<T>.Element
+}
+public struct OrderedSetGenerator<T> : Swift.IteratorProtocol where T : Swift.Hashable {
+  public typealias Element = T
+  public init(set: linkid_mmp.OrderedSet<T>)
+  public mutating func next() -> linkid_mmp.OrderedSetGenerator<T>.Element?
+}
+public func + <T, S>(lhs: linkid_mmp.OrderedSet<T>, rhs: S) -> linkid_mmp.OrderedSet<T> where T : Swift.Hashable, T == S.Element, S : Swift.Sequence
+public func += <T, S>(lhs: inout linkid_mmp.OrderedSet<T>, rhs: S) where T : Swift.Hashable, T == S.Element, S : Swift.Sequence
+public func - <T, S>(lhs: linkid_mmp.OrderedSet<T>, rhs: S) -> linkid_mmp.OrderedSet<T> where T : Swift.Hashable, T == S.Element, S : Swift.Sequence
+public func -= <T, S>(lhs: inout linkid_mmp.OrderedSet<T>, rhs: S) where T : Swift.Hashable, T == S.Element, S : Swift.Sequence
+extension linkid_mmp.OrderedSet : Swift.Equatable {
+}
+public func == <T>(lhs: linkid_mmp.OrderedSet<T>, rhs: linkid_mmp.OrderedSet<T>) -> Swift.Bool where T : Swift.Hashable
+extension linkid_mmp.OrderedSet : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers open class ParseError {
+  open func getErrorMessage() -> Swift.String
+  open func getPosition() -> Swift.Int
+  open func toString() -> Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ParseErrorList {
+  open func add(_ e: linkid_mmp.ParseError)
+  open func add(_ index: Swift.Int, _ element: linkid_mmp.ParseError)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Parser {
+  public func parseInput(_ html: Swift.String, _ baseUri: Swift.String) throws -> linkid_mmp.Document
+  public func getTreeBuilder() -> linkid_mmp.TreeBuilder
+  @discardableResult
+  public func setTreeBuilder(_ treeBuilder: linkid_mmp.TreeBuilder) -> linkid_mmp.Parser
+  public func isTrackErrors() -> Swift.Bool
+  @discardableResult
+  public func setTrackErrors(_ maxErrors: Swift.Int) -> linkid_mmp.Parser
+  public func getErrors() -> linkid_mmp.ParseErrorList
+  @discardableResult
+  public func settings(_ settings: linkid_mmp.ParseSettings) -> linkid_mmp.Parser
+  public func settings() -> linkid_mmp.ParseSettings
+  public static func parse(_ html: Swift.String, _ baseUri: Swift.String) throws -> linkid_mmp.Document
+  public static func parseFragment(_ fragmentHtml: Swift.String, _ context: linkid_mmp.Element?, _ baseUri: Swift.String) throws -> Swift.Array<linkid_mmp.Node>
+  public static func parseXmlFragment(_ fragmentXml: Swift.String, _ baseUri: Swift.String) throws -> Swift.Array<linkid_mmp.Node>
+  public static func parseBodyFragment(_ bodyHtml: Swift.String, _ baseUri: Swift.String) throws -> linkid_mmp.Document
+  public static func unescapeEntities(_ string: Swift.String, _ inAttribute: Swift.Bool) throws -> Swift.String
+  public static func parseBodyFragmentRelaxed(_ bodyHtml: Swift.String, _ baseUri: Swift.String) throws -> linkid_mmp.Document
+  public static func htmlParser() -> linkid_mmp.Parser
+  public static func xmlParser() -> linkid_mmp.Parser
+  @objc deinit
+}
+open class ParseSettings {
+  public static let htmlDefault: linkid_mmp.ParseSettings
+  public static let preserveCase: linkid_mmp.ParseSettings
+  public init(_ tag: Swift.Bool, _ attribute: Swift.Bool)
+  open func normalizeTag(_ name: Swift.String) -> Swift.String
+  open func normalizeAttribute(_ name: Swift.String) -> Swift.String
+  open func normalizeAttributes(_ attributes: linkid_mmp.Attributes) throws -> linkid_mmp.Attributes
+  @objc deinit
+}
+public struct Pattern {
+  public static let CASE_INSENSITIVE: Swift.Int
+  public static func compile(_ s: Swift.String) -> linkid_mmp.Pattern
+  public static func compile(_ s: Swift.String, _ op: Swift.Int) -> linkid_mmp.Pattern
+  public func validate() throws
+  public func matcher(in text: Swift.String) -> linkid_mmp.Matcher
+  public func toString() -> Swift.String
+}
+@_hasMissingDesignatedInitializers public class Matcher {
+  public var count: Swift.Int {
+    get
+  }
+  @discardableResult
+  public func find() -> Swift.Bool
+  public func group(_ i: Swift.Int) -> Swift.String?
+  public func group() -> Swift.String?
+  @objc deinit
+}
 extension linkid_mmp.Database.ConflictResolution {
   @usableFromInline
   internal var invalidatesLastInsertedRowID: Swift.Bool {
@@ -2139,7 +3122,7 @@ extension linkid_mmp.MutablePersistableRecord {
                 columns: columns,
                 onConflict: type(of: self).persistenceConflictPolicy.conflictResolutionForUpdate)
             else {
-                // Nil primary key
+                 
                 throw dao.makeRecordNotFoundError()
         }
         try statement.execute()
@@ -2148,8 +3131,8 @@ extension linkid_mmp.MutablePersistableRecord {
         }
     }
   @inlinable public mutating func performSave(_ db: linkid_mmp.Database) throws {
-        // Call self.insert and self.update so that we support classes that
-        // override those methods.
+         
+         
         if let key = try primaryKey(db) {
             do {
                 try update(db)
@@ -2162,7 +3145,7 @@ extension linkid_mmp.MutablePersistableRecord {
     }
   @inlinable public func performDelete(_ db: linkid_mmp.Database) throws -> Swift.Bool {
         guard let statement = try DAO(db, self).deleteStatement() else {
-            // Nil primary key
+             
             return false
         }
         try statement.execute()
@@ -2170,7 +3153,7 @@ extension linkid_mmp.MutablePersistableRecord {
     }
   @inlinable public func performExists(_ db: linkid_mmp.Database) throws -> Swift.Bool {
         guard let statement = try DAO(db, self).existsStatement() else {
-            // Nil primary key
+             
             return false
         }
         return try Row.fetchOne(statement) != nil
@@ -2219,8 +3202,8 @@ extension linkid_mmp.PersistableRecord {
         }
     }
   @inlinable public func performSave(_ db: linkid_mmp.Database) throws {
-        // Call self.insert and self.update so that we support classes that
-        // override those methods.
+         
+         
         if let key = try primaryKey(db) {
             do {
                 try update(db)
@@ -2351,6 +3334,11 @@ extension linkid_mmp.QueryInterfaceRequest where T : linkid_mmp.TableRecord {
   public func annotated(with aggregates: linkid_mmp.AssociationAggregate<linkid_mmp.QueryInterfaceRequest<T>.RowDecoder>...) -> linkid_mmp.QueryInterfaceRequest<T>
   public func annotated(with aggregates: [linkid_mmp.AssociationAggregate<linkid_mmp.QueryInterfaceRequest<T>.RowDecoder>]) -> linkid_mmp.QueryInterfaceRequest<T>
   public func having(_ predicate: linkid_mmp.AssociationAggregate<linkid_mmp.QueryInterfaceRequest<T>.RowDecoder>) -> linkid_mmp.QueryInterfaceRequest<T>
+}
+@_hasMissingDesignatedInitializers public class QueryParser {
+  public static func parse(_ query: Swift.String) throws -> linkid_mmp.Evaluator
+  public func parse() throws -> linkid_mmp.Evaluator
+  @objc deinit
 }
 open class Record : linkid_mmp.FetchableRecord, linkid_mmp.TableRecord, linkid_mmp.PersistableRecord {
   public init()
@@ -2572,7 +3560,7 @@ extension linkid_mmp.Row {
   @inlinable final public subscript<Value>(columnName: Swift.String) -> Value where Value : linkid_mmp.DatabaseValueConvertible {
     get {
         guard let index = index(ofColumn: columnName) else {
-            // No such column
+             
             fatalConversionError(to: Value.self, from: nil, in: self, atColumn: columnName)
         }
         return Value.decode(from: self, atUncheckedIndex: index)
@@ -2581,7 +3569,7 @@ extension linkid_mmp.Row {
   @inlinable final public subscript<Value>(columnName: Swift.String) -> Value where Value : linkid_mmp.DatabaseValueConvertible, Value : linkid_mmp.StatementColumnConvertible {
     get {
         guard let index = index(ofColumn: columnName) else {
-            // No such column
+             
             fatalConversionError(to: Value.self, from: nil, in: self, atColumn: columnName)
         }
         return Value.fastDecode(from: self, atUncheckedIndex: index)
@@ -2660,8 +3648,8 @@ extension linkid_mmp.Row {
   @objc deinit
   @inlinable final public func next() throws -> linkid_mmp.Row? {
         if _done {
-            // make sure this instance never yields a value again, even if the
-            // statement is reset by another cursor.
+             
+             
             return nil
         }
         switch sqlite3_step(_sqliteStatement) {
@@ -2842,6 +3830,21 @@ public struct ScopeAdapter : linkid_mmp.RowAdapter {
   public init(base: any linkid_mmp.RowAdapter, scopes: [Swift.String : any linkid_mmp.RowAdapter])
   public func layoutedAdapter(from layout: any linkid_mmp.RowLayout) throws -> any linkid_mmp.LayoutedRowAdapter
 }
+public class SimpleDictionary<KeyType, ValueType> where KeyType : Swift.Hashable {
+  public typealias DictionaryType = [KeyType : ValueType]
+  public var values: linkid_mmp.SimpleDictionary<KeyType, ValueType>.DictionaryType {
+    get
+  }
+  public init()
+  public var count: Swift.Int {
+    get
+  }
+  public func remove(_ key: KeyType)
+  public func contains(_ key: KeyType) -> Swift.Bool
+  public func put(_ value: ValueType, forKey key: KeyType)
+  public func get(_ key: KeyType) -> ValueType?
+  @objc deinit
+}
 public struct SQLAssociation {
 }
 public struct SQLCollatedExpression {
@@ -2917,8 +3920,8 @@ public struct SQLUnaryOperator : Swift.Hashable {
   public let sql: Swift.String
   public let needsRightSpace: Swift.Bool
   public init(_ sql: Swift.String, needsRightSpace: Swift.Bool)
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: linkid_mmp.SQLUnaryOperator, b: linkid_mmp.SQLUnaryOperator) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -2937,8 +3940,8 @@ public struct SQLBinaryOperator : Swift.Hashable {
   public var negated: linkid_mmp.SQLBinaryOperator? {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: linkid_mmp.SQLBinaryOperator, b: linkid_mmp.SQLBinaryOperator) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -2959,8 +3962,8 @@ public struct SQLAssociativeBinaryOperator : Swift.Hashable {
   public let neutralValue: linkid_mmp.DatabaseValue
   public let strictlyAssociative: Swift.Bool
   public init(sql: Swift.String, neutralValue: linkid_mmp.DatabaseValue, strictlyAssociative: Swift.Bool)
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: linkid_mmp.SQLAssociativeBinaryOperator, b: linkid_mmp.SQLAssociativeBinaryOperator) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -2971,8 +3974,8 @@ extension Swift.Sequence where Self.Element == any linkid_mmp.SQLExpression {
 public struct SQLFunctionName : Swift.Hashable {
   public var sql: Swift.String
   public init(_ sql: Swift.String)
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: linkid_mmp.SQLFunctionName, b: linkid_mmp.SQLFunctionName) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -3534,8 +4537,8 @@ public protocol StatementColumnConvertible {
   @objc deinit
   @inlinable final public func next() throws -> Value? {
         if _done {
-            // make sure this instance never yields a value again, even if the
-            // statement is reset by another cursor.
+             
+             
             return nil
         }
         switch sqlite3_step(_sqliteStatement) {
@@ -3562,8 +4565,8 @@ public protocol StatementColumnConvertible {
   @objc deinit
   @inlinable final public func next() throws -> Value?? {
         if _done {
-            // make sure this instance never yields a value again, even if the
-            // statement is reset by another cursor.
+             
+             
             return nil
         }
         switch sqlite3_step(_sqliteStatement) {
@@ -3613,6 +4616,105 @@ extension Swift.Optional where Wrapped : linkid_mmp.DatabaseValueConvertible, Wr
 extension linkid_mmp.FetchRequest where Self.RowDecoder : linkid_mmp._OptionalProtocol, Self.RowDecoder._Wrapped : linkid_mmp.DatabaseValueConvertible, Self.RowDecoder._Wrapped : linkid_mmp.StatementColumnConvertible {
   public func fetchCursor(_ db: linkid_mmp.Database) throws -> linkid_mmp.FastNullableDatabaseValueCursor<Self.RowDecoder._Wrapped>
   public func fetchAll(_ db: linkid_mmp.Database) throws -> [Self.RowDecoder._Wrapped?]
+}
+extension Swift.String.Encoding {
+  public func displayName() -> Swift.String
+}
+open class StringBuilder {
+  public init(string: Swift.String = "")
+  public init(_ size: Swift.Int)
+  open func toString() -> Swift.String
+  open var xlength: Swift.Int {
+    get
+  }
+  open var isEmpty: Swift.Bool {
+    get
+  }
+  open func append(_ string: Swift.String)
+  open func appendCodePoint(_ chr: Swift.Character)
+  open func appendCodePoints(_ chr: [Swift.Character])
+  open func appendCodePoint(_ ch: Swift.Int)
+  open func appendCodePoint(_ ch: Swift.UnicodeScalar)
+  open func appendCodePoints(_ chr: [Swift.UnicodeScalar])
+  @discardableResult
+  open func append<T>(_ value: T) -> linkid_mmp.StringBuilder where T : Swift.CustomStringConvertible
+  @discardableResult
+  open func append(_ value: Swift.UnicodeScalar) -> linkid_mmp.StringBuilder
+  @discardableResult
+  open func appendLine(_ string: Swift.String) -> linkid_mmp.StringBuilder
+  @discardableResult
+  open func appendLine<T>(_ value: T) -> linkid_mmp.StringBuilder where T : Swift.CustomStringConvertible
+  @discardableResult
+  open func clear() -> linkid_mmp.StringBuilder
+  @objc deinit
+}
+public func += (lhs: linkid_mmp.StringBuilder, rhs: Swift.String)
+public func += <T>(lhs: linkid_mmp.StringBuilder, rhs: T) where T : Swift.CustomStringConvertible
+public func + (lhs: linkid_mmp.StringBuilder, rhs: linkid_mmp.StringBuilder) -> linkid_mmp.StringBuilder
+@_hasMissingDesignatedInitializers open class StringUtil {
+  public static func join(_ strings: [Swift.String], sep: Swift.String) -> Swift.String
+  public static func join(_ strings: Swift.Set<Swift.String>, sep: Swift.String) -> Swift.String
+  public static func join(_ strings: linkid_mmp.OrderedSet<Swift.String>, sep: Swift.String) -> Swift.String
+  public static func padding(_ width: Swift.Int) -> Swift.String
+  public static func isBlank(_ string: Swift.String) -> Swift.Bool
+  public static func isNumeric(_ string: Swift.String) -> Swift.Bool
+  public static func isWhitespace(_ c: Swift.Character) -> Swift.Bool
+  public static func normaliseWhitespace(_ string: Swift.String) -> Swift.String
+  public static func appendNormalisedWhitespace(_ accum: linkid_mmp.StringBuilder, string: Swift.String, stripLeading: Swift.Bool)
+  public static func resolve(_ base: Foundation.URL, relUrl: Swift.String) -> Foundation.URL?
+  public static func resolve(_ baseUrl: Swift.String, relUrl: Swift.String) -> Swift.String
+  @objc deinit
+}
+public class StructuralEvaluator : linkid_mmp.Evaluator {
+  public init(_ evaluator: linkid_mmp.Evaluator)
+  @_inheritsConvenienceInitializers public class Root : linkid_mmp.Evaluator {
+    override public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) -> Swift.Bool
+    override public init()
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers public class Has : linkid_mmp.StructuralEvaluator {
+    override public init(_ evaluator: linkid_mmp.Evaluator)
+    override public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override public func toString() -> Swift.String
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers public class Not : linkid_mmp.StructuralEvaluator {
+    override public init(_ evaluator: linkid_mmp.Evaluator)
+    override public func matches(_ root: linkid_mmp.Element, _ node: linkid_mmp.Element) -> Swift.Bool
+    override public func toString() -> Swift.String
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers public class Parent : linkid_mmp.StructuralEvaluator {
+    override public init(_ evaluator: linkid_mmp.Evaluator)
+    override public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) -> Swift.Bool
+    override public func toString() -> Swift.String
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers public class ImmediateParent : linkid_mmp.StructuralEvaluator {
+    override public init(_ evaluator: linkid_mmp.Evaluator)
+    override public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) -> Swift.Bool
+    override public func toString() -> Swift.String
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers public class PreviousSibling : linkid_mmp.StructuralEvaluator {
+    override public init(_ evaluator: linkid_mmp.Evaluator)
+    override public func matches(_ root: linkid_mmp.Element, _ element: linkid_mmp.Element) throws -> Swift.Bool
+    override public func toString() -> Swift.String
+    @objc deinit
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class SwiftSoup {
+  public static func parse(_ html: Swift.String, _ baseUri: Swift.String) throws -> linkid_mmp.Document
+  public static func parse(_ html: Swift.String, _ baseUri: Swift.String, _ parser: linkid_mmp.Parser) throws -> linkid_mmp.Document
+  public static func parse(_ html: Swift.String) throws -> linkid_mmp.Document
+  public static func parseBodyFragment(_ bodyHtml: Swift.String, _ baseUri: Swift.String) throws -> linkid_mmp.Document
+  public static func parseBodyFragment(_ bodyHtml: Swift.String) throws -> linkid_mmp.Document
+  public static func clean(_ bodyHtml: Swift.String, _ baseUri: Swift.String, _ whitelist: linkid_mmp.Whitelist) throws -> Swift.String?
+  public static func clean(_ bodyHtml: Swift.String, _ whitelist: linkid_mmp.Whitelist) throws -> Swift.String?
+  public static func clean(_ bodyHtml: Swift.String, _ baseUri: Swift.String, _ whitelist: linkid_mmp.Whitelist, _ outputSettings: linkid_mmp.OutputSettings) throws -> Swift.String?
+  public static func isValid(_ bodyHtml: Swift.String, _ whitelist: linkid_mmp.Whitelist) throws -> Swift.Bool
+  @objc deinit
 }
 extension linkid_mmp.Database {
   @available(macOS 10.10, *)
@@ -3743,6 +4845,125 @@ extension linkid_mmp.TableRecord {
   public static func limit(_ limit: Swift.Int, offset: Swift.Int? = nil) -> linkid_mmp.QueryInterfaceRequest<Self>
   public static func aliased(_ alias: linkid_mmp.TableAlias) -> linkid_mmp.QueryInterfaceRequest<Self>
 }
+open class Tag : Swift.Hashable {
+  public init(_ tagName: Swift.String)
+  open func getName() -> Swift.String
+  open func getNameNormal() -> Swift.String
+  public static func valueOf(_ tagName: Swift.String, _ settings: linkid_mmp.ParseSettings) throws -> linkid_mmp.Tag
+  public static func valueOf(_ tagName: Swift.String) throws -> linkid_mmp.Tag
+  open func isBlock() -> Swift.Bool
+  open func formatAsBlock() -> Swift.Bool
+  open func canContainBlock() -> Swift.Bool
+  open func isInline() -> Swift.Bool
+  open func isData() -> Swift.Bool
+  open func isEmpty() -> Swift.Bool
+  open func isSelfClosing() -> Swift.Bool
+  open func isKnownTag() -> Swift.Bool
+  public static func isKnownTag(_ tagName: Swift.String) -> Swift.Bool
+  public func preserveWhitespace() -> Swift.Bool
+  public func isFormListed() -> Swift.Bool
+  public func isFormSubmittable() -> Swift.Bool
+  public static func == (lhs: linkid_mmp.Tag, rhs: linkid_mmp.Tag) -> Swift.Bool
+  public func equals(_ tag: linkid_mmp.Tag) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  open func toString() -> Swift.String
+  @objc deinit
+  open var hashValue: Swift.Int {
+    get
+  }
+}
+open class TextNode : linkid_mmp.Node {
+  public init(_ text: Swift.String, _ baseUri: Swift.String?)
+  override open func nodeName() -> Swift.String
+  open func text() -> Swift.String
+  @discardableResult
+  public func text(_ text: Swift.String) -> linkid_mmp.TextNode
+  open func getWholeText() -> Swift.String
+  open func isBlank() -> Swift.Bool
+  open func splitText(_ offset: Swift.Int) throws -> linkid_mmp.TextNode
+  public static func createFromEncoded(_ encodedText: Swift.String, _ baseUri: Swift.String) throws -> linkid_mmp.TextNode
+  public static func normaliseWhitespace(_ text: Swift.String) -> Swift.String
+  public static func stripLeadingWhitespace(_ text: Swift.String) -> Swift.String
+  public static func lastCharIsWhitespace(_ sb: linkid_mmp.StringBuilder) -> Swift.Bool
+  override open func attr(_ attributeKey: Swift.String) throws -> Swift.String
+  override open func getAttributes() -> linkid_mmp.Attributes
+  override open func attr(_ attributeKey: Swift.String, _ attributeValue: Swift.String) throws -> linkid_mmp.Node
+  override open func hasAttr(_ attributeKey: Swift.String) -> Swift.Bool
+  override open func removeAttr(_ attributeKey: Swift.String) throws -> linkid_mmp.Node
+  override open func absUrl(_ attributeKey: Swift.String) throws -> Swift.String
+  override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  override public func copy(parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  override public func copy(clone: linkid_mmp.Node, parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class Token {
+  @discardableResult
+  public func reset() -> linkid_mmp.Token
+  open func toString() throws -> Swift.String
+  public enum TokenType {
+    case Doctype
+    case StartTag
+    case EndTag
+    case Comment
+    case Char
+    case EOF
+    public static func == (a: linkid_mmp.Token.TokenType, b: linkid_mmp.Token.TokenType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+}
+extension linkid_mmp.Token : Swift.CustomDebugStringConvertible {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class TokeniserStateVars {
+  public static let nullScalr: Swift.UnicodeScalar
+  @objc deinit
+}
+open class TokenQueue {
+  public init(_ data: Swift.String)
+  open func isEmpty() -> Swift.Bool
+  open func peek() -> Swift.Character
+  open func addFirst(_ c: Swift.Character)
+  open func addFirst(_ seq: Swift.String)
+  open func matches(_ seq: Swift.String) -> Swift.Bool
+  open func matchesCS(_ seq: Swift.String) -> Swift.Bool
+  open func matchesAny(_ seq: [Swift.String]) -> Swift.Bool
+  open func matchesAny(_ seq: Swift.String...) -> Swift.Bool
+  open func matchesAny(_ seq: Swift.Character...) -> Swift.Bool
+  open func matchesStartTag() -> Swift.Bool
+  @discardableResult
+  open func matchChomp(_ seq: Swift.String) -> Swift.Bool
+  open func matchesWhitespace() -> Swift.Bool
+  open func matchesWord() -> Swift.Bool
+  open func advance()
+  open func consume() -> Swift.Character
+  open func consume(_ seq: Swift.String) throws
+  @discardableResult
+  open func consumeTo(_ seq: Swift.String) -> Swift.String
+  open func consumeToIgnoreCase(_ seq: Swift.String) -> Swift.String
+  open func consumeToAny(_ seq: Swift.String...) -> Swift.String
+  open func consumeToAny(_ seq: [Swift.String]) -> Swift.String
+  open func chompTo(_ seq: Swift.String) -> Swift.String
+  open func chompToIgnoreCase(_ seq: Swift.String) -> Swift.String
+  open func chompBalanced(_ open: Swift.Character, _ close: Swift.Character) -> Swift.String
+  public static func unescape(_ input: Swift.String) -> Swift.String
+  @discardableResult
+  open func consumeWhitespace() -> Swift.Bool
+  @discardableResult
+  open func consumeWord() -> Swift.String
+  open func consumeTagName() -> Swift.String
+  open func consumeElementSelector() -> Swift.String
+  open func consumeCssIdentifier() -> Swift.String
+  open func consumeAttributeKey() -> Swift.String
+  open func remainder() -> Swift.String
+  open func toString() -> Swift.String
+  @objc deinit
+}
 extension linkid_mmp.Database {
   final public func add(transactionObserver: any linkid_mmp.TransactionObserver, extent: linkid_mmp.Database.TransactionObservationExtent = .observerLifetime)
   final public func remove(transactionObserver: any linkid_mmp.TransactionObserver)
@@ -3800,6 +5021,42 @@ public struct DatabaseEvent {
   public let rowID: Swift.Int64
   public func copy() -> linkid_mmp.DatabaseEvent
 }
+public class TreeBuilder {
+  public var reader: linkid_mmp.CharacterReader
+  public var doc: linkid_mmp.Document
+  public var stack: Swift.Array<linkid_mmp.Element>
+  public var baseUri: Swift.String
+  public var currentToken: linkid_mmp.Token?
+  public var errors: linkid_mmp.ParseErrorList
+  public var settings: linkid_mmp.ParseSettings
+  public func defaultSettings() -> linkid_mmp.ParseSettings
+  public init()
+  public func initialiseParse(_ input: Swift.String, _ baseUri: Swift.String, _ errors: linkid_mmp.ParseErrorList, _ settings: linkid_mmp.ParseSettings)
+  public func runParser() throws
+  @discardableResult
+  public func process(_ token: linkid_mmp.Token) throws -> Swift.Bool
+  @discardableResult
+  public func processStartTag(_ name: Swift.String) throws -> Swift.Bool
+  @discardableResult
+  public func processStartTag(_ name: Swift.String, _ attrs: linkid_mmp.Attributes) throws -> Swift.Bool
+  @discardableResult
+  public func processEndTag(_ name: Swift.String) throws -> Swift.Bool
+  public func currentElement() -> linkid_mmp.Element?
+  @objc deinit
+}
+extension Swift.Unicode.Scalar {
+  public static let Ampersand: Swift.UnicodeScalar
+  public static let LessThan: Swift.UnicodeScalar
+  public static let GreaterThan: Swift.UnicodeScalar
+  public static let Space: Swift.UnicodeScalar
+  public static let BackslashF: Swift.UnicodeScalar
+  public static let BackslashT: Swift.UnicodeScalar
+  public static let BackslashN: Swift.UnicodeScalar
+  public static let BackslashR: Swift.UnicodeScalar
+  public static let Slash: Swift.UnicodeScalar
+  public static let FormFeed: Swift.UnicodeScalar
+  public static let VerticalTab: Swift.UnicodeScalar
+}
 extension Foundation.NSURL : linkid_mmp.DatabaseValueConvertible {
   public var databaseValue: linkid_mmp.DatabaseValue {
     get
@@ -3818,7 +5075,7 @@ extension Foundation.URL : linkid_mmp.DatabaseValueConvertible {
 extension Swift.String {
   @inlinable public var quotedDatabaseIdentifier: Swift.String {
     get {
-        // See https://www.sqlite.org/lang_keywords.html
+         
         return "\"\(self)\""
     }
   }
@@ -3833,9 +5090,9 @@ extension Swift.Optional : linkid_mmp._OptionalProtocol {
   public typealias _Wrapped = Wrapped
 }
 @inlinable internal func GRDBPrecondition(_ condition: @autoclosure () -> Swift.Bool, _ message: @autoclosure () -> Swift.String = "", file: Swift.StaticString = #file, line: Swift.UInt = #line) {
-    /// Custom precondition function which aims at solving
-    /// https://bugs.swift.org/browse/SR-905 and
-    /// https://github.com/groue/GRDB.swift/issues/37
+     
+     
+     
     if !condition() {
         fatalError(message(), file: file, line: line)
     }
@@ -3881,28 +5138,6 @@ extension Foundation.UUID : linkid_mmp.StatementColumnConvertible {
             fatalConversionError(to: UUID.self, sqliteStatement: sqliteStatement, index: index)
         }
     }
-}
-@_hasMissingDesignatedInitializers public class AdItem : Swift.CustomStringConvertible {
-  public var description: Swift.String {
-    get
-  }
-  public func toJsonObject() -> [Swift.String : Any]
-  public func toJsonString() -> Swift.String?
-  @_hasMissingDesignatedInitializers public class AdSize : Swift.CustomStringConvertible {
-    public var description: Swift.String {
-      get
-    }
-    public func toJsonObject() -> [Swift.String : Any]
-    @objc deinit
-  }
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class AirflexAdHelper {
-  public static func showAd()
-  public static func getAd(adId: Swift.String, adType: Swift.String, callback: @escaping (linkid_mmp.AdItem?) -> Swift.Void)
-  public static func trackImpression(adId: Swift.String, productId: Swift.String = "")
-  public static func trackClick(adId: Swift.String, productId: Swift.String = "")
-  @objc deinit
 }
 public enum ValueScheduling {
   case mainQueue
@@ -4066,6 +5301,79 @@ extension linkid_mmp.Database {
   final public func create(virtualTable name: Swift.String, ifNotExists: Swift.Bool = false, using module: Swift.String) throws
   final public func create<Module>(virtualTable tableName: Swift.String, ifNotExists: Swift.Bool = false, using module: Module, _ body: ((Module.TableDefinition) -> Swift.Void)? = nil) throws where Module : linkid_mmp.VirtualTableModule
 }
+@_hasMissingDesignatedInitializers public class Whitelist {
+  public static func none() -> linkid_mmp.Whitelist
+  public static func simpleText() throws -> linkid_mmp.Whitelist
+  public static func basic() throws -> linkid_mmp.Whitelist
+  public static func basicWithImages() throws -> linkid_mmp.Whitelist
+  public static func relaxed() throws -> linkid_mmp.Whitelist
+  @discardableResult
+  open func addTags(_ tags: Swift.String...) throws -> linkid_mmp.Whitelist
+  @discardableResult
+  open func removeTags(_ tags: Swift.String...) throws -> linkid_mmp.Whitelist
+  @discardableResult
+  open func addAttributes(_ tag: Swift.String, _ keys: Swift.String...) throws -> linkid_mmp.Whitelist
+  @discardableResult
+  open func removeAttributes(_ tag: Swift.String, _ keys: Swift.String...) throws -> linkid_mmp.Whitelist
+  @discardableResult
+  open func addEnforcedAttribute(_ tag: Swift.String, _ key: Swift.String, _ value: Swift.String) throws -> linkid_mmp.Whitelist
+  @discardableResult
+  open func removeEnforcedAttribute(_ tag: Swift.String, _ key: Swift.String) throws -> linkid_mmp.Whitelist
+  @discardableResult
+  open func preserveRelativeLinks(_ preserve: Swift.Bool) -> linkid_mmp.Whitelist
+  @discardableResult
+  open func addProtocols(_ tag: Swift.String, _ key: Swift.String, _ protocols: Swift.String...) throws -> linkid_mmp.Whitelist
+  @discardableResult
+  open func removeProtocols(_ tag: Swift.String, _ key: Swift.String, _ protocols: Swift.String...) throws -> linkid_mmp.Whitelist
+  public func isSafeTag(_ tag: Swift.String) -> Swift.Bool
+  public func isSafeAttribute(_ tagName: Swift.String, _ el: linkid_mmp.Element, _ attr: linkid_mmp.Attribute) throws -> Swift.Bool
+  public func getEnforcedAttributes(_ tagName: Swift.String) throws -> linkid_mmp.Attributes
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class TagName : linkid_mmp.TypedValue {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class AttributeKey : linkid_mmp.TypedValue {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class AttributeValue : linkid_mmp.TypedValue {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class Protocol : linkid_mmp.TypedValue {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class TypedValue {
+  public func toString() -> Swift.String
+  @objc deinit
+}
+extension linkid_mmp.TypedValue : Swift.Hashable {
+  public func hash(into hasher: inout Swift.Hasher)
+  open var hashValue: Swift.Int {
+    get
+  }
+}
+public func == (lhs: linkid_mmp.TypedValue, rhs: linkid_mmp.TypedValue) -> Swift.Bool
+public class XmlDeclaration : linkid_mmp.Node {
+  public init(_ name: Swift.String, _ baseUri: Swift.String, _ isProcessingInstruction: Swift.Bool)
+  override public func nodeName() -> Swift.String
+  public func name() -> Swift.String
+  public func getWholeDeclaration() throws -> Swift.String
+  override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  override public func copy(parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  override public func copy(clone: linkid_mmp.Node, parent: linkid_mmp.Node?) -> linkid_mmp.Node
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class XmlTreeBuilder : linkid_mmp.TreeBuilder {
+  override public init()
+  override public func defaultSettings() -> linkid_mmp.ParseSettings
+  public func parse(_ input: Swift.String, _ baseUri: Swift.String) throws -> linkid_mmp.Document
+  override public func initialiseParse(_ input: Swift.String, _ baseUri: Swift.String, _ errors: linkid_mmp.ParseErrorList, _ settings: linkid_mmp.ParseSettings)
+  override public func process(_ token: linkid_mmp.Token) throws -> Swift.Bool
+  @objc deinit
+}
+extension linkid_mmp.AirflexAdView.AdType : Swift.Equatable {}
+extension linkid_mmp.AirflexAdView.AdType : Swift.Hashable {}
+extension linkid_mmp.AirflexAdView.AdType : Swift.RawRepresentable {}
 extension linkid_mmp.FingerprintJSVersion : Swift.Equatable {}
 extension linkid_mmp.FingerprintJSVersion : Swift.Hashable {}
 extension linkid_mmp.Database.CheckpointMode : Swift.Equatable {}
@@ -4088,10 +5396,18 @@ extension linkid_mmp.DatabaseDateComponents.Format : Swift.RawRepresentable {}
 extension linkid_mmp.Network : Swift.Equatable {}
 extension linkid_mmp.Network : Swift.Hashable {}
 extension linkid_mmp.Network : Swift.RawRepresentable {}
+extension linkid_mmp.Document.QuirksMode : Swift.Equatable {}
+extension linkid_mmp.Document.QuirksMode : Swift.Hashable {}
+extension linkid_mmp.OutputSettings.Syntax : Swift.Equatable {}
+extension linkid_mmp.OutputSettings.Syntax : Swift.Hashable {}
 extension linkid_mmp.DatabaseUUIDEncodingStrategy : Swift.Equatable {}
 extension linkid_mmp.DatabaseUUIDEncodingStrategy : Swift.Hashable {}
+extension linkid_mmp.ExceptionType : Swift.Equatable {}
+extension linkid_mmp.ExceptionType : Swift.Hashable {}
 extension linkid_mmp.FTS3.Diacritics : Swift.Equatable {}
 extension linkid_mmp.FTS3.Diacritics : Swift.Hashable {}
+extension linkid_mmp.Token.TokenType : Swift.Equatable {}
+extension linkid_mmp.Token.TokenType : Swift.Hashable {}
 extension linkid_mmp.Database.TransactionObservationExtent : Swift.Equatable {}
 extension linkid_mmp.Database.TransactionObservationExtent : Swift.Hashable {}
 extension linkid_mmp.DatabaseEvent.Kind : Swift.Equatable {}

@@ -13,7 +13,7 @@ class _AdRetailMediaBanner extends StatelessWidget {
   final AdMediaData ad;
   final EdgeInsets padding;
   final AdActionCallback? onAdImpression;
-  final AdActionCallback? onAdClick;
+  final AdClickCallback? onAdClick;
   final VoidCallback? onClose;
 
   @override

@@ -17,7 +17,7 @@ class _AdWidget extends StatefulWidget {
   final Size size;
   final EdgeInsets padding;
   final AdActionCallback? onAdImpression;
-  final AdActionCallback? onAdClick;
+  final AdClickCallback? onAdClick;
   final VoidCallback? onClose;
 
   @override
@@ -28,6 +28,8 @@ class _AdWidgetState extends State<_AdWidget> {
   dom.NodeList _parseHtml(String html) => parser.HtmlParser(html, parseMeta: false).parseFragment().nodes;
 
   String productId = '';
+  String actionType = '';
+  String actionData = '';
 
   @override
   void initState() {
@@ -35,6 +37,8 @@ class _AdWidgetState extends State<_AdWidget> {
     final dom.NodeList nodes = _parseHtml(widget.adContent);
     final dom.Element root = nodes.first as dom.Element;
     productId = root.attributes['data-ad-element-id'] ?? '';
+    actionType = root.attributes['data-cta-type'] ?? '';
+    actionData = root.attributes['data-cta-destination'] ?? '';
   }
 
   @override
@@ -42,7 +46,7 @@ class _AdWidgetState extends State<_AdWidget> {
     return Padding(
       padding: widget.padding,
       child: _AdActionWrapper(
-        onClick: () => widget.onAdClick?.call(productId),
+        onClick: () => widget.onAdClick?.call(productId, actionType, actionData),
         onImpression: () => widget.onAdImpression?.call(productId),
         onClose: widget.onClose,
         child: AspectRatio(
