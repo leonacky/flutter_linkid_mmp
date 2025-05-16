@@ -2,6 +2,7 @@ import 'dart:async' as DartAsync;
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter_linkid_mmp/ad_media/ad_type.dart';
 import 'package:flutter_linkid_mmp/deep_link_handler.dart';
 import 'package:flutter_linkid_mmp/user_info.dart';
 
@@ -114,8 +115,8 @@ class Airflex implements DeepLinkHandler {
   //   print(adResult);
   // }
 
-  Future<Map<String, dynamic>?> getAd({required String adId, required String adType}) {
-    return FlutterLinkIdMmpPlatform.instance.getAd(adId: adId, adType: adType);
+  Future<Map<String, dynamic>?> getAd({required String adId, required AdType adType}) {
+    return FlutterLinkIdMmpPlatform.instance.getAd(adId: adId, adType: adType.name.toUpperCase());
   }
 
   Future<bool> trackAdClick({required String adId, String productId = ""}) {
