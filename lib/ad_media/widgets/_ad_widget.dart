@@ -7,15 +7,19 @@ class _AdWidget extends StatefulWidget {
     Key? key,
     required this.adContent,
     required this.size,
-    this.padding = _AdWidget.defaultPadding,
+    EdgeInsets? padding,
+    BorderRadius? borderRadius,
     this.onAdImpression,
     this.onAdClick,
     this.onClose,
-  }) : super(key: key);
+  })  : padding = padding ?? _AdWidget.defaultPadding,
+        borderRadius = borderRadius ?? BorderRadius.zero,
+        super(key: key);
 
   final String adContent;
   final Size size;
   final EdgeInsets padding;
+  final BorderRadius borderRadius;
   final AdActionCallback? onAdImpression;
   final AdClickCallback? onAdClick;
   final VoidCallback? onClose;
@@ -45,16 +49,20 @@ class _AdWidgetState extends State<_AdWidget> {
   Widget build(BuildContext context) {
     return Padding(
       padding: widget.padding,
-      child: _AdActionWrapper(
-        onClick: () => widget.onAdClick?.call(productId, actionType, actionData),
-        onImpression: () => widget.onAdImpression?.call(productId),
-        onClose: widget.onClose,
-        child: AspectRatio(
-          aspectRatio: widget.size.aspectRatio,
-          child: AbsorbPointer(
-            child: HtmlWidget(
-              widget.adContent,
-              enableCaching: true,
+      child: ClipRRect(
+        borderRadius: widget.borderRadius,
+        clipBehavior: Clip.hardEdge,
+        child: _AdActionWrapper(
+          onClick: () => widget.onAdClick?.call(productId, actionType, actionData),
+          onImpression: () => widget.onAdImpression?.call(productId),
+          onClose: widget.onClose,
+          child: AspectRatio(
+            aspectRatio: widget.size.aspectRatio,
+            child: AbsorbPointer(
+              child: HtmlWidget(
+                widget.adContent,
+                enableCaching: true,
+              ),
             ),
           ),
         ),

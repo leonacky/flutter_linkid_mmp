@@ -4,14 +4,16 @@ class _AdRetailMediaBanner extends StatelessWidget {
   const _AdRetailMediaBanner({
     Key? key,
     required this.ad,
-    this.padding = _AdWidget.defaultPadding,
+    this.padding,
+    this.borderRadius,
     this.onAdImpression,
     this.onAdClick,
     this.onClose,
   }) : super(key: key);
 
   final AdMediaData ad;
-  final EdgeInsets padding;
+  final EdgeInsets? padding;
+  final BorderRadius? borderRadius;
   final AdActionCallback? onAdImpression;
   final AdClickCallback? onAdClick;
   final VoidCallback? onClose;
@@ -22,6 +24,7 @@ class _AdRetailMediaBanner extends StatelessWidget {
       adContent: ad.adData.first,
       size: ad.size.toFlutterSize,
       padding: padding,
+      borderRadius: borderRadius,
       onAdImpression: onAdImpression,
       onAdClick: onAdClick,
       onClose: onClose,

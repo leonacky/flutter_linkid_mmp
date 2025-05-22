@@ -45,6 +45,8 @@ Alternatively, your editor might support dart pub get or flutter pub get. Check 
 | adType             | Type of ad. Currently there are 2 types: BANNER (only image) and PRODUCT (information about product including image, name, description and price). |
 | placeholder        | Placeholder when getting ad                                                                                                                        |
 | padding            | Padding around ad, default is EdgeInsets.all(16)                                                                                                   |
+| borderRadius       | Border radius around ad, default is BorderRadius.zero                                                                                              |
+| adCarouselConfig   | Configuration for ad carousel                                                                                                                      |
 | timeoutGetAd       | Timeout when getting ad, default is Duration(seconds: 30)                                                                                          |
 | keepAlive          | Whether to keep this widget alive in lazy list, default is true                                                                                    |
 | adListenerCallback | Listener callbacks for ad widget such as onAdError, onAdClick, onAdImpression,...                                                                  |
@@ -55,6 +57,17 @@ AdRetailMediaWidget(
     adType: AdType.banner,
     placeholder: Center(child: CircularProgressIndicator()),
     padding: EdgeInsets.all(16),
+    borderRadius: BorderRadius.all(Radius.circular(8)),
+    adCarouselConfig: AdCarouselConfig(
+        autoPlay: true,
+        enableInfiniteScroll: true,
+        autoPlayInterval:const Duration(seconds: 5),
+        showIndicator: true,
+        indicatorHeight: 20,
+        indicatorBuilder: (isSelected) {
+            // Your custom indicator builder
+        }
+    ),
     keepAlive: true,
     timeoutGetAd: Duration(seconds: 30),
     adListenerCallback: AdListenerCallback(

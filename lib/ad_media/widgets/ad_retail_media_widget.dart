@@ -25,7 +25,9 @@ class AdRetailMediaWidget extends StatefulWidget {
   final String adId;
   final AdType adType;
   final EdgeInsets padding;
+  final BorderRadius borderRadius;
   final Widget? placeholder;
+  final AdCarouselConfig? adCarouselConfig;
   final Duration timeoutGetAd;
   final bool keepAlive;
   final AdListenerCallback? adListenerCallback;
@@ -35,11 +37,14 @@ class AdRetailMediaWidget extends StatefulWidget {
     required this.adId,
     required this.adType,
     EdgeInsets? padding,
+    BorderRadius? borderRadius,
     this.placeholder,
+    this.adCarouselConfig,
     this.timeoutGetAd = const Duration(seconds: 30),
     this.keepAlive = true,
     this.adListenerCallback,
-  }) : padding = padding ?? _AdWidget.defaultPadding;
+  })  : padding = padding ?? _AdWidget.defaultPadding,
+        borderRadius = borderRadius ?? BorderRadius.zero;
 
   @override
   State<AdRetailMediaWidget> createState() => _AdRetailMediaWidgetState();
@@ -74,26 +79,47 @@ class _AdRetailMediaWidgetState extends State<AdRetailMediaWidget> with Automati
           if (snapshot.data == null || snapshot.data!.adData.isEmpty || !showAd) {
             return const SizedBox.shrink();
           }
-          switch (widget.adType) {
-            case AdType.banner:
-              return _AdRetailMediaBanner(
-                ad: ad!,
-                padding: widget.padding,
-                onAdImpression: _onAdImpression,
-                onAdClick: _onAdClick,
-                onClose: _onClose,
-              );
-            case AdType.product:
-              return _AdRetailMediaProduct(
-                ad: ad!,
-                padding: widget.padding,
-                onAdImpression: _onAdImpression,
-                onAdClick: _onAdClick,
-                onClose: _onClose,
-              );
-            default:
-              return const SizedBox.shrink();
+          if (ad!.adData.length == 1) {
+            return _AdRetailMediaBanner(
+              ad: ad!,
+              padding: widget.padding,
+              borderRadius: widget.borderRadius,
+              onAdImpression: _onAdImpression,
+              onAdClick: _onAdClick,
+              onClose: _onClose,
+            );
+          } else if (ad!.adData.length > 1) {
+            return _AdRetailMediaProduct(
+              ad: ad!,
+              padding: widget.padding,
+              borderRadius: widget.borderRadius,
+              carouselConfig: widget.adCarouselConfig,
+              onAdImpression: _onAdImpression,
+              onAdClick: _onAdClick,
+              onClose: _onClose,
+            );
           }
+          return const SizedBox.shrink();
+          // switch (widget.adType) {
+          //   case AdType.banner:
+          //     return _AdRetailMediaBanner(
+          //       ad: ad!,
+          //       padding: widget.padding,
+          //       onAdImpression: _onAdImpression,
+          //       onAdClick: _onAdClick,
+          //       onClose: _onClose,
+          //     );
+          //   case AdType.product:
+          //     return _AdRetailMediaProduct(
+          //       ad: ad!,
+          //       padding: widget.padding,
+          //       onAdImpression: _onAdImpression,
+          //       onAdClick: _onAdClick,
+          //       onClose: _onClose,
+          //     );
+          //   default:
+          //     return const SizedBox.shrink();
+          // }
         },
       ),
     );
