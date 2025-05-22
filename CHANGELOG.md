@@ -228,4 +228,8 @@
 
 ## 1.1.80
 
-- Release version 1.1.60 of LynkiD Airflex: Update documentation about Retail Media
+- Release version 1.1.80 of LynkiD Airflex: Update documentation about Retail Media
+
+## 1.1.81
+
+- Release version 1.1.81 of LynkiD Airflex: Update com.linkid.fintech:airflex:1.0.58

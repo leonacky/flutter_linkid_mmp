@@ -403,6 +403,7 @@ public class FlutterLinkidMmpPlugin implements FlutterPlugin, MethodCallHandler,
 
     @Override
     public boolean onNewIntent(@NonNull Intent intent) {
+        // Log.e(Airflex.TAG, "Flutter Plugin onNewIntent " + intent.getData().toString());
         Airflex.handleDeepLink(context, intent, deepLinkHandler);
         return false;
     }
